@@ -22,7 +22,7 @@ CREATE TABLE account(
     FOREIGN KEY(usr_id) REFERENCES user(usr_id) ON DELETE CASCADE ON UPDATE CASCADE ------级联删除&更新------
 );
 
---账本
+--记账记录
 CREATE TABLE recocrd(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     usr_id INT NOT NULL, ------用户id------

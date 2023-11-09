@@ -5,7 +5,13 @@
 	"CMAKE_CURRENT_SOURCE_DIR" : "E:/code/qt/Widgets/AccountSystem/AccountSystem",
 	"CMAKE_SOURCE_DIR" : "E:/code/qt/Widgets/AccountSystem/AccountSystem",
 	"INCLUDE_DIR" : "E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/include",
-	"INPUTS" : [],
+	"INPUTS" : 
+	[
+		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/balance.png",
+		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/income.png",
+		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/pay.png",
+		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/totalAssets.png"
+	],
 	"LOCK_FILE" : "E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/CMakeFiles/AccountSystem_autogen.dir/AutoRcc_res_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,
 	"OPTIONS" : [ "-name", "res" ],
