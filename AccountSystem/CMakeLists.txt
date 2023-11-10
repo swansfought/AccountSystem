@@ -39,6 +39,7 @@ else()
         add_executable(AccountSystem
             ${PROJECT_SOURCES}
             res.qrc
+            addwin.h addwin.cpp addwin.ui
         )
     endif()
 endif()

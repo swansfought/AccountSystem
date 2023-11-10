@@ -6,10 +6,12 @@ MainWin::MainWin(QWidget *parent)
     , ui(new Ui::MainWin)
 {
     ui->setupUi(this);
-
     //    this->setMinimumSize(QSize(1300,750));
 
-
+    addWin = new AddWin(this);
+    addWin->setStatusBar(nullptr);
+    addWin->setMinimumSize(QSize(600,520));
+    addWin->setMaximumSize(QSize(600,520));
 }
 
 MainWin::~MainWin()
@@ -63,5 +65,12 @@ void MainWin::on_btn_setting_clicked()
 {
     ui->stackedWidget_dockPage->setCurrentWidget(ui->page_setting);
 
+}
+
+
+void MainWin::on_btn_addRecord_clicked()
+{
+    addWin->setWindowModality(Qt::WindowModal);
+    addWin->show();
 }
 

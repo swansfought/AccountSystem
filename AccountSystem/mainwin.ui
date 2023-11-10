@@ -109,34 +109,6 @@
           <property name="spacing">
            <number>0</number>
           </property>
-          <item row="0" column="5">
-           <widget class="QToolButton" name="btn_addRecord">
-            <property name="minimumSize">
-             <size>
-              <width>70</width>
-              <height>70</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>70</width>
-              <height>70</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>10</pointsize>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="text">
-             <string>记一笔</string>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="0">
            <widget class="QWidget" name="widget_2" native="true">
             <property name="minimumSize">
@@ -861,6 +833,34 @@
              </size>
             </property>
            </spacer>
+          </item>
+          <item row="0" column="5">
+           <widget class="QPushButton" name="btn_addRecord">
+            <property name="minimumSize">
+             <size>
+              <width>70</width>
+              <height>70</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>70</width>
+              <height>70</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>记一笔</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -2273,7 +2273,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>400</width>
-                   <height>521</height>
+                   <height>225</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_48">

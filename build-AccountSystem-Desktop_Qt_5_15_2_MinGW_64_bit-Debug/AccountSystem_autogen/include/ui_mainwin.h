@@ -45,7 +45,6 @@ public:
     QGridLayout *gridLayout_3;
     QWidget *widget;
     QGridLayout *gridLayout_4;
-    QToolButton *btn_addRecord;
     QWidget *widget_2;
     QLabel *label;
     QWidget *widget_3;
@@ -89,6 +88,7 @@ public:
     QFrame *line_5;
     QSpacerItem *horizontalSpacer;
     QSpacerItem *horizontalSpacer_7;
+    QPushButton *btn_addRecord;
     QWidget *widget_dock;
     QGridLayout *gridLayout_2;
     QPushButton *btn_analysis;
@@ -307,18 +307,6 @@ public:
         gridLayout_4->setSpacing(0);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        btn_addRecord = new QToolButton(widget);
-        btn_addRecord->setObjectName(QString::fromUtf8("btn_addRecord"));
-        btn_addRecord->setMinimumSize(QSize(70, 70));
-        btn_addRecord->setMaximumSize(QSize(70, 70));
-        QFont font;
-        font.setPointSize(10);
-        font.setBold(false);
-        btn_addRecord->setFont(font);
-        btn_addRecord->setStyleSheet(QString::fromUtf8(""));
-
-        gridLayout_4->addWidget(btn_addRecord, 0, 5, 1, 1);
-
         widget_2 = new QWidget(widget);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         widget_2->setMinimumSize(QSize(140, 0));
@@ -365,10 +353,10 @@ public:
         label_15->setObjectName(QString::fromUtf8("label_15"));
         label_15->setMinimumSize(QSize(0, 0));
         label_15->setMaximumSize(QSize(16777215, 16777215));
-        QFont font1;
-        font1.setPointSize(11);
-        font1.setBold(true);
-        label_15->setFont(font1);
+        QFont font;
+        font.setPointSize(11);
+        font.setBold(true);
+        label_15->setFont(font);
 
         gridLayout_8->addWidget(label_15, 0, 1, 1, 1);
 
@@ -399,11 +387,11 @@ public:
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setMinimumSize(QSize(180, 30));
         label_6->setMaximumSize(QSize(180, 30));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font2.setPointSize(13);
-        font2.setBold(true);
-        label_6->setFont(font2);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font1.setPointSize(13);
+        font1.setBold(true);
+        label_6->setFont(font1);
         label_6->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
 
         gridLayout_9->addWidget(label_6, 1, 1, 1, 1);
@@ -465,7 +453,7 @@ public:
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setMinimumSize(QSize(0, 0));
         label_7->setMaximumSize(QSize(16777215, 16777215));
-        label_7->setFont(font1);
+        label_7->setFont(font);
 
         gridLayout_11->addWidget(label_7, 0, 1, 1, 1);
 
@@ -480,7 +468,7 @@ public:
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setMinimumSize(QSize(180, 30));
         label_8->setMaximumSize(QSize(180, 30));
-        label_8->setFont(font2);
+        label_8->setFont(font1);
         label_8->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
 
         gridLayout_10->addWidget(label_8, 1, 1, 1, 1);
@@ -515,7 +503,7 @@ public:
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setMinimumSize(QSize(0, 0));
         label_10->setMaximumSize(QSize(16777215, 16777215));
-        label_10->setFont(font1);
+        label_10->setFont(font);
 
         gridLayout_14->addWidget(label_10, 0, 1, 1, 1);
 
@@ -556,7 +544,7 @@ public:
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setMinimumSize(QSize(180, 30));
         label_11->setMaximumSize(QSize(180, 30));
-        label_11->setFont(font2);
+        label_11->setFont(font1);
         label_11->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
 
         gridLayout_12->addWidget(label_11, 1, 1, 1, 1);
@@ -592,6 +580,18 @@ public:
         horizontalSpacer_7 = new QSpacerItem(10, 27, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         gridLayout_4->addItem(horizontalSpacer_7, 0, 4, 1, 1);
+
+        btn_addRecord = new QPushButton(widget);
+        btn_addRecord->setObjectName(QString::fromUtf8("btn_addRecord"));
+        btn_addRecord->setMinimumSize(QSize(70, 70));
+        btn_addRecord->setMaximumSize(QSize(70, 70));
+        QFont font2;
+        font2.setPointSize(10);
+        font2.setBold(false);
+        btn_addRecord->setFont(font2);
+        btn_addRecord->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout_4->addWidget(btn_addRecord, 0, 5, 1, 1);
 
 
         gridLayout_3->addWidget(widget, 0, 0, 1, 4);
@@ -1111,7 +1111,7 @@ public:
         scrollArea_3->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 400, 521));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 400, 225));
         gridLayout_48 = new QGridLayout(scrollAreaWidgetContents_3);
         gridLayout_48->setObjectName(QString::fromUtf8("gridLayout_48"));
         gridLayout_48->setHorizontalSpacing(0);
@@ -1951,7 +1951,6 @@ public:
     void retranslateUi(QMainWindow *MainWin)
     {
         MainWin->setWindowTitle(QCoreApplication::translate("MainWin", "MainWin", nullptr));
-        btn_addRecord->setText(QCoreApplication::translate("MainWin", "\350\256\260\344\270\200\347\254\224", nullptr));
         label->setText(QCoreApplication::translate("MainWin", "\346\231\232\351\243\216\346\235\245\347\232\204\346\255\243\345\267\247", nullptr));
         pushButton->setText(QString());
         label_15->setText(QCoreApplication::translate("MainWin", "\346\200\273\350\265\204\344\272\247", nullptr));
@@ -1965,6 +1964,7 @@ public:
         pushButton_3->setText(QString());
         label_9->setText(QString());
         label_11->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
+        btn_addRecord->setText(QCoreApplication::translate("MainWin", "\350\256\260\344\270\200\347\254\224", nullptr));
         btn_analysis->setText(QCoreApplication::translate("MainWin", "\350\264\246\347\233\256\347\273\237\350\256\241/", nullptr));
         btn_borrowReturn->setText(QCoreApplication::translate("MainWin", "\345\200\237\350\277\230\350\256\260\345\275\225/", nullptr));
         btn_classify->setText(QCoreApplication::translate("MainWin", "\345\210\206\347\261\273\347\256\241\347\220\206", nullptr));

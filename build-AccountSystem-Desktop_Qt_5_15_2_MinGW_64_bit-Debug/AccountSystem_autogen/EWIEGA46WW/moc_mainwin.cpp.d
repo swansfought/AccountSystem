@@ -258,4 +258,5 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/sys/types.h \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/vadefs.h \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h \
-  D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h
+  D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/addwin.h

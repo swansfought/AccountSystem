@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "addwin.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWin; }
 QT_END_NAMESPACE
@@ -24,6 +26,12 @@ private slots:
     void on_btn_accountBook_clicked();
     void on_btn_classify_clicked();
     void on_btn_setting_clicked();
+
+
+    void on_btn_addRecord_clicked();
+
+private:
+    AddWin *addWin;//记账窗口
 
 private:
     Ui::MainWin *ui;

@@ -312,6 +312,8 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/CMakeLists.txt \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/addwin.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/addwin.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/main.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.h \
@@ -321,5 +323,6 @@ AccountSystem_autogen/timestamp: \
   CMakeFiles/3.24.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.24.2/CMakeRCCompiler.cmake \
   CMakeFiles/3.24.2/CMakeSystem.cmake \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/addwin.ui \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.ui \
   D:/software/Qt/Tools/CMake_64/bin/cmake.exe

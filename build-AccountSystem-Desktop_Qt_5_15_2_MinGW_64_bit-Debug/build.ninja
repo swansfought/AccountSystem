@@ -73,6 +73,14 @@ build CMakeFiles/AccountSystem.dir/mainwin.cpp.obj: CXX_COMPILER__AccountSystem_
   OBJECT_DIR = CMakeFiles\AccountSystem.dir
   OBJECT_FILE_DIR = CMakeFiles\AccountSystem.dir
 
+build CMakeFiles/AccountSystem.dir/addwin.cpp.obj: CXX_COMPILER__AccountSystem_Debug E$:/code/qt/Widgets/AccountSystem/AccountSystem/addwin.cpp || cmake_object_order_depends_target_AccountSystem
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles\AccountSystem.dir\addwin.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17
+  INCLUDES = -IE:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/include -isystem D:/software/Qt/5.15.2/mingw81_64/include -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtGui -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtANGLE -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtCore -isystem D:/software/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\AccountSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\AccountSystem.dir
+
 build CMakeFiles/AccountSystem.dir/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp.obj: CXX_COMPILER__AccountSystem_Debug E$:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp || cmake_object_order_depends_target_AccountSystem
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles\AccountSystem.dir\AccountSystem_autogen\EWIEGA46WW\qrc_res.cpp.obj.d
@@ -89,7 +97,7 @@ build CMakeFiles/AccountSystem.dir/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp.
 #############################################
 # Link the executable AccountSystem.exe
 
-build AccountSystem.exe: CXX_EXECUTABLE_LINKER__AccountSystem_Debug CMakeFiles/AccountSystem.dir/AccountSystem_autogen/mocs_compilation.cpp.obj CMakeFiles/AccountSystem.dir/main.cpp.obj CMakeFiles/AccountSystem.dir/mainwin.cpp.obj CMakeFiles/AccountSystem.dir/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp.obj | D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Gui.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Core.a D$:/software/Qt/5.15.2/mingw81_64/lib/libqtmain.a || AccountSystem_autogen AccountSystem_autogen_timestamp_deps
+build AccountSystem.exe: CXX_EXECUTABLE_LINKER__AccountSystem_Debug CMakeFiles/AccountSystem.dir/AccountSystem_autogen/mocs_compilation.cpp.obj CMakeFiles/AccountSystem.dir/main.cpp.obj CMakeFiles/AccountSystem.dir/mainwin.cpp.obj CMakeFiles/AccountSystem.dir/addwin.cpp.obj CMakeFiles/AccountSystem.dir/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp.obj | D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Gui.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Core.a D$:/software/Qt/5.15.2/mingw81_64/lib/libqtmain.a || AccountSystem_autogen AccountSystem_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = D:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a  D:/software/Qt/5.15.2/mingw81_64/lib/libQt5Gui.a  D:/software/Qt/5.15.2/mingw81_64/lib/libQt5Core.a  D:/software/Qt/5.15.2/mingw81_64/lib/libqtmain.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -176,7 +184,7 @@ build AccountSystem_autogen_timestamp_deps: phony CMakeFiles/AccountSystem_autog
 #############################################
 # Utility command for AccountSystem_autogen
 
-build AccountSystem_autogen: phony CMakeFiles/AccountSystem_autogen AccountSystem_autogen/include/ui_mainwin.h AccountSystem_autogen/timestamp AccountSystem_autogen/mocs_compilation.cpp AccountSystem_autogen_timestamp_deps
+build AccountSystem_autogen: phony CMakeFiles/AccountSystem_autogen AccountSystem_autogen/include/ui_mainwin.h AccountSystem_autogen/include/ui_addwin.h AccountSystem_autogen/timestamp AccountSystem_autogen/mocs_compilation.cpp AccountSystem_autogen_timestamp_deps
 
 
 #############################################
@@ -207,7 +215,7 @@ build CMakeFiles/AccountSystem_autogen_timestamp_deps | ${cmake_ninja_workdir}CM
 #############################################
 # Phony custom command for CMakeFiles\AccountSystem_autogen
 
-build CMakeFiles/AccountSystem_autogen AccountSystem_autogen/include/ui_mainwin.h | ${cmake_ninja_workdir}CMakeFiles/AccountSystem_autogen ${cmake_ninja_workdir}AccountSystem_autogen/include/ui_mainwin.h: phony AccountSystem_autogen/timestamp || AccountSystem_autogen_timestamp_deps
+build CMakeFiles/AccountSystem_autogen AccountSystem_autogen/include/ui_mainwin.h AccountSystem_autogen/include/ui_addwin.h | ${cmake_ninja_workdir}CMakeFiles/AccountSystem_autogen ${cmake_ninja_workdir}AccountSystem_autogen/include/ui_mainwin.h ${cmake_ninja_workdir}AccountSystem_autogen/include/ui_addwin.h: phony AccountSystem_autogen/timestamp || AccountSystem_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

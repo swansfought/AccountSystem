@@ -75,6 +75,12 @@
 	"HEADERS" : 
 	[
 		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/addwin.h",
+			"MU",
+			"EWIEGA46WW/moc_addwin.cpp",
+			null
+		],
+		[
 			"E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwin.cpp",
@@ -131,6 +137,11 @@
 	"SETTINGS_FILE" : "E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/CMakeFiles/AccountSystem_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/addwin.cpp",
+			"MU",
+			null
+		],
 		[ "E:/code/qt/Widgets/AccountSystem/AccountSystem/main.cpp", "MU", null ],
 		[
 			"E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.cpp",
