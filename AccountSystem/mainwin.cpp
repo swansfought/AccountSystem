@@ -15,7 +15,6 @@ MainWin::MainWin(QWidget *parent)
     font.setFamily("微软雅黑");
     addWin->setFont(font);
     addWin->setWindowModality(Qt::WindowModal); //设置为模态窗口
-    //    addWin->setWindowFlags(Qt::Dialog);
     addWin->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);//只显示关闭按钮 //| Qt::WindowTitleHint | Qt::CustomizeWindowHint
 
     initData();//初始化数据

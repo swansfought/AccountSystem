@@ -31,3 +31,9 @@
 943	3444	7213356629527739	CMakeFiles/AccountSystem.dir/ui/addwin.cpp.obj	1dfd77cc88e05e71
 947	3933	7213356634527073	CMakeFiles/AccountSystem.dir/mainwin.cpp.obj	616881a42044a1cc
 3933	4373	7213356638306186	AccountSystem.exe	b021e046a9c81d1a
+9	340	7213366468429731	AccountSystem_autogen/timestamp	63c527e54b58585b
+9	340	7213366468429731	AccountSystem_autogen/mocs_compilation.cpp	63c527e54b58585b
+9	340	7213366468429731	E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/timestamp	63c527e54b58585b
+9	340	7213366468429731	E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/mocs_compilation.cpp	63c527e54b58585b
+343	2749	7213366492439233	CMakeFiles/AccountSystem.dir/mainwin.cpp.obj	616881a42044a1cc
+2749	3284	7213366497759125	AccountSystem.exe	b021e046a9c81d1a
