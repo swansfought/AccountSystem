@@ -6,12 +6,16 @@ MainWin::MainWin(QWidget *parent)
     , ui(new Ui::MainWin)
 {
     ui->setupUi(this);
-    //    this->setMinimumSize(QSize(1300,750));
 
+    // 添加记账窗口
     addWin = new AddWin(this);
-    addWin->setStatusBar(nullptr);
-    addWin->setMinimumSize(QSize(600,520));
-    addWin->setMaximumSize(QSize(600,520));
+    QFont font;
+    font.setFamily("微软雅黑");
+    addWin->setFont(font);
+    addWin->setWindowModality(Qt::WindowModal); //设置为模态窗口
+    //    addWin->setWindowFlags(Qt::Dialog);
+    addWin->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);//只显示关闭按钮 //| Qt::WindowTitleHint | Qt::CustomizeWindowHint
+
 }
 
 MainWin::~MainWin()
@@ -70,7 +74,6 @@ void MainWin::on_btn_setting_clicked()
 
 void MainWin::on_btn_addRecord_clicked()
 {
-    addWin->setWindowModality(Qt::WindowModal);
     addWin->show();
 }
 

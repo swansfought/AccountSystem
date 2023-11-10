@@ -1179,7 +1179,7 @@
            <item row="1" column="0">
             <widget class="QStackedWidget" name="stackedWidget_2">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="page_record_tree">
               <layout class="QGridLayout" name="gridLayout_20">
@@ -2273,7 +2273,7 @@
                    <x>0</x>
                    <y>0</y>
                    <width>400</width>
-                   <height>225</height>
+                   <height>521</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_48">
@@ -2706,7 +2706,7 @@
                     </size>
                    </property>
                    <property name="currentIndex">
-                    <number>0</number>
+                    <number>1</number>
                    </property>
                    <widget class="QWidget" name="page_5">
                     <layout class="QGridLayout" name="gridLayout_54">
@@ -2898,7 +2898,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLineEdit" name="lineEdit_8">
+                  <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -2916,17 +2916,23 @@
                      <pointsize>10</pointsize>
                     </font>
                    </property>
-                   <property name="text">
-                    <string/>
-                   </property>
                    <property name="frame">
                     <bool>false</bool>
                    </property>
-                   <property name="readOnly">
-                    <bool>false</bool>
+                   <property name="buttonSymbols">
+                    <enum>QAbstractSpinBox::NoButtons</enum>
                    </property>
-                   <property name="placeholderText">
-                    <string>账户资产</string>
+                   <property name="showGroupSeparator" stdset="0">
+                    <bool>true</bool>
+                   </property>
+                   <property name="suffix">
+                    <string> 元</string>
+                   </property>
+                   <property name="maximum">
+                    <double>99999999.989999994635582</double>
+                   </property>
+                   <property name="singleStep">
+                    <double>100.000000000000000</double>
                    </property>
                   </widget>
                  </item>

@@ -192,7 +192,7 @@ public:
     QWidget *widget_26;
     QGridLayout *gridLayout_49;
     QLabel *label_29;
-    QLineEdit *lineEdit_8;
+    QDoubleSpinBox *doubleSpinBox_3;
     QWidget *widget_27;
     QGridLayout *gridLayout_51;
     QLabel *label_30;
@@ -1111,7 +1111,7 @@ public:
         scrollArea_3->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 400, 225));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 400, 521));
         gridLayout_48 = new QGridLayout(scrollAreaWidgetContents_3);
         gridLayout_48->setObjectName(QString::fromUtf8("gridLayout_48"));
         gridLayout_48->setHorizontalSpacing(0);
@@ -1312,15 +1312,18 @@ public:
 
         gridLayout_49->addWidget(label_29, 0, 0, 1, 1);
 
-        lineEdit_8 = new QLineEdit(widget_26);
-        lineEdit_8->setObjectName(QString::fromUtf8("lineEdit_8"));
-        lineEdit_8->setMinimumSize(QSize(0, 35));
-        lineEdit_8->setMaximumSize(QSize(16777215, 35));
-        lineEdit_8->setFont(font4);
-        lineEdit_8->setFrame(false);
-        lineEdit_8->setReadOnly(false);
+        doubleSpinBox_3 = new QDoubleSpinBox(widget_26);
+        doubleSpinBox_3->setObjectName(QString::fromUtf8("doubleSpinBox_3"));
+        doubleSpinBox_3->setMinimumSize(QSize(0, 35));
+        doubleSpinBox_3->setMaximumSize(QSize(16777215, 35));
+        doubleSpinBox_3->setFont(font4);
+        doubleSpinBox_3->setFrame(false);
+        doubleSpinBox_3->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        doubleSpinBox_3->setProperty("showGroupSeparator", QVariant(true));
+        doubleSpinBox_3->setMaximum(99999999.989999994635582);
+        doubleSpinBox_3->setSingleStep(100.000000000000000);
 
-        gridLayout_49->addWidget(lineEdit_8, 0, 1, 1, 1);
+        gridLayout_49->addWidget(doubleSpinBox_3, 0, 1, 1, 1);
 
 
         gridLayout_53->addWidget(widget_26, 2, 0, 1, 1);
@@ -1940,8 +1943,8 @@ public:
 
         retranslateUi(MainWin);
 
-        stackedWidget_2->setCurrentIndex(0);
-        stackedWidget_3->setCurrentIndex(0);
+        stackedWidget_2->setCurrentIndex(1);
+        stackedWidget_3->setCurrentIndex(1);
         stackedWidget->setCurrentIndex(1);
 
 
@@ -2015,8 +2018,7 @@ public:
         lineEdit_11->setText(QString());
         lineEdit_11->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\345\220\215\347\247\260", nullptr));
         label_29->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\350\265\204\344\272\247", nullptr));
-        lineEdit_8->setText(QString());
-        lineEdit_8->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\350\265\204\344\272\247", nullptr));
+        doubleSpinBox_3->setSuffix(QCoreApplication::translate("MainWin", " \345\205\203", nullptr));
         label_30->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\345\210\253\347\247\260", nullptr));
         lineEdit_10->setText(QString());
         lineEdit_10->setPlaceholderText(QCoreApplication::translate("MainWin", "\345\270\256\345\212\251\347\224\250\346\210\267\345\277\253\351\200\237\350\257\206\345\210\253(\351\235\236\345\277\205\345\241\253)", nullptr));
