@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>img/balance.png</file>
-        <file>img/income.png</file>
-        <file>img/pay.png</file>
-        <file>img/totalAssets.png</file>
-    </qresource>
-</RCC>
