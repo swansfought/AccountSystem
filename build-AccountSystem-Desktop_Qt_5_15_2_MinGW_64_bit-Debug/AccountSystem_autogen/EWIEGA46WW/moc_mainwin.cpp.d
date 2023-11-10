@@ -1,5 +1,14 @@
 E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/EWIEGA46WW/moc_mainwin.cpp: E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.h \
   E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/moc_predefs.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QCoreApplication \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonArray \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonDocument \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonObject \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonParseError \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonValue \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h \
@@ -7,12 +16,24 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbytearray.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qcborcommon.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qcborvalue.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qchar.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qcompilerdetection.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qconfig.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qcoreevent.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qdatastream.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qflags.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qglobal.h \
@@ -21,11 +42,18 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qiodevice.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qjsonarray.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qjsondocument.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qjsonobject.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qjsonvalue.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qline.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qlist.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qlocale.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qlogging.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qmap.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qmargins.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qmetatype.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qmutex.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qnamespace.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qnumeric.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qobject.h \
@@ -38,7 +66,9 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qrect.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qrefcount.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qregexp.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qscopedpointer.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qset.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qshareddata.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h \
@@ -52,7 +82,11 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qsysinfo.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/quuid.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qvariant.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
@@ -259,4 +293,5 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/vadefs.h \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/addwin.h
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/classify.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.h

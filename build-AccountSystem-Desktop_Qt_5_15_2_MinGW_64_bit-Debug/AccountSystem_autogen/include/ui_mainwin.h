@@ -122,36 +122,9 @@ public:
     QLabel *label_2;
     QWidget *page_classify;
     QGridLayout *gridLayout_58;
-    QWidget *widget_13;
-    QGridLayout *gridLayout_60;
-    QGroupBox *groupBox_33;
-    QGridLayout *gridLayout_59;
-    QWidget *widget_31;
-    QGridLayout *gridLayout_57;
-    QLabel *label_4;
-    QLabel *label_31;
-    QSpacerItem *horizontalSpacer_11;
-    QFrame *line_8;
-    QWidget *widget_32;
-    QGridLayout *gridLayout_50;
-    QLineEdit *lineEdit_6;
-    QSpacerItem *horizontalSpacer_8;
-    QPushButton *pushButton_35;
-    QComboBox *comboBox_3;
-    QLineEdit *lineEdit_7;
-    QPushButton *pushButton_37;
-    QTreeWidget *treeWidget_classify;
-    QWidget *widget_30;
-    QGridLayout *gridLayout_61;
-    QGroupBox *groupBox_34;
-    QGridLayout *gridLayout_62;
-    QWidget *widget_34;
-    QGridLayout *gridLayout_63;
-    QLineEdit *lineEdit_12;
-    QPushButton *pushButton_36;
-    QLabel *label_32;
-    QTreeWidget *treeWidget_classify_2;
     QSpacerItem *horizontalSpacer_23;
+    QTreeWidget *treeWidget_income;
+    QTreeWidget *treeWidget_expend;
     QWidget *page_analysis;
     QWidget *page_asset;
     QGridLayout *gridLayout_56;
@@ -830,209 +803,36 @@ public:
         page_classify->setObjectName(QString::fromUtf8("page_classify"));
         gridLayout_58 = new QGridLayout(page_classify);
         gridLayout_58->setObjectName(QString::fromUtf8("gridLayout_58"));
-        gridLayout_58->setHorizontalSpacing(20);
+        gridLayout_58->setHorizontalSpacing(10);
         gridLayout_58->setVerticalSpacing(0);
         gridLayout_58->setContentsMargins(5, 5, 5, 5);
-        widget_13 = new QWidget(page_classify);
-        widget_13->setObjectName(QString::fromUtf8("widget_13"));
-        widget_13->setMinimumSize(QSize(400, 0));
-        widget_13->setMaximumSize(QSize(400, 16777215));
-        gridLayout_60 = new QGridLayout(widget_13);
-        gridLayout_60->setObjectName(QString::fromUtf8("gridLayout_60"));
-        gridLayout_60->setHorizontalSpacing(0);
-        gridLayout_60->setVerticalSpacing(5);
-        gridLayout_60->setContentsMargins(0, 0, 0, 0);
-        groupBox_33 = new QGroupBox(widget_13);
-        groupBox_33->setObjectName(QString::fromUtf8("groupBox_33"));
-        groupBox_33->setMinimumSize(QSize(0, 35));
-        groupBox_33->setMaximumSize(QSize(16777215, 500));
-        groupBox_33->setFont(font4);
-        gridLayout_59 = new QGridLayout(groupBox_33);
-        gridLayout_59->setObjectName(QString::fromUtf8("gridLayout_59"));
-        gridLayout_59->setHorizontalSpacing(0);
-        gridLayout_59->setVerticalSpacing(4);
-        gridLayout_59->setContentsMargins(4, 4, 4, 4);
-        widget_31 = new QWidget(groupBox_33);
-        widget_31->setObjectName(QString::fromUtf8("widget_31"));
-        widget_31->setMinimumSize(QSize(0, 27));
-        widget_31->setMaximumSize(QSize(16777215, 27));
-        gridLayout_57 = new QGridLayout(widget_31);
-        gridLayout_57->setSpacing(0);
-        gridLayout_57->setObjectName(QString::fromUtf8("gridLayout_57"));
-        gridLayout_57->setContentsMargins(0, 0, 0, 0);
-        label_4 = new QLabel(widget_31);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setMinimumSize(QSize(160, 25));
-        label_4->setMaximumSize(QSize(160, 25));
-        label_4->setFont(font4);
-        label_4->setAlignment(Qt::AlignCenter);
-
-        gridLayout_57->addWidget(label_4, 0, 0, 1, 1);
-
-        label_31 = new QLabel(widget_31);
-        label_31->setObjectName(QString::fromUtf8("label_31"));
-        label_31->setMinimumSize(QSize(160, 25));
-        label_31->setMaximumSize(QSize(160, 25));
-        label_31->setFont(font4);
-        label_31->setAlignment(Qt::AlignCenter);
-
-        gridLayout_57->addWidget(label_31, 0, 1, 1, 1);
-
-        horizontalSpacer_11 = new QSpacerItem(52, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_57->addItem(horizontalSpacer_11, 0, 2, 1, 1);
-
-        line_8 = new QFrame(widget_31);
-        line_8->setObjectName(QString::fromUtf8("line_8"));
-        line_8->setMinimumSize(QSize(0, 2));
-        line_8->setMaximumSize(QSize(16777215, 2));
-        line_8->setFrameShape(QFrame::HLine);
-        line_8->setFrameShadow(QFrame::Sunken);
-
-        gridLayout_57->addWidget(line_8, 1, 0, 1, 3);
-
-
-        gridLayout_59->addWidget(widget_31, 0, 0, 1, 1);
-
-        widget_32 = new QWidget(groupBox_33);
-        widget_32->setObjectName(QString::fromUtf8("widget_32"));
-        gridLayout_50 = new QGridLayout(widget_32);
-        gridLayout_50->setObjectName(QString::fromUtf8("gridLayout_50"));
-        gridLayout_50->setHorizontalSpacing(10);
-        gridLayout_50->setVerticalSpacing(5);
-        gridLayout_50->setContentsMargins(0, 0, 0, 0);
-        lineEdit_6 = new QLineEdit(widget_32);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
-        lineEdit_6->setMinimumSize(QSize(160, 35));
-        lineEdit_6->setMaximumSize(QSize(160, 35));
-        lineEdit_6->setFont(font4);
-
-        gridLayout_50->addWidget(lineEdit_6, 0, 0, 1, 1);
-
-        horizontalSpacer_8 = new QSpacerItem(152, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_50->addItem(horizontalSpacer_8, 0, 1, 1, 1);
-
-        pushButton_35 = new QPushButton(widget_32);
-        pushButton_35->setObjectName(QString::fromUtf8("pushButton_35"));
-        pushButton_35->setMinimumSize(QSize(55, 35));
-        pushButton_35->setMaximumSize(QSize(55, 35));
-        pushButton_35->setFont(font4);
-
-        gridLayout_50->addWidget(pushButton_35, 0, 2, 1, 1);
-
-        comboBox_3 = new QComboBox(widget_32);
-        comboBox_3->setObjectName(QString::fromUtf8("comboBox_3"));
-        comboBox_3->setMinimumSize(QSize(160, 35));
-        comboBox_3->setMaximumSize(QSize(160, 35));
-        comboBox_3->setFont(font4);
-
-        gridLayout_50->addWidget(comboBox_3, 1, 0, 1, 1);
-
-        lineEdit_7 = new QLineEdit(widget_32);
-        lineEdit_7->setObjectName(QString::fromUtf8("lineEdit_7"));
-        lineEdit_7->setMinimumSize(QSize(160, 35));
-        lineEdit_7->setMaximumSize(QSize(160, 35));
-        lineEdit_7->setFont(font4);
-
-        gridLayout_50->addWidget(lineEdit_7, 1, 1, 1, 1);
-
-        pushButton_37 = new QPushButton(widget_32);
-        pushButton_37->setObjectName(QString::fromUtf8("pushButton_37"));
-        pushButton_37->setMinimumSize(QSize(55, 35));
-        pushButton_37->setMaximumSize(QSize(55, 35));
-        pushButton_37->setFont(font4);
-
-        gridLayout_50->addWidget(pushButton_37, 1, 2, 1, 1);
-
-
-        gridLayout_59->addWidget(widget_32, 1, 0, 1, 1);
-
-
-        gridLayout_60->addWidget(groupBox_33, 0, 0, 1, 1);
-
-        treeWidget_classify = new QTreeWidget(widget_13);
-        QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem();
-        __qtreewidgetitem1->setText(0, QString::fromUtf8("1"));
-        treeWidget_classify->setHeaderItem(__qtreewidgetitem1);
-        treeWidget_classify->setObjectName(QString::fromUtf8("treeWidget_classify"));
-
-        gridLayout_60->addWidget(treeWidget_classify, 1, 0, 1, 1);
-
-
-        gridLayout_58->addWidget(widget_13, 0, 0, 1, 1);
-
-        widget_30 = new QWidget(page_classify);
-        widget_30->setObjectName(QString::fromUtf8("widget_30"));
-        widget_30->setMinimumSize(QSize(310, 0));
-        widget_30->setMaximumSize(QSize(310, 16777215));
-        gridLayout_61 = new QGridLayout(widget_30);
-        gridLayout_61->setObjectName(QString::fromUtf8("gridLayout_61"));
-        gridLayout_61->setHorizontalSpacing(0);
-        gridLayout_61->setVerticalSpacing(5);
-        gridLayout_61->setContentsMargins(0, 0, 0, 0);
-        groupBox_34 = new QGroupBox(widget_30);
-        groupBox_34->setObjectName(QString::fromUtf8("groupBox_34"));
-        groupBox_34->setMinimumSize(QSize(0, 35));
-        groupBox_34->setMaximumSize(QSize(16777215, 500));
-        groupBox_34->setFont(font4);
-        gridLayout_62 = new QGridLayout(groupBox_34);
-        gridLayout_62->setObjectName(QString::fromUtf8("gridLayout_62"));
-        gridLayout_62->setHorizontalSpacing(0);
-        gridLayout_62->setVerticalSpacing(4);
-        gridLayout_62->setContentsMargins(4, 4, 0, 4);
-        widget_34 = new QWidget(groupBox_34);
-        widget_34->setObjectName(QString::fromUtf8("widget_34"));
-        gridLayout_63 = new QGridLayout(widget_34);
-        gridLayout_63->setObjectName(QString::fromUtf8("gridLayout_63"));
-        gridLayout_63->setHorizontalSpacing(5);
-        gridLayout_63->setVerticalSpacing(0);
-        gridLayout_63->setContentsMargins(0, 0, 0, 0);
-        lineEdit_12 = new QLineEdit(widget_34);
-        lineEdit_12->setObjectName(QString::fromUtf8("lineEdit_12"));
-        lineEdit_12->setMinimumSize(QSize(160, 35));
-        lineEdit_12->setMaximumSize(QSize(160, 35));
-        lineEdit_12->setFont(font4);
-
-        gridLayout_63->addWidget(lineEdit_12, 0, 1, 1, 1);
-
-        pushButton_36 = new QPushButton(widget_34);
-        pushButton_36->setObjectName(QString::fromUtf8("pushButton_36"));
-        pushButton_36->setMinimumSize(QSize(55, 35));
-        pushButton_36->setMaximumSize(QSize(55, 35));
-        pushButton_36->setFont(font4);
-
-        gridLayout_63->addWidget(pushButton_36, 0, 2, 1, 1);
-
-        label_32 = new QLabel(widget_34);
-        label_32->setObjectName(QString::fromUtf8("label_32"));
-        label_32->setMinimumSize(QSize(70, 35));
-        label_32->setMaximumSize(QSize(70, 35));
-        label_32->setFont(font4);
-        label_32->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-
-        gridLayout_63->addWidget(label_32, 0, 0, 1, 1);
-
-
-        gridLayout_62->addWidget(widget_34, 0, 0, 1, 1);
-
-
-        gridLayout_61->addWidget(groupBox_34, 0, 0, 1, 1);
-
-        treeWidget_classify_2 = new QTreeWidget(widget_30);
-        QTreeWidgetItem *__qtreewidgetitem2 = new QTreeWidgetItem();
-        __qtreewidgetitem2->setText(0, QString::fromUtf8("1"));
-        treeWidget_classify_2->setHeaderItem(__qtreewidgetitem2);
-        treeWidget_classify_2->setObjectName(QString::fromUtf8("treeWidget_classify_2"));
-
-        gridLayout_61->addWidget(treeWidget_classify_2, 1, 0, 1, 1);
-
-
-        gridLayout_58->addWidget(widget_30, 0, 1, 1, 1);
-
         horizontalSpacer_23 = new QSpacerItem(286, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_58->addItem(horizontalSpacer_23, 0, 2, 1, 1);
+
+        treeWidget_income = new QTreeWidget(page_classify);
+        QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem();
+        __qtreewidgetitem1->setText(0, QString::fromUtf8("\346\224\266\345\205\245\345\210\206\347\261\273"));
+        treeWidget_income->setHeaderItem(__qtreewidgetitem1);
+        treeWidget_income->setObjectName(QString::fromUtf8("treeWidget_income"));
+        treeWidget_income->setMinimumSize(QSize(400, 0));
+        treeWidget_income->setMaximumSize(QSize(400, 16777215));
+        QFont font6;
+        font6.setPointSize(11);
+        treeWidget_income->setFont(font6);
+
+        gridLayout_58->addWidget(treeWidget_income, 0, 1, 1, 1);
+
+        treeWidget_expend = new QTreeWidget(page_classify);
+        QTreeWidgetItem *__qtreewidgetitem2 = new QTreeWidgetItem();
+        __qtreewidgetitem2->setText(0, QString::fromUtf8("\346\224\257\345\207\272\345\210\206\347\261\273"));
+        treeWidget_expend->setHeaderItem(__qtreewidgetitem2);
+        treeWidget_expend->setObjectName(QString::fromUtf8("treeWidget_expend"));
+        treeWidget_expend->setMinimumSize(QSize(400, 0));
+        treeWidget_expend->setMaximumSize(QSize(400, 16777215));
+        treeWidget_expend->setFont(font6);
+
+        gridLayout_58->addWidget(treeWidget_expend, 0, 0, 1, 1);
 
         stackedWidget_dockPage->addWidget(page_classify);
         page_analysis = new QWidget();
@@ -1985,14 +1785,6 @@ public:
         comboBox_2->setItemText(3, QCoreApplication::translate("MainWin", "\344\277\235\347\225\231\346\227\245\346\234\237", nullptr));
 
         label_2->setText(QCoreApplication::translate("MainWin", "\351\200\211\346\213\251\346\227\245\346\234\237", nullptr));
-        groupBox_33->setTitle(QCoreApplication::translate("MainWin", "\346\224\257\345\207\272\345\210\206\347\261\273", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWin", "\344\270\200\347\272\247\346\240\207\351\242\230", nullptr));
-        label_31->setText(QCoreApplication::translate("MainWin", "\344\272\214\347\272\247\346\240\207\351\242\230", nullptr));
-        pushButton_35->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
-        pushButton_37->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
-        groupBox_34->setTitle(QCoreApplication::translate("MainWin", "\346\224\266\345\205\245\345\210\206\347\261\273", nullptr));
-        pushButton_36->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
-        label_32->setText(QCoreApplication::translate("MainWin", "\344\270\200\347\272\247\346\240\207\351\242\230", nullptr));
         pushButton_26->setText(QCoreApplication::translate("MainWin", "\344\270\212\347\247\273", nullptr));
         pushButton_27->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
         pushButton_28->setText(QCoreApplication::translate("MainWin", "\344\270\213\347\247\273", nullptr));
