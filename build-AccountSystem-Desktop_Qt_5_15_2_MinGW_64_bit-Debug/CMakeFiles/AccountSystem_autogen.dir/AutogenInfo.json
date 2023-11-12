@@ -66,6 +66,11 @@
 		"D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
 		"D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
 		"D:/software/Qt/Tools/CMake_64/share/cmake-3.24/Modules/CMakeParseArguments.cmake",
+		"D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake",
+		"D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5SqlConfig.cmake",
+		"D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5Sql_QODBCDriverPlugin.cmake",
+		"D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake",
+		"D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake",
 		"D:/software/Qt/Tools/CMake_64/share/cmake-3.24/Modules/GNUInstallDirs.cmake",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/res.qrc"
 	],
@@ -81,9 +86,39 @@
 			null
 		],
 		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/classify.h",
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.h",
 			"MU",
-			"4HPZ3RALQ6/moc_classify.cpp",
+			"SQIZ3OIOWK/moc_account.cpp",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.h",
+			"MU",
+			"SQIZ3OIOWK/moc_book.cpp",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/database.h",
+			"MU",
+			"SQIZ3OIOWK/moc_database.cpp",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/record.h",
+			"MU",
+			"SQIZ3OIOWK/moc_record.cpp",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.h",
+			"MU",
+			"4HPZ3RALQ6/moc_config.cpp",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/global.h",
+			"MU",
+			"EWIEGA46WW/moc_global.cpp",
 			null
 		],
 		[
@@ -102,7 +137,7 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/include",
 	"MOC_COMPILATION_FILE" : "E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_SQL_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -119,6 +154,7 @@
 		"D:/software/Qt/5.15.2/mingw81_64/include/QtANGLE",
 		"D:/software/Qt/5.15.2/mingw81_64/include/QtCore",
 		"D:/software/Qt/5.15.2/mingw81_64/mkspecs/win32-g++",
+		"D:/software/Qt/5.15.2/mingw81_64/include/QtSql",
 		"D:/software/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
 		"D:/software/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
 		"D:/software/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
@@ -156,7 +192,27 @@
 			null
 		],
 		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/classify.cpp",
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/database.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/record.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.cpp",
 			"MU",
 			null
 		],

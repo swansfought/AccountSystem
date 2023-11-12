@@ -2,9 +2,11 @@
 #define MAINWIN_H
 
 #include <QMainWindow>
+#include <QToolButton>
 
 #include "ui/addwin.h"
-#include "dev/classify.h"
+#include "dev/config.h"
+#include "db/database.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWin; }
@@ -31,9 +33,11 @@ private slots:
 
 private:
     void initData();
+    QToolButton* createBookItem(const Book& book);
 
     AddWin *addWin;//记账窗口
-    Classify *classify;//分类管理
+    Config *config;//配置管理
+    DataBase *db;
 
 private:
     Ui::MainWin *ui;

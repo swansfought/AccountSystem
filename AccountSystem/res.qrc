@@ -4,5 +4,6 @@
         <file>img/income.png</file>
         <file>img/pay.png</file>
         <file>img/totalAssets.png</file>
+        <file>img/book.png</file>
     </qresource>
 </RCC>

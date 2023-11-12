@@ -1,5 +1,5 @@
-#ifndef CLASSIFY_H
-#define CLASSIFY_H
+#ifndef CONFIG_H
+#define CONFIG_H
 
 #include <QMutex>
 #include <QJsonObject>
@@ -10,47 +10,58 @@
 #include <QCoreApplication>
 #include <QDir>
 
-#define CURR_PATH QCoreApplication::applicationDirPath()
-#define CFG_FILE_PATH CURR_PATH + "/classify.json"
-
 #include <QDebug>
 
-class Classify
+#include "global.h"
+
+class Config
 {
 public:
-    static Classify* getInstance();
+    static Config* getInstance();
 
-    void checkClassifyFile(bool isCheck = true);
+    void checkConfigFile(bool isCheck = true);
 
-//    QJsonObject getCanyin();
-//    QJsonObject getGouwu();
-//    QJsonObject getJiaju();
-//    QJsonObject getJiaotong();
-//    QJsonObject getJiaoy();
-//    QJsonObject getLvyou();
-//    QJsonObject getRenqing();
-//    QJsonObject getTongxun();
-//    QJsonObject getYiliao();
-//    QJsonObject getYule();
-//    QJsonObject getZaxiang();
-    QJsonObject getExpend();
-    QJsonArray getIncome();
 
+    enum Type{
+        Expend_First_Classify = 0x00000000,
+        Expend_Second_GouWu,
+        Expend_Second_CanYin,
+        Expend_Second_JiaoTong,
+        Expend_Second_YuLe,
+        Expend_Second_LvYou,
+        Expend_Second_JiaJu,
+        Expend_Second_JiaoYu,
+        Expend_Second_RenQing,
+        Expend_Second_YiLiao,
+        Expend_Second_TongXun,
+        Expend_Second_ZaXiang,
+        Income_Classify,
+        Money_Flow_Type,
+        Account_Top_Sequence,
+        Account_Normal_Sequence,
+        Book_Top_Sequence,
+        Book_Normal_Sequence,
+        Accounts,
+        Books
+    };
+    QJsonArray getJsonArray(const Type& type);
 
 private:
-    bool writeClassifyJson(const QJsonObject &rootObj);
-    QJsonObject readClassifyJson();
+    bool writeConfigJson(const QJsonObject &rootObj);
+    QJsonObject readConfigJson();
     QJsonObject getDefaultClassify();
-//    void loadCfg();
+    void loadConfigMap();
+
+    QMap<QString,QJsonArray> configMap;
 
 
 private:
-    Classify();
-    Classify(const Classify&) = delete;
-    Classify& operator=(const Classify&) = delete;
+    Config();
+    Config(const Config&) = delete;
+    Config& operator=(const Config&) = delete;
 
     static QMutex mutex;
-    static Classify* instance;
+    static Config* instance;
 };
 
-#endif // CLASSIFY_H
+#endif // CONFIG_H

@@ -895,6 +895,37 @@
           <property name="spacing">
            <number>0</number>
           </property>
+          <item row="6" column="0">
+           <widget class="QPushButton" name="btn_classify">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>分类管理</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
           <item row="1" column="0">
            <widget class="QPushButton" name="btn_analysis">
             <property name="minimumSize">
@@ -957,8 +988,8 @@
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
-           <widget class="QPushButton" name="btn_classify">
+          <item row="4" column="0">
+           <widget class="QPushButton" name="btn_asset">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -978,9 +1009,56 @@
              </font>
             </property>
             <property name="text">
-             <string>分类管理</string>
+             <string>账户管理</string>
             </property>
             <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="btn_record">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>流水账目</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
              <bool>true</bool>
             </property>
             <property name="autoExclusive">
@@ -1019,50 +1097,6 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
-           <widget class="QPushButton" name="btn_asset">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>微软雅黑</family>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>资产管理</string>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="0">
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="7" column="0">
            <widget class="QPushButton" name="btn_setting">
             <property name="minimumSize">
@@ -1087,40 +1121,6 @@
              <string>设       置/</string>
             </property>
             <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="btn_record">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>微软雅黑</family>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>流水账目</string>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="checked">
              <bool>true</bool>
             </property>
             <property name="autoExclusive">
@@ -1179,7 +1179,7 @@
            <item row="1" column="0">
             <widget class="QStackedWidget" name="stackedWidget_2">
              <property name="currentIndex">
-              <number>1</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="page_record_tree">
               <layout class="QGridLayout" name="gridLayout_20">
@@ -1509,7 +1509,7 @@
             </spacer>
            </item>
            <item row="0" column="1">
-            <widget class="QTreeWidget" name="treeWidget_income">
+            <widget class="TreeWidget" name="treeWidget_income">
              <property name="minimumSize">
               <size>
                <width>400</width>
@@ -1535,7 +1535,7 @@
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QTreeWidget" name="treeWidget_expend">
+            <widget class="TreeWidget" name="treeWidget_expend">
              <property name="minimumSize">
               <size>
                <width>400</width>
@@ -1563,7 +1563,7 @@
           </layout>
          </widget>
          <widget class="QWidget" name="page_analysis"/>
-         <widget class="QWidget" name="page_asset">
+         <widget class="QWidget" name="page_account">
           <layout class="QGridLayout" name="gridLayout_56">
            <property name="leftMargin">
             <number>5</number>
@@ -2217,7 +2217,7 @@
                     </size>
                    </property>
                    <property name="currentIndex">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                    <widget class="QWidget" name="page_5">
                     <layout class="QGridLayout" name="gridLayout_54">
@@ -3017,13 +3017,13 @@
                 <property name="widgetResizable">
                  <bool>true</bool>
                 </property>
-                <widget class="QWidget" name="scrollAreaWidgetContents">
+                <widget class="QWidget" name="scrollArea_book">
                  <property name="geometry">
                   <rect>
                    <x>0</x>
                    <y>0</y>
                    <width>400</width>
-                   <height>990</height>
+                   <height>521</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_22">
@@ -3039,510 +3039,28 @@
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
-                  <property name="horizontalSpacing">
+                  <property name="spacing">
                    <number>0</number>
                   </property>
-                  <property name="verticalSpacing">
-                   <number>10</number>
-                  </property>
-                  <item row="2" column="0">
-                   <widget class="QToolButton" name="toolButton_7">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>日常账本（系统自带）
-存在99999条账单
-账本创建于2023年12月25日 20:15</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
                   <item row="0" column="0">
-                   <widget class="QToolButton" name="toolButton">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>日常账本（系统自带）
-存在99999条账单
-账本创建于2023年12月25日 20:15</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QToolButton" name="toolButton_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>日常账本（系统自带）
-存在99999条账单
-账本创建于2023年12月25日 20:15</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="6" column="0">
-                   <widget class="QToolButton" name="toolButton_3">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>日常账本（系统自带）
-存在99999条账单
-账本创建于2023年12月25日 20:15</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="8" column="0">
-                   <widget class="QToolButton" name="toolButton_5">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>日常账本（系统自带）
-存在99999条账单
-账本创建于2023年12月25日 20:15</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="7" column="0">
-                   <widget class="QToolButton" name="toolButton_4">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>日常账本（系统自带）
-存在99999条账单
-账本创建于2023年12月25日 20:15</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="9" column="0">
-                   <spacer name="verticalSpacer_2">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>1</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="4" column="0">
-                   <widget class="QToolButton" name="toolButton_8">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>日常账本（系统自带）
-存在99999条账单
-账本创建于2023年12月25日 20:15</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="5" column="0">
-                   <widget class="QToolButton" name="toolButton_6">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>日常账本（系统自带）
-存在99999条账单
-账本创建于2023年12月25日 20:15</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QToolButton" name="toolButton_9">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>100</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>日常账本（系统自带）
-存在99999条账单
-账本创建于2023年12月25日 20:15</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>80</width>
-                      <height>80</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
+                   <layout class="QVBoxLayout" name="vLayout_book">
+                    <property name="spacing">
+                     <number>10</number>
+                    </property>
+                    <item>
+                     <spacer name="verticalSpacer_2">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </widget>
@@ -3720,7 +3238,7 @@
                  </size>
                 </property>
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="page">
                  <layout class="QGridLayout" name="gridLayout_25">
@@ -4267,6 +3785,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>custom/treewidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="res.qrc"/>
  </resources>

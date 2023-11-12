@@ -1,19 +1,26 @@
 AccountSystem_autogen/timestamp: \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QBuffer \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QByteArray \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QCoreApplication \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QDateTime \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QDebug \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QDir \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QFile \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonArray \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonDocument \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonObject \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonParseError \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonValue \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QString \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QVector \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qabstractitemmodel.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_cxx11.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbuffer.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbytearray.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qcborcommon.h \
@@ -117,12 +124,26 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtSql/QSqlError \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtSql/qsqlerror.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QAction \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QComboBox \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QFileDialog \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenu \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolButton \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QTreeWidget \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QTreeWidgetItem \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractitemview.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
@@ -131,9 +152,14 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qcombobox.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qfiledialog.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qgraphicseffect.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qmessagebox.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qrubberband.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qslider.h \
@@ -141,6 +167,7 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qstyleoption.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabbar.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbutton.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtreeview.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtreewidget.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtreewidgetitemiterator.h \
@@ -176,6 +203,11 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake \
   D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake \
   D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake \
+  D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5SqlConfig.cmake \
+  D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake \
+  D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5Sql_QODBCDriverPlugin.cmake \
+  D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake \
+  D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake \
   D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
   D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
   D:/software/Qt/5.15.2/mingw81_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
@@ -376,8 +408,17 @@ AccountSystem_autogen/timestamp: \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/CMakeLists.txt \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.h \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/classify.cpp \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/classify.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/database.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/database.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/record.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/record.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/global.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/main.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.h \

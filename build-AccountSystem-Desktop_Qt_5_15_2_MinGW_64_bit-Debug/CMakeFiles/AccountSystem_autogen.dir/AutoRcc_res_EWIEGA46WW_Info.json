@@ -7,6 +7,7 @@
 	"INCLUDE_DIR" : "E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/include",
 	"INPUTS" : 
 	[
+		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/book.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/balance.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/income.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/pay.png",

@@ -31,7 +31,9 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "custom/treewidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -91,14 +93,14 @@ public:
     QPushButton *btn_addRecord;
     QWidget *widget_dock;
     QGridLayout *gridLayout_2;
+    QPushButton *btn_classify;
     QPushButton *btn_analysis;
     QPushButton *btn_borrowReturn;
-    QPushButton *btn_classify;
-    QPushButton *btn_accountBook;
     QPushButton *btn_asset;
     QSpacerItem *verticalSpacer;
-    QPushButton *btn_setting;
     QPushButton *btn_record;
+    QPushButton *btn_accountBook;
+    QPushButton *btn_setting;
     QFrame *line_central;
     QFrame *line;
     QStackedWidget *stackedWidget_dockPage;
@@ -123,10 +125,10 @@ public:
     QWidget *page_classify;
     QGridLayout *gridLayout_58;
     QSpacerItem *horizontalSpacer_23;
-    QTreeWidget *treeWidget_income;
-    QTreeWidget *treeWidget_expend;
+    TreeWidget *treeWidget_income;
+    TreeWidget *treeWidget_expend;
     QWidget *page_analysis;
-    QWidget *page_asset;
+    QWidget *page_account;
     QGridLayout *gridLayout_56;
     QWidget *widget_24;
     QGridLayout *gridLayout_46;
@@ -195,18 +197,10 @@ public:
     QPushButton *pushButton_9;
     QSpacerItem *horizontalSpacer_12;
     QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
+    QWidget *scrollArea_book;
     QGridLayout *gridLayout_22;
-    QToolButton *toolButton_7;
-    QToolButton *toolButton;
-    QToolButton *toolButton_2;
-    QToolButton *toolButton_3;
-    QToolButton *toolButton_5;
-    QToolButton *toolButton_4;
+    QVBoxLayout *vLayout_book;
     QSpacerItem *verticalSpacer_2;
-    QToolButton *toolButton_8;
-    QToolButton *toolButton_6;
-    QToolButton *toolButton_9;
     QWidget *widget_29;
     QGridLayout *gridLayout_24;
     QGroupBox *groupBox_19;
@@ -577,13 +571,23 @@ public:
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        btn_classify = new QPushButton(widget_dock);
+        btn_classify->setObjectName(QString::fromUtf8("btn_classify"));
+        btn_classify->setMinimumSize(QSize(0, 60));
+        btn_classify->setMaximumSize(QSize(16777215, 60));
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setPointSize(11);
+        btn_classify->setFont(font3);
+        btn_classify->setCheckable(true);
+        btn_classify->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(btn_classify, 6, 0, 1, 1);
+
         btn_analysis = new QPushButton(widget_dock);
         btn_analysis->setObjectName(QString::fromUtf8("btn_analysis"));
         btn_analysis->setMinimumSize(QSize(0, 60));
         btn_analysis->setMaximumSize(QSize(16777215, 60));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font3.setPointSize(11);
         btn_analysis->setFont(font3);
         btn_analysis->setCheckable(true);
         btn_analysis->setAutoExclusive(true);
@@ -600,26 +604,6 @@ public:
 
         gridLayout_2->addWidget(btn_borrowReturn, 2, 0, 1, 1);
 
-        btn_classify = new QPushButton(widget_dock);
-        btn_classify->setObjectName(QString::fromUtf8("btn_classify"));
-        btn_classify->setMinimumSize(QSize(0, 60));
-        btn_classify->setMaximumSize(QSize(16777215, 60));
-        btn_classify->setFont(font3);
-        btn_classify->setCheckable(true);
-        btn_classify->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(btn_classify, 6, 0, 1, 1);
-
-        btn_accountBook = new QPushButton(widget_dock);
-        btn_accountBook->setObjectName(QString::fromUtf8("btn_accountBook"));
-        btn_accountBook->setMinimumSize(QSize(0, 60));
-        btn_accountBook->setMaximumSize(QSize(16777215, 60));
-        btn_accountBook->setFont(font3);
-        btn_accountBook->setCheckable(true);
-        btn_accountBook->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(btn_accountBook, 5, 0, 1, 1);
-
         btn_asset = new QPushButton(widget_dock);
         btn_asset->setObjectName(QString::fromUtf8("btn_asset"));
         btn_asset->setMinimumSize(QSize(0, 60));
@@ -634,16 +618,6 @@ public:
 
         gridLayout_2->addItem(verticalSpacer, 8, 0, 1, 1);
 
-        btn_setting = new QPushButton(widget_dock);
-        btn_setting->setObjectName(QString::fromUtf8("btn_setting"));
-        btn_setting->setMinimumSize(QSize(0, 60));
-        btn_setting->setMaximumSize(QSize(16777215, 60));
-        btn_setting->setFont(font3);
-        btn_setting->setCheckable(true);
-        btn_setting->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(btn_setting, 7, 0, 1, 1);
-
         btn_record = new QPushButton(widget_dock);
         btn_record->setObjectName(QString::fromUtf8("btn_record"));
         btn_record->setMinimumSize(QSize(0, 60));
@@ -654,6 +628,26 @@ public:
         btn_record->setAutoExclusive(true);
 
         gridLayout_2->addWidget(btn_record, 0, 0, 1, 1);
+
+        btn_accountBook = new QPushButton(widget_dock);
+        btn_accountBook->setObjectName(QString::fromUtf8("btn_accountBook"));
+        btn_accountBook->setMinimumSize(QSize(0, 60));
+        btn_accountBook->setMaximumSize(QSize(16777215, 60));
+        btn_accountBook->setFont(font3);
+        btn_accountBook->setCheckable(true);
+        btn_accountBook->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(btn_accountBook, 5, 0, 1, 1);
+
+        btn_setting = new QPushButton(widget_dock);
+        btn_setting->setObjectName(QString::fromUtf8("btn_setting"));
+        btn_setting->setMinimumSize(QSize(0, 60));
+        btn_setting->setMaximumSize(QSize(16777215, 60));
+        btn_setting->setFont(font3);
+        btn_setting->setCheckable(true);
+        btn_setting->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(btn_setting, 7, 0, 1, 1);
 
 
         gridLayout_3->addWidget(widget_dock, 2, 0, 1, 1);
@@ -810,7 +804,7 @@ public:
 
         gridLayout_58->addItem(horizontalSpacer_23, 0, 2, 1, 1);
 
-        treeWidget_income = new QTreeWidget(page_classify);
+        treeWidget_income = new TreeWidget(page_classify);
         QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem();
         __qtreewidgetitem1->setText(0, QString::fromUtf8("\346\224\266\345\205\245\345\210\206\347\261\273"));
         treeWidget_income->setHeaderItem(__qtreewidgetitem1);
@@ -823,7 +817,7 @@ public:
 
         gridLayout_58->addWidget(treeWidget_income, 0, 1, 1, 1);
 
-        treeWidget_expend = new QTreeWidget(page_classify);
+        treeWidget_expend = new TreeWidget(page_classify);
         QTreeWidgetItem *__qtreewidgetitem2 = new QTreeWidgetItem();
         __qtreewidgetitem2->setText(0, QString::fromUtf8("\346\224\257\345\207\272\345\210\206\347\261\273"));
         treeWidget_expend->setHeaderItem(__qtreewidgetitem2);
@@ -838,14 +832,14 @@ public:
         page_analysis = new QWidget();
         page_analysis->setObjectName(QString::fromUtf8("page_analysis"));
         stackedWidget_dockPage->addWidget(page_analysis);
-        page_asset = new QWidget();
-        page_asset->setObjectName(QString::fromUtf8("page_asset"));
-        gridLayout_56 = new QGridLayout(page_asset);
+        page_account = new QWidget();
+        page_account->setObjectName(QString::fromUtf8("page_account"));
+        gridLayout_56 = new QGridLayout(page_account);
         gridLayout_56->setObjectName(QString::fromUtf8("gridLayout_56"));
         gridLayout_56->setHorizontalSpacing(20);
         gridLayout_56->setVerticalSpacing(0);
         gridLayout_56->setContentsMargins(5, 5, 5, 5);
-        widget_24 = new QWidget(page_asset);
+        widget_24 = new QWidget(page_account);
         widget_24->setObjectName(QString::fromUtf8("widget_24"));
         widget_24->setMinimumSize(QSize(400, 0));
         widget_24->setMaximumSize(QSize(400, 16777215));
@@ -978,7 +972,7 @@ public:
 
         gridLayout_56->addWidget(widget_24, 0, 0, 1, 1);
 
-        widget_21 = new QWidget(page_asset);
+        widget_21 = new QWidget(page_account);
         widget_21->setObjectName(QString::fromUtf8("widget_21"));
         widget_21->setMinimumSize(QSize(450, 0));
         widget_21->setMaximumSize(QSize(450, 16777215));
@@ -1248,7 +1242,7 @@ public:
 
         gridLayout_56->addItem(horizontalSpacer_6, 0, 2, 1, 1);
 
-        stackedWidget_dockPage->addWidget(page_asset);
+        stackedWidget_dockPage->addWidget(page_account);
         page_accountBook = new QWidget();
         page_accountBook->setObjectName(QString::fromUtf8("page_accountBook"));
         gridLayout_28 = new QGridLayout(page_accountBook);
@@ -1320,163 +1314,24 @@ public:
         scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 400, 990));
-        gridLayout_22 = new QGridLayout(scrollAreaWidgetContents);
+        scrollArea_book = new QWidget();
+        scrollArea_book->setObjectName(QString::fromUtf8("scrollArea_book"));
+        scrollArea_book->setGeometry(QRect(0, 0, 400, 521));
+        gridLayout_22 = new QGridLayout(scrollArea_book);
+        gridLayout_22->setSpacing(0);
         gridLayout_22->setObjectName(QString::fromUtf8("gridLayout_22"));
-        gridLayout_22->setHorizontalSpacing(0);
-        gridLayout_22->setVerticalSpacing(10);
         gridLayout_22->setContentsMargins(0, 0, 0, 0);
-        toolButton_7 = new QToolButton(scrollAreaWidgetContents);
-        toolButton_7->setObjectName(QString::fromUtf8("toolButton_7"));
-        toolButton_7->setMinimumSize(QSize(400, 100));
-        toolButton_7->setMaximumSize(QSize(400, 100));
-        toolButton_7->setFont(font4);
-        toolButton_7->setIcon(icon);
-        toolButton_7->setIconSize(QSize(80, 80));
-        toolButton_7->setCheckable(true);
-        toolButton_7->setAutoRepeat(false);
-        toolButton_7->setAutoExclusive(true);
-        toolButton_7->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_7->setAutoRaise(false);
-        toolButton_7->setArrowType(Qt::NoArrow);
+        vLayout_book = new QVBoxLayout();
+        vLayout_book->setSpacing(10);
+        vLayout_book->setObjectName(QString::fromUtf8("vLayout_book"));
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_22->addWidget(toolButton_7, 2, 0, 1, 1);
+        vLayout_book->addItem(verticalSpacer_2);
 
-        toolButton = new QToolButton(scrollAreaWidgetContents);
-        toolButton->setObjectName(QString::fromUtf8("toolButton"));
-        toolButton->setMinimumSize(QSize(400, 100));
-        toolButton->setMaximumSize(QSize(400, 100));
-        toolButton->setFont(font4);
-        toolButton->setIcon(icon);
-        toolButton->setIconSize(QSize(80, 80));
-        toolButton->setCheckable(true);
-        toolButton->setAutoRepeat(false);
-        toolButton->setAutoExclusive(true);
-        toolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton->setAutoRaise(false);
-        toolButton->setArrowType(Qt::NoArrow);
 
-        gridLayout_22->addWidget(toolButton, 0, 0, 1, 1);
+        gridLayout_22->addLayout(vLayout_book, 0, 0, 1, 1);
 
-        toolButton_2 = new QToolButton(scrollAreaWidgetContents);
-        toolButton_2->setObjectName(QString::fromUtf8("toolButton_2"));
-        toolButton_2->setMinimumSize(QSize(400, 100));
-        toolButton_2->setMaximumSize(QSize(400, 100));
-        toolButton_2->setFont(font4);
-        toolButton_2->setIcon(icon);
-        toolButton_2->setIconSize(QSize(80, 80));
-        toolButton_2->setCheckable(true);
-        toolButton_2->setAutoRepeat(false);
-        toolButton_2->setAutoExclusive(true);
-        toolButton_2->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_2->setAutoRaise(false);
-        toolButton_2->setArrowType(Qt::NoArrow);
-
-        gridLayout_22->addWidget(toolButton_2, 1, 0, 1, 1);
-
-        toolButton_3 = new QToolButton(scrollAreaWidgetContents);
-        toolButton_3->setObjectName(QString::fromUtf8("toolButton_3"));
-        toolButton_3->setMinimumSize(QSize(400, 100));
-        toolButton_3->setMaximumSize(QSize(400, 100));
-        toolButton_3->setFont(font4);
-        toolButton_3->setIcon(icon);
-        toolButton_3->setIconSize(QSize(80, 80));
-        toolButton_3->setCheckable(true);
-        toolButton_3->setAutoRepeat(false);
-        toolButton_3->setAutoExclusive(true);
-        toolButton_3->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_3->setAutoRaise(false);
-        toolButton_3->setArrowType(Qt::NoArrow);
-
-        gridLayout_22->addWidget(toolButton_3, 6, 0, 1, 1);
-
-        toolButton_5 = new QToolButton(scrollAreaWidgetContents);
-        toolButton_5->setObjectName(QString::fromUtf8("toolButton_5"));
-        toolButton_5->setMinimumSize(QSize(400, 100));
-        toolButton_5->setMaximumSize(QSize(400, 100));
-        toolButton_5->setFont(font4);
-        toolButton_5->setIcon(icon);
-        toolButton_5->setIconSize(QSize(80, 80));
-        toolButton_5->setCheckable(true);
-        toolButton_5->setAutoRepeat(false);
-        toolButton_5->setAutoExclusive(true);
-        toolButton_5->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_5->setAutoRaise(false);
-        toolButton_5->setArrowType(Qt::NoArrow);
-
-        gridLayout_22->addWidget(toolButton_5, 8, 0, 1, 1);
-
-        toolButton_4 = new QToolButton(scrollAreaWidgetContents);
-        toolButton_4->setObjectName(QString::fromUtf8("toolButton_4"));
-        toolButton_4->setMinimumSize(QSize(400, 100));
-        toolButton_4->setMaximumSize(QSize(400, 100));
-        toolButton_4->setFont(font4);
-        toolButton_4->setIcon(icon);
-        toolButton_4->setIconSize(QSize(80, 80));
-        toolButton_4->setCheckable(true);
-        toolButton_4->setAutoRepeat(false);
-        toolButton_4->setAutoExclusive(true);
-        toolButton_4->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_4->setAutoRaise(false);
-        toolButton_4->setArrowType(Qt::NoArrow);
-
-        gridLayout_22->addWidget(toolButton_4, 7, 0, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 1, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_22->addItem(verticalSpacer_2, 9, 0, 1, 1);
-
-        toolButton_8 = new QToolButton(scrollAreaWidgetContents);
-        toolButton_8->setObjectName(QString::fromUtf8("toolButton_8"));
-        toolButton_8->setMinimumSize(QSize(400, 100));
-        toolButton_8->setMaximumSize(QSize(400, 100));
-        toolButton_8->setFont(font4);
-        toolButton_8->setIcon(icon);
-        toolButton_8->setIconSize(QSize(80, 80));
-        toolButton_8->setCheckable(true);
-        toolButton_8->setAutoRepeat(false);
-        toolButton_8->setAutoExclusive(true);
-        toolButton_8->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_8->setAutoRaise(false);
-        toolButton_8->setArrowType(Qt::NoArrow);
-
-        gridLayout_22->addWidget(toolButton_8, 4, 0, 1, 1);
-
-        toolButton_6 = new QToolButton(scrollAreaWidgetContents);
-        toolButton_6->setObjectName(QString::fromUtf8("toolButton_6"));
-        toolButton_6->setMinimumSize(QSize(400, 100));
-        toolButton_6->setMaximumSize(QSize(400, 100));
-        toolButton_6->setFont(font4);
-        toolButton_6->setIcon(icon);
-        toolButton_6->setIconSize(QSize(80, 80));
-        toolButton_6->setCheckable(true);
-        toolButton_6->setAutoRepeat(false);
-        toolButton_6->setAutoExclusive(true);
-        toolButton_6->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_6->setAutoRaise(false);
-        toolButton_6->setArrowType(Qt::NoArrow);
-
-        gridLayout_22->addWidget(toolButton_6, 5, 0, 1, 1);
-
-        toolButton_9 = new QToolButton(scrollAreaWidgetContents);
-        toolButton_9->setObjectName(QString::fromUtf8("toolButton_9"));
-        toolButton_9->setMinimumSize(QSize(400, 100));
-        toolButton_9->setMaximumSize(QSize(400, 100));
-        toolButton_9->setFont(font4);
-        toolButton_9->setIcon(icon);
-        toolButton_9->setIconSize(QSize(80, 80));
-        toolButton_9->setCheckable(true);
-        toolButton_9->setAutoRepeat(false);
-        toolButton_9->setAutoExclusive(true);
-        toolButton_9->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_9->setAutoRaise(false);
-        toolButton_9->setArrowType(Qt::NoArrow);
-
-        gridLayout_22->addWidget(toolButton_9, 3, 0, 1, 1);
-
-        scrollArea->setWidget(scrollAreaWidgetContents);
+        scrollArea->setWidget(scrollArea_book);
 
         gridLayout_27->addWidget(scrollArea, 1, 0, 1, 1);
 
@@ -1743,9 +1598,9 @@ public:
 
         retranslateUi(MainWin);
 
-        stackedWidget_2->setCurrentIndex(1);
-        stackedWidget_3->setCurrentIndex(1);
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget_2->setCurrentIndex(0);
+        stackedWidget_3->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWin);
@@ -1768,13 +1623,13 @@ public:
         label_9->setText(QString());
         label_11->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
         btn_addRecord->setText(QCoreApplication::translate("MainWin", "\350\256\260\344\270\200\347\254\224", nullptr));
+        btn_classify->setText(QCoreApplication::translate("MainWin", "\345\210\206\347\261\273\347\256\241\347\220\206", nullptr));
         btn_analysis->setText(QCoreApplication::translate("MainWin", "\350\264\246\347\233\256\347\273\237\350\256\241/", nullptr));
         btn_borrowReturn->setText(QCoreApplication::translate("MainWin", "\345\200\237\350\277\230\350\256\260\345\275\225/", nullptr));
-        btn_classify->setText(QCoreApplication::translate("MainWin", "\345\210\206\347\261\273\347\256\241\347\220\206", nullptr));
-        btn_accountBook->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\347\256\241\347\220\206", nullptr));
-        btn_asset->setText(QCoreApplication::translate("MainWin", "\350\265\204\344\272\247\347\256\241\347\220\206", nullptr));
-        btn_setting->setText(QCoreApplication::translate("MainWin", "\350\256\276       \347\275\256/", nullptr));
+        btn_asset->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\347\256\241\347\220\206", nullptr));
         btn_record->setText(QCoreApplication::translate("MainWin", "\346\265\201\346\260\264\350\264\246\347\233\256", nullptr));
+        btn_accountBook->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\347\256\241\347\220\206", nullptr));
+        btn_setting->setText(QCoreApplication::translate("MainWin", "\350\256\276       \347\275\256/", nullptr));
         dateEdit->setDisplayFormat(QCoreApplication::translate("MainWin", "yyyy\345\271\264MM\346\234\210dd\346\227\245", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWin", "\351\207\215\347\275\256", nullptr));
         lineEdit->setPlaceholderText(QCoreApplication::translate("MainWin", "\346\250\241\347\263\212\346\237\245\350\257\242", nullptr));
@@ -1826,33 +1681,6 @@ public:
         pushButton_10->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
         pushButton_8->setText(QCoreApplication::translate("MainWin", "\344\270\213\347\247\273", nullptr));
         pushButton_9->setText(QCoreApplication::translate("MainWin", "\347\275\256\351\241\266", nullptr));
-        toolButton_7->setText(QCoreApplication::translate("MainWin", "\346\227\245\345\270\270\350\264\246\346\234\254\357\274\210\347\263\273\347\273\237\350\207\252\345\270\246\357\274\211\n"
-"\345\255\230\345\234\25099999\346\235\241\350\264\246\345\215\225\n"
-"\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023\345\271\26412\346\234\21025\346\227\245 20:15", nullptr));
-        toolButton->setText(QCoreApplication::translate("MainWin", "\346\227\245\345\270\270\350\264\246\346\234\254\357\274\210\347\263\273\347\273\237\350\207\252\345\270\246\357\274\211\n"
-"\345\255\230\345\234\25099999\346\235\241\350\264\246\345\215\225\n"
-"\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023\345\271\26412\346\234\21025\346\227\245 20:15", nullptr));
-        toolButton_2->setText(QCoreApplication::translate("MainWin", "\346\227\245\345\270\270\350\264\246\346\234\254\357\274\210\347\263\273\347\273\237\350\207\252\345\270\246\357\274\211\n"
-"\345\255\230\345\234\25099999\346\235\241\350\264\246\345\215\225\n"
-"\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023\345\271\26412\346\234\21025\346\227\245 20:15", nullptr));
-        toolButton_3->setText(QCoreApplication::translate("MainWin", "\346\227\245\345\270\270\350\264\246\346\234\254\357\274\210\347\263\273\347\273\237\350\207\252\345\270\246\357\274\211\n"
-"\345\255\230\345\234\25099999\346\235\241\350\264\246\345\215\225\n"
-"\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023\345\271\26412\346\234\21025\346\227\245 20:15", nullptr));
-        toolButton_5->setText(QCoreApplication::translate("MainWin", "\346\227\245\345\270\270\350\264\246\346\234\254\357\274\210\347\263\273\347\273\237\350\207\252\345\270\246\357\274\211\n"
-"\345\255\230\345\234\25099999\346\235\241\350\264\246\345\215\225\n"
-"\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023\345\271\26412\346\234\21025\346\227\245 20:15", nullptr));
-        toolButton_4->setText(QCoreApplication::translate("MainWin", "\346\227\245\345\270\270\350\264\246\346\234\254\357\274\210\347\263\273\347\273\237\350\207\252\345\270\246\357\274\211\n"
-"\345\255\230\345\234\25099999\346\235\241\350\264\246\345\215\225\n"
-"\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023\345\271\26412\346\234\21025\346\227\245 20:15", nullptr));
-        toolButton_8->setText(QCoreApplication::translate("MainWin", "\346\227\245\345\270\270\350\264\246\346\234\254\357\274\210\347\263\273\347\273\237\350\207\252\345\270\246\357\274\211\n"
-"\345\255\230\345\234\25099999\346\235\241\350\264\246\345\215\225\n"
-"\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023\345\271\26412\346\234\21025\346\227\245 20:15", nullptr));
-        toolButton_6->setText(QCoreApplication::translate("MainWin", "\346\227\245\345\270\270\350\264\246\346\234\254\357\274\210\347\263\273\347\273\237\350\207\252\345\270\246\357\274\211\n"
-"\345\255\230\345\234\25099999\346\235\241\350\264\246\345\215\225\n"
-"\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023\345\271\26412\346\234\21025\346\227\245 20:15", nullptr));
-        toolButton_9->setText(QCoreApplication::translate("MainWin", "\346\227\245\345\270\270\350\264\246\346\234\254\357\274\210\347\263\273\347\273\237\350\207\252\345\270\246\357\274\211\n"
-"\345\255\230\345\234\25099999\346\235\241\350\264\246\345\215\225\n"
-"\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023\345\271\26412\346\234\21025\346\227\245 20:15", nullptr));
         pushButton_13->setText(QCoreApplication::translate("MainWin", "\344\277\235\345\255\230", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainWin", "\345\210\240\351\231\244", nullptr));
         pushButton_7->setText(QCoreApplication::translate("MainWin", "\350\277\224\345\233\236", nullptr));

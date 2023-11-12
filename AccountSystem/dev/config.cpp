@@ -1,29 +1,36 @@
-#include "classify.h"
+#include "config.h"
 
-QMutex Classify::mutex;
-Classify* Classify::instance = nullptr;
+QMutex Config::mutex;
+Config* Config::instance = nullptr;
 
-Classify *Classify::getInstance()
+Config *Config::getInstance()
 {
     if(instance == nullptr){
         QMutexLocker locker(&mutex);
         if(instance == nullptr){
-            instance = new Classify;
+            instance = new Config;
         }
     }
     return instance;
 }
 
-void Classify::checkClassifyFile(bool isCheck)
+void Config::checkConfigFile(bool isCheck)
 {
     //1.配置文件是否存在
     QFile file(CFG_FILE_PATH);
     if(isCheck && file.exists()){
-//        loadCfg(); //加载配置
+        loadConfigMap();
         return;
     }
 
     //2.新建配置文件
+    // 判断d资源文件夹是否存在
+    QDir resPath(RES_DIR_PATH);
+    if(!resPath.exists()){
+        resPath.setPath(CURR_PATH);
+        resPath.mkdir("resources");
+    }
+
     QJsonDocument doc( getDefaultClassify() );
     QByteArray bytes = doc.toJson(QJsonDocument::Compact);
 
@@ -31,22 +38,93 @@ void Classify::checkClassifyFile(bool isCheck)
         file.write(bytes);
         file.close();
     }
-    //    loadCfg(); //加载配置
+    loadConfigMap();
 }
 
-QJsonObject Classify::getExpend()
+QJsonArray Config::getJsonArray(const Type &type)
 {
-    QJsonObject rootObj = readClassifyJson();
-    return rootObj["expend"].toObject();
+    QJsonArray arr;
+    switch (type) {
+    case Expend_First_Classify:{
+        arr = configMap.find("Expend_First_Classify").value();
+        break;
+    }
+    case Income_Classify:{
+        arr = configMap.find("Income_First_Classify").value();
+        break;
+    }
+    case Money_Flow_Type:{
+        arr = configMap.find("Money_Flow_Type").value();
+        break;
+    }
+    case Expend_Second_GouWu:{
+        arr = configMap.find("Expend_Second_GouWu").value();
+        break;
+    }
+    case Expend_Second_CanYin:{
+        arr = configMap.find("Expend_Second_CanYin").value();
+        break;
+    }
+    case Expend_Second_JiaoTong:{
+        arr =configMap.find("Expend_Second_JiaoTong").value();
+        break;
+    }
+    case Expend_Second_YuLe:{
+        arr = configMap.find("Expend_Second_YuLe").value();
+        break;
+    }
+    case Expend_Second_LvYou:{
+        arr = configMap.find("Expend_Second_LvYou").value();
+        break;
+    }
+    case Expend_Second_JiaJu:{
+        arr = configMap.find("Expend_Second_JiaJu").value();
+        break;
+    }
+    case Expend_Second_JiaoYu:{
+        arr = configMap.find("Expend_Second_JiaoYu").value();
+        break;
+    }
+    case Expend_Second_RenQing:{
+        arr = configMap.find("Expend_Second_RenQing").value();
+        break;
+    }
+    case Expend_Second_YiLiao:{
+        arr = configMap.find("Expend_Second_YiLiao").value();
+        break;
+    }
+    case Expend_Second_TongXun:{
+        arr = configMap.find("Expend_Second_TongXun").value();
+        break;
+    }
+    case Expend_Second_ZaXiang:{
+        arr = configMap.find("Expend_Second_ZaXiang").value();
+        break;
+    }
+    case Account_Top_Sequence:{
+        arr = configMap.find("Account_Top_Sequence").value();
+        break;
+    }
+    case Account_Normal_Sequence:{
+        arr = configMap.find("Account_Normal_Sequence").value();
+        break;
+    }
+    case Book_Top_Sequence:{
+        arr = configMap.find("Book_Top_Sequence").value();
+        break;
+    }
+    case Book_Normal_Sequence:{
+        arr = configMap.find("Book_Normal_Sequence").value();
+        break;
+    }
+    default:
+        break;
+    }
+    return arr;
 }
 
-QJsonArray Classify::getIncome()
-{
-    QJsonObject rootObj = readClassifyJson();
-    return rootObj["income"].toArray();
-}
 
-QJsonObject Classify::readClassifyJson()
+QJsonObject Config::readConfigJson()
 {
     QFile file(CFG_FILE_PATH);
     if(file.open(QIODevice::ReadOnly)){
@@ -58,7 +136,7 @@ QJsonObject Classify::readClassifyJson()
     return rootObj;
 }
 
-bool Classify::writeClassifyJson(const QJsonObject &rootObj)
+bool Config::writeConfigJson(const QJsonObject &rootObj)
 {
     QFile file(CFG_FILE_PATH);
     if(file.open(QIODevice::WriteOnly)){
@@ -71,10 +149,31 @@ bool Classify::writeClassifyJson(const QJsonObject &rootObj)
 }
 
 // 获取默认配置
-QJsonObject Classify::getDefaultClassify()
+QJsonObject Config::getDefaultClassify()
 {
     QJsonObject rootObj;
-    QJsonObject outObj;//支出
+    QJsonObject subObj;
+
+    // 一级分类
+    QJsonArray firstClassify;
+    firstClassify.append("购物");
+    firstClassify.append("餐饮");
+    firstClassify.append("交通");
+    firstClassify.append("娱乐");
+    firstClassify.append("旅游");
+    firstClassify.append("家居");
+    firstClassify.append("教育");
+    firstClassify.append("人情");
+    firstClassify.append("医疗");
+    firstClassify.append("通讯");
+    firstClassify.append("杂项");
+    subObj.insert("expend_first_classify",firstClassify);
+
+    QJsonArray flowType;
+    flowType.append("收入");
+    flowType.append("支出");
+    flowType.append("转账");
+    subObj.insert("money_flow_type",flowType);
 
     QJsonArray inObj;//收入
     inObj.append("薪资");
@@ -87,8 +186,10 @@ QJsonObject Classify::getDefaultClassify()
     inObj.append("闲置品");
     inObj.append("人情礼金");
     inObj.append("其他");
-    rootObj.insert("income",inObj);
+    subObj.insert("income_classify",inObj);
 
+    // 二级分类
+    QJsonObject outObj;//支出
     // 支出-购物
     QJsonArray gouwuArr;
     gouwuArr.append("家居用品");
@@ -118,6 +219,7 @@ QJsonObject Classify::getDefaultClassify()
     canyinArr.append("水产品");
     canyinArr.append("饮料酒水");
     canyinArr.append("材米油盐");
+    canyinArr.append("其他");
     outObj.insert("canyin",canyinArr);
 
     // 支出-交通
@@ -154,7 +256,6 @@ QJsonObject Classify::getDefaultClassify()
     lvyouArr.append("伴手礼");
     lvyouArr.append("其他");
     outObj.insert("lvyou",lvyouArr);
-
     // 支出-居家
     QJsonArray jujiaArr;
     jujiaArr.append("电费");
@@ -178,7 +279,7 @@ QJsonObject Classify::getDefaultClassify()
     jiaoyuArr.append("其他");
     outObj.insert("jiaoyu",jiaoyuArr);
 
-    // 支出-教育
+    // 支出-人情
     QJsonArray renqingArr;
     renqingArr.append("送礼");
     renqingArr.append("红包");
@@ -211,12 +312,65 @@ QJsonObject Classify::getDefaultClassify()
     zaxiangArr.append("其他");
     outObj.insert("zaxiang",zaxiangArr);
 
-    rootObj.insert("expend",outObj);
+    subObj.insert("expend_second_classify",outObj);
+
+    rootObj.insert("classify",subObj); //分类配置
+
+    //账户顺序
+    QJsonObject accountObj;
+    QJsonArray topArr;
+    QJsonArray normalArr;
+    accountObj.insert("top_list",topArr);
+    topArr.removeFirst();
+    accountObj.insert("normal_list",normalArr);  //空的
+    rootObj.insert("account",accountObj); //分类配置
+
+    //账本顺序
+    QJsonObject bookObj;
+    normalArr.append("日常账本(系统自带)");
+    bookObj.insert("top_list",topArr); //空的
+    bookObj.insert("normal_list",normalArr);  //空的
+    rootObj.insert("book",bookObj); //分类配置
 
     return rootObj;
 }
 
-Classify::Classify()
+void Config::loadConfigMap()
 {
-    checkClassifyFile();
+    QJsonObject rootObj = readConfigJson();
+
+    //账户顺序
+    QJsonObject accountObj = rootObj["account"].toObject();
+    configMap.insert("Account_Top_Sequence",accountObj["top_list"].toArray());
+    configMap.insert("Account_Top_Sequence",accountObj["normal_list"].toArray());
+
+    //账本顺序
+    QJsonObject bookObj = rootObj["book"].toObject();
+    configMap.insert("Account_Top_Sequence",bookObj["top_list"].toArray());
+    configMap.insert("Account_Top_Sequence",bookObj["normal_list"].toArray());
+
+    //分类
+    QJsonObject classifyObj = rootObj["classify"].toObject();
+    configMap.insert("Expend_First_Classify",classifyObj["expend_first_classify"].toArray());
+
+    QJsonObject expendSecondObj = classifyObj["expend_second_classify"].toObject();
+    configMap.insert("Expend_Second_GouWu",expendSecondObj["gouwu"].toArray());
+    configMap.insert("Expend_Second_CanYin",expendSecondObj["canyin"].toArray());
+    configMap.insert("Expend_Second_JiaoTong",expendSecondObj["jiaotong"].toArray());
+    configMap.insert("Expend_Second_YuLe",expendSecondObj["yule"].toArray());
+    configMap.insert("Expend_Second_LvYou",expendSecondObj["lvyou"].toArray());
+    configMap.insert("Expend_Second_JiaJu",expendSecondObj["jiaju"].toArray());
+    configMap.insert("Expend_Second_JiaoYu",expendSecondObj["jiaoyu"].toArray());
+    configMap.insert("Expend_Second_RenQing",expendSecondObj["renqing"].toArray());
+    configMap.insert("Expend_Second_YiLiao",expendSecondObj["yiliao"].toArray());
+    configMap.insert("Expend_Second_TongXun",expendSecondObj["tongxun"].toArray());
+    configMap.insert("Expend_Second_ZaXiang",expendSecondObj["zaxiang"].toArray());
+
+    configMap.insert("Income_First_Classify",classifyObj["income_classify"].toArray());
+    configMap.insert("Money_Flow_Type",classifyObj["money_flow_type"].toArray());
+}
+
+Config::Config()
+{
+    checkConfigFile();
 }
