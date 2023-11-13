@@ -45,88 +45,88 @@ public:
     QFrame *line_bottom;
     QWidget *widget_background;
     QGridLayout *gridLayout_3;
-    QWidget *widget;
+    QWidget *widget_top_dock;
     QGridLayout *gridLayout_4;
     QWidget *widget_2;
     QLabel *label;
     QWidget *widget_3;
     QGridLayout *gridLayout_15;
-    QWidget *widget_4;
+    QWidget *widget_totalFund;
     QGridLayout *gridLayout_9;
     QWidget *widget_7;
     QGridLayout *gridLayout_8;
-    QPushButton *pushButton;
+    QPushButton *docck_totalFund_hide;
     QSpacerItem *horizontalSpacer_2;
     QLabel *label_15;
     QWidget *widget_6;
     QGridLayout *gridLayout_5;
     QLabel *label_3;
-    QLabel *label_6;
+    QLabel *dock_totalFund_num;
     QFrame *line_3;
-    QWidget *widget_5;
+    QWidget *widget_totalIncome;
     QGridLayout *gridLayout_10;
     QWidget *widget_8;
     QGridLayout *gridLayout_6;
     QLabel *label_5;
     QWidget *widget_9;
     QGridLayout *gridLayout_11;
-    QPushButton *pushButton_2;
+    QPushButton *dock_totalIncome_hide;
     QLabel *label_7;
     QSpacerItem *horizontalSpacer_3;
-    QLabel *label_8;
+    QLabel *dock_totalIncome_num;
     QFrame *line_4;
-    QWidget *widget_10;
+    QWidget *widget_totalExpend;
     QGridLayout *gridLayout_12;
     QWidget *widget_12;
     QGridLayout *gridLayout_14;
     QLabel *label_10;
-    QPushButton *pushButton_3;
+    QPushButton *dock_totalExpend_hide;
     QSpacerItem *horizontalSpacer_4;
     QWidget *widget_11;
     QGridLayout *gridLayout_13;
     QLabel *label_9;
-    QLabel *label_11;
+    QLabel *dock_totalExpend_num;
     QFrame *line_2;
     QFrame *line_5;
     QSpacerItem *horizontalSpacer;
     QSpacerItem *horizontalSpacer_7;
-    QPushButton *btn_addRecord;
-    QWidget *widget_dock;
+    QPushButton *dock_addRecord;
+    QWidget *widget_left_dock;
     QGridLayout *gridLayout_2;
-    QPushButton *btn_classify;
-    QPushButton *btn_analysis;
-    QPushButton *btn_borrowReturn;
-    QPushButton *btn_asset;
+    QPushButton *dock_classify;
+    QPushButton *dock_analysis;
+    QPushButton *dock_borrowReturn;
+    QPushButton *dock_account;
     QSpacerItem *verticalSpacer;
-    QPushButton *btn_record;
-    QPushButton *btn_accountBook;
-    QPushButton *btn_setting;
+    QPushButton *dock_record;
+    QPushButton *dock_book;
+    QPushButton *dock_setting;
     QFrame *line_central;
     QFrame *line;
-    QStackedWidget *stackedWidget_dockPage;
+    QStackedWidget *stackedWidget_dock;
     QWidget *page_record;
     QGridLayout *gridLayout_7;
     QStackedWidget *stackedWidget_2;
     QWidget *page_record_tree;
     QGridLayout *gridLayout_20;
-    QTreeWidget *treeWidget_record;
+    QTreeWidget *record_tree;
     QWidget *page_record_loading;
     QGroupBox *groupBox_13;
     QGridLayout *gridLayout_19;
     QFrame *line_7;
-    QDateEdit *dateEdit;
+    QDateEdit *record_date;
     QFrame *line_6;
-    QPushButton *pushButton_5;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton_11;
-    QComboBox *comboBox_2;
+    QPushButton *record_reset;
+    QLineEdit *record_input;
+    QPushButton *record_output;
+    QComboBox *record_filter;
     QSpacerItem *horizontalSpacer_5;
     QLabel *label_2;
     QWidget *page_classify;
     QGridLayout *gridLayout_58;
     QSpacerItem *horizontalSpacer_23;
-    TreeWidget *treeWidget_income;
-    TreeWidget *treeWidget_expend;
+    TreeWidget *classify_incomeTree;
+    TreeWidget *classify_expendTree;
     QWidget *page_analysis;
     QWidget *page_account;
     QGridLayout *gridLayout_56;
@@ -134,67 +134,66 @@ public:
     QGridLayout *gridLayout_46;
     QGroupBox *groupBox_25;
     QGridLayout *gridLayout_47;
-    QPushButton *pushButton_26;
-    QPushButton *pushButton_27;
-    QPushButton *pushButton_28;
-    QPushButton *pushButton_29;
+    QPushButton *account_up;
+    QPushButton *account_add;
+    QPushButton *account_down;
+    QPushButton *account_top;
     QSpacerItem *horizontalSpacer_21;
     QScrollArea *scrollArea_3;
     QWidget *scrollAreaWidgetContents_3;
     QGridLayout *gridLayout_48;
-    QToolButton *toolButton_21;
+    QVBoxLayout *vLayout_account;
     QToolButton *toolButton_20;
-    QSpacerItem *verticalSpacer_4;
-    QToolButton *toolButton_22;
+    QSpacerItem *verticalSpacer_3;
     QWidget *widget_21;
     QGridLayout *gridLayout_53;
     QGroupBox *groupBox_24;
     QGridLayout *gridLayout_43;
     QSpacerItem *horizontalSpacer_22;
-    QPushButton *pushButton_31;
-    QPushButton *pushButton_32;
-    QPushButton *pushButton_34;
+    QPushButton *account_save;
+    QPushButton *account_delete;
+    QPushButton *account_return;
     QWidget *widget_25;
     QGridLayout *gridLayout_41;
     QLabel *label_23;
-    QStackedWidget *stackedWidget_3;
-    QWidget *page_5;
+    QStackedWidget *stackedWidget_account_name;
+    QWidget *page_account_newName;
     QGridLayout *gridLayout_54;
-    QComboBox *comboBox;
-    QWidget *page_6;
+    QComboBox *account_newName;
+    QWidget *page_account_name;
     QGridLayout *gridLayout_55;
-    QLineEdit *lineEdit_11;
+    QLineEdit *account_name;
     QWidget *widget_26;
     QGridLayout *gridLayout_49;
     QLabel *label_29;
-    QDoubleSpinBox *doubleSpinBox_3;
+    QDoubleSpinBox *account_fund;
     QWidget *widget_27;
     QGridLayout *gridLayout_51;
     QLabel *label_30;
-    QLineEdit *lineEdit_10;
+    QLineEdit *account_nickname;
     QWidget *widget_28;
     QGridLayout *gridLayout_52;
     QLabel *label_28;
-    QLineEdit *lineEdit_9;
+    QLineEdit *account_card;
     QWidget *widget_23;
     QGridLayout *gridLayout_45;
     QLabel *label_27;
-    QPlainTextEdit *plainTextEdit_7;
+    QPlainTextEdit *account_remark;
     QWidget *widget_22;
     QGridLayout *gridLayout_40;
     QLabel *label_26;
     QPushButton *pushButton_33;
     QSpacerItem *horizontalSpacer_6;
-    QWidget *page_accountBook;
+    QWidget *page_book;
     QGridLayout *gridLayout_28;
     QWidget *widget_14;
     QGridLayout *gridLayout_27;
-    QGroupBox *groupBox_17;
+    QGroupBox *groupBox_book_left_dock;
     QGridLayout *gridLayout_21;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_10;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_9;
+    QPushButton *book_down;
+    QPushButton *book_add;
+    QPushButton *book_up;
+    QPushButton *book_top;
     QSpacerItem *horizontalSpacer_12;
     QScrollArea *scrollArea;
     QWidget *scrollArea_book;
@@ -203,35 +202,35 @@ public:
     QSpacerItem *verticalSpacer_2;
     QWidget *widget_29;
     QGridLayout *gridLayout_24;
-    QGroupBox *groupBox_19;
+    QGroupBox *groupBox_book_right_dock;
     QGridLayout *gridLayout_23;
-    QPushButton *pushButton_13;
-    QPushButton *pushButton_4;
+    QPushButton *book_save;
+    QPushButton *book_delete;
     QSpacerItem *horizontalSpacer_13;
-    QPushButton *pushButton_7;
-    QStackedWidget *stackedWidget;
-    QWidget *page;
+    QPushButton *book_return;
+    QStackedWidget *stackedWidget_book;
+    QWidget *page_addBook;
     QGridLayout *gridLayout_25;
-    QPlainTextEdit *plainTextEdit;
-    QLineEdit *lineEdit_2;
-    QWidget *page_2;
+    QPlainTextEdit *book_newRemark;
+    QLineEdit *book_newName;
+    QWidget *page_bookInfo;
     QGridLayout *gridLayout_26;
     QWidget *widget_18;
     QGridLayout *gridLayout_18;
     QLabel *label_16;
-    QDoubleSpinBox *doubleSpinBox_2;
+    QDoubleSpinBox *book_totalExpend;
     QSpacerItem *horizontalSpacer_9;
-    QDoubleSpinBox *doubleSpinBox;
+    QDoubleSpinBox *book_totalIncome;
     QLabel *label_18;
     QWidget *widget_16;
     QGridLayout *gridLayout_17;
     QLabel *label_14;
-    QLineEdit *lineEdit_3;
+    QLineEdit *book_name;
     QWidget *widget_15;
     QGridLayout *gridLayout_16;
     QLabel *label_12;
-    QPlainTextEdit *plainTextEdit_3;
-    QLabel *label_13;
+    QPlainTextEdit *book_remark;
+    QLabel *book_info;
     QSpacerItem *horizontalSpacer_15;
     QWidget *page_setting;
     QWidget *page_borrowReturn;
@@ -266,15 +265,15 @@ public:
         gridLayout_3->setSpacing(0);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        widget = new QWidget(widget_background);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setMinimumSize(QSize(0, 0));
-        widget->setMaximumSize(QSize(16777215, 80));
-        gridLayout_4 = new QGridLayout(widget);
+        widget_top_dock = new QWidget(widget_background);
+        widget_top_dock->setObjectName(QString::fromUtf8("widget_top_dock"));
+        widget_top_dock->setMinimumSize(QSize(0, 0));
+        widget_top_dock->setMaximumSize(QSize(16777215, 80));
+        gridLayout_4 = new QGridLayout(widget_top_dock);
         gridLayout_4->setSpacing(0);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        widget_2 = new QWidget(widget);
+        widget_2 = new QWidget(widget_top_dock);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         widget_2->setMinimumSize(QSize(140, 0));
         widget_2->setMaximumSize(QSize(16777215, 16777215));
@@ -284,19 +283,19 @@ public:
 
         gridLayout_4->addWidget(widget_2, 0, 0, 1, 1);
 
-        widget_3 = new QWidget(widget);
+        widget_3 = new QWidget(widget_top_dock);
         widget_3->setObjectName(QString::fromUtf8("widget_3"));
         gridLayout_15 = new QGridLayout(widget_3);
         gridLayout_15->setSpacing(0);
         gridLayout_15->setObjectName(QString::fromUtf8("gridLayout_15"));
         gridLayout_15->setContentsMargins(4, 0, 0, 0);
-        widget_4 = new QWidget(widget_3);
-        widget_4->setObjectName(QString::fromUtf8("widget_4"));
-        gridLayout_9 = new QGridLayout(widget_4);
+        widget_totalFund = new QWidget(widget_3);
+        widget_totalFund->setObjectName(QString::fromUtf8("widget_totalFund"));
+        gridLayout_9 = new QGridLayout(widget_totalFund);
         gridLayout_9->setSpacing(5);
         gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
         gridLayout_9->setContentsMargins(5, 5, 5, 5);
-        widget_7 = new QWidget(widget_4);
+        widget_7 = new QWidget(widget_totalFund);
         widget_7->setObjectName(QString::fromUtf8("widget_7"));
         widget_7->setMinimumSize(QSize(180, 30));
         widget_7->setMaximumSize(QSize(180, 30));
@@ -305,12 +304,12 @@ public:
         gridLayout_8->setHorizontalSpacing(5);
         gridLayout_8->setVerticalSpacing(0);
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(widget_7);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setMinimumSize(QSize(30, 30));
-        pushButton->setMaximumSize(QSize(30, 30));
+        docck_totalFund_hide = new QPushButton(widget_7);
+        docck_totalFund_hide->setObjectName(QString::fromUtf8("docck_totalFund_hide"));
+        docck_totalFund_hide->setMinimumSize(QSize(30, 30));
+        docck_totalFund_hide->setMaximumSize(QSize(30, 30));
 
-        gridLayout_8->addWidget(pushButton, 0, 2, 1, 1);
+        gridLayout_8->addWidget(docck_totalFund_hide, 0, 2, 1, 1);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -330,7 +329,7 @@ public:
 
         gridLayout_9->addWidget(widget_7, 0, 1, 1, 1);
 
-        widget_6 = new QWidget(widget_4);
+        widget_6 = new QWidget(widget_totalFund);
         widget_6->setObjectName(QString::fromUtf8("widget_6"));
         widget_6->setMinimumSize(QSize(70, 70));
         widget_6->setMaximumSize(QSize(70, 70));
@@ -350,21 +349,21 @@ public:
 
         gridLayout_9->addWidget(widget_6, 0, 0, 2, 1);
 
-        label_6 = new QLabel(widget_4);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setMinimumSize(QSize(180, 30));
-        label_6->setMaximumSize(QSize(180, 30));
+        dock_totalFund_num = new QLabel(widget_totalFund);
+        dock_totalFund_num->setObjectName(QString::fromUtf8("dock_totalFund_num"));
+        dock_totalFund_num->setMinimumSize(QSize(180, 30));
+        dock_totalFund_num->setMaximumSize(QSize(180, 30));
         QFont font1;
         font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font1.setPointSize(13);
         font1.setBold(true);
-        label_6->setFont(font1);
-        label_6->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
+        dock_totalFund_num->setFont(font1);
+        dock_totalFund_num->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
 
-        gridLayout_9->addWidget(label_6, 1, 1, 1, 1);
+        gridLayout_9->addWidget(dock_totalFund_num, 1, 1, 1, 1);
 
 
-        gridLayout_15->addWidget(widget_4, 0, 0, 1, 1);
+        gridLayout_15->addWidget(widget_totalFund, 0, 0, 1, 1);
 
         line_3 = new QFrame(widget_3);
         line_3->setObjectName(QString::fromUtf8("line_3"));
@@ -375,12 +374,12 @@ public:
 
         gridLayout_15->addWidget(line_3, 0, 1, 1, 1);
 
-        widget_5 = new QWidget(widget_3);
-        widget_5->setObjectName(QString::fromUtf8("widget_5"));
-        gridLayout_10 = new QGridLayout(widget_5);
+        widget_totalIncome = new QWidget(widget_3);
+        widget_totalIncome->setObjectName(QString::fromUtf8("widget_totalIncome"));
+        gridLayout_10 = new QGridLayout(widget_totalIncome);
         gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
         gridLayout_10->setContentsMargins(-1, 5, -1, 5);
-        widget_8 = new QWidget(widget_5);
+        widget_8 = new QWidget(widget_totalIncome);
         widget_8->setObjectName(QString::fromUtf8("widget_8"));
         widget_8->setMinimumSize(QSize(70, 70));
         widget_8->setMaximumSize(QSize(70, 70));
@@ -400,7 +399,7 @@ public:
 
         gridLayout_10->addWidget(widget_8, 0, 0, 2, 1);
 
-        widget_9 = new QWidget(widget_5);
+        widget_9 = new QWidget(widget_totalIncome);
         widget_9->setObjectName(QString::fromUtf8("widget_9"));
         widget_9->setMinimumSize(QSize(180, 30));
         widget_9->setMaximumSize(QSize(180, 30));
@@ -409,12 +408,12 @@ public:
         gridLayout_11->setHorizontalSpacing(5);
         gridLayout_11->setVerticalSpacing(0);
         gridLayout_11->setContentsMargins(0, 0, 0, 0);
-        pushButton_2 = new QPushButton(widget_9);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setMinimumSize(QSize(30, 30));
-        pushButton_2->setMaximumSize(QSize(30, 30));
+        dock_totalIncome_hide = new QPushButton(widget_9);
+        dock_totalIncome_hide->setObjectName(QString::fromUtf8("dock_totalIncome_hide"));
+        dock_totalIncome_hide->setMinimumSize(QSize(30, 30));
+        dock_totalIncome_hide->setMaximumSize(QSize(30, 30));
 
-        gridLayout_11->addWidget(pushButton_2, 0, 2, 1, 1);
+        gridLayout_11->addWidget(dock_totalIncome_hide, 0, 2, 1, 1);
 
         label_7 = new QLabel(widget_9);
         label_7->setObjectName(QString::fromUtf8("label_7"));
@@ -431,17 +430,17 @@ public:
 
         gridLayout_10->addWidget(widget_9, 0, 1, 1, 1);
 
-        label_8 = new QLabel(widget_5);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setMinimumSize(QSize(180, 30));
-        label_8->setMaximumSize(QSize(180, 30));
-        label_8->setFont(font1);
-        label_8->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
+        dock_totalIncome_num = new QLabel(widget_totalIncome);
+        dock_totalIncome_num->setObjectName(QString::fromUtf8("dock_totalIncome_num"));
+        dock_totalIncome_num->setMinimumSize(QSize(180, 30));
+        dock_totalIncome_num->setMaximumSize(QSize(180, 30));
+        dock_totalIncome_num->setFont(font1);
+        dock_totalIncome_num->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
 
-        gridLayout_10->addWidget(label_8, 1, 1, 1, 1);
+        gridLayout_10->addWidget(dock_totalIncome_num, 1, 1, 1, 1);
 
 
-        gridLayout_15->addWidget(widget_5, 0, 2, 1, 1);
+        gridLayout_15->addWidget(widget_totalIncome, 0, 2, 1, 1);
 
         line_4 = new QFrame(widget_3);
         line_4->setObjectName(QString::fromUtf8("line_4"));
@@ -452,12 +451,12 @@ public:
 
         gridLayout_15->addWidget(line_4, 0, 3, 1, 1);
 
-        widget_10 = new QWidget(widget_3);
-        widget_10->setObjectName(QString::fromUtf8("widget_10"));
-        gridLayout_12 = new QGridLayout(widget_10);
+        widget_totalExpend = new QWidget(widget_3);
+        widget_totalExpend->setObjectName(QString::fromUtf8("widget_totalExpend"));
+        gridLayout_12 = new QGridLayout(widget_totalExpend);
         gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
         gridLayout_12->setContentsMargins(-1, 5, -1, 5);
-        widget_12 = new QWidget(widget_10);
+        widget_12 = new QWidget(widget_totalExpend);
         widget_12->setObjectName(QString::fromUtf8("widget_12"));
         widget_12->setMinimumSize(QSize(180, 30));
         widget_12->setMaximumSize(QSize(180, 30));
@@ -474,12 +473,12 @@ public:
 
         gridLayout_14->addWidget(label_10, 0, 1, 1, 1);
 
-        pushButton_3 = new QPushButton(widget_12);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setMinimumSize(QSize(30, 30));
-        pushButton_3->setMaximumSize(QSize(30, 30));
+        dock_totalExpend_hide = new QPushButton(widget_12);
+        dock_totalExpend_hide->setObjectName(QString::fromUtf8("dock_totalExpend_hide"));
+        dock_totalExpend_hide->setMinimumSize(QSize(30, 30));
+        dock_totalExpend_hide->setMaximumSize(QSize(30, 30));
 
-        gridLayout_14->addWidget(pushButton_3, 0, 2, 1, 1);
+        gridLayout_14->addWidget(dock_totalExpend_hide, 0, 2, 1, 1);
 
         horizontalSpacer_4 = new QSpacerItem(59, 27, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -488,7 +487,7 @@ public:
 
         gridLayout_12->addWidget(widget_12, 0, 1, 1, 1);
 
-        widget_11 = new QWidget(widget_10);
+        widget_11 = new QWidget(widget_totalExpend);
         widget_11->setObjectName(QString::fromUtf8("widget_11"));
         widget_11->setMinimumSize(QSize(70, 70));
         widget_11->setMaximumSize(QSize(70, 70));
@@ -507,22 +506,22 @@ public:
 
         gridLayout_12->addWidget(widget_11, 0, 0, 2, 1);
 
-        label_11 = new QLabel(widget_10);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setMinimumSize(QSize(180, 30));
-        label_11->setMaximumSize(QSize(180, 30));
-        label_11->setFont(font1);
-        label_11->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
+        dock_totalExpend_num = new QLabel(widget_totalExpend);
+        dock_totalExpend_num->setObjectName(QString::fromUtf8("dock_totalExpend_num"));
+        dock_totalExpend_num->setMinimumSize(QSize(180, 30));
+        dock_totalExpend_num->setMaximumSize(QSize(180, 30));
+        dock_totalExpend_num->setFont(font1);
+        dock_totalExpend_num->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
 
-        gridLayout_12->addWidget(label_11, 1, 1, 1, 1);
+        gridLayout_12->addWidget(dock_totalExpend_num, 1, 1, 1, 1);
 
 
-        gridLayout_15->addWidget(widget_10, 0, 4, 1, 1);
+        gridLayout_15->addWidget(widget_totalExpend, 0, 4, 1, 1);
 
 
         gridLayout_4->addWidget(widget_3, 0, 2, 1, 1);
 
-        line_2 = new QFrame(widget);
+        line_2 = new QFrame(widget_top_dock);
         line_2->setObjectName(QString::fromUtf8("line_2"));
         line_2->setMinimumSize(QSize(2, 0));
         line_2->setMaximumSize(QSize(2, 16777215));
@@ -531,7 +530,7 @@ public:
 
         gridLayout_4->addWidget(line_2, 0, 1, 1, 1);
 
-        line_5 = new QFrame(widget);
+        line_5 = new QFrame(widget_top_dock);
         line_5->setObjectName(QString::fromUtf8("line_5"));
         line_5->setMinimumSize(QSize(2, 0));
         line_5->setMaximumSize(QSize(2, 16777215));
@@ -548,109 +547,109 @@ public:
 
         gridLayout_4->addItem(horizontalSpacer_7, 0, 4, 1, 1);
 
-        btn_addRecord = new QPushButton(widget);
-        btn_addRecord->setObjectName(QString::fromUtf8("btn_addRecord"));
-        btn_addRecord->setMinimumSize(QSize(70, 70));
-        btn_addRecord->setMaximumSize(QSize(70, 70));
+        dock_addRecord = new QPushButton(widget_top_dock);
+        dock_addRecord->setObjectName(QString::fromUtf8("dock_addRecord"));
+        dock_addRecord->setMinimumSize(QSize(70, 70));
+        dock_addRecord->setMaximumSize(QSize(70, 70));
         QFont font2;
         font2.setPointSize(10);
         font2.setBold(false);
-        btn_addRecord->setFont(font2);
-        btn_addRecord->setStyleSheet(QString::fromUtf8(""));
+        dock_addRecord->setFont(font2);
+        dock_addRecord->setStyleSheet(QString::fromUtf8(""));
 
-        gridLayout_4->addWidget(btn_addRecord, 0, 5, 1, 1);
+        gridLayout_4->addWidget(dock_addRecord, 0, 5, 1, 1);
 
 
-        gridLayout_3->addWidget(widget, 0, 0, 1, 4);
+        gridLayout_3->addWidget(widget_top_dock, 0, 0, 1, 4);
 
-        widget_dock = new QWidget(widget_background);
-        widget_dock->setObjectName(QString::fromUtf8("widget_dock"));
-        widget_dock->setMinimumSize(QSize(140, 0));
-        widget_dock->setMaximumSize(QSize(140, 16777215));
-        gridLayout_2 = new QGridLayout(widget_dock);
+        widget_left_dock = new QWidget(widget_background);
+        widget_left_dock->setObjectName(QString::fromUtf8("widget_left_dock"));
+        widget_left_dock->setMinimumSize(QSize(140, 0));
+        widget_left_dock->setMaximumSize(QSize(140, 16777215));
+        gridLayout_2 = new QGridLayout(widget_left_dock);
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        btn_classify = new QPushButton(widget_dock);
-        btn_classify->setObjectName(QString::fromUtf8("btn_classify"));
-        btn_classify->setMinimumSize(QSize(0, 60));
-        btn_classify->setMaximumSize(QSize(16777215, 60));
+        dock_classify = new QPushButton(widget_left_dock);
+        dock_classify->setObjectName(QString::fromUtf8("dock_classify"));
+        dock_classify->setMinimumSize(QSize(0, 60));
+        dock_classify->setMaximumSize(QSize(16777215, 60));
         QFont font3;
         font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
         font3.setPointSize(11);
-        btn_classify->setFont(font3);
-        btn_classify->setCheckable(true);
-        btn_classify->setAutoExclusive(true);
+        dock_classify->setFont(font3);
+        dock_classify->setCheckable(true);
+        dock_classify->setAutoExclusive(true);
 
-        gridLayout_2->addWidget(btn_classify, 6, 0, 1, 1);
+        gridLayout_2->addWidget(dock_classify, 6, 0, 1, 1);
 
-        btn_analysis = new QPushButton(widget_dock);
-        btn_analysis->setObjectName(QString::fromUtf8("btn_analysis"));
-        btn_analysis->setMinimumSize(QSize(0, 60));
-        btn_analysis->setMaximumSize(QSize(16777215, 60));
-        btn_analysis->setFont(font3);
-        btn_analysis->setCheckable(true);
-        btn_analysis->setAutoExclusive(true);
+        dock_analysis = new QPushButton(widget_left_dock);
+        dock_analysis->setObjectName(QString::fromUtf8("dock_analysis"));
+        dock_analysis->setMinimumSize(QSize(0, 60));
+        dock_analysis->setMaximumSize(QSize(16777215, 60));
+        dock_analysis->setFont(font3);
+        dock_analysis->setCheckable(true);
+        dock_analysis->setAutoExclusive(true);
 
-        gridLayout_2->addWidget(btn_analysis, 1, 0, 1, 1);
+        gridLayout_2->addWidget(dock_analysis, 1, 0, 1, 1);
 
-        btn_borrowReturn = new QPushButton(widget_dock);
-        btn_borrowReturn->setObjectName(QString::fromUtf8("btn_borrowReturn"));
-        btn_borrowReturn->setMinimumSize(QSize(0, 60));
-        btn_borrowReturn->setMaximumSize(QSize(16777215, 60));
-        btn_borrowReturn->setFont(font3);
-        btn_borrowReturn->setCheckable(true);
-        btn_borrowReturn->setAutoExclusive(true);
+        dock_borrowReturn = new QPushButton(widget_left_dock);
+        dock_borrowReturn->setObjectName(QString::fromUtf8("dock_borrowReturn"));
+        dock_borrowReturn->setMinimumSize(QSize(0, 60));
+        dock_borrowReturn->setMaximumSize(QSize(16777215, 60));
+        dock_borrowReturn->setFont(font3);
+        dock_borrowReturn->setCheckable(true);
+        dock_borrowReturn->setAutoExclusive(true);
 
-        gridLayout_2->addWidget(btn_borrowReturn, 2, 0, 1, 1);
+        gridLayout_2->addWidget(dock_borrowReturn, 2, 0, 1, 1);
 
-        btn_asset = new QPushButton(widget_dock);
-        btn_asset->setObjectName(QString::fromUtf8("btn_asset"));
-        btn_asset->setMinimumSize(QSize(0, 60));
-        btn_asset->setMaximumSize(QSize(16777215, 60));
-        btn_asset->setFont(font3);
-        btn_asset->setCheckable(true);
-        btn_asset->setAutoExclusive(true);
+        dock_account = new QPushButton(widget_left_dock);
+        dock_account->setObjectName(QString::fromUtf8("dock_account"));
+        dock_account->setMinimumSize(QSize(0, 60));
+        dock_account->setMaximumSize(QSize(16777215, 60));
+        dock_account->setFont(font3);
+        dock_account->setCheckable(true);
+        dock_account->setAutoExclusive(true);
 
-        gridLayout_2->addWidget(btn_asset, 4, 0, 1, 1);
+        gridLayout_2->addWidget(dock_account, 4, 0, 1, 1);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_2->addItem(verticalSpacer, 8, 0, 1, 1);
 
-        btn_record = new QPushButton(widget_dock);
-        btn_record->setObjectName(QString::fromUtf8("btn_record"));
-        btn_record->setMinimumSize(QSize(0, 60));
-        btn_record->setMaximumSize(QSize(16777215, 60));
-        btn_record->setFont(font3);
-        btn_record->setCheckable(true);
-        btn_record->setChecked(true);
-        btn_record->setAutoExclusive(true);
+        dock_record = new QPushButton(widget_left_dock);
+        dock_record->setObjectName(QString::fromUtf8("dock_record"));
+        dock_record->setMinimumSize(QSize(0, 60));
+        dock_record->setMaximumSize(QSize(16777215, 60));
+        dock_record->setFont(font3);
+        dock_record->setCheckable(true);
+        dock_record->setChecked(true);
+        dock_record->setAutoExclusive(true);
 
-        gridLayout_2->addWidget(btn_record, 0, 0, 1, 1);
+        gridLayout_2->addWidget(dock_record, 0, 0, 1, 1);
 
-        btn_accountBook = new QPushButton(widget_dock);
-        btn_accountBook->setObjectName(QString::fromUtf8("btn_accountBook"));
-        btn_accountBook->setMinimumSize(QSize(0, 60));
-        btn_accountBook->setMaximumSize(QSize(16777215, 60));
-        btn_accountBook->setFont(font3);
-        btn_accountBook->setCheckable(true);
-        btn_accountBook->setAutoExclusive(true);
+        dock_book = new QPushButton(widget_left_dock);
+        dock_book->setObjectName(QString::fromUtf8("dock_book"));
+        dock_book->setMinimumSize(QSize(0, 60));
+        dock_book->setMaximumSize(QSize(16777215, 60));
+        dock_book->setFont(font3);
+        dock_book->setCheckable(true);
+        dock_book->setAutoExclusive(true);
 
-        gridLayout_2->addWidget(btn_accountBook, 5, 0, 1, 1);
+        gridLayout_2->addWidget(dock_book, 5, 0, 1, 1);
 
-        btn_setting = new QPushButton(widget_dock);
-        btn_setting->setObjectName(QString::fromUtf8("btn_setting"));
-        btn_setting->setMinimumSize(QSize(0, 60));
-        btn_setting->setMaximumSize(QSize(16777215, 60));
-        btn_setting->setFont(font3);
-        btn_setting->setCheckable(true);
-        btn_setting->setAutoExclusive(true);
+        dock_setting = new QPushButton(widget_left_dock);
+        dock_setting->setObjectName(QString::fromUtf8("dock_setting"));
+        dock_setting->setMinimumSize(QSize(0, 60));
+        dock_setting->setMaximumSize(QSize(16777215, 60));
+        dock_setting->setFont(font3);
+        dock_setting->setCheckable(true);
+        dock_setting->setAutoExclusive(true);
 
-        gridLayout_2->addWidget(btn_setting, 7, 0, 1, 1);
+        gridLayout_2->addWidget(dock_setting, 7, 0, 1, 1);
 
 
-        gridLayout_3->addWidget(widget_dock, 2, 0, 1, 1);
+        gridLayout_3->addWidget(widget_left_dock, 2, 0, 1, 1);
 
         line_central = new QFrame(widget_background);
         line_central->setObjectName(QString::fromUtf8("line_central"));
@@ -668,8 +667,8 @@ public:
 
         gridLayout_3->addWidget(line, 1, 0, 1, 4);
 
-        stackedWidget_dockPage = new QStackedWidget(widget_background);
-        stackedWidget_dockPage->setObjectName(QString::fromUtf8("stackedWidget_dockPage"));
+        stackedWidget_dock = new QStackedWidget(widget_background);
+        stackedWidget_dock->setObjectName(QString::fromUtf8("stackedWidget_dock"));
         page_record = new QWidget();
         page_record->setObjectName(QString::fromUtf8("page_record"));
         gridLayout_7 = new QGridLayout(page_record);
@@ -684,13 +683,13 @@ public:
         gridLayout_20->setSpacing(0);
         gridLayout_20->setObjectName(QString::fromUtf8("gridLayout_20"));
         gridLayout_20->setContentsMargins(0, 0, 0, 0);
-        treeWidget_record = new QTreeWidget(page_record_tree);
+        record_tree = new QTreeWidget(page_record_tree);
         QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
         __qtreewidgetitem->setText(0, QString::fromUtf8("1"));
-        treeWidget_record->setHeaderItem(__qtreewidgetitem);
-        treeWidget_record->setObjectName(QString::fromUtf8("treeWidget_record"));
+        record_tree->setHeaderItem(__qtreewidgetitem);
+        record_tree->setObjectName(QString::fromUtf8("record_tree"));
 
-        gridLayout_20->addWidget(treeWidget_record, 0, 0, 1, 1);
+        gridLayout_20->addWidget(record_tree, 0, 0, 1, 1);
 
         stackedWidget_2->addWidget(page_record_tree);
         page_record_loading = new QWidget();
@@ -718,17 +717,17 @@ public:
 
         gridLayout_19->addWidget(line_7, 0, 6, 1, 1);
 
-        dateEdit = new QDateEdit(groupBox_13);
-        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
-        dateEdit->setMinimumSize(QSize(170, 35));
-        dateEdit->setMaximumSize(QSize(170, 35));
+        record_date = new QDateEdit(groupBox_13);
+        record_date->setObjectName(QString::fromUtf8("record_date"));
+        record_date->setMinimumSize(QSize(170, 35));
+        record_date->setMaximumSize(QSize(170, 35));
         QFont font4;
         font4.setPointSize(10);
-        dateEdit->setFont(font4);
-        dateEdit->setCalendarPopup(true);
-        dateEdit->setDate(QDate(2023, 11, 8));
+        record_date->setFont(font4);
+        record_date->setCalendarPopup(true);
+        record_date->setDate(QDate(2023, 11, 8));
 
-        gridLayout_19->addWidget(dateEdit, 0, 5, 1, 1);
+        gridLayout_19->addWidget(record_date, 0, 5, 1, 1);
 
         line_6 = new QFrame(groupBox_13);
         line_6->setObjectName(QString::fromUtf8("line_6"));
@@ -739,43 +738,43 @@ public:
 
         gridLayout_19->addWidget(line_6, 0, 3, 1, 1);
 
-        pushButton_5 = new QPushButton(groupBox_13);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setMinimumSize(QSize(55, 35));
-        pushButton_5->setMaximumSize(QSize(55, 35));
+        record_reset = new QPushButton(groupBox_13);
+        record_reset->setObjectName(QString::fromUtf8("record_reset"));
+        record_reset->setMinimumSize(QSize(55, 35));
+        record_reset->setMaximumSize(QSize(55, 35));
         QFont font5;
         font5.setPointSize(9);
-        pushButton_5->setFont(font5);
+        record_reset->setFont(font5);
 
-        gridLayout_19->addWidget(pushButton_5, 0, 7, 1, 1);
+        gridLayout_19->addWidget(record_reset, 0, 7, 1, 1);
 
-        lineEdit = new QLineEdit(groupBox_13);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setMinimumSize(QSize(255, 35));
-        lineEdit->setMaximumSize(QSize(255, 35));
-        lineEdit->setFont(font4);
+        record_input = new QLineEdit(groupBox_13);
+        record_input->setObjectName(QString::fromUtf8("record_input"));
+        record_input->setMinimumSize(QSize(255, 35));
+        record_input->setMaximumSize(QSize(255, 35));
+        record_input->setFont(font4);
 
-        gridLayout_19->addWidget(lineEdit, 0, 1, 1, 1);
+        gridLayout_19->addWidget(record_input, 0, 1, 1, 1);
 
-        pushButton_11 = new QPushButton(groupBox_13);
-        pushButton_11->setObjectName(QString::fromUtf8("pushButton_11"));
-        pushButton_11->setMinimumSize(QSize(55, 35));
-        pushButton_11->setMaximumSize(QSize(55, 35));
-        pushButton_11->setFont(font5);
+        record_output = new QPushButton(groupBox_13);
+        record_output->setObjectName(QString::fromUtf8("record_output"));
+        record_output->setMinimumSize(QSize(55, 35));
+        record_output->setMaximumSize(QSize(55, 35));
+        record_output->setFont(font5);
 
-        gridLayout_19->addWidget(pushButton_11, 0, 8, 1, 1);
+        gridLayout_19->addWidget(record_output, 0, 8, 1, 1);
 
-        comboBox_2 = new QComboBox(groupBox_13);
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
-        comboBox_2->setMinimumSize(QSize(105, 35));
-        comboBox_2->setMaximumSize(QSize(105, 35));
-        comboBox_2->setFont(font4);
+        record_filter = new QComboBox(groupBox_13);
+        record_filter->addItem(QString());
+        record_filter->addItem(QString());
+        record_filter->addItem(QString());
+        record_filter->addItem(QString());
+        record_filter->setObjectName(QString::fromUtf8("record_filter"));
+        record_filter->setMinimumSize(QSize(105, 35));
+        record_filter->setMaximumSize(QSize(105, 35));
+        record_filter->setFont(font4);
 
-        gridLayout_19->addWidget(comboBox_2, 0, 2, 1, 1);
+        gridLayout_19->addWidget(record_filter, 0, 2, 1, 1);
 
         horizontalSpacer_5 = new QSpacerItem(231, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -792,7 +791,7 @@ public:
 
         gridLayout_7->addWidget(groupBox_13, 0, 0, 1, 1);
 
-        stackedWidget_dockPage->addWidget(page_record);
+        stackedWidget_dock->addWidget(page_record);
         page_classify = new QWidget();
         page_classify->setObjectName(QString::fromUtf8("page_classify"));
         gridLayout_58 = new QGridLayout(page_classify);
@@ -804,34 +803,34 @@ public:
 
         gridLayout_58->addItem(horizontalSpacer_23, 0, 2, 1, 1);
 
-        treeWidget_income = new TreeWidget(page_classify);
+        classify_incomeTree = new TreeWidget(page_classify);
         QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem();
         __qtreewidgetitem1->setText(0, QString::fromUtf8("\346\224\266\345\205\245\345\210\206\347\261\273"));
-        treeWidget_income->setHeaderItem(__qtreewidgetitem1);
-        treeWidget_income->setObjectName(QString::fromUtf8("treeWidget_income"));
-        treeWidget_income->setMinimumSize(QSize(400, 0));
-        treeWidget_income->setMaximumSize(QSize(400, 16777215));
+        classify_incomeTree->setHeaderItem(__qtreewidgetitem1);
+        classify_incomeTree->setObjectName(QString::fromUtf8("classify_incomeTree"));
+        classify_incomeTree->setMinimumSize(QSize(400, 0));
+        classify_incomeTree->setMaximumSize(QSize(400, 16777215));
         QFont font6;
         font6.setPointSize(11);
-        treeWidget_income->setFont(font6);
+        classify_incomeTree->setFont(font6);
 
-        gridLayout_58->addWidget(treeWidget_income, 0, 1, 1, 1);
+        gridLayout_58->addWidget(classify_incomeTree, 0, 1, 1, 1);
 
-        treeWidget_expend = new TreeWidget(page_classify);
+        classify_expendTree = new TreeWidget(page_classify);
         QTreeWidgetItem *__qtreewidgetitem2 = new QTreeWidgetItem();
         __qtreewidgetitem2->setText(0, QString::fromUtf8("\346\224\257\345\207\272\345\210\206\347\261\273"));
-        treeWidget_expend->setHeaderItem(__qtreewidgetitem2);
-        treeWidget_expend->setObjectName(QString::fromUtf8("treeWidget_expend"));
-        treeWidget_expend->setMinimumSize(QSize(400, 0));
-        treeWidget_expend->setMaximumSize(QSize(400, 16777215));
-        treeWidget_expend->setFont(font6);
+        classify_expendTree->setHeaderItem(__qtreewidgetitem2);
+        classify_expendTree->setObjectName(QString::fromUtf8("classify_expendTree"));
+        classify_expendTree->setMinimumSize(QSize(400, 0));
+        classify_expendTree->setMaximumSize(QSize(400, 16777215));
+        classify_expendTree->setFont(font6);
 
-        gridLayout_58->addWidget(treeWidget_expend, 0, 0, 1, 1);
+        gridLayout_58->addWidget(classify_expendTree, 0, 0, 1, 1);
 
-        stackedWidget_dockPage->addWidget(page_classify);
+        stackedWidget_dock->addWidget(page_classify);
         page_analysis = new QWidget();
         page_analysis->setObjectName(QString::fromUtf8("page_analysis"));
-        stackedWidget_dockPage->addWidget(page_analysis);
+        stackedWidget_dock->addWidget(page_analysis);
         page_account = new QWidget();
         page_account->setObjectName(QString::fromUtf8("page_account"));
         gridLayout_56 = new QGridLayout(page_account);
@@ -857,37 +856,37 @@ public:
         gridLayout_47->setHorizontalSpacing(4);
         gridLayout_47->setVerticalSpacing(0);
         gridLayout_47->setContentsMargins(4, 0, 4, 0);
-        pushButton_26 = new QPushButton(groupBox_25);
-        pushButton_26->setObjectName(QString::fromUtf8("pushButton_26"));
-        pushButton_26->setMinimumSize(QSize(55, 35));
-        pushButton_26->setMaximumSize(QSize(55, 35));
-        pushButton_26->setFont(font5);
+        account_up = new QPushButton(groupBox_25);
+        account_up->setObjectName(QString::fromUtf8("account_up"));
+        account_up->setMinimumSize(QSize(55, 35));
+        account_up->setMaximumSize(QSize(55, 35));
+        account_up->setFont(font5);
 
-        gridLayout_47->addWidget(pushButton_26, 0, 1, 1, 1);
+        gridLayout_47->addWidget(account_up, 0, 1, 1, 1);
 
-        pushButton_27 = new QPushButton(groupBox_25);
-        pushButton_27->setObjectName(QString::fromUtf8("pushButton_27"));
-        pushButton_27->setMinimumSize(QSize(55, 35));
-        pushButton_27->setMaximumSize(QSize(55, 35));
-        pushButton_27->setFont(font5);
+        account_add = new QPushButton(groupBox_25);
+        account_add->setObjectName(QString::fromUtf8("account_add"));
+        account_add->setMinimumSize(QSize(55, 35));
+        account_add->setMaximumSize(QSize(55, 35));
+        account_add->setFont(font5);
 
-        gridLayout_47->addWidget(pushButton_27, 0, 4, 1, 1);
+        gridLayout_47->addWidget(account_add, 0, 4, 1, 1);
 
-        pushButton_28 = new QPushButton(groupBox_25);
-        pushButton_28->setObjectName(QString::fromUtf8("pushButton_28"));
-        pushButton_28->setMinimumSize(QSize(55, 35));
-        pushButton_28->setMaximumSize(QSize(55, 35));
-        pushButton_28->setFont(font5);
+        account_down = new QPushButton(groupBox_25);
+        account_down->setObjectName(QString::fromUtf8("account_down"));
+        account_down->setMinimumSize(QSize(55, 35));
+        account_down->setMaximumSize(QSize(55, 35));
+        account_down->setFont(font5);
 
-        gridLayout_47->addWidget(pushButton_28, 0, 2, 1, 1);
+        gridLayout_47->addWidget(account_down, 0, 2, 1, 1);
 
-        pushButton_29 = new QPushButton(groupBox_25);
-        pushButton_29->setObjectName(QString::fromUtf8("pushButton_29"));
-        pushButton_29->setMinimumSize(QSize(55, 35));
-        pushButton_29->setMaximumSize(QSize(55, 35));
-        pushButton_29->setFont(font5);
+        account_top = new QPushButton(groupBox_25);
+        account_top->setObjectName(QString::fromUtf8("account_top"));
+        account_top->setMinimumSize(QSize(55, 35));
+        account_top->setMaximumSize(QSize(55, 35));
+        account_top->setFont(font5);
 
-        gridLayout_47->addWidget(pushButton_29, 0, 0, 1, 1);
+        gridLayout_47->addWidget(account_top, 0, 0, 1, 1);
 
         horizontalSpacer_21 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -905,35 +904,21 @@ public:
         scrollArea_3->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 400, 521));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 402, 521));
         gridLayout_48 = new QGridLayout(scrollAreaWidgetContents_3);
+        gridLayout_48->setSpacing(0);
         gridLayout_48->setObjectName(QString::fromUtf8("gridLayout_48"));
-        gridLayout_48->setHorizontalSpacing(0);
-        gridLayout_48->setVerticalSpacing(5);
         gridLayout_48->setContentsMargins(0, 0, 0, 0);
-        toolButton_21 = new QToolButton(scrollAreaWidgetContents_3);
-        toolButton_21->setObjectName(QString::fromUtf8("toolButton_21"));
-        toolButton_21->setMinimumSize(QSize(400, 70));
-        toolButton_21->setMaximumSize(QSize(400, 70));
-        toolButton_21->setFont(font4);
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/img/pay.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_21->setIcon(icon);
-        toolButton_21->setIconSize(QSize(50, 50));
-        toolButton_21->setCheckable(true);
-        toolButton_21->setAutoRepeat(false);
-        toolButton_21->setAutoExclusive(true);
-        toolButton_21->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_21->setAutoRaise(false);
-        toolButton_21->setArrowType(Qt::NoArrow);
-
-        gridLayout_48->addWidget(toolButton_21, 1, 0, 1, 1);
-
+        vLayout_account = new QVBoxLayout();
+        vLayout_account->setSpacing(5);
+        vLayout_account->setObjectName(QString::fromUtf8("vLayout_account"));
         toolButton_20 = new QToolButton(scrollAreaWidgetContents_3);
         toolButton_20->setObjectName(QString::fromUtf8("toolButton_20"));
         toolButton_20->setMinimumSize(QSize(400, 70));
         toolButton_20->setMaximumSize(QSize(400, 70));
         toolButton_20->setFont(font4);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/img/pay.png"), QSize(), QIcon::Normal, QIcon::Off);
         toolButton_20->setIcon(icon);
         toolButton_20->setIconSize(QSize(50, 50));
         toolButton_20->setCheckable(true);
@@ -943,27 +928,14 @@ public:
         toolButton_20->setAutoRaise(false);
         toolButton_20->setArrowType(Qt::NoArrow);
 
-        gridLayout_48->addWidget(toolButton_20, 0, 0, 1, 1);
+        vLayout_account->addWidget(toolButton_20);
 
-        verticalSpacer_4 = new QSpacerItem(20, 1, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_48->addItem(verticalSpacer_4, 3, 0, 1, 1);
+        vLayout_account->addItem(verticalSpacer_3);
 
-        toolButton_22 = new QToolButton(scrollAreaWidgetContents_3);
-        toolButton_22->setObjectName(QString::fromUtf8("toolButton_22"));
-        toolButton_22->setMinimumSize(QSize(400, 70));
-        toolButton_22->setMaximumSize(QSize(400, 70));
-        toolButton_22->setFont(font4);
-        toolButton_22->setIcon(icon);
-        toolButton_22->setIconSize(QSize(50, 50));
-        toolButton_22->setCheckable(true);
-        toolButton_22->setAutoRepeat(false);
-        toolButton_22->setAutoExclusive(true);
-        toolButton_22->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_22->setAutoRaise(false);
-        toolButton_22->setArrowType(Qt::NoArrow);
 
-        gridLayout_48->addWidget(toolButton_22, 2, 0, 1, 1);
+        gridLayout_48->addLayout(vLayout_account, 2, 0, 1, 1);
 
         scrollArea_3->setWidget(scrollAreaWidgetContents_3);
 
@@ -994,31 +966,31 @@ public:
 
         gridLayout_43->addItem(horizontalSpacer_22, 0, 5, 1, 1);
 
-        pushButton_31 = new QPushButton(groupBox_24);
-        pushButton_31->setObjectName(QString::fromUtf8("pushButton_31"));
-        pushButton_31->setEnabled(true);
-        pushButton_31->setMinimumSize(QSize(55, 35));
-        pushButton_31->setMaximumSize(QSize(55, 35));
-        pushButton_31->setFont(font5);
-        pushButton_31->setAutoDefault(false);
+        account_save = new QPushButton(groupBox_24);
+        account_save->setObjectName(QString::fromUtf8("account_save"));
+        account_save->setEnabled(true);
+        account_save->setMinimumSize(QSize(55, 35));
+        account_save->setMaximumSize(QSize(55, 35));
+        account_save->setFont(font5);
+        account_save->setAutoDefault(false);
 
-        gridLayout_43->addWidget(pushButton_31, 0, 0, 1, 1);
+        gridLayout_43->addWidget(account_save, 0, 0, 1, 1);
 
-        pushButton_32 = new QPushButton(groupBox_24);
-        pushButton_32->setObjectName(QString::fromUtf8("pushButton_32"));
-        pushButton_32->setMinimumSize(QSize(55, 35));
-        pushButton_32->setMaximumSize(QSize(55, 35));
-        pushButton_32->setFont(font5);
+        account_delete = new QPushButton(groupBox_24);
+        account_delete->setObjectName(QString::fromUtf8("account_delete"));
+        account_delete->setMinimumSize(QSize(55, 35));
+        account_delete->setMaximumSize(QSize(55, 35));
+        account_delete->setFont(font5);
 
-        gridLayout_43->addWidget(pushButton_32, 0, 1, 1, 1);
+        gridLayout_43->addWidget(account_delete, 0, 1, 1, 1);
 
-        pushButton_34 = new QPushButton(groupBox_24);
-        pushButton_34->setObjectName(QString::fromUtf8("pushButton_34"));
-        pushButton_34->setMinimumSize(QSize(55, 35));
-        pushButton_34->setMaximumSize(QSize(55, 35));
-        pushButton_34->setFont(font5);
+        account_return = new QPushButton(groupBox_24);
+        account_return->setObjectName(QString::fromUtf8("account_return"));
+        account_return->setMinimumSize(QSize(55, 35));
+        account_return->setMaximumSize(QSize(55, 35));
+        account_return->setFont(font5);
 
-        gridLayout_43->addWidget(pushButton_34, 0, 6, 1, 1);
+        gridLayout_43->addWidget(account_return, 0, 6, 1, 1);
 
 
         gridLayout_53->addWidget(groupBox_24, 0, 0, 1, 1);
@@ -1040,51 +1012,51 @@ public:
 
         gridLayout_41->addWidget(label_23, 0, 0, 1, 1);
 
-        stackedWidget_3 = new QStackedWidget(widget_25);
-        stackedWidget_3->setObjectName(QString::fromUtf8("stackedWidget_3"));
-        stackedWidget_3->setMinimumSize(QSize(0, 35));
-        stackedWidget_3->setMaximumSize(QSize(16777215, 35));
-        page_5 = new QWidget();
-        page_5->setObjectName(QString::fromUtf8("page_5"));
-        gridLayout_54 = new QGridLayout(page_5);
+        stackedWidget_account_name = new QStackedWidget(widget_25);
+        stackedWidget_account_name->setObjectName(QString::fromUtf8("stackedWidget_account_name"));
+        stackedWidget_account_name->setMinimumSize(QSize(0, 35));
+        stackedWidget_account_name->setMaximumSize(QSize(16777215, 35));
+        page_account_newName = new QWidget();
+        page_account_newName->setObjectName(QString::fromUtf8("page_account_newName"));
+        gridLayout_54 = new QGridLayout(page_account_newName);
         gridLayout_54->setSpacing(0);
         gridLayout_54->setObjectName(QString::fromUtf8("gridLayout_54"));
         gridLayout_54->setContentsMargins(0, 0, 0, 0);
-        comboBox = new QComboBox(page_5);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setMinimumSize(QSize(0, 35));
-        comboBox->setMaximumSize(QSize(16777215, 35));
-        comboBox->setFont(font4);
+        account_newName = new QComboBox(page_account_newName);
+        account_newName->addItem(QString());
+        account_newName->addItem(QString());
+        account_newName->addItem(QString());
+        account_newName->addItem(QString());
+        account_newName->addItem(QString());
+        account_newName->addItem(QString());
+        account_newName->addItem(QString());
+        account_newName->setObjectName(QString::fromUtf8("account_newName"));
+        account_newName->setMinimumSize(QSize(0, 35));
+        account_newName->setMaximumSize(QSize(16777215, 35));
+        account_newName->setFont(font4);
 
-        gridLayout_54->addWidget(comboBox, 0, 0, 1, 1);
+        gridLayout_54->addWidget(account_newName, 0, 0, 1, 1);
 
-        stackedWidget_3->addWidget(page_5);
-        page_6 = new QWidget();
-        page_6->setObjectName(QString::fromUtf8("page_6"));
-        gridLayout_55 = new QGridLayout(page_6);
+        stackedWidget_account_name->addWidget(page_account_newName);
+        page_account_name = new QWidget();
+        page_account_name->setObjectName(QString::fromUtf8("page_account_name"));
+        gridLayout_55 = new QGridLayout(page_account_name);
         gridLayout_55->setSpacing(0);
         gridLayout_55->setObjectName(QString::fromUtf8("gridLayout_55"));
         gridLayout_55->setContentsMargins(0, 0, 0, 0);
-        lineEdit_11 = new QLineEdit(page_6);
-        lineEdit_11->setObjectName(QString::fromUtf8("lineEdit_11"));
-        lineEdit_11->setMinimumSize(QSize(0, 35));
-        lineEdit_11->setMaximumSize(QSize(16777215, 35));
-        lineEdit_11->setFont(font4);
-        lineEdit_11->setFrame(false);
-        lineEdit_11->setReadOnly(false);
+        account_name = new QLineEdit(page_account_name);
+        account_name->setObjectName(QString::fromUtf8("account_name"));
+        account_name->setMinimumSize(QSize(0, 35));
+        account_name->setMaximumSize(QSize(16777215, 35));
+        account_name->setFont(font4);
+        account_name->setFrame(false);
+        account_name->setReadOnly(false);
 
-        gridLayout_55->addWidget(lineEdit_11, 0, 0, 1, 1);
+        gridLayout_55->addWidget(account_name, 0, 0, 1, 1);
 
-        stackedWidget_3->addWidget(page_6);
+        stackedWidget_account_name->addWidget(page_account_name);
 
-        gridLayout_41->addWidget(stackedWidget_3, 0, 1, 1, 1);
+        gridLayout_41->addWidget(stackedWidget_account_name, 0, 1, 1, 1);
 
 
         gridLayout_53->addWidget(widget_25, 1, 0, 1, 1);
@@ -1106,18 +1078,18 @@ public:
 
         gridLayout_49->addWidget(label_29, 0, 0, 1, 1);
 
-        doubleSpinBox_3 = new QDoubleSpinBox(widget_26);
-        doubleSpinBox_3->setObjectName(QString::fromUtf8("doubleSpinBox_3"));
-        doubleSpinBox_3->setMinimumSize(QSize(0, 35));
-        doubleSpinBox_3->setMaximumSize(QSize(16777215, 35));
-        doubleSpinBox_3->setFont(font4);
-        doubleSpinBox_3->setFrame(false);
-        doubleSpinBox_3->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        doubleSpinBox_3->setProperty("showGroupSeparator", QVariant(true));
-        doubleSpinBox_3->setMaximum(99999999.989999994635582);
-        doubleSpinBox_3->setSingleStep(100.000000000000000);
+        account_fund = new QDoubleSpinBox(widget_26);
+        account_fund->setObjectName(QString::fromUtf8("account_fund"));
+        account_fund->setMinimumSize(QSize(0, 35));
+        account_fund->setMaximumSize(QSize(16777215, 35));
+        account_fund->setFont(font4);
+        account_fund->setFrame(false);
+        account_fund->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        account_fund->setProperty("showGroupSeparator", QVariant(true));
+        account_fund->setMaximum(99999999.989999994635582);
+        account_fund->setSingleStep(100.000000000000000);
 
-        gridLayout_49->addWidget(doubleSpinBox_3, 0, 1, 1, 1);
+        gridLayout_49->addWidget(account_fund, 0, 1, 1, 1);
 
 
         gridLayout_53->addWidget(widget_26, 2, 0, 1, 1);
@@ -1139,15 +1111,15 @@ public:
 
         gridLayout_51->addWidget(label_30, 0, 0, 1, 1);
 
-        lineEdit_10 = new QLineEdit(widget_27);
-        lineEdit_10->setObjectName(QString::fromUtf8("lineEdit_10"));
-        lineEdit_10->setMinimumSize(QSize(0, 35));
-        lineEdit_10->setMaximumSize(QSize(16777215, 35));
-        lineEdit_10->setFont(font4);
-        lineEdit_10->setFrame(false);
-        lineEdit_10->setReadOnly(false);
+        account_nickname = new QLineEdit(widget_27);
+        account_nickname->setObjectName(QString::fromUtf8("account_nickname"));
+        account_nickname->setMinimumSize(QSize(0, 35));
+        account_nickname->setMaximumSize(QSize(16777215, 35));
+        account_nickname->setFont(font4);
+        account_nickname->setFrame(false);
+        account_nickname->setReadOnly(false);
 
-        gridLayout_51->addWidget(lineEdit_10, 0, 1, 1, 1);
+        gridLayout_51->addWidget(account_nickname, 0, 1, 1, 1);
 
 
         gridLayout_53->addWidget(widget_27, 3, 0, 1, 1);
@@ -1169,15 +1141,15 @@ public:
 
         gridLayout_52->addWidget(label_28, 0, 0, 1, 1);
 
-        lineEdit_9 = new QLineEdit(widget_28);
-        lineEdit_9->setObjectName(QString::fromUtf8("lineEdit_9"));
-        lineEdit_9->setMinimumSize(QSize(0, 35));
-        lineEdit_9->setMaximumSize(QSize(16777215, 35));
-        lineEdit_9->setFont(font4);
-        lineEdit_9->setFrame(false);
-        lineEdit_9->setReadOnly(false);
+        account_card = new QLineEdit(widget_28);
+        account_card->setObjectName(QString::fromUtf8("account_card"));
+        account_card->setMinimumSize(QSize(0, 35));
+        account_card->setMaximumSize(QSize(16777215, 35));
+        account_card->setFont(font4);
+        account_card->setFrame(false);
+        account_card->setReadOnly(false);
 
-        gridLayout_52->addWidget(lineEdit_9, 0, 1, 1, 1);
+        gridLayout_52->addWidget(account_card, 0, 1, 1, 1);
 
 
         gridLayout_53->addWidget(widget_28, 4, 0, 1, 1);
@@ -1196,15 +1168,15 @@ public:
 
         gridLayout_45->addWidget(label_27, 0, 0, 1, 1);
 
-        plainTextEdit_7 = new QPlainTextEdit(widget_23);
-        plainTextEdit_7->setObjectName(QString::fromUtf8("plainTextEdit_7"));
-        plainTextEdit_7->setFont(font4);
-        plainTextEdit_7->setFrameShape(QFrame::NoFrame);
-        plainTextEdit_7->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        plainTextEdit_7->setTabChangesFocus(false);
-        plainTextEdit_7->setBackgroundVisible(false);
+        account_remark = new QPlainTextEdit(widget_23);
+        account_remark->setObjectName(QString::fromUtf8("account_remark"));
+        account_remark->setFont(font4);
+        account_remark->setFrameShape(QFrame::NoFrame);
+        account_remark->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        account_remark->setTabChangesFocus(false);
+        account_remark->setBackgroundVisible(false);
 
-        gridLayout_45->addWidget(plainTextEdit_7, 1, 0, 1, 1);
+        gridLayout_45->addWidget(account_remark, 1, 0, 1, 1);
 
 
         gridLayout_53->addWidget(widget_23, 5, 0, 1, 1);
@@ -1242,15 +1214,15 @@ public:
 
         gridLayout_56->addItem(horizontalSpacer_6, 0, 2, 1, 1);
 
-        stackedWidget_dockPage->addWidget(page_account);
-        page_accountBook = new QWidget();
-        page_accountBook->setObjectName(QString::fromUtf8("page_accountBook"));
-        gridLayout_28 = new QGridLayout(page_accountBook);
+        stackedWidget_dock->addWidget(page_account);
+        page_book = new QWidget();
+        page_book->setObjectName(QString::fromUtf8("page_book"));
+        gridLayout_28 = new QGridLayout(page_book);
         gridLayout_28->setObjectName(QString::fromUtf8("gridLayout_28"));
         gridLayout_28->setHorizontalSpacing(20);
         gridLayout_28->setVerticalSpacing(0);
         gridLayout_28->setContentsMargins(5, 5, 5, 5);
-        widget_14 = new QWidget(page_accountBook);
+        widget_14 = new QWidget(page_book);
         widget_14->setObjectName(QString::fromUtf8("widget_14"));
         widget_14->setMinimumSize(QSize(400, 0));
         widget_14->setMaximumSize(QSize(400, 16777215));
@@ -1259,53 +1231,53 @@ public:
         gridLayout_27->setHorizontalSpacing(0);
         gridLayout_27->setVerticalSpacing(5);
         gridLayout_27->setContentsMargins(0, 0, 0, 0);
-        groupBox_17 = new QGroupBox(widget_14);
-        groupBox_17->setObjectName(QString::fromUtf8("groupBox_17"));
-        groupBox_17->setMinimumSize(QSize(0, 48));
-        groupBox_17->setMaximumSize(QSize(16777215, 48));
-        gridLayout_21 = new QGridLayout(groupBox_17);
+        groupBox_book_left_dock = new QGroupBox(widget_14);
+        groupBox_book_left_dock->setObjectName(QString::fromUtf8("groupBox_book_left_dock"));
+        groupBox_book_left_dock->setMinimumSize(QSize(0, 48));
+        groupBox_book_left_dock->setMaximumSize(QSize(16777215, 48));
+        gridLayout_21 = new QGridLayout(groupBox_book_left_dock);
         gridLayout_21->setObjectName(QString::fromUtf8("gridLayout_21"));
         gridLayout_21->setHorizontalSpacing(4);
         gridLayout_21->setVerticalSpacing(0);
         gridLayout_21->setContentsMargins(4, 0, 4, 0);
-        pushButton_6 = new QPushButton(groupBox_17);
-        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
-        pushButton_6->setMinimumSize(QSize(55, 35));
-        pushButton_6->setMaximumSize(QSize(55, 35));
-        pushButton_6->setFont(font5);
+        book_down = new QPushButton(groupBox_book_left_dock);
+        book_down->setObjectName(QString::fromUtf8("book_down"));
+        book_down->setMinimumSize(QSize(55, 35));
+        book_down->setMaximumSize(QSize(55, 35));
+        book_down->setFont(font5);
 
-        gridLayout_21->addWidget(pushButton_6, 0, 1, 1, 1);
+        gridLayout_21->addWidget(book_down, 0, 1, 1, 1);
 
-        pushButton_10 = new QPushButton(groupBox_17);
-        pushButton_10->setObjectName(QString::fromUtf8("pushButton_10"));
-        pushButton_10->setMinimumSize(QSize(55, 35));
-        pushButton_10->setMaximumSize(QSize(55, 35));
-        pushButton_10->setFont(font5);
+        book_add = new QPushButton(groupBox_book_left_dock);
+        book_add->setObjectName(QString::fromUtf8("book_add"));
+        book_add->setMinimumSize(QSize(55, 35));
+        book_add->setMaximumSize(QSize(55, 35));
+        book_add->setFont(font5);
 
-        gridLayout_21->addWidget(pushButton_10, 0, 4, 1, 1);
+        gridLayout_21->addWidget(book_add, 0, 4, 1, 1);
 
-        pushButton_8 = new QPushButton(groupBox_17);
-        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
-        pushButton_8->setMinimumSize(QSize(55, 35));
-        pushButton_8->setMaximumSize(QSize(55, 35));
-        pushButton_8->setFont(font5);
+        book_up = new QPushButton(groupBox_book_left_dock);
+        book_up->setObjectName(QString::fromUtf8("book_up"));
+        book_up->setMinimumSize(QSize(55, 35));
+        book_up->setMaximumSize(QSize(55, 35));
+        book_up->setFont(font5);
 
-        gridLayout_21->addWidget(pushButton_8, 0, 2, 1, 1);
+        gridLayout_21->addWidget(book_up, 0, 2, 1, 1);
 
-        pushButton_9 = new QPushButton(groupBox_17);
-        pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
-        pushButton_9->setMinimumSize(QSize(55, 35));
-        pushButton_9->setMaximumSize(QSize(55, 35));
-        pushButton_9->setFont(font5);
+        book_top = new QPushButton(groupBox_book_left_dock);
+        book_top->setObjectName(QString::fromUtf8("book_top"));
+        book_top->setMinimumSize(QSize(55, 35));
+        book_top->setMaximumSize(QSize(55, 35));
+        book_top->setFont(font5);
 
-        gridLayout_21->addWidget(pushButton_9, 0, 0, 1, 1);
+        gridLayout_21->addWidget(book_top, 0, 0, 1, 1);
 
         horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_21->addItem(horizontalSpacer_12, 0, 3, 1, 1);
 
 
-        gridLayout_27->addWidget(groupBox_17, 0, 0, 1, 1);
+        gridLayout_27->addWidget(groupBox_book_left_dock, 0, 0, 1, 1);
 
         scrollArea = new QScrollArea(widget_14);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
@@ -1338,7 +1310,7 @@ public:
 
         gridLayout_28->addWidget(widget_14, 0, 0, 1, 1);
 
-        widget_29 = new QWidget(page_accountBook);
+        widget_29 = new QWidget(page_book);
         widget_29->setObjectName(QString::fromUtf8("widget_29"));
         widget_29->setMinimumSize(QSize(450, 0));
         widget_29->setMaximumSize(QSize(450, 16777215));
@@ -1347,85 +1319,85 @@ public:
         gridLayout_24->setHorizontalSpacing(0);
         gridLayout_24->setVerticalSpacing(5);
         gridLayout_24->setContentsMargins(0, 0, 0, 0);
-        groupBox_19 = new QGroupBox(widget_29);
-        groupBox_19->setObjectName(QString::fromUtf8("groupBox_19"));
-        groupBox_19->setMinimumSize(QSize(0, 48));
-        groupBox_19->setMaximumSize(QSize(16777215, 48));
-        gridLayout_23 = new QGridLayout(groupBox_19);
+        groupBox_book_right_dock = new QGroupBox(widget_29);
+        groupBox_book_right_dock->setObjectName(QString::fromUtf8("groupBox_book_right_dock"));
+        groupBox_book_right_dock->setMinimumSize(QSize(0, 48));
+        groupBox_book_right_dock->setMaximumSize(QSize(16777215, 48));
+        gridLayout_23 = new QGridLayout(groupBox_book_right_dock);
         gridLayout_23->setObjectName(QString::fromUtf8("gridLayout_23"));
         gridLayout_23->setHorizontalSpacing(4);
         gridLayout_23->setVerticalSpacing(0);
         gridLayout_23->setContentsMargins(4, 0, 4, 0);
-        pushButton_13 = new QPushButton(groupBox_19);
-        pushButton_13->setObjectName(QString::fromUtf8("pushButton_13"));
-        pushButton_13->setMinimumSize(QSize(55, 35));
-        pushButton_13->setMaximumSize(QSize(55, 35));
-        pushButton_13->setFont(font5);
+        book_save = new QPushButton(groupBox_book_right_dock);
+        book_save->setObjectName(QString::fromUtf8("book_save"));
+        book_save->setMinimumSize(QSize(55, 35));
+        book_save->setMaximumSize(QSize(55, 35));
+        book_save->setFont(font5);
 
-        gridLayout_23->addWidget(pushButton_13, 0, 0, 1, 1);
+        gridLayout_23->addWidget(book_save, 0, 0, 1, 1);
 
-        pushButton_4 = new QPushButton(groupBox_19);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setMinimumSize(QSize(55, 35));
-        pushButton_4->setMaximumSize(QSize(55, 35));
-        pushButton_4->setFont(font5);
+        book_delete = new QPushButton(groupBox_book_right_dock);
+        book_delete->setObjectName(QString::fromUtf8("book_delete"));
+        book_delete->setMinimumSize(QSize(55, 35));
+        book_delete->setMaximumSize(QSize(55, 35));
+        book_delete->setFont(font5);
 
-        gridLayout_23->addWidget(pushButton_4, 0, 1, 1, 1);
+        gridLayout_23->addWidget(book_delete, 0, 1, 1, 1);
 
         horizontalSpacer_13 = new QSpacerItem(238, 29, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_23->addItem(horizontalSpacer_13, 0, 2, 1, 1);
 
-        pushButton_7 = new QPushButton(groupBox_19);
-        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
-        pushButton_7->setMinimumSize(QSize(55, 35));
-        pushButton_7->setMaximumSize(QSize(55, 35));
-        pushButton_7->setFont(font5);
+        book_return = new QPushButton(groupBox_book_right_dock);
+        book_return->setObjectName(QString::fromUtf8("book_return"));
+        book_return->setMinimumSize(QSize(55, 35));
+        book_return->setMaximumSize(QSize(55, 35));
+        book_return->setFont(font5);
 
-        gridLayout_23->addWidget(pushButton_7, 0, 3, 1, 1);
+        gridLayout_23->addWidget(book_return, 0, 3, 1, 1);
 
 
-        gridLayout_24->addWidget(groupBox_19, 0, 0, 1, 1);
+        gridLayout_24->addWidget(groupBox_book_right_dock, 0, 0, 1, 1);
 
-        stackedWidget = new QStackedWidget(widget_29);
-        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setMinimumSize(QSize(0, 0));
-        stackedWidget->setMaximumSize(QSize(16777215, 16777215));
-        page = new QWidget();
-        page->setObjectName(QString::fromUtf8("page"));
-        gridLayout_25 = new QGridLayout(page);
+        stackedWidget_book = new QStackedWidget(widget_29);
+        stackedWidget_book->setObjectName(QString::fromUtf8("stackedWidget_book"));
+        stackedWidget_book->setMinimumSize(QSize(0, 0));
+        stackedWidget_book->setMaximumSize(QSize(16777215, 16777215));
+        page_addBook = new QWidget();
+        page_addBook->setObjectName(QString::fromUtf8("page_addBook"));
+        gridLayout_25 = new QGridLayout(page_addBook);
         gridLayout_25->setObjectName(QString::fromUtf8("gridLayout_25"));
         gridLayout_25->setHorizontalSpacing(0);
         gridLayout_25->setVerticalSpacing(5);
         gridLayout_25->setContentsMargins(0, 0, 5, 0);
-        plainTextEdit = new QPlainTextEdit(page);
-        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
-        plainTextEdit->setFont(font4);
-        plainTextEdit->setFrameShape(QFrame::NoFrame);
-        plainTextEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        plainTextEdit->setTabChangesFocus(false);
-        plainTextEdit->setBackgroundVisible(false);
+        book_newRemark = new QPlainTextEdit(page_addBook);
+        book_newRemark->setObjectName(QString::fromUtf8("book_newRemark"));
+        book_newRemark->setFont(font4);
+        book_newRemark->setFrameShape(QFrame::NoFrame);
+        book_newRemark->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        book_newRemark->setTabChangesFocus(false);
+        book_newRemark->setBackgroundVisible(false);
 
-        gridLayout_25->addWidget(plainTextEdit, 2, 0, 1, 1);
+        gridLayout_25->addWidget(book_newRemark, 2, 0, 1, 1);
 
-        lineEdit_2 = new QLineEdit(page);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setMinimumSize(QSize(0, 35));
-        lineEdit_2->setMaximumSize(QSize(16777215, 35));
-        lineEdit_2->setFont(font4);
-        lineEdit_2->setFrame(false);
+        book_newName = new QLineEdit(page_addBook);
+        book_newName->setObjectName(QString::fromUtf8("book_newName"));
+        book_newName->setMinimumSize(QSize(0, 35));
+        book_newName->setMaximumSize(QSize(16777215, 35));
+        book_newName->setFont(font4);
+        book_newName->setFrame(false);
 
-        gridLayout_25->addWidget(lineEdit_2, 0, 0, 1, 1);
+        gridLayout_25->addWidget(book_newName, 0, 0, 1, 1);
 
-        stackedWidget->addWidget(page);
-        page_2 = new QWidget();
-        page_2->setObjectName(QString::fromUtf8("page_2"));
-        gridLayout_26 = new QGridLayout(page_2);
+        stackedWidget_book->addWidget(page_addBook);
+        page_bookInfo = new QWidget();
+        page_bookInfo->setObjectName(QString::fromUtf8("page_bookInfo"));
+        gridLayout_26 = new QGridLayout(page_bookInfo);
         gridLayout_26->setObjectName(QString::fromUtf8("gridLayout_26"));
         gridLayout_26->setHorizontalSpacing(0);
         gridLayout_26->setVerticalSpacing(5);
         gridLayout_26->setContentsMargins(0, 0, 0, 0);
-        widget_18 = new QWidget(page_2);
+        widget_18 = new QWidget(page_bookInfo);
         widget_18->setObjectName(QString::fromUtf8("widget_18"));
         widget_18->setMinimumSize(QSize(0, 35));
         widget_18->setMaximumSize(QSize(16777215, 35));
@@ -1442,45 +1414,45 @@ public:
 
         gridLayout_18->addWidget(label_16, 0, 3, 1, 1);
 
-        doubleSpinBox_2 = new QDoubleSpinBox(widget_18);
-        doubleSpinBox_2->setObjectName(QString::fromUtf8("doubleSpinBox_2"));
-        doubleSpinBox_2->setMinimumSize(QSize(0, 35));
-        doubleSpinBox_2->setFont(font4);
-        doubleSpinBox_2->setWrapping(false);
-        doubleSpinBox_2->setFrame(false);
-        doubleSpinBox_2->setReadOnly(true);
-        doubleSpinBox_2->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        doubleSpinBox_2->setAccelerated(false);
-        doubleSpinBox_2->setCorrectionMode(QAbstractSpinBox::CorrectToPreviousValue);
-        doubleSpinBox_2->setKeyboardTracking(true);
-        doubleSpinBox_2->setProperty("showGroupSeparator", QVariant(true));
-        doubleSpinBox_2->setMaximum(99999999.989999994635582);
-        doubleSpinBox_2->setSingleStep(100.000000000000000);
-        doubleSpinBox_2->setValue(156750.000000000000000);
+        book_totalExpend = new QDoubleSpinBox(widget_18);
+        book_totalExpend->setObjectName(QString::fromUtf8("book_totalExpend"));
+        book_totalExpend->setMinimumSize(QSize(0, 35));
+        book_totalExpend->setFont(font4);
+        book_totalExpend->setWrapping(false);
+        book_totalExpend->setFrame(false);
+        book_totalExpend->setReadOnly(true);
+        book_totalExpend->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        book_totalExpend->setAccelerated(false);
+        book_totalExpend->setCorrectionMode(QAbstractSpinBox::CorrectToPreviousValue);
+        book_totalExpend->setKeyboardTracking(true);
+        book_totalExpend->setProperty("showGroupSeparator", QVariant(true));
+        book_totalExpend->setMaximum(99999999.989999994635582);
+        book_totalExpend->setSingleStep(100.000000000000000);
+        book_totalExpend->setValue(0.000000000000000);
 
-        gridLayout_18->addWidget(doubleSpinBox_2, 0, 4, 1, 1);
+        gridLayout_18->addWidget(book_totalExpend, 0, 4, 1, 1);
 
         horizontalSpacer_9 = new QSpacerItem(15, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         gridLayout_18->addItem(horizontalSpacer_9, 0, 2, 1, 1);
 
-        doubleSpinBox = new QDoubleSpinBox(widget_18);
-        doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
-        doubleSpinBox->setMinimumSize(QSize(0, 35));
-        doubleSpinBox->setFont(font4);
-        doubleSpinBox->setWrapping(false);
-        doubleSpinBox->setFrame(false);
-        doubleSpinBox->setReadOnly(true);
-        doubleSpinBox->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        doubleSpinBox->setAccelerated(false);
-        doubleSpinBox->setCorrectionMode(QAbstractSpinBox::CorrectToPreviousValue);
-        doubleSpinBox->setKeyboardTracking(true);
-        doubleSpinBox->setProperty("showGroupSeparator", QVariant(true));
-        doubleSpinBox->setMaximum(99999999.989999994635582);
-        doubleSpinBox->setSingleStep(100.000000000000000);
-        doubleSpinBox->setValue(99999999.989999994635582);
+        book_totalIncome = new QDoubleSpinBox(widget_18);
+        book_totalIncome->setObjectName(QString::fromUtf8("book_totalIncome"));
+        book_totalIncome->setMinimumSize(QSize(0, 35));
+        book_totalIncome->setFont(font4);
+        book_totalIncome->setWrapping(false);
+        book_totalIncome->setFrame(false);
+        book_totalIncome->setReadOnly(true);
+        book_totalIncome->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        book_totalIncome->setAccelerated(false);
+        book_totalIncome->setCorrectionMode(QAbstractSpinBox::CorrectToPreviousValue);
+        book_totalIncome->setKeyboardTracking(true);
+        book_totalIncome->setProperty("showGroupSeparator", QVariant(true));
+        book_totalIncome->setMaximum(99999999.989999994635582);
+        book_totalIncome->setSingleStep(100.000000000000000);
+        book_totalIncome->setValue(0.000000000000000);
 
-        gridLayout_18->addWidget(doubleSpinBox, 0, 1, 1, 1);
+        gridLayout_18->addWidget(book_totalIncome, 0, 1, 1, 1);
 
         label_18 = new QLabel(widget_18);
         label_18->setObjectName(QString::fromUtf8("label_18"));
@@ -1493,7 +1465,7 @@ public:
 
         gridLayout_26->addWidget(widget_18, 0, 0, 1, 2);
 
-        widget_16 = new QWidget(page_2);
+        widget_16 = new QWidget(page_bookInfo);
         widget_16->setObjectName(QString::fromUtf8("widget_16"));
         widget_16->setMinimumSize(QSize(0, 35));
         widget_16->setMaximumSize(QSize(16777215, 35));
@@ -1510,20 +1482,20 @@ public:
 
         gridLayout_17->addWidget(label_14, 0, 0, 1, 1);
 
-        lineEdit_3 = new QLineEdit(widget_16);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setMinimumSize(QSize(0, 35));
-        lineEdit_3->setMaximumSize(QSize(16777215, 35));
-        lineEdit_3->setFont(font4);
-        lineEdit_3->setFrame(false);
-        lineEdit_3->setReadOnly(false);
+        book_name = new QLineEdit(widget_16);
+        book_name->setObjectName(QString::fromUtf8("book_name"));
+        book_name->setMinimumSize(QSize(0, 35));
+        book_name->setMaximumSize(QSize(16777215, 35));
+        book_name->setFont(font4);
+        book_name->setFrame(false);
+        book_name->setReadOnly(true);
 
-        gridLayout_17->addWidget(lineEdit_3, 0, 1, 1, 1);
+        gridLayout_17->addWidget(book_name, 0, 1, 1, 1);
 
 
         gridLayout_26->addWidget(widget_16, 1, 0, 1, 2);
 
-        widget_15 = new QWidget(page_2);
+        widget_15 = new QWidget(page_bookInfo);
         widget_15->setObjectName(QString::fromUtf8("widget_15"));
         gridLayout_16 = new QGridLayout(widget_15);
         gridLayout_16->setSpacing(0);
@@ -1537,30 +1509,31 @@ public:
 
         gridLayout_16->addWidget(label_12, 0, 0, 1, 1);
 
-        plainTextEdit_3 = new QPlainTextEdit(widget_15);
-        plainTextEdit_3->setObjectName(QString::fromUtf8("plainTextEdit_3"));
-        plainTextEdit_3->setFont(font4);
-        plainTextEdit_3->setFrameShape(QFrame::NoFrame);
-        plainTextEdit_3->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        plainTextEdit_3->setTabChangesFocus(false);
-        plainTextEdit_3->setBackgroundVisible(false);
+        book_remark = new QPlainTextEdit(widget_15);
+        book_remark->setObjectName(QString::fromUtf8("book_remark"));
+        book_remark->setFont(font4);
+        book_remark->setFrameShape(QFrame::NoFrame);
+        book_remark->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        book_remark->setTabChangesFocus(false);
+        book_remark->setReadOnly(true);
+        book_remark->setBackgroundVisible(false);
 
-        gridLayout_16->addWidget(plainTextEdit_3, 1, 0, 1, 1);
+        gridLayout_16->addWidget(book_remark, 1, 0, 1, 1);
 
-        label_13 = new QLabel(widget_15);
-        label_13->setObjectName(QString::fromUtf8("label_13"));
-        label_13->setMinimumSize(QSize(0, 35));
-        label_13->setMaximumSize(QSize(16777215, 35));
-        label_13->setFont(font4);
+        book_info = new QLabel(widget_15);
+        book_info->setObjectName(QString::fromUtf8("book_info"));
+        book_info->setMinimumSize(QSize(0, 35));
+        book_info->setMaximumSize(QSize(16777215, 35));
+        book_info->setFont(font4);
 
-        gridLayout_16->addWidget(label_13, 2, 0, 1, 1);
+        gridLayout_16->addWidget(book_info, 2, 0, 1, 1);
 
 
         gridLayout_26->addWidget(widget_15, 2, 0, 2, 2);
 
-        stackedWidget->addWidget(page_2);
+        stackedWidget_book->addWidget(page_bookInfo);
 
-        gridLayout_24->addWidget(stackedWidget, 1, 0, 1, 1);
+        gridLayout_24->addWidget(stackedWidget_book, 1, 0, 1, 1);
 
 
         gridLayout_28->addWidget(widget_29, 0, 1, 1, 1);
@@ -1569,15 +1542,15 @@ public:
 
         gridLayout_28->addItem(horizontalSpacer_15, 0, 2, 1, 1);
 
-        stackedWidget_dockPage->addWidget(page_accountBook);
+        stackedWidget_dock->addWidget(page_book);
         page_setting = new QWidget();
         page_setting->setObjectName(QString::fromUtf8("page_setting"));
-        stackedWidget_dockPage->addWidget(page_setting);
+        stackedWidget_dock->addWidget(page_setting);
         page_borrowReturn = new QWidget();
         page_borrowReturn->setObjectName(QString::fromUtf8("page_borrowReturn"));
-        stackedWidget_dockPage->addWidget(page_borrowReturn);
+        stackedWidget_dock->addWidget(page_borrowReturn);
 
-        gridLayout_3->addWidget(stackedWidget_dockPage, 2, 2, 1, 1);
+        gridLayout_3->addWidget(stackedWidget_dock, 2, 2, 1, 1);
 
 
         gridLayout->addWidget(widget_background, 1, 0, 1, 1);
@@ -1599,8 +1572,8 @@ public:
         retranslateUi(MainWin);
 
         stackedWidget_2->setCurrentIndex(0);
-        stackedWidget_3->setCurrentIndex(0);
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget_account_name->setCurrentIndex(1);
+        stackedWidget_book->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWin);
@@ -1610,96 +1583,92 @@ public:
     {
         MainWin->setWindowTitle(QCoreApplication::translate("MainWin", "MainWin", nullptr));
         label->setText(QCoreApplication::translate("MainWin", "\346\231\232\351\243\216\346\235\245\347\232\204\346\255\243\345\267\247", nullptr));
-        pushButton->setText(QString());
+        docck_totalFund_hide->setText(QString());
         label_15->setText(QCoreApplication::translate("MainWin", "\346\200\273\350\265\204\344\272\247", nullptr));
         label_3->setText(QString());
-        label_6->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
+        dock_totalFund_num->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
         label_5->setText(QString());
-        pushButton_2->setText(QString());
+        dock_totalIncome_hide->setText(QString());
         label_7->setText(QCoreApplication::translate("MainWin", "\346\234\210\346\224\266\345\205\245", nullptr));
-        label_8->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
+        dock_totalIncome_num->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
         label_10->setText(QCoreApplication::translate("MainWin", "\346\234\210\346\224\257\345\207\272", nullptr));
-        pushButton_3->setText(QString());
+        dock_totalExpend_hide->setText(QString());
         label_9->setText(QString());
-        label_11->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
-        btn_addRecord->setText(QCoreApplication::translate("MainWin", "\350\256\260\344\270\200\347\254\224", nullptr));
-        btn_classify->setText(QCoreApplication::translate("MainWin", "\345\210\206\347\261\273\347\256\241\347\220\206", nullptr));
-        btn_analysis->setText(QCoreApplication::translate("MainWin", "\350\264\246\347\233\256\347\273\237\350\256\241/", nullptr));
-        btn_borrowReturn->setText(QCoreApplication::translate("MainWin", "\345\200\237\350\277\230\350\256\260\345\275\225/", nullptr));
-        btn_asset->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\347\256\241\347\220\206", nullptr));
-        btn_record->setText(QCoreApplication::translate("MainWin", "\346\265\201\346\260\264\350\264\246\347\233\256", nullptr));
-        btn_accountBook->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\347\256\241\347\220\206", nullptr));
-        btn_setting->setText(QCoreApplication::translate("MainWin", "\350\256\276       \347\275\256/", nullptr));
-        dateEdit->setDisplayFormat(QCoreApplication::translate("MainWin", "yyyy\345\271\264MM\346\234\210dd\346\227\245", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainWin", "\351\207\215\347\275\256", nullptr));
-        lineEdit->setPlaceholderText(QCoreApplication::translate("MainWin", "\346\250\241\347\263\212\346\237\245\350\257\242", nullptr));
-        pushButton_11->setText(QCoreApplication::translate("MainWin", "\345\257\274\345\207\272", nullptr));
-        comboBox_2->setItemText(0, QCoreApplication::translate("MainWin", "\345\277\275\347\225\245\346\227\245\346\234\237", nullptr));
-        comboBox_2->setItemText(1, QCoreApplication::translate("MainWin", "\345\277\275\347\225\245\346\227\245", nullptr));
-        comboBox_2->setItemText(2, QCoreApplication::translate("MainWin", "\345\277\275\347\225\245\346\234\210", nullptr));
-        comboBox_2->setItemText(3, QCoreApplication::translate("MainWin", "\344\277\235\347\225\231\346\227\245\346\234\237", nullptr));
+        dock_totalExpend_num->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
+        dock_addRecord->setText(QCoreApplication::translate("MainWin", "\350\256\260\344\270\200\347\254\224", nullptr));
+        dock_classify->setText(QCoreApplication::translate("MainWin", "\345\210\206\347\261\273\347\256\241\347\220\206", nullptr));
+        dock_analysis->setText(QCoreApplication::translate("MainWin", "\350\264\246\347\233\256\347\273\237\350\256\241/", nullptr));
+        dock_borrowReturn->setText(QCoreApplication::translate("MainWin", "\345\200\237\350\277\230\350\256\260\345\275\225/", nullptr));
+        dock_account->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\347\256\241\347\220\206", nullptr));
+        dock_record->setText(QCoreApplication::translate("MainWin", "\346\265\201\346\260\264\350\264\246\347\233\256", nullptr));
+        dock_book->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\347\256\241\347\220\206", nullptr));
+        dock_setting->setText(QCoreApplication::translate("MainWin", "\350\256\276       \347\275\256/", nullptr));
+        record_date->setDisplayFormat(QCoreApplication::translate("MainWin", "yyyy\345\271\264MM\346\234\210dd\346\227\245", nullptr));
+        record_reset->setText(QCoreApplication::translate("MainWin", "\351\207\215\347\275\256", nullptr));
+        record_input->setPlaceholderText(QCoreApplication::translate("MainWin", "\346\250\241\347\263\212\346\237\245\350\257\242", nullptr));
+        record_output->setText(QCoreApplication::translate("MainWin", "\345\257\274\345\207\272", nullptr));
+        record_filter->setItemText(0, QCoreApplication::translate("MainWin", "\345\277\275\347\225\245\346\227\245\346\234\237", nullptr));
+        record_filter->setItemText(1, QCoreApplication::translate("MainWin", "\345\277\275\347\225\245\346\227\245", nullptr));
+        record_filter->setItemText(2, QCoreApplication::translate("MainWin", "\345\277\275\347\225\245\346\234\210", nullptr));
+        record_filter->setItemText(3, QCoreApplication::translate("MainWin", "\344\277\235\347\225\231\346\227\245\346\234\237", nullptr));
 
         label_2->setText(QCoreApplication::translate("MainWin", "\351\200\211\346\213\251\346\227\245\346\234\237", nullptr));
-        pushButton_26->setText(QCoreApplication::translate("MainWin", "\344\270\212\347\247\273", nullptr));
-        pushButton_27->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
-        pushButton_28->setText(QCoreApplication::translate("MainWin", "\344\270\213\347\247\273", nullptr));
-        pushButton_29->setText(QCoreApplication::translate("MainWin", "\347\275\256\351\241\266", nullptr));
-        toolButton_21->setText(QCoreApplication::translate("MainWin", "\345\276\256\344\277\241\n"
-"\347\216\260\346\234\211\350\265\204\344\272\2475000.00\345\205\203", nullptr));
+        account_up->setText(QCoreApplication::translate("MainWin", "\344\270\212\347\247\273", nullptr));
+        account_add->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
+        account_down->setText(QCoreApplication::translate("MainWin", "\344\270\213\347\247\273", nullptr));
+        account_top->setText(QCoreApplication::translate("MainWin", "\347\275\256\351\241\266", nullptr));
         toolButton_20->setText(QCoreApplication::translate("MainWin", "\360\237\223\214 \346\224\257\344\273\230\345\256\235\n"
 "\347\216\260\346\234\211\350\265\204\344\272\2475000.00\345\205\203", nullptr));
-        toolButton_22->setText(QCoreApplication::translate("MainWin", "\344\270\255\345\233\275\345\206\234\344\270\232\351\223\266\350\241\214\n"
-"\347\216\260\346\234\211\350\265\204\344\272\2475000.00\345\205\203", nullptr));
-        pushButton_31->setText(QCoreApplication::translate("MainWin", "\344\277\235\345\255\230", nullptr));
-        pushButton_32->setText(QCoreApplication::translate("MainWin", "\345\210\240\351\231\244", nullptr));
-        pushButton_34->setText(QCoreApplication::translate("MainWin", "\350\277\224\345\233\236", nullptr));
+        account_save->setText(QCoreApplication::translate("MainWin", "\344\277\235\345\255\230", nullptr));
+        account_delete->setText(QCoreApplication::translate("MainWin", "\345\210\240\351\231\244", nullptr));
+        account_return->setText(QCoreApplication::translate("MainWin", "\350\277\224\345\233\236", nullptr));
         label_23->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\345\220\215\347\247\260", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("MainWin", "\347\216\260\351\207\221", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWin", "\346\224\257\344\273\230\345\256\235", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("MainWin", "\345\276\256\344\277\241", nullptr));
-        comboBox->setItemText(3, QCoreApplication::translate("MainWin", "\351\223\266\350\241\214\345\215\241", nullptr));
-        comboBox->setItemText(4, QCoreApplication::translate("MainWin", "\350\241\214\347\224\250\345\215\241", nullptr));
-        comboBox->setItemText(5, QCoreApplication::translate("MainWin", "\344\274\232\345\221\230\345\215\241", nullptr));
-        comboBox->setItemText(6, QCoreApplication::translate("MainWin", "\345\205\254\344\272\244\345\215\241", nullptr));
+        account_newName->setItemText(0, QCoreApplication::translate("MainWin", "\347\216\260\351\207\221", nullptr));
+        account_newName->setItemText(1, QCoreApplication::translate("MainWin", "\346\224\257\344\273\230\345\256\235", nullptr));
+        account_newName->setItemText(2, QCoreApplication::translate("MainWin", "\345\276\256\344\277\241", nullptr));
+        account_newName->setItemText(3, QCoreApplication::translate("MainWin", "\351\223\266\350\241\214\345\215\241", nullptr));
+        account_newName->setItemText(4, QCoreApplication::translate("MainWin", "\350\241\214\347\224\250\345\215\241", nullptr));
+        account_newName->setItemText(5, QCoreApplication::translate("MainWin", "\344\274\232\345\221\230\345\215\241", nullptr));
+        account_newName->setItemText(6, QCoreApplication::translate("MainWin", "\345\205\254\344\272\244\345\215\241", nullptr));
 
-        lineEdit_11->setText(QString());
-        lineEdit_11->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\345\220\215\347\247\260", nullptr));
+        account_name->setText(QString());
+        account_name->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\345\220\215\347\247\260", nullptr));
         label_29->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\350\265\204\344\272\247", nullptr));
-        doubleSpinBox_3->setSuffix(QCoreApplication::translate("MainWin", " \345\205\203", nullptr));
+        account_fund->setSuffix(QCoreApplication::translate("MainWin", " \345\205\203", nullptr));
         label_30->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\345\210\253\347\247\260", nullptr));
-        lineEdit_10->setText(QString());
-        lineEdit_10->setPlaceholderText(QCoreApplication::translate("MainWin", "\345\270\256\345\212\251\347\224\250\346\210\267\345\277\253\351\200\237\350\257\206\345\210\253(\351\235\236\345\277\205\345\241\253)", nullptr));
+        account_nickname->setText(QString());
+        account_nickname->setPlaceholderText(QCoreApplication::translate("MainWin", "\345\270\256\345\212\251\347\224\250\346\210\267\345\277\253\351\200\237\350\257\206\345\210\253(\351\235\236\345\277\205\345\241\253)", nullptr));
         label_28->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\345\215\241\345\217\267", nullptr));
-        lineEdit_9->setText(QString());
-        lineEdit_9->setPlaceholderText(QCoreApplication::translate("MainWin", "\346\227\240\345\215\241\345\217\267\345\277\275\347\225\245\345\215\263\345\217\257(\351\235\236\345\277\205\345\241\253)", nullptr));
+        account_card->setText(QString());
+        account_card->setPlaceholderText(QCoreApplication::translate("MainWin", "\346\227\240\345\215\241\345\217\267\345\277\275\347\225\245\345\215\263\345\217\257(\351\235\236\345\277\205\345\241\253)", nullptr));
         label_27->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\346\217\217\350\277\260", nullptr));
-        plainTextEdit_7->setPlainText(QString());
-        plainTextEdit_7->setPlaceholderText(QCoreApplication::translate("MainWin", "\347\256\200\350\246\201\346\217\217\350\277\260(\351\235\236\345\277\205\345\241\253)", nullptr));
+        account_remark->setPlainText(QString());
+        account_remark->setPlaceholderText(QCoreApplication::translate("MainWin", "\347\256\200\350\246\201\346\217\217\350\277\260(\351\235\236\345\277\205\345\241\253)", nullptr));
         label_26->setText(QCoreApplication::translate("MainWin", "\346\230\257\345\220\246\350\256\241\345\205\245\346\200\273\350\265\204\344\272\247", nullptr));
         pushButton_33->setText(QString());
-        pushButton_6->setText(QCoreApplication::translate("MainWin", "\344\270\212\347\247\273", nullptr));
-        pushButton_10->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("MainWin", "\344\270\213\347\247\273", nullptr));
-        pushButton_9->setText(QCoreApplication::translate("MainWin", "\347\275\256\351\241\266", nullptr));
-        pushButton_13->setText(QCoreApplication::translate("MainWin", "\344\277\235\345\255\230", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWin", "\345\210\240\351\231\244", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("MainWin", "\350\277\224\345\233\236", nullptr));
-        plainTextEdit->setPlainText(QString());
-        plainTextEdit->setPlaceholderText(QCoreApplication::translate("MainWin", "\347\256\200\350\246\201\346\217\217\350\277\260", nullptr));
-        lineEdit_2->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\345\220\215\347\247\260", nullptr));
+        book_down->setText(QCoreApplication::translate("MainWin", "\344\270\212\347\247\273", nullptr));
+        book_add->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
+        book_up->setText(QCoreApplication::translate("MainWin", "\344\270\213\347\247\273", nullptr));
+        book_top->setText(QCoreApplication::translate("MainWin", "\347\275\256\351\241\266", nullptr));
+        book_save->setText(QCoreApplication::translate("MainWin", "\344\277\235\345\255\230", nullptr));
+        book_delete->setText(QCoreApplication::translate("MainWin", "\345\210\240\351\231\244", nullptr));
+        book_return->setText(QCoreApplication::translate("MainWin", "\350\277\224\345\233\236", nullptr));
+        book_newRemark->setPlainText(QString());
+        book_newRemark->setPlaceholderText(QCoreApplication::translate("MainWin", "\347\256\200\350\246\201\346\217\217\350\277\260", nullptr));
+        book_newName->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\345\220\215\347\247\260", nullptr));
         label_16->setText(QCoreApplication::translate("MainWin", "\345\205\261\350\256\241\346\224\257\345\207\272", nullptr));
-        doubleSpinBox_2->setSpecialValueText(QString());
-        doubleSpinBox_2->setSuffix(QCoreApplication::translate("MainWin", " \345\205\203", nullptr));
-        doubleSpinBox->setSpecialValueText(QString());
-        doubleSpinBox->setSuffix(QCoreApplication::translate("MainWin", " \345\205\203", nullptr));
+        book_totalExpend->setSpecialValueText(QString());
+        book_totalExpend->setSuffix(QCoreApplication::translate("MainWin", " \345\205\203", nullptr));
+        book_totalIncome->setSpecialValueText(QString());
+        book_totalIncome->setSuffix(QCoreApplication::translate("MainWin", " \345\205\203", nullptr));
         label_18->setText(QCoreApplication::translate("MainWin", "\345\205\261\350\256\241\346\224\266\345\205\245", nullptr));
         label_14->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\345\220\215\347\247\260", nullptr));
-        lineEdit_3->setText(QString());
-        lineEdit_3->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\345\220\215\347\247\260", nullptr));
+        book_name->setText(QString());
+        book_name->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\345\220\215\347\247\260", nullptr));
         label_12->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\346\217\217\350\277\260", nullptr));
-        plainTextEdit_3->setPlainText(QString());
-        plainTextEdit_3->setPlaceholderText(QCoreApplication::translate("MainWin", "\347\256\200\350\246\201\346\217\217\350\277\260(\351\235\236\345\277\205\345\241\253)", nullptr));
-        label_13->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\345\210\233\345\273\272\344\272\2162023/12/25\357\274\214\345\267\262\350\256\260\345\275\225\"999\"\346\235\241\350\264\246\345\215\225\343\200\202", nullptr));
+        book_remark->setPlainText(QString());
+        book_remark->setPlaceholderText(QCoreApplication::translate("MainWin", "\347\256\200\350\246\201\346\217\217\350\277\260(\351\235\236\345\277\205\345\241\253)", nullptr));
+        book_info->setText(QString());
     } // retranslateUi
 
 };

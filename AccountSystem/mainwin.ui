@@ -80,7 +80,7 @@
         <number>0</number>
        </property>
        <item row="0" column="0" colspan="4">
-        <widget class="QWidget" name="widget" native="true">
+        <widget class="QWidget" name="widget_top_dock" native="true">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -157,7 +157,7 @@
               <number>0</number>
              </property>
              <item row="0" column="0">
-              <widget class="QWidget" name="widget_4" native="true">
+              <widget class="QWidget" name="widget_totalFund" native="true">
                <layout class="QGridLayout" name="gridLayout_9">
                 <property name="leftMargin">
                  <number>5</number>
@@ -208,7 +208,7 @@
                     <number>0</number>
                    </property>
                    <item row="0" column="2">
-                    <widget class="QPushButton" name="pushButton">
+                    <widget class="QPushButton" name="docck_totalFund_hide">
                      <property name="minimumSize">
                       <size>
                        <width>30</width>
@@ -323,7 +323,7 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLabel" name="label_6">
+                 <widget class="QLabel" name="dock_totalFund_num">
                   <property name="minimumSize">
                    <size>
                     <width>180</width>
@@ -374,7 +374,7 @@
               </widget>
              </item>
              <item row="0" column="2">
-              <widget class="QWidget" name="widget_5" native="true">
+              <widget class="QWidget" name="widget_totalIncome" native="true">
                <layout class="QGridLayout" name="gridLayout_10">
                 <property name="topMargin">
                  <number>5</number>
@@ -471,7 +471,7 @@
                     <number>0</number>
                    </property>
                    <item row="0" column="2">
-                    <widget class="QPushButton" name="pushButton_2">
+                    <widget class="QPushButton" name="dock_totalIncome_hide">
                      <property name="minimumSize">
                       <size>
                        <width>30</width>
@@ -531,7 +531,7 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLabel" name="label_8">
+                 <widget class="QLabel" name="dock_totalIncome_num">
                   <property name="minimumSize">
                    <size>
                     <width>180</width>
@@ -582,7 +582,7 @@
               </widget>
              </item>
              <item row="0" column="4">
-              <widget class="QWidget" name="widget_10" native="true">
+              <widget class="QWidget" name="widget_totalExpend" native="true">
                <layout class="QGridLayout" name="gridLayout_12">
                 <property name="topMargin">
                  <number>5</number>
@@ -649,7 +649,7 @@
                     </widget>
                    </item>
                    <item row="0" column="2">
-                    <widget class="QPushButton" name="pushButton_3">
+                    <widget class="QPushButton" name="dock_totalExpend_hide">
                      <property name="minimumSize">
                       <size>
                        <width>30</width>
@@ -733,7 +733,7 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLabel" name="label_11">
+                 <widget class="QLabel" name="dock_totalExpend_num">
                   <property name="minimumSize">
                    <size>
                     <width>180</width>
@@ -835,7 +835,7 @@
            </spacer>
           </item>
           <item row="0" column="5">
-           <widget class="QPushButton" name="btn_addRecord">
+           <widget class="QPushButton" name="dock_addRecord">
             <property name="minimumSize">
              <size>
               <width>70</width>
@@ -866,7 +866,7 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QWidget" name="widget_dock" native="true">
+        <widget class="QWidget" name="widget_left_dock" native="true">
          <property name="minimumSize">
           <size>
            <width>140</width>
@@ -896,7 +896,7 @@
            <number>0</number>
           </property>
           <item row="6" column="0">
-           <widget class="QPushButton" name="btn_classify">
+           <widget class="QPushButton" name="dock_classify">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -927,7 +927,7 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QPushButton" name="btn_analysis">
+           <widget class="QPushButton" name="dock_analysis">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -958,7 +958,7 @@
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QPushButton" name="btn_borrowReturn">
+           <widget class="QPushButton" name="dock_borrowReturn">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -989,7 +989,7 @@
            </widget>
           </item>
           <item row="4" column="0">
-           <widget class="QPushButton" name="btn_asset">
+           <widget class="QPushButton" name="dock_account">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1033,7 +1033,7 @@
            </spacer>
           </item>
           <item row="0" column="0">
-           <widget class="QPushButton" name="btn_record">
+           <widget class="QPushButton" name="dock_record">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1067,7 +1067,7 @@
            </widget>
           </item>
           <item row="5" column="0">
-           <widget class="QPushButton" name="btn_accountBook">
+           <widget class="QPushButton" name="dock_book">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1098,7 +1098,7 @@
            </widget>
           </item>
           <item row="7" column="0">
-           <widget class="QPushButton" name="btn_setting">
+           <widget class="QPushButton" name="dock_setting">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1158,7 +1158,7 @@
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QStackedWidget" name="stackedWidget_dockPage">
+        <widget class="QStackedWidget" name="stackedWidget_dock">
          <widget class="QWidget" name="page_record">
           <layout class="QGridLayout" name="gridLayout_7">
            <property name="leftMargin">
@@ -1199,7 +1199,7 @@
                 <number>0</number>
                </property>
                <item row="0" column="0">
-                <widget class="QTreeWidget" name="treeWidget_record">
+                <widget class="QTreeWidget" name="record_tree">
                  <column>
                   <property name="text">
                    <string notr="true">1</string>
@@ -1268,7 +1268,7 @@
                </widget>
               </item>
               <item row="0" column="5">
-               <widget class="QDateEdit" name="dateEdit">
+               <widget class="QDateEdit" name="record_date">
                 <property name="minimumSize">
                  <size>
                   <width>170</width>
@@ -1321,7 +1321,7 @@
                </widget>
               </item>
               <item row="0" column="7">
-               <widget class="QPushButton" name="pushButton_5">
+               <widget class="QPushButton" name="record_reset">
                 <property name="minimumSize">
                  <size>
                   <width>55</width>
@@ -1345,7 +1345,7 @@
                </widget>
               </item>
               <item row="0" column="1">
-               <widget class="QLineEdit" name="lineEdit">
+               <widget class="QLineEdit" name="record_input">
                 <property name="minimumSize">
                  <size>
                   <width>255</width>
@@ -1369,7 +1369,7 @@
                </widget>
               </item>
               <item row="0" column="8">
-               <widget class="QPushButton" name="pushButton_11">
+               <widget class="QPushButton" name="record_output">
                 <property name="minimumSize">
                  <size>
                   <width>55</width>
@@ -1393,7 +1393,7 @@
                </widget>
               </item>
               <item row="0" column="2">
-               <widget class="QComboBox" name="comboBox_2">
+               <widget class="QComboBox" name="record_filter">
                 <property name="minimumSize">
                  <size>
                   <width>105</width>
@@ -1509,7 +1509,7 @@
             </spacer>
            </item>
            <item row="0" column="1">
-            <widget class="TreeWidget" name="treeWidget_income">
+            <widget class="TreeWidget" name="classify_incomeTree">
              <property name="minimumSize">
               <size>
                <width>400</width>
@@ -1535,7 +1535,7 @@
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="TreeWidget" name="treeWidget_expend">
+            <widget class="TreeWidget" name="classify_expendTree">
              <property name="minimumSize">
               <size>
                <width>400</width>
@@ -1650,7 +1650,7 @@
                   <number>0</number>
                  </property>
                  <item row="0" column="1">
-                  <widget class="QPushButton" name="pushButton_26">
+                  <widget class="QPushButton" name="account_up">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -1674,7 +1674,7 @@
                   </widget>
                  </item>
                  <item row="0" column="4">
-                  <widget class="QPushButton" name="pushButton_27">
+                  <widget class="QPushButton" name="account_add">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -1698,7 +1698,7 @@
                   </widget>
                  </item>
                  <item row="0" column="2">
-                  <widget class="QPushButton" name="pushButton_28">
+                  <widget class="QPushButton" name="account_down">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -1722,7 +1722,7 @@
                   </widget>
                  </item>
                  <item row="0" column="0">
-                  <widget class="QPushButton" name="pushButton_29">
+                  <widget class="QPushButton" name="account_top">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -1783,7 +1783,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>400</width>
+                   <width>402</width>
                    <height>521</height>
                   </rect>
                  </property>
@@ -1800,183 +1800,81 @@
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
-                  <property name="horizontalSpacing">
+                  <property name="spacing">
                    <number>0</number>
                   </property>
-                  <property name="verticalSpacing">
-                   <number>5</number>
-                  </property>
-                  <item row="1" column="0">
-                   <widget class="QToolButton" name="toolButton_21">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>70</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>70</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>微信
-现有资产5000.00元</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>50</width>
-                      <height>50</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
-                   <widget class="QToolButton" name="toolButton_20">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>70</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>70</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>📌 支付宝
-现有资产5000.00元</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>50</width>
-                      <height>50</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <spacer name="verticalSpacer_4">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>1</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
                   <item row="2" column="0">
-                   <widget class="QToolButton" name="toolButton_22">
-                    <property name="minimumSize">
-                     <size>
-                      <width>400</width>
-                      <height>70</height>
-                     </size>
+                   <layout class="QVBoxLayout" name="vLayout_account">
+                    <property name="spacing">
+                     <number>5</number>
                     </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>400</width>
-                      <height>70</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>10</pointsize>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>中国农业银行
+                    <item>
+                     <widget class="QToolButton" name="toolButton_20">
+                      <property name="minimumSize">
+                       <size>
+                        <width>400</width>
+                        <height>70</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>400</width>
+                        <height>70</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>📌 支付宝
 现有资产5000.00元</string>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="res.qrc">
-                      <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>50</width>
-                      <height>50</height>
-                     </size>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="autoRepeat">
-                     <bool>false</bool>
-                    </property>
-                    <property name="autoExclusive">
-                     <bool>true</bool>
-                    </property>
-                    <property name="toolButtonStyle">
-                     <enum>Qt::ToolButtonTextBesideIcon</enum>
-                    </property>
-                    <property name="autoRaise">
-                     <bool>false</bool>
-                    </property>
-                    <property name="arrowType">
-                     <enum>Qt::NoArrow</enum>
-                    </property>
-                   </widget>
+                      </property>
+                      <property name="icon">
+                       <iconset resource="res.qrc">
+                        <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>50</width>
+                        <height>50</height>
+                       </size>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="autoRepeat">
+                       <bool>false</bool>
+                      </property>
+                      <property name="autoExclusive">
+                       <bool>true</bool>
+                      </property>
+                      <property name="toolButtonStyle">
+                       <enum>Qt::ToolButtonTextBesideIcon</enum>
+                      </property>
+                      <property name="autoRaise">
+                       <bool>false</bool>
+                      </property>
+                      <property name="arrowType">
+                       <enum>Qt::NoArrow</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="verticalSpacer_3">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </widget>
@@ -2065,7 +1963,7 @@
                   </spacer>
                  </item>
                  <item row="0" column="0">
-                  <widget class="QPushButton" name="pushButton_31">
+                  <widget class="QPushButton" name="account_save">
                    <property name="enabled">
                     <bool>true</bool>
                    </property>
@@ -2095,7 +1993,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QPushButton" name="pushButton_32">
+                  <widget class="QPushButton" name="account_delete">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -2119,7 +2017,7 @@
                   </widget>
                  </item>
                  <item row="0" column="6">
-                  <widget class="QPushButton" name="pushButton_34">
+                  <widget class="QPushButton" name="account_return">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -2203,7 +2101,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QStackedWidget" name="stackedWidget_3">
+                  <widget class="QStackedWidget" name="stackedWidget_account_name">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -2217,9 +2115,9 @@
                     </size>
                    </property>
                    <property name="currentIndex">
-                    <number>0</number>
+                    <number>1</number>
                    </property>
-                   <widget class="QWidget" name="page_5">
+                   <widget class="QWidget" name="page_account_newName">
                     <layout class="QGridLayout" name="gridLayout_54">
                      <property name="leftMargin">
                       <number>0</number>
@@ -2237,7 +2135,7 @@
                       <number>0</number>
                      </property>
                      <item row="0" column="0">
-                      <widget class="QComboBox" name="comboBox">
+                      <widget class="QComboBox" name="account_newName">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -2294,7 +2192,7 @@
                      </item>
                     </layout>
                    </widget>
-                   <widget class="QWidget" name="page_6">
+                   <widget class="QWidget" name="page_account_name">
                     <layout class="QGridLayout" name="gridLayout_55">
                      <property name="leftMargin">
                       <number>0</number>
@@ -2312,7 +2210,7 @@
                       <number>0</number>
                      </property>
                      <item row="0" column="0">
-                      <widget class="QLineEdit" name="lineEdit_11">
+                      <widget class="QLineEdit" name="account_name">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -2409,7 +2307,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+                  <widget class="QDoubleSpinBox" name="account_fund">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -2508,7 +2406,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLineEdit" name="lineEdit_10">
+                  <widget class="QLineEdit" name="account_nickname">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -2601,7 +2499,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QLineEdit" name="lineEdit_9">
+                  <widget class="QLineEdit" name="account_card">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -2679,7 +2577,7 @@
                   </widget>
                  </item>
                  <item row="1" column="0">
-                  <widget class="QPlainTextEdit" name="plainTextEdit_7">
+                  <widget class="QPlainTextEdit" name="account_remark">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -2802,7 +2700,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="page_accountBook">
+         <widget class="QWidget" name="page_book">
           <layout class="QGridLayout" name="gridLayout_28">
            <property name="leftMargin">
             <number>5</number>
@@ -2856,7 +2754,7 @@
                <number>5</number>
               </property>
               <item row="0" column="0">
-               <widget class="QGroupBox" name="groupBox_17">
+               <widget class="QGroupBox" name="groupBox_book_left_dock">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -2889,7 +2787,7 @@
                   <number>0</number>
                  </property>
                  <item row="0" column="1">
-                  <widget class="QPushButton" name="pushButton_6">
+                  <widget class="QPushButton" name="book_down">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -2913,7 +2811,7 @@
                   </widget>
                  </item>
                  <item row="0" column="4">
-                  <widget class="QPushButton" name="pushButton_10">
+                  <widget class="QPushButton" name="book_add">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -2937,7 +2835,7 @@
                   </widget>
                  </item>
                  <item row="0" column="2">
-                  <widget class="QPushButton" name="pushButton_8">
+                  <widget class="QPushButton" name="book_up">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -2961,7 +2859,7 @@
                   </widget>
                  </item>
                  <item row="0" column="0">
-                  <widget class="QPushButton" name="pushButton_9">
+                  <widget class="QPushButton" name="book_top">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -3103,7 +3001,7 @@
                <number>5</number>
               </property>
               <item row="0" column="0">
-               <widget class="QGroupBox" name="groupBox_19">
+               <widget class="QGroupBox" name="groupBox_book_right_dock">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -3136,7 +3034,7 @@
                   <number>0</number>
                  </property>
                  <item row="0" column="0">
-                  <widget class="QPushButton" name="pushButton_13">
+                  <widget class="QPushButton" name="book_save">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -3160,7 +3058,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QPushButton" name="pushButton_4">
+                  <widget class="QPushButton" name="book_delete">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -3197,7 +3095,7 @@
                   </spacer>
                  </item>
                  <item row="0" column="3">
-                  <widget class="QPushButton" name="pushButton_7">
+                  <widget class="QPushButton" name="book_return">
                    <property name="minimumSize">
                     <size>
                      <width>55</width>
@@ -3224,7 +3122,7 @@
                </widget>
               </item>
               <item row="1" column="0">
-               <widget class="QStackedWidget" name="stackedWidget">
+               <widget class="QStackedWidget" name="stackedWidget_book">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -3238,9 +3136,9 @@
                  </size>
                 </property>
                 <property name="currentIndex">
-                 <number>0</number>
+                 <number>1</number>
                 </property>
-                <widget class="QWidget" name="page">
+                <widget class="QWidget" name="page_addBook">
                  <layout class="QGridLayout" name="gridLayout_25">
                   <property name="leftMargin">
                    <number>0</number>
@@ -3261,7 +3159,7 @@
                    <number>5</number>
                   </property>
                   <item row="2" column="0">
-                   <widget class="QPlainTextEdit" name="plainTextEdit">
+                   <widget class="QPlainTextEdit" name="book_newRemark">
                     <property name="font">
                      <font>
                       <pointsize>10</pointsize>
@@ -3288,7 +3186,7 @@
                    </widget>
                   </item>
                   <item row="0" column="0">
-                   <widget class="QLineEdit" name="lineEdit_2">
+                   <widget class="QLineEdit" name="book_newName">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -3316,7 +3214,7 @@
                   </item>
                  </layout>
                 </widget>
-                <widget class="QWidget" name="page_2">
+                <widget class="QWidget" name="page_bookInfo">
                  <layout class="QGridLayout" name="gridLayout_26">
                   <property name="leftMargin">
                    <number>0</number>
@@ -3394,7 +3292,7 @@
                       </widget>
                      </item>
                      <item row="0" column="4">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+                      <widget class="QDoubleSpinBox" name="book_totalExpend">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -3443,7 +3341,7 @@
                         <double>100.000000000000000</double>
                        </property>
                        <property name="value">
-                        <double>156750.000000000000000</double>
+                        <double>0.000000000000000</double>
                        </property>
                       </widget>
                      </item>
@@ -3464,7 +3362,7 @@
                       </spacer>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox">
+                      <widget class="QDoubleSpinBox" name="book_totalIncome">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -3513,7 +3411,7 @@
                         <double>100.000000000000000</double>
                        </property>
                        <property name="value">
-                        <double>99999999.989999994635582</double>
+                        <double>0.000000000000000</double>
                        </property>
                       </widget>
                      </item>
@@ -3602,7 +3500,7 @@
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLineEdit" name="lineEdit_3">
+                      <widget class="QLineEdit" name="book_name">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -3627,7 +3525,7 @@
                         <bool>false</bool>
                        </property>
                        <property name="readOnly">
-                        <bool>false</bool>
+                        <bool>true</bool>
                        </property>
                        <property name="placeholderText">
                         <string>账本名称</string>
@@ -3680,7 +3578,7 @@
                       </widget>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QPlainTextEdit" name="plainTextEdit_3">
+                      <widget class="QPlainTextEdit" name="book_remark">
                        <property name="font">
                         <font>
                          <pointsize>10</pointsize>
@@ -3695,6 +3593,9 @@
                        <property name="tabChangesFocus">
                         <bool>false</bool>
                        </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
                        <property name="plainText">
                         <string/>
                        </property>
@@ -3707,7 +3608,7 @@
                       </widget>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="label_13">
+                      <widget class="QLabel" name="book_info">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -3726,7 +3627,7 @@
                         </font>
                        </property>
                        <property name="text">
-                        <string>账本创建于2023/12/25，已记录&quot;999&quot;条账单。</string>
+                        <string/>
                        </property>
                       </widget>
                      </item>

@@ -25,6 +25,41 @@ AddWin::~AddWin()
     delete ui;
 }
 
+void AddWin::setAccount(const QString &text)
+{
+    ui->account->setCurrentText(text);
+}
+
+void AddWin::setAccountIn(const QString &text)
+{
+    ui->account_in->setCurrentText(text);
+}
+
+void AddWin::setFlowType(const QString &text)
+{
+    ui->flowType->setCurrentText(text);
+}
+
+void AddWin::setFirstClassify(const QString &text)
+{
+    ui->firstClassify->setCurrentText(text);
+}
+
+void AddWin::setSecondClassify(const QString &text)
+{
+    ui->secondClassify->setCurrentText(text);
+}
+
+void AddWin::setMoney(const qreal &money)
+{
+    ui->money->setValue(money);
+}
+
+void AddWin::setRemark(const QString &text)
+{
+    ui->remark->setPlainText(text);
+}
+
 void AddWin::initData()
 {
     QJsonArray accountArr = config->getJsonArray(Config::Type::Accounts);

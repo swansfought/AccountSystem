@@ -20,19 +20,10 @@ public:
     MainWin(QWidget *parent = nullptr);
     ~MainWin();
 
-private slots:
-    // dock栏按
-    void on_btn_record_clicked();
-    void on_btn_analysis_clicked();
-    void on_btn_borrowReturn_clicked();
-    void on_btn_asset_clicked();
-    void on_btn_accountBook_clicked();
-    void on_btn_classify_clicked();
-    void on_btn_setting_clicked();
-    void on_btn_addRecord_clicked();
 
 private:
     void initData();
+    void initSignalSlots();
     QToolButton* createBookItem(const Book& book);
 
     AddWin *addWin;//记账窗口

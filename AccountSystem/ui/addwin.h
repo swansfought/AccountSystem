@@ -22,6 +22,13 @@ public:
     explicit AddWin(QWidget *parent = nullptr);
     ~AddWin();
 
+    void setAccount(const QString& text);
+    void setAccountIn(const QString& text);
+    void setFlowType(const QString& text);
+    void setFirstClassify(const QString& text);
+    void setSecondClassify(const QString& text);
+    void setMoney(const qreal& money);
+    void setRemark(const QString& text);
 
 protected:
 //    void closeEvent(QCloseEvent *event);
