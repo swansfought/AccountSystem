@@ -7,35 +7,43 @@ MainWin::MainWin(QWidget *parent)
 {
     ui->setupUi(this);
 
-    config = Config::getInstance();
+    totalFund = 0;
+    totalIncome = 0;
+    totalExpend = 0;
     db = DataBase::getInstance();
-
-    // 添加记账窗口
     addWin = new AddWin(this);
-//    addWin->hide();
-//    connect(addWin,QMainWindow::)
+    config = Config::getInstance();
 
-    initData();//初始化数据
+    initWinData();//初始化数据
     initSignalSlots();
 }
 
 MainWin::~MainWin()
 {
+    db->disconnect();
     delete ui;
 }
 
-void MainWin::initData()
+void MainWin::initWinData()
 {
+    //dock栏
+    ui->dock_totalIncome_hide->setIcon(QIcon(":/img/show.png"));
+    ui->dock_totalExpend_hide->setIcon(QIcon(":/img/show.png"));
+    ui->dock_totalFund_hide->setIcon(QIcon(":/img/show.png"));
+
     //账本
     auto bookVec = db->queryAllBook();
     for (int i = 0; i < bookVec.size(); ++i) {
         auto toolBtn = createBookItem(bookVec.at(i));
-        ui->vLayout_book->insertWidget(i, static_cast<QWidget*>(toolBtn));
+        ui->vLayout_book->insertWidget(i, qobject_cast<QWidget*>(toolBtn));
     }
 
     //账户
-
-
+    auto accountVec = db->queryAllAccount();
+    for (int i = 0; i < accountVec.size(); ++i) {
+        auto toolBtn = createAccountItem(accountVec.at(i));
+        ui->vLayout_account->insertWidget(i, qobject_cast<QWidget*>(toolBtn));
+    }
 
     //收入分类
     QJsonArray inArr = config->getJsonArray(Config::Type::Income_Classify);
@@ -137,11 +145,44 @@ void MainWin::initData()
     //显隐设置
     ui->groupBox_book_left_dock->setVisible(false);
     ui->groupBox_book_right_dock->setVisible(false);
+    ui->groupBox_account_left_dock->setVisible(false);
+    ui->groupBox_account_right_dock->setVisible(false);
 
 }
 
 void MainWin::initSignalSlots()
 {
+    // dock栏
+    connect(ui->dock_totalIncome_hide,&QPushButton::clicked,this,[=](){
+        //显示
+        if(ui->dock_totalIncome_hide->isChecked()){
+            ui->dock_totalIncome_num->setText("*****");
+            ui->dock_totalIncome_hide->setIcon(QIcon(":/img/hide.png"));
+        }else{//隐藏
+            ui->dock_totalIncome_num->setText(QString::number(totalIncome,'f',2));
+            ui->dock_totalIncome_hide->setIcon(QIcon(":/img/show.png"));
+        }
+    });
+    connect(ui->dock_totalExpend_hide,&QPushButton::clicked,this,[=](){
+        //显示
+        if(ui->dock_totalExpend_hide->isChecked()){
+            ui->dock_totalExpend_num->setText("*****");
+            ui->dock_totalExpend_hide->setIcon(QIcon(":/img/hide.png"));
+        }else{//隐藏
+            ui->dock_totalExpend_num->setText(QString::number(totalExpend,'f',2));
+            ui->dock_totalExpend_hide->setIcon(QIcon(":/img/show.png"));
+        }
+    });
+    connect(ui->dock_totalFund_hide,&QPushButton::clicked,this,[=](){
+        //显示
+        if(ui->dock_totalFund_hide->isChecked()){
+            ui->dock_totalFund_num->setText("*****");
+            ui->dock_totalFund_hide->setIcon(QIcon(":/img/hide.png"));
+        }else{//隐藏
+            ui->dock_totalFund_num->setText(QString::number(totalFund,'f',2));
+            ui->dock_totalFund_hide->setIcon(QIcon(":/img/show.png"));
+        }
+    });
     connect(ui->dock_record,&QPushButton::clicked,this,[=](){
         ui->stackedWidget_dock->setCurrentWidget(ui->page_record);
     });
@@ -173,11 +214,50 @@ void MainWin::initSignalSlots()
     });
 
     // account - 账户
+    connect(ui->account_add,&QPushButton::clicked,this,[=](){
+        ui->account_delete->setVisible(false);
+        ui->account_return->setVisible(true);
+        ui->stackedWidget_account_name->setCurrentWidget(ui->page_account_newName);
+        //重置数据
+        ui->account_fund->setValue(0);
+        ui->account_nickname->clear();
+        ui->account_card->clear();
+        ui->account_remark->clear();
+        ui->account_enable->setChecked(true);
+    });
+    connect(ui->account_save,&QPushButton::clicked,this,[=](){
+        QString name = ui->account_newName->currentText();
+        QString nickname = ui->account_nickname->text();
+        qreal fund = ui->account_fund->value();
+        QString card = ui->account_card->text();
+        QString remark = ui->account_remark->toPlainText();
+        bool enable = false;
+        if(ui->account_enable->isChecked())
+            enable = true;
+//        if(!nickname.isEmpty() || !card.isEmpty() || !remark.isEmpty() )
+    });
+    connect(ui->account_delete,&QPushButton::clicked,this,[=](){
+        ;
+    });
+    connect(ui->account_return,&QPushButton::clicked,this,[=](){
+        //显隐
+        ui->account_delete->setVisible(true);
+        ui->account_return->setVisible(false);
+        ui->stackedWidget_account_name->setCurrentWidget(ui->page_account_name);
 
+        //还原数据
+        ui->account_name->setText(currAccount.getName());
+        ui->account_fund->setValue(currAccount.getFund());
+        ui->account_nickname->setText(currAccount.getNickname());
+        ui->account_card->setText(currAccount.getCardNumber());
+        ui->account_remark->setPlainText(currAccount.getRemark());
+        ui->account_enable->setChecked(currAccount.getEnable());
+    });
 
     // book - 账本
     connect(ui->book_add,&QPushButton::clicked,this,[=](){
         ui->book_delete->setVisible(false);
+        ui->book_return->setVisible(true);
         ui->stackedWidget_book->setCurrentWidget(ui->page_addBook);
     });
     connect(ui->book_save,&QPushButton::clicked,this,[=](){
@@ -188,10 +268,10 @@ void MainWin::initSignalSlots()
     });
     connect(ui->book_return,&QPushButton::clicked,this,[=](){
         ui->book_delete->setVisible(true);
+        ui->book_return->setVisible(false);
 //        QString name = ui->book_newName->text();
 //        QString remark = ui->book_newRemark->toPlainText();
         ui->stackedWidget_book->setCurrentWidget(ui->page_bookInfo);
-        //判断是否选择而隐藏dock
     });
 }
 
@@ -212,13 +292,13 @@ QToolButton* MainWin::createBookItem(const Book& book)
     toolBtn->setText(text);
     // 选择展示信息
     connect(toolBtn,&QToolButton::clicked,this,[=](){
-
-        if(!toolBtn->isChecked()){
-            ui->groupBox_book_left_dock->setVisible(false);
-            if(ui->page_addBook != ui->stackedWidget_book->currentWidget())
-                ui->groupBox_book_right_dock->setVisible(false);
+        currBook = book;
+        //前提是选择按钮互斥
+        if(!toolBtn->isChecked() && !bookIsChecked()){
+            toolBtn->setChecked(true);
             return;
         }
+        //数据
         ui->book_totalIncome->setValue(book.getTotalIncome());
         ui->book_totalExpend->setValue(book.getTotalExpend());
         ui->book_name->setText(book.getName());
@@ -226,8 +306,12 @@ QToolButton* MainWin::createBookItem(const Book& book)
                                                                    QString::number(book.getTotalRecord()));
         ui->book_info->setText(info);
 
+        //显隐
+        ui->book_return->setVisible(false);
         ui->groupBox_book_left_dock->setVisible(true);
         ui->groupBox_book_right_dock->setVisible(true);
+
+        //更改
         if(DEFAULT_BOOK == book.getName()){
             ui->book_name->setReadOnly(true);
             ui->book_remark->setReadOnly(true);
@@ -238,5 +322,71 @@ QToolButton* MainWin::createBookItem(const Book& book)
 
     });
     return toolBtn;
+}
+
+QToolButton *MainWin::createAccountItem(const Account &account)
+{
+    QToolButton *toolBtn = new QToolButton(this);
+    toolBtn->setMinimumSize(QSize(400,100));
+    toolBtn->setMaximumSize(QSize(400,100));
+    toolBtn->setIcon(QIcon(":/img/book.png"));
+    toolBtn->setIconSize(QSize(90,90));
+    toolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    toolBtn->setCheckable(true);
+    toolBtn->setAutoExclusive(true);
+
+    QString text = QString("%1\n现有资产%2元").arg(account.getName(),
+                                                   QString::number(account.getFund(),'f',2));
+    toolBtn->setText(text);
+    // 选择展示信息
+    connect(toolBtn,&QToolButton::clicked,this,[=](){
+        currAccount = account;
+        //前提是选择按钮互斥
+        if(!toolBtn->isChecked() && !accountIsChecked()){
+            toolBtn->setChecked(true);
+            return;
+        }
+        //数据
+        ui->account_name->setText(account.getName());
+        ui->account_fund->setValue(account.getFund());
+        ui->account_nickname->setText(account.getNickname());
+        ui->account_card->setText(account.getCardNumber());
+        ui->account_remark->setPlainText(account.getRemark());
+        ui->account_enable->setChecked(account.getEnable());
+
+        //显隐
+        ui->account_return->setVisible(false);
+        ui->groupBox_account_left_dock->setVisible(true);
+        ui->groupBox_account_right_dock->setVisible(true);
+    });
+    return toolBtn;
+}
+
+bool MainWin::bookIsChecked()
+{
+    int counts = ui->vLayout_book->count();
+    for (int i = 0; i < counts; ++i) {
+        QLayoutItem* item = ui->vLayout_book->itemAt(i);
+        if (item->widget() != nullptr && item->widget()->isWidgetType() && qobject_cast<QToolButton*>(item->widget())) {
+            QToolButton* toolBtn = qobject_cast<QToolButton*>(item->widget());
+            if(toolBtn->isChecked())
+                return true;
+        }
+    }
+    return false;
+}
+
+bool MainWin::accountIsChecked()
+{
+    int counts = ui->vLayout_account->count();
+    for (int i = 0; i < counts; ++i) {
+        QLayoutItem* item = ui->vLayout_account->itemAt(i);
+        if (item->widget() != nullptr && item->widget()->isWidgetType() && qobject_cast<QToolButton*>(item->widget())) {
+            QToolButton* toolBtn = qobject_cast<QToolButton*>(item->widget());
+            if(toolBtn->isChecked())
+                return true;
+        }
+    }
+    return false;
 }
 

@@ -3,7 +3,9 @@
         <file>img/balance.png</file>
         <file>img/income.png</file>
         <file>img/pay.png</file>
-        <file>img/totalAssets.png</file>
         <file>img/book.png</file>
+        <file>img/fund.png</file>
+        <file>img/show.png</file>
+        <file>img/hide.png</file>
     </qresource>
 </RCC>

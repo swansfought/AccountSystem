@@ -28,12 +28,16 @@ public:
     int getTotalRecord() const;
     void setTotalRecord(int newTotalRecord);
 
+    bool getEnable() const;
+    void setEnable(bool newEnable);
+
 private:
     QString name;
     qreal totalIncome;
     qreal totalExpend;
     int totalRecord;
     QString remark;
+    bool enable;
     QDateTime createTime;
 
 };

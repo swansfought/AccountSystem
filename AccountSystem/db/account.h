@@ -28,12 +28,16 @@ public:
     QDateTime getCreateTime() const;
     void setCreateTime(const QDateTime &newCreateTime);
 
+    bool getEnable() const;
+    void setEnable(bool newEnable);
+
 private:
     QString name;
     qreal fund;
     QString nickname;
     QString cardNumber;
     QString remark;
+    bool enable;
     QDateTime createTime;
 };
 

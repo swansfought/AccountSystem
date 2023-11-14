@@ -69,3 +69,13 @@ void Book::setTotalRecord(int newTotalRecord)
 {
     totalRecord = newTotalRecord;
 }
+
+bool Book::getEnable() const
+{
+    return enable;
+}
+
+void Book::setEnable(bool newEnable)
+{
+    enable = newEnable;
+}

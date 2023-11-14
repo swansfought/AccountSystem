@@ -13,7 +13,7 @@ DataBase *DataBase::getInstance()
     return instance;
 }
 
-bool DataBase::connectDB()
+bool DataBase::connect()
 {
     if(connectState)
         return connectState;
@@ -35,7 +35,12 @@ bool DataBase::connectDB()
                                 "act_nickname VARCHAR(20) DEFAULT NULL," // --账户别称
                                 "act_cardnumber VARCHAR(30) DEFAULT NULL," // --账户卡号
                                 "act_remark text DEFAULT NULL," // --账户备注
+                                "act_enable bool default 1,"
                                 "act_datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"; //--创建时间
+            query.exec(sql);
+
+            //添加默认账户
+            sql = QString("insert into account(act_name,act_datetime) values('默认账户(系统自带)','%1');").arg(QDateTime::currentDateTime().toString("yyyy年MM月dd日 hh:mm:ss"));
             query.exec(sql);
         }
         if(!tables.contains("book")){
@@ -45,11 +50,12 @@ bool DataBase::connectDB()
                                 "bok_totalincome REAL DEFAULT 0," // --共计收入
                                 "bok_totalexpend REAL DEFAULT 0," // --共计支出
                                 "bok_remark text DEFAULT NULL," // --账本备注
+                                "bok_enable bool default 1,"
                                 "bok_datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"; // --创建时间
             query.exec(sql);
 
             //添加默认账本
-            sql = QString("insert into book(bok_name,bok_datetime) values('%1','%2');").arg("默认账本(系统自带)",QDateTime::currentDateTime().toString("yyyy年MM月dd日 hh:mm:ss"));
+            sql = QString("insert into book(bok_name,bok_datetime) values('默认账本(系统自带)','%1');").arg(QDateTime::currentDateTime().toString("yyyy年MM月dd日 hh:mm:ss"));
             query.exec(sql);
         }
         if(!tables.contains("record")){
@@ -69,21 +75,47 @@ bool DataBase::connectDB()
                                 "FOREIGN KEY(bok_name) REFERENCES book(bok_name) ON DELETE CASCADE ON UPDATE CASCADE);"; //------级联删除&更新-------
             query.exec(sql);
         }
-        qDebug()<<"数据库连接成功...";
+        qDebug()<< QString("%1数据库连接成功...").arg(LOG_DATETIME);
     }else{
         connectState = false;
+        qDebug()<< QString("%1数据库连接失败...").arg(LOG_DATETIME);
     }
-
     return connectState;
+}
+
+void DataBase::disconnect()
+{
+    db.close();
+    qDebug()<< QString("%1数据库断开连接...").arg(LOG_DATETIME);
 }
 
 QVector<Account> DataBase::queryAllAccount()
 {
+    checkConnect(); //检查数据库连接
+    QVector<Account> vec;
 
+    Record record;
+    QSqlQuery query;
+    QString sql = "select * from account;";
+    if(query.exec(sql)){
+        while (query.next()) {
+            Account account;
+            account.setName(query.value("act_name").toString());
+            account.setFund(query.value("act_fund").toDouble());
+            account.setNickname(query.value("act_nickname").toString());
+            account.setCardNumber(query.value("act_cardnumber").toString());
+            account.setRemark(query.value("act_remark").toString());
+            account.setEnable(query.value("act_enable").toBool());
+            account.setCreateTime(query.value("act_datetime").toDateTime());
+            vec.append(account);
+        }
+    }
+    return vec;
 }
 
 QVector<Book> DataBase::queryAllBook()
 {
+    checkConnect(); //检查数据库连接
     QVector<Book> vec;
 
     Record record;
@@ -98,6 +130,7 @@ QVector<Book> DataBase::queryAllBook()
             book.setTotalIncome(query.value("bok_totalincome").toDouble());
             book.setTotalExpend(query.value("bok_totalexpend").toDouble());
             book.setRemark(query.value("bok_remark").toString());
+            book.setEnable(query.value("bok_enable").toBool());
             book.setCreateTime(query.value("bok_datetime").toDateTime());
 
             // 拿到该账本的总记录数
@@ -113,6 +146,7 @@ QVector<Book> DataBase::queryAllBook()
 
 QVector<Record> DataBase::queryAllRecord()
 {
+    checkConnect(); //检查数据库连接
 
 }
 
@@ -124,6 +158,12 @@ DataBase::DataBase()
         resPath.setPath(CURR_PATH);
         resPath.mkdir("resources");
     }
+    connect();
+}
 
-    connectDB();
+void DataBase::checkConnect()
+{
+    if(db.isOpen())
+        return;
+    connect();
 }

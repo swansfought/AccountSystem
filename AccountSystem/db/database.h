@@ -16,14 +16,14 @@
 #include "db/record.h"
 #include "db/account.h"
 #include "db/book.h"
-
 #include "global.h"
 
 class DataBase
 {
 public:
     static DataBase* getInstance();
-    bool connectDB();
+    bool connect();
+    void disconnect();
 
 //    QVector<Record> queryAccount();
 //    QVector<Record> queryBook();
@@ -39,9 +39,10 @@ private:
     DataBase(const DataBase&) = delete;
     DataBase& operator=(const DataBase&) = delete;
 
+    void checkConnect();
+
     static QMutex mutex;
     static DataBase* instance;
-
 
     bool connectState;
     QSqlDatabase db;

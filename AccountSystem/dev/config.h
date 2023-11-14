@@ -13,6 +13,7 @@
 #include <QDebug>
 
 #include "global.h"
+#include "global.h"
 
 class Config
 {

@@ -9,6 +9,7 @@
 
 #include "dev/config.h"
 #include "db/database.h"
+#include "global.h"
 
 namespace Ui {
 class AddWin;

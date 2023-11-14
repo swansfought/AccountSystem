@@ -53,26 +53,26 @@ public:
     QGridLayout *gridLayout_15;
     QWidget *widget_totalFund;
     QGridLayout *gridLayout_9;
-    QWidget *widget_7;
-    QGridLayout *gridLayout_8;
-    QPushButton *docck_totalFund_hide;
-    QSpacerItem *horizontalSpacer_2;
-    QLabel *label_15;
     QWidget *widget_6;
     QGridLayout *gridLayout_5;
     QLabel *label_3;
+    QWidget *widget_7;
+    QGridLayout *gridLayout_8;
+    QPushButton *dock_totalFund_hide;
+    QSpacerItem *horizontalSpacer_2;
+    QLabel *label_15;
     QLabel *dock_totalFund_num;
     QFrame *line_3;
     QWidget *widget_totalIncome;
     QGridLayout *gridLayout_10;
-    QWidget *widget_8;
-    QGridLayout *gridLayout_6;
-    QLabel *label_5;
     QWidget *widget_9;
     QGridLayout *gridLayout_11;
     QPushButton *dock_totalIncome_hide;
     QLabel *label_7;
     QSpacerItem *horizontalSpacer_3;
+    QWidget *widget_8;
+    QGridLayout *gridLayout_6;
+    QLabel *label_5;
     QLabel *dock_totalIncome_num;
     QFrame *line_4;
     QWidget *widget_totalExpend;
@@ -132,7 +132,7 @@ public:
     QGridLayout *gridLayout_56;
     QWidget *widget_24;
     QGridLayout *gridLayout_46;
-    QGroupBox *groupBox_25;
+    QGroupBox *groupBox_account_left_dock;
     QGridLayout *gridLayout_47;
     QPushButton *account_up;
     QPushButton *account_add;
@@ -147,7 +147,7 @@ public:
     QSpacerItem *verticalSpacer_3;
     QWidget *widget_21;
     QGridLayout *gridLayout_53;
-    QGroupBox *groupBox_24;
+    QGroupBox *groupBox_account_right_dock;
     QGridLayout *gridLayout_43;
     QSpacerItem *horizontalSpacer_22;
     QPushButton *account_save;
@@ -182,7 +182,7 @@ public:
     QWidget *widget_22;
     QGridLayout *gridLayout_40;
     QLabel *label_26;
-    QPushButton *pushButton_33;
+    QPushButton *account_enable;
     QSpacerItem *horizontalSpacer_6;
     QWidget *page_book;
     QGridLayout *gridLayout_28;
@@ -291,44 +291,13 @@ public:
         gridLayout_15->setContentsMargins(4, 0, 0, 0);
         widget_totalFund = new QWidget(widget_3);
         widget_totalFund->setObjectName(QString::fromUtf8("widget_totalFund"));
+        QFont font;
+        font.setPointSize(13);
+        widget_totalFund->setFont(font);
         gridLayout_9 = new QGridLayout(widget_totalFund);
         gridLayout_9->setSpacing(5);
         gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
         gridLayout_9->setContentsMargins(5, 5, 5, 5);
-        widget_7 = new QWidget(widget_totalFund);
-        widget_7->setObjectName(QString::fromUtf8("widget_7"));
-        widget_7->setMinimumSize(QSize(180, 30));
-        widget_7->setMaximumSize(QSize(180, 30));
-        gridLayout_8 = new QGridLayout(widget_7);
-        gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
-        gridLayout_8->setHorizontalSpacing(5);
-        gridLayout_8->setVerticalSpacing(0);
-        gridLayout_8->setContentsMargins(0, 0, 0, 0);
-        docck_totalFund_hide = new QPushButton(widget_7);
-        docck_totalFund_hide->setObjectName(QString::fromUtf8("docck_totalFund_hide"));
-        docck_totalFund_hide->setMinimumSize(QSize(30, 30));
-        docck_totalFund_hide->setMaximumSize(QSize(30, 30));
-
-        gridLayout_8->addWidget(docck_totalFund_hide, 0, 2, 1, 1);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_8->addItem(horizontalSpacer_2, 0, 3, 1, 1);
-
-        label_15 = new QLabel(widget_7);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setMinimumSize(QSize(0, 0));
-        label_15->setMaximumSize(QSize(16777215, 16777215));
-        QFont font;
-        font.setPointSize(11);
-        font.setBold(true);
-        label_15->setFont(font);
-
-        gridLayout_8->addWidget(label_15, 0, 1, 1, 1);
-
-
-        gridLayout_9->addWidget(widget_7, 0, 1, 1, 1);
-
         widget_6 = new QWidget(widget_totalFund);
         widget_6->setObjectName(QString::fromUtf8("widget_6"));
         widget_6->setMinimumSize(QSize(70, 70));
@@ -341,7 +310,7 @@ public:
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setMaximumSize(QSize(65, 65));
         label_3->setStyleSheet(QString::fromUtf8(""));
-        label_3->setPixmap(QPixmap(QString::fromUtf8(":/img/totalAssets.png")));
+        label_3->setPixmap(QPixmap(QString::fromUtf8(":/img/fund.png")));
         label_3->setScaledContents(true);
 
         gridLayout_5->addWidget(label_3, 0, 0, 1, 1);
@@ -349,15 +318,51 @@ public:
 
         gridLayout_9->addWidget(widget_6, 0, 0, 2, 1);
 
+        widget_7 = new QWidget(widget_totalFund);
+        widget_7->setObjectName(QString::fromUtf8("widget_7"));
+        widget_7->setMinimumSize(QSize(180, 30));
+        widget_7->setMaximumSize(QSize(180, 30));
+        gridLayout_8 = new QGridLayout(widget_7);
+        gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
+        gridLayout_8->setHorizontalSpacing(5);
+        gridLayout_8->setVerticalSpacing(0);
+        gridLayout_8->setContentsMargins(0, 0, 0, 0);
+        dock_totalFund_hide = new QPushButton(widget_7);
+        dock_totalFund_hide->setObjectName(QString::fromUtf8("dock_totalFund_hide"));
+        dock_totalFund_hide->setMinimumSize(QSize(30, 30));
+        dock_totalFund_hide->setMaximumSize(QSize(30, 30));
+        dock_totalFund_hide->setCheckable(true);
+        dock_totalFund_hide->setAutoExclusive(true);
+
+        gridLayout_8->addWidget(dock_totalFund_hide, 0, 2, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_8->addItem(horizontalSpacer_2, 0, 3, 1, 1);
+
+        label_15 = new QLabel(widget_7);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setMinimumSize(QSize(0, 0));
+        label_15->setMaximumSize(QSize(16777215, 16777215));
+        QFont font1;
+        font1.setPointSize(11);
+        font1.setBold(true);
+        label_15->setFont(font1);
+
+        gridLayout_8->addWidget(label_15, 0, 1, 1, 1);
+
+
+        gridLayout_9->addWidget(widget_7, 0, 1, 1, 1);
+
         dock_totalFund_num = new QLabel(widget_totalFund);
         dock_totalFund_num->setObjectName(QString::fromUtf8("dock_totalFund_num"));
         dock_totalFund_num->setMinimumSize(QSize(180, 30));
         dock_totalFund_num->setMaximumSize(QSize(180, 30));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font1.setPointSize(13);
-        font1.setBold(true);
-        dock_totalFund_num->setFont(font1);
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font2.setPointSize(13);
+        font2.setBold(true);
+        dock_totalFund_num->setFont(font2);
         dock_totalFund_num->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
 
         gridLayout_9->addWidget(dock_totalFund_num, 1, 1, 1, 1);
@@ -379,6 +384,39 @@ public:
         gridLayout_10 = new QGridLayout(widget_totalIncome);
         gridLayout_10->setObjectName(QString::fromUtf8("gridLayout_10"));
         gridLayout_10->setContentsMargins(-1, 5, -1, 5);
+        widget_9 = new QWidget(widget_totalIncome);
+        widget_9->setObjectName(QString::fromUtf8("widget_9"));
+        widget_9->setMinimumSize(QSize(180, 30));
+        widget_9->setMaximumSize(QSize(180, 30));
+        gridLayout_11 = new QGridLayout(widget_9);
+        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
+        gridLayout_11->setHorizontalSpacing(5);
+        gridLayout_11->setVerticalSpacing(0);
+        gridLayout_11->setContentsMargins(0, 0, 0, 0);
+        dock_totalIncome_hide = new QPushButton(widget_9);
+        dock_totalIncome_hide->setObjectName(QString::fromUtf8("dock_totalIncome_hide"));
+        dock_totalIncome_hide->setMinimumSize(QSize(30, 30));
+        dock_totalIncome_hide->setMaximumSize(QSize(30, 30));
+        dock_totalIncome_hide->setCheckable(true);
+        dock_totalIncome_hide->setAutoExclusive(true);
+
+        gridLayout_11->addWidget(dock_totalIncome_hide, 0, 2, 1, 1);
+
+        label_7 = new QLabel(widget_9);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setMinimumSize(QSize(0, 0));
+        label_7->setMaximumSize(QSize(16777215, 16777215));
+        label_7->setFont(font1);
+
+        gridLayout_11->addWidget(label_7, 0, 1, 1, 1);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_11->addItem(horizontalSpacer_3, 0, 3, 1, 1);
+
+
+        gridLayout_10->addWidget(widget_9, 0, 1, 1, 1);
+
         widget_8 = new QWidget(widget_totalIncome);
         widget_8->setObjectName(QString::fromUtf8("widget_8"));
         widget_8->setMinimumSize(QSize(70, 70));
@@ -399,42 +437,11 @@ public:
 
         gridLayout_10->addWidget(widget_8, 0, 0, 2, 1);
 
-        widget_9 = new QWidget(widget_totalIncome);
-        widget_9->setObjectName(QString::fromUtf8("widget_9"));
-        widget_9->setMinimumSize(QSize(180, 30));
-        widget_9->setMaximumSize(QSize(180, 30));
-        gridLayout_11 = new QGridLayout(widget_9);
-        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
-        gridLayout_11->setHorizontalSpacing(5);
-        gridLayout_11->setVerticalSpacing(0);
-        gridLayout_11->setContentsMargins(0, 0, 0, 0);
-        dock_totalIncome_hide = new QPushButton(widget_9);
-        dock_totalIncome_hide->setObjectName(QString::fromUtf8("dock_totalIncome_hide"));
-        dock_totalIncome_hide->setMinimumSize(QSize(30, 30));
-        dock_totalIncome_hide->setMaximumSize(QSize(30, 30));
-
-        gridLayout_11->addWidget(dock_totalIncome_hide, 0, 2, 1, 1);
-
-        label_7 = new QLabel(widget_9);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setMinimumSize(QSize(0, 0));
-        label_7->setMaximumSize(QSize(16777215, 16777215));
-        label_7->setFont(font);
-
-        gridLayout_11->addWidget(label_7, 0, 1, 1, 1);
-
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_11->addItem(horizontalSpacer_3, 0, 3, 1, 1);
-
-
-        gridLayout_10->addWidget(widget_9, 0, 1, 1, 1);
-
         dock_totalIncome_num = new QLabel(widget_totalIncome);
         dock_totalIncome_num->setObjectName(QString::fromUtf8("dock_totalIncome_num"));
         dock_totalIncome_num->setMinimumSize(QSize(180, 30));
         dock_totalIncome_num->setMaximumSize(QSize(180, 30));
-        dock_totalIncome_num->setFont(font1);
+        dock_totalIncome_num->setFont(font2);
         dock_totalIncome_num->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
 
         gridLayout_10->addWidget(dock_totalIncome_num, 1, 1, 1, 1);
@@ -469,7 +476,7 @@ public:
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setMinimumSize(QSize(0, 0));
         label_10->setMaximumSize(QSize(16777215, 16777215));
-        label_10->setFont(font);
+        label_10->setFont(font1);
 
         gridLayout_14->addWidget(label_10, 0, 1, 1, 1);
 
@@ -477,6 +484,8 @@ public:
         dock_totalExpend_hide->setObjectName(QString::fromUtf8("dock_totalExpend_hide"));
         dock_totalExpend_hide->setMinimumSize(QSize(30, 30));
         dock_totalExpend_hide->setMaximumSize(QSize(30, 30));
+        dock_totalExpend_hide->setCheckable(true);
+        dock_totalExpend_hide->setAutoExclusive(true);
 
         gridLayout_14->addWidget(dock_totalExpend_hide, 0, 2, 1, 1);
 
@@ -510,7 +519,7 @@ public:
         dock_totalExpend_num->setObjectName(QString::fromUtf8("dock_totalExpend_num"));
         dock_totalExpend_num->setMinimumSize(QSize(180, 30));
         dock_totalExpend_num->setMaximumSize(QSize(180, 30));
-        dock_totalExpend_num->setFont(font1);
+        dock_totalExpend_num->setFont(font2);
         dock_totalExpend_num->setStyleSheet(QString::fromUtf8("color: rgb(55, 146, 250);"));
 
         gridLayout_12->addWidget(dock_totalExpend_num, 1, 1, 1, 1);
@@ -551,10 +560,10 @@ public:
         dock_addRecord->setObjectName(QString::fromUtf8("dock_addRecord"));
         dock_addRecord->setMinimumSize(QSize(70, 70));
         dock_addRecord->setMaximumSize(QSize(70, 70));
-        QFont font2;
-        font2.setPointSize(10);
-        font2.setBold(false);
-        dock_addRecord->setFont(font2);
+        QFont font3;
+        font3.setPointSize(10);
+        font3.setBold(false);
+        dock_addRecord->setFont(font3);
         dock_addRecord->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout_4->addWidget(dock_addRecord, 0, 5, 1, 1);
@@ -574,10 +583,10 @@ public:
         dock_classify->setObjectName(QString::fromUtf8("dock_classify"));
         dock_classify->setMinimumSize(QSize(0, 60));
         dock_classify->setMaximumSize(QSize(16777215, 60));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font3.setPointSize(11);
-        dock_classify->setFont(font3);
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font4.setPointSize(11);
+        dock_classify->setFont(font4);
         dock_classify->setCheckable(true);
         dock_classify->setAutoExclusive(true);
 
@@ -587,7 +596,7 @@ public:
         dock_analysis->setObjectName(QString::fromUtf8("dock_analysis"));
         dock_analysis->setMinimumSize(QSize(0, 60));
         dock_analysis->setMaximumSize(QSize(16777215, 60));
-        dock_analysis->setFont(font3);
+        dock_analysis->setFont(font4);
         dock_analysis->setCheckable(true);
         dock_analysis->setAutoExclusive(true);
 
@@ -597,7 +606,7 @@ public:
         dock_borrowReturn->setObjectName(QString::fromUtf8("dock_borrowReturn"));
         dock_borrowReturn->setMinimumSize(QSize(0, 60));
         dock_borrowReturn->setMaximumSize(QSize(16777215, 60));
-        dock_borrowReturn->setFont(font3);
+        dock_borrowReturn->setFont(font4);
         dock_borrowReturn->setCheckable(true);
         dock_borrowReturn->setAutoExclusive(true);
 
@@ -607,7 +616,7 @@ public:
         dock_account->setObjectName(QString::fromUtf8("dock_account"));
         dock_account->setMinimumSize(QSize(0, 60));
         dock_account->setMaximumSize(QSize(16777215, 60));
-        dock_account->setFont(font3);
+        dock_account->setFont(font4);
         dock_account->setCheckable(true);
         dock_account->setAutoExclusive(true);
 
@@ -621,7 +630,7 @@ public:
         dock_record->setObjectName(QString::fromUtf8("dock_record"));
         dock_record->setMinimumSize(QSize(0, 60));
         dock_record->setMaximumSize(QSize(16777215, 60));
-        dock_record->setFont(font3);
+        dock_record->setFont(font4);
         dock_record->setCheckable(true);
         dock_record->setChecked(true);
         dock_record->setAutoExclusive(true);
@@ -632,7 +641,7 @@ public:
         dock_book->setObjectName(QString::fromUtf8("dock_book"));
         dock_book->setMinimumSize(QSize(0, 60));
         dock_book->setMaximumSize(QSize(16777215, 60));
-        dock_book->setFont(font3);
+        dock_book->setFont(font4);
         dock_book->setCheckable(true);
         dock_book->setAutoExclusive(true);
 
@@ -642,7 +651,7 @@ public:
         dock_setting->setObjectName(QString::fromUtf8("dock_setting"));
         dock_setting->setMinimumSize(QSize(0, 60));
         dock_setting->setMaximumSize(QSize(16777215, 60));
-        dock_setting->setFont(font3);
+        dock_setting->setFont(font4);
         dock_setting->setCheckable(true);
         dock_setting->setAutoExclusive(true);
 
@@ -721,9 +730,9 @@ public:
         record_date->setObjectName(QString::fromUtf8("record_date"));
         record_date->setMinimumSize(QSize(170, 35));
         record_date->setMaximumSize(QSize(170, 35));
-        QFont font4;
-        font4.setPointSize(10);
-        record_date->setFont(font4);
+        QFont font5;
+        font5.setPointSize(10);
+        record_date->setFont(font5);
         record_date->setCalendarPopup(true);
         record_date->setDate(QDate(2023, 11, 8));
 
@@ -742,9 +751,9 @@ public:
         record_reset->setObjectName(QString::fromUtf8("record_reset"));
         record_reset->setMinimumSize(QSize(55, 35));
         record_reset->setMaximumSize(QSize(55, 35));
-        QFont font5;
-        font5.setPointSize(9);
-        record_reset->setFont(font5);
+        QFont font6;
+        font6.setPointSize(9);
+        record_reset->setFont(font6);
 
         gridLayout_19->addWidget(record_reset, 0, 7, 1, 1);
 
@@ -752,7 +761,7 @@ public:
         record_input->setObjectName(QString::fromUtf8("record_input"));
         record_input->setMinimumSize(QSize(255, 35));
         record_input->setMaximumSize(QSize(255, 35));
-        record_input->setFont(font4);
+        record_input->setFont(font5);
 
         gridLayout_19->addWidget(record_input, 0, 1, 1, 1);
 
@@ -760,7 +769,7 @@ public:
         record_output->setObjectName(QString::fromUtf8("record_output"));
         record_output->setMinimumSize(QSize(55, 35));
         record_output->setMaximumSize(QSize(55, 35));
-        record_output->setFont(font5);
+        record_output->setFont(font6);
 
         gridLayout_19->addWidget(record_output, 0, 8, 1, 1);
 
@@ -772,7 +781,7 @@ public:
         record_filter->setObjectName(QString::fromUtf8("record_filter"));
         record_filter->setMinimumSize(QSize(105, 35));
         record_filter->setMaximumSize(QSize(105, 35));
-        record_filter->setFont(font4);
+        record_filter->setFont(font5);
 
         gridLayout_19->addWidget(record_filter, 0, 2, 1, 1);
 
@@ -784,7 +793,7 @@ public:
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setMinimumSize(QSize(0, 0));
         label_2->setMaximumSize(QSize(16777215, 16777215));
-        label_2->setFont(font4);
+        label_2->setFont(font5);
 
         gridLayout_19->addWidget(label_2, 0, 4, 1, 1);
 
@@ -810,9 +819,9 @@ public:
         classify_incomeTree->setObjectName(QString::fromUtf8("classify_incomeTree"));
         classify_incomeTree->setMinimumSize(QSize(400, 0));
         classify_incomeTree->setMaximumSize(QSize(400, 16777215));
-        QFont font6;
-        font6.setPointSize(11);
-        classify_incomeTree->setFont(font6);
+        QFont font7;
+        font7.setPointSize(11);
+        classify_incomeTree->setFont(font7);
 
         gridLayout_58->addWidget(classify_incomeTree, 0, 1, 1, 1);
 
@@ -823,7 +832,7 @@ public:
         classify_expendTree->setObjectName(QString::fromUtf8("classify_expendTree"));
         classify_expendTree->setMinimumSize(QSize(400, 0));
         classify_expendTree->setMaximumSize(QSize(400, 16777215));
-        classify_expendTree->setFont(font6);
+        classify_expendTree->setFont(font7);
 
         gridLayout_58->addWidget(classify_expendTree, 0, 0, 1, 1);
 
@@ -847,44 +856,44 @@ public:
         gridLayout_46->setHorizontalSpacing(0);
         gridLayout_46->setVerticalSpacing(5);
         gridLayout_46->setContentsMargins(0, 0, 0, 0);
-        groupBox_25 = new QGroupBox(widget_24);
-        groupBox_25->setObjectName(QString::fromUtf8("groupBox_25"));
-        groupBox_25->setMinimumSize(QSize(0, 48));
-        groupBox_25->setMaximumSize(QSize(16777215, 48));
-        gridLayout_47 = new QGridLayout(groupBox_25);
+        groupBox_account_left_dock = new QGroupBox(widget_24);
+        groupBox_account_left_dock->setObjectName(QString::fromUtf8("groupBox_account_left_dock"));
+        groupBox_account_left_dock->setMinimumSize(QSize(0, 48));
+        groupBox_account_left_dock->setMaximumSize(QSize(16777215, 48));
+        gridLayout_47 = new QGridLayout(groupBox_account_left_dock);
         gridLayout_47->setObjectName(QString::fromUtf8("gridLayout_47"));
         gridLayout_47->setHorizontalSpacing(4);
         gridLayout_47->setVerticalSpacing(0);
         gridLayout_47->setContentsMargins(4, 0, 4, 0);
-        account_up = new QPushButton(groupBox_25);
+        account_up = new QPushButton(groupBox_account_left_dock);
         account_up->setObjectName(QString::fromUtf8("account_up"));
         account_up->setMinimumSize(QSize(55, 35));
         account_up->setMaximumSize(QSize(55, 35));
-        account_up->setFont(font5);
+        account_up->setFont(font6);
 
         gridLayout_47->addWidget(account_up, 0, 1, 1, 1);
 
-        account_add = new QPushButton(groupBox_25);
+        account_add = new QPushButton(groupBox_account_left_dock);
         account_add->setObjectName(QString::fromUtf8("account_add"));
         account_add->setMinimumSize(QSize(55, 35));
         account_add->setMaximumSize(QSize(55, 35));
-        account_add->setFont(font5);
+        account_add->setFont(font6);
 
         gridLayout_47->addWidget(account_add, 0, 4, 1, 1);
 
-        account_down = new QPushButton(groupBox_25);
+        account_down = new QPushButton(groupBox_account_left_dock);
         account_down->setObjectName(QString::fromUtf8("account_down"));
         account_down->setMinimumSize(QSize(55, 35));
         account_down->setMaximumSize(QSize(55, 35));
-        account_down->setFont(font5);
+        account_down->setFont(font6);
 
         gridLayout_47->addWidget(account_down, 0, 2, 1, 1);
 
-        account_top = new QPushButton(groupBox_25);
+        account_top = new QPushButton(groupBox_account_left_dock);
         account_top->setObjectName(QString::fromUtf8("account_top"));
         account_top->setMinimumSize(QSize(55, 35));
         account_top->setMaximumSize(QSize(55, 35));
-        account_top->setFont(font5);
+        account_top->setFont(font6);
 
         gridLayout_47->addWidget(account_top, 0, 0, 1, 1);
 
@@ -893,7 +902,7 @@ public:
         gridLayout_47->addItem(horizontalSpacer_21, 0, 3, 1, 1);
 
 
-        gridLayout_46->addWidget(groupBox_25, 0, 0, 1, 1);
+        gridLayout_46->addWidget(groupBox_account_left_dock, 0, 0, 1, 1);
 
         scrollArea_3 = new QScrollArea(widget_24);
         scrollArea_3->setObjectName(QString::fromUtf8("scrollArea_3"));
@@ -916,7 +925,7 @@ public:
         toolButton_20->setObjectName(QString::fromUtf8("toolButton_20"));
         toolButton_20->setMinimumSize(QSize(400, 70));
         toolButton_20->setMaximumSize(QSize(400, 70));
-        toolButton_20->setFont(font4);
+        toolButton_20->setFont(font5);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/img/pay.png"), QSize(), QIcon::Normal, QIcon::Off);
         toolButton_20->setIcon(icon);
@@ -953,11 +962,11 @@ public:
         gridLayout_53->setHorizontalSpacing(0);
         gridLayout_53->setVerticalSpacing(5);
         gridLayout_53->setContentsMargins(0, 0, 0, 0);
-        groupBox_24 = new QGroupBox(widget_21);
-        groupBox_24->setObjectName(QString::fromUtf8("groupBox_24"));
-        groupBox_24->setMinimumSize(QSize(0, 48));
-        groupBox_24->setMaximumSize(QSize(16777215, 48));
-        gridLayout_43 = new QGridLayout(groupBox_24);
+        groupBox_account_right_dock = new QGroupBox(widget_21);
+        groupBox_account_right_dock->setObjectName(QString::fromUtf8("groupBox_account_right_dock"));
+        groupBox_account_right_dock->setMinimumSize(QSize(0, 48));
+        groupBox_account_right_dock->setMaximumSize(QSize(16777215, 48));
+        gridLayout_43 = new QGridLayout(groupBox_account_right_dock);
         gridLayout_43->setObjectName(QString::fromUtf8("gridLayout_43"));
         gridLayout_43->setHorizontalSpacing(4);
         gridLayout_43->setVerticalSpacing(0);
@@ -966,34 +975,34 @@ public:
 
         gridLayout_43->addItem(horizontalSpacer_22, 0, 5, 1, 1);
 
-        account_save = new QPushButton(groupBox_24);
+        account_save = new QPushButton(groupBox_account_right_dock);
         account_save->setObjectName(QString::fromUtf8("account_save"));
         account_save->setEnabled(true);
         account_save->setMinimumSize(QSize(55, 35));
         account_save->setMaximumSize(QSize(55, 35));
-        account_save->setFont(font5);
+        account_save->setFont(font6);
         account_save->setAutoDefault(false);
 
         gridLayout_43->addWidget(account_save, 0, 0, 1, 1);
 
-        account_delete = new QPushButton(groupBox_24);
+        account_delete = new QPushButton(groupBox_account_right_dock);
         account_delete->setObjectName(QString::fromUtf8("account_delete"));
         account_delete->setMinimumSize(QSize(55, 35));
         account_delete->setMaximumSize(QSize(55, 35));
-        account_delete->setFont(font5);
+        account_delete->setFont(font6);
 
         gridLayout_43->addWidget(account_delete, 0, 1, 1, 1);
 
-        account_return = new QPushButton(groupBox_24);
+        account_return = new QPushButton(groupBox_account_right_dock);
         account_return->setObjectName(QString::fromUtf8("account_return"));
         account_return->setMinimumSize(QSize(55, 35));
         account_return->setMaximumSize(QSize(55, 35));
-        account_return->setFont(font5);
+        account_return->setFont(font6);
 
         gridLayout_43->addWidget(account_return, 0, 6, 1, 1);
 
 
-        gridLayout_53->addWidget(groupBox_24, 0, 0, 1, 1);
+        gridLayout_53->addWidget(groupBox_account_right_dock, 0, 0, 1, 1);
 
         widget_25 = new QWidget(widget_21);
         widget_25->setObjectName(QString::fromUtf8("widget_25"));
@@ -1008,7 +1017,7 @@ public:
         label_23->setObjectName(QString::fromUtf8("label_23"));
         label_23->setMinimumSize(QSize(70, 35));
         label_23->setMaximumSize(QSize(70, 16777215));
-        label_23->setFont(font4);
+        label_23->setFont(font5);
 
         gridLayout_41->addWidget(label_23, 0, 0, 1, 1);
 
@@ -1033,7 +1042,7 @@ public:
         account_newName->setObjectName(QString::fromUtf8("account_newName"));
         account_newName->setMinimumSize(QSize(0, 35));
         account_newName->setMaximumSize(QSize(16777215, 35));
-        account_newName->setFont(font4);
+        account_newName->setFont(font5);
 
         gridLayout_54->addWidget(account_newName, 0, 0, 1, 1);
 
@@ -1048,7 +1057,7 @@ public:
         account_name->setObjectName(QString::fromUtf8("account_name"));
         account_name->setMinimumSize(QSize(0, 35));
         account_name->setMaximumSize(QSize(16777215, 35));
-        account_name->setFont(font4);
+        account_name->setFont(font5);
         account_name->setFrame(false);
         account_name->setReadOnly(false);
 
@@ -1074,7 +1083,7 @@ public:
         label_29->setObjectName(QString::fromUtf8("label_29"));
         label_29->setMinimumSize(QSize(70, 35));
         label_29->setMaximumSize(QSize(70, 35));
-        label_29->setFont(font4);
+        label_29->setFont(font5);
 
         gridLayout_49->addWidget(label_29, 0, 0, 1, 1);
 
@@ -1082,7 +1091,7 @@ public:
         account_fund->setObjectName(QString::fromUtf8("account_fund"));
         account_fund->setMinimumSize(QSize(0, 35));
         account_fund->setMaximumSize(QSize(16777215, 35));
-        account_fund->setFont(font4);
+        account_fund->setFont(font5);
         account_fund->setFrame(false);
         account_fund->setButtonSymbols(QAbstractSpinBox::NoButtons);
         account_fund->setProperty("showGroupSeparator", QVariant(true));
@@ -1107,7 +1116,7 @@ public:
         label_30->setObjectName(QString::fromUtf8("label_30"));
         label_30->setMinimumSize(QSize(70, 35));
         label_30->setMaximumSize(QSize(70, 16777215));
-        label_30->setFont(font4);
+        label_30->setFont(font5);
 
         gridLayout_51->addWidget(label_30, 0, 0, 1, 1);
 
@@ -1115,7 +1124,7 @@ public:
         account_nickname->setObjectName(QString::fromUtf8("account_nickname"));
         account_nickname->setMinimumSize(QSize(0, 35));
         account_nickname->setMaximumSize(QSize(16777215, 35));
-        account_nickname->setFont(font4);
+        account_nickname->setFont(font5);
         account_nickname->setFrame(false);
         account_nickname->setReadOnly(false);
 
@@ -1137,7 +1146,7 @@ public:
         label_28->setObjectName(QString::fromUtf8("label_28"));
         label_28->setMinimumSize(QSize(70, 35));
         label_28->setMaximumSize(QSize(70, 16777215));
-        label_28->setFont(font4);
+        label_28->setFont(font5);
 
         gridLayout_52->addWidget(label_28, 0, 0, 1, 1);
 
@@ -1145,7 +1154,7 @@ public:
         account_card->setObjectName(QString::fromUtf8("account_card"));
         account_card->setMinimumSize(QSize(0, 35));
         account_card->setMaximumSize(QSize(16777215, 35));
-        account_card->setFont(font4);
+        account_card->setFont(font5);
         account_card->setFrame(false);
         account_card->setReadOnly(false);
 
@@ -1164,13 +1173,13 @@ public:
         label_27->setObjectName(QString::fromUtf8("label_27"));
         label_27->setMinimumSize(QSize(0, 35));
         label_27->setMaximumSize(QSize(16777215, 35));
-        label_27->setFont(font4);
+        label_27->setFont(font5);
 
         gridLayout_45->addWidget(label_27, 0, 0, 1, 1);
 
         account_remark = new QPlainTextEdit(widget_23);
         account_remark->setObjectName(QString::fromUtf8("account_remark"));
-        account_remark->setFont(font4);
+        account_remark->setFont(font5);
         account_remark->setFrameShape(QFrame::NoFrame);
         account_remark->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         account_remark->setTabChangesFocus(false);
@@ -1193,16 +1202,17 @@ public:
         label_26->setObjectName(QString::fromUtf8("label_26"));
         label_26->setMinimumSize(QSize(0, 35));
         label_26->setMaximumSize(QSize(16777215, 35));
-        label_26->setFont(font4);
+        label_26->setFont(font5);
 
         gridLayout_40->addWidget(label_26, 0, 0, 1, 1);
 
-        pushButton_33 = new QPushButton(widget_22);
-        pushButton_33->setObjectName(QString::fromUtf8("pushButton_33"));
-        pushButton_33->setMinimumSize(QSize(70, 35));
-        pushButton_33->setMaximumSize(QSize(55, 35));
+        account_enable = new QPushButton(widget_22);
+        account_enable->setObjectName(QString::fromUtf8("account_enable"));
+        account_enable->setMinimumSize(QSize(70, 35));
+        account_enable->setMaximumSize(QSize(55, 35));
+        account_enable->setCheckable(true);
 
-        gridLayout_40->addWidget(pushButton_33, 0, 1, 1, 1);
+        gridLayout_40->addWidget(account_enable, 0, 1, 1, 1);
 
 
         gridLayout_53->addWidget(widget_22, 6, 0, 1, 1);
@@ -1244,7 +1254,7 @@ public:
         book_down->setObjectName(QString::fromUtf8("book_down"));
         book_down->setMinimumSize(QSize(55, 35));
         book_down->setMaximumSize(QSize(55, 35));
-        book_down->setFont(font5);
+        book_down->setFont(font6);
 
         gridLayout_21->addWidget(book_down, 0, 1, 1, 1);
 
@@ -1252,7 +1262,7 @@ public:
         book_add->setObjectName(QString::fromUtf8("book_add"));
         book_add->setMinimumSize(QSize(55, 35));
         book_add->setMaximumSize(QSize(55, 35));
-        book_add->setFont(font5);
+        book_add->setFont(font6);
 
         gridLayout_21->addWidget(book_add, 0, 4, 1, 1);
 
@@ -1260,7 +1270,7 @@ public:
         book_up->setObjectName(QString::fromUtf8("book_up"));
         book_up->setMinimumSize(QSize(55, 35));
         book_up->setMaximumSize(QSize(55, 35));
-        book_up->setFont(font5);
+        book_up->setFont(font6);
 
         gridLayout_21->addWidget(book_up, 0, 2, 1, 1);
 
@@ -1268,7 +1278,7 @@ public:
         book_top->setObjectName(QString::fromUtf8("book_top"));
         book_top->setMinimumSize(QSize(55, 35));
         book_top->setMaximumSize(QSize(55, 35));
-        book_top->setFont(font5);
+        book_top->setFont(font6);
 
         gridLayout_21->addWidget(book_top, 0, 0, 1, 1);
 
@@ -1288,7 +1298,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollArea_book = new QWidget();
         scrollArea_book->setObjectName(QString::fromUtf8("scrollArea_book"));
-        scrollArea_book->setGeometry(QRect(0, 0, 400, 521));
+        scrollArea_book->setGeometry(QRect(0, 0, 100, 30));
         gridLayout_22 = new QGridLayout(scrollArea_book);
         gridLayout_22->setSpacing(0);
         gridLayout_22->setObjectName(QString::fromUtf8("gridLayout_22"));
@@ -1332,7 +1342,7 @@ public:
         book_save->setObjectName(QString::fromUtf8("book_save"));
         book_save->setMinimumSize(QSize(55, 35));
         book_save->setMaximumSize(QSize(55, 35));
-        book_save->setFont(font5);
+        book_save->setFont(font6);
 
         gridLayout_23->addWidget(book_save, 0, 0, 1, 1);
 
@@ -1340,7 +1350,7 @@ public:
         book_delete->setObjectName(QString::fromUtf8("book_delete"));
         book_delete->setMinimumSize(QSize(55, 35));
         book_delete->setMaximumSize(QSize(55, 35));
-        book_delete->setFont(font5);
+        book_delete->setFont(font6);
 
         gridLayout_23->addWidget(book_delete, 0, 1, 1, 1);
 
@@ -1352,7 +1362,7 @@ public:
         book_return->setObjectName(QString::fromUtf8("book_return"));
         book_return->setMinimumSize(QSize(55, 35));
         book_return->setMaximumSize(QSize(55, 35));
-        book_return->setFont(font5);
+        book_return->setFont(font6);
 
         gridLayout_23->addWidget(book_return, 0, 3, 1, 1);
 
@@ -1372,7 +1382,7 @@ public:
         gridLayout_25->setContentsMargins(0, 0, 5, 0);
         book_newRemark = new QPlainTextEdit(page_addBook);
         book_newRemark->setObjectName(QString::fromUtf8("book_newRemark"));
-        book_newRemark->setFont(font4);
+        book_newRemark->setFont(font5);
         book_newRemark->setFrameShape(QFrame::NoFrame);
         book_newRemark->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         book_newRemark->setTabChangesFocus(false);
@@ -1384,7 +1394,7 @@ public:
         book_newName->setObjectName(QString::fromUtf8("book_newName"));
         book_newName->setMinimumSize(QSize(0, 35));
         book_newName->setMaximumSize(QSize(16777215, 35));
-        book_newName->setFont(font4);
+        book_newName->setFont(font5);
         book_newName->setFrame(false);
 
         gridLayout_25->addWidget(book_newName, 0, 0, 1, 1);
@@ -1410,14 +1420,14 @@ public:
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setMinimumSize(QSize(70, 35));
         label_16->setMaximumSize(QSize(70, 35));
-        label_16->setFont(font4);
+        label_16->setFont(font5);
 
         gridLayout_18->addWidget(label_16, 0, 3, 1, 1);
 
         book_totalExpend = new QDoubleSpinBox(widget_18);
         book_totalExpend->setObjectName(QString::fromUtf8("book_totalExpend"));
         book_totalExpend->setMinimumSize(QSize(0, 35));
-        book_totalExpend->setFont(font4);
+        book_totalExpend->setFont(font5);
         book_totalExpend->setWrapping(false);
         book_totalExpend->setFrame(false);
         book_totalExpend->setReadOnly(true);
@@ -1439,7 +1449,7 @@ public:
         book_totalIncome = new QDoubleSpinBox(widget_18);
         book_totalIncome->setObjectName(QString::fromUtf8("book_totalIncome"));
         book_totalIncome->setMinimumSize(QSize(0, 35));
-        book_totalIncome->setFont(font4);
+        book_totalIncome->setFont(font5);
         book_totalIncome->setWrapping(false);
         book_totalIncome->setFrame(false);
         book_totalIncome->setReadOnly(true);
@@ -1458,7 +1468,7 @@ public:
         label_18->setObjectName(QString::fromUtf8("label_18"));
         label_18->setMinimumSize(QSize(70, 35));
         label_18->setMaximumSize(QSize(70, 35));
-        label_18->setFont(font4);
+        label_18->setFont(font5);
 
         gridLayout_18->addWidget(label_18, 0, 0, 1, 1);
 
@@ -1478,7 +1488,7 @@ public:
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setMinimumSize(QSize(70, 35));
         label_14->setMaximumSize(QSize(70, 16777215));
-        label_14->setFont(font4);
+        label_14->setFont(font5);
 
         gridLayout_17->addWidget(label_14, 0, 0, 1, 1);
 
@@ -1486,7 +1496,7 @@ public:
         book_name->setObjectName(QString::fromUtf8("book_name"));
         book_name->setMinimumSize(QSize(0, 35));
         book_name->setMaximumSize(QSize(16777215, 35));
-        book_name->setFont(font4);
+        book_name->setFont(font5);
         book_name->setFrame(false);
         book_name->setReadOnly(true);
 
@@ -1505,13 +1515,13 @@ public:
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setMinimumSize(QSize(0, 35));
         label_12->setMaximumSize(QSize(16777215, 35));
-        label_12->setFont(font4);
+        label_12->setFont(font5);
 
         gridLayout_16->addWidget(label_12, 0, 0, 1, 1);
 
         book_remark = new QPlainTextEdit(widget_15);
         book_remark->setObjectName(QString::fromUtf8("book_remark"));
-        book_remark->setFont(font4);
+        book_remark->setFont(font5);
         book_remark->setFrameShape(QFrame::NoFrame);
         book_remark->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         book_remark->setTabChangesFocus(false);
@@ -1524,7 +1534,7 @@ public:
         book_info->setObjectName(QString::fromUtf8("book_info"));
         book_info->setMinimumSize(QSize(0, 35));
         book_info->setMaximumSize(QSize(16777215, 35));
-        book_info->setFont(font4);
+        book_info->setFont(font5);
 
         gridLayout_16->addWidget(book_info, 2, 0, 1, 1);
 
@@ -1583,13 +1593,13 @@ public:
     {
         MainWin->setWindowTitle(QCoreApplication::translate("MainWin", "MainWin", nullptr));
         label->setText(QCoreApplication::translate("MainWin", "\346\231\232\351\243\216\346\235\245\347\232\204\346\255\243\345\267\247", nullptr));
-        docck_totalFund_hide->setText(QString());
-        label_15->setText(QCoreApplication::translate("MainWin", "\346\200\273\350\265\204\344\272\247", nullptr));
         label_3->setText(QString());
+        dock_totalFund_hide->setText(QString());
+        label_15->setText(QCoreApplication::translate("MainWin", "\346\200\273\350\265\204\344\272\247", nullptr));
         dock_totalFund_num->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
-        label_5->setText(QString());
         dock_totalIncome_hide->setText(QString());
         label_7->setText(QCoreApplication::translate("MainWin", "\346\234\210\346\224\266\345\205\245", nullptr));
+        label_5->setText(QString());
         dock_totalIncome_num->setText(QCoreApplication::translate("MainWin", "0.00", nullptr));
         label_10->setText(QCoreApplication::translate("MainWin", "\346\234\210\346\224\257\345\207\272", nullptr));
         dock_totalExpend_hide->setText(QString());
@@ -1645,7 +1655,7 @@ public:
         account_remark->setPlainText(QString());
         account_remark->setPlaceholderText(QCoreApplication::translate("MainWin", "\347\256\200\350\246\201\346\217\217\350\277\260(\351\235\236\345\277\205\345\241\253)", nullptr));
         label_26->setText(QCoreApplication::translate("MainWin", "\346\230\257\345\220\246\350\256\241\345\205\245\346\200\273\350\265\204\344\272\247", nullptr));
-        pushButton_33->setText(QString());
+        account_enable->setText(QString());
         book_down->setText(QCoreApplication::translate("MainWin", "\344\270\212\347\247\273", nullptr));
         book_add->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
         book_up->setText(QCoreApplication::translate("MainWin", "\344\270\213\347\247\273", nullptr));

@@ -69,3 +69,13 @@ void Account::setCreateTime(const QDateTime &newCreateTime)
 {
     createTime = newCreateTime;
 }
+
+bool Account::getEnable() const
+{
+    return enable;
+}
+
+void Account::setEnable(bool newEnable)
+{
+    enable = newEnable;
+}
