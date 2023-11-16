@@ -296,11 +296,11 @@ E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.h
  mdp:D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h
-E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.h
 E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.h
-E:/code/qt/Widgets/AccountSystem/AccountSystem/db/database.h
+E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.h
 E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.h
 E:/code/qt/Widgets/AccountSystem/AccountSystem/db/record.h
+E:/code/qt/Widgets/AccountSystem/AccountSystem/db/database.h
 E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.cpp
  uic:ui_addwin.h
 E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.h
@@ -645,8 +645,8 @@ E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.h
  mdp:E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.h
  mdp:E:/code/qt/Widgets/AccountSystem/AccountSystem/global.h
  mdp:E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.h
-E:/code/qt/Widgets/AccountSystem/AccountSystem/global.h
 E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.cpp
+E:/code/qt/Widgets/AccountSystem/AccountSystem/global.h
 E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.h
  mmc:Q_OBJECT
  mdp:E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.h
@@ -986,8 +986,8 @@ E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.h
  mdp:E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.h
  mdp:E:/code/qt/Widgets/AccountSystem/AccountSystem/global.h
 E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.cpp
-E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.cpp
 E:/code/qt/Widgets/AccountSystem/AccountSystem/db/record.cpp
+E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.cpp
 E:/code/qt/Widgets/AccountSystem/AccountSystem/db/database.cpp
 E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.cpp
 E:/code/qt/Widgets/AccountSystem/AccountSystem/main.cpp

@@ -3,10 +3,13 @@
 
 #include <QMainWindow>
 #include <QToolButton>
+#include <QMessageBox>
 
 #include "ui/addwin.h"
 #include "dev/config.h"
 #include "db/database.h"
+#include "db/account.h"
+#include "db/book.h"
 #include "global.h"
 
 QT_BEGIN_NAMESPACE
@@ -29,6 +32,7 @@ private:
     QToolButton* createAccountItem(const Account& account);
     bool bookIsChecked();
     bool accountIsChecked();
+    void accountReadOnly(bool bol);
 
     qreal totalFund;
     qreal totalIncome;

@@ -147,6 +147,7 @@ void MainWin::initWinData()
     ui->groupBox_book_right_dock->setVisible(false);
     ui->groupBox_account_left_dock->setVisible(false);
     ui->groupBox_account_right_dock->setVisible(false);
+    ui->widget_account_enable->setVisible(false);
 
 }
 
@@ -215,26 +216,69 @@ void MainWin::initSignalSlots()
 
     // account - 账户
     connect(ui->account_add,&QPushButton::clicked,this,[=](){
-        ui->account_delete->setVisible(false);
-        ui->account_return->setVisible(true);
-        ui->stackedWidget_account_name->setCurrentWidget(ui->page_account_newName);
         //重置数据
+        accountReadOnly(false);
         ui->account_fund->setValue(0);
         ui->account_nickname->clear();
         ui->account_card->clear();
         ui->account_remark->clear();
         ui->account_enable->setChecked(true);
+
+        ui->account_delete->setVisible(false);
+        ui->account_return->setVisible(true);
+
+        ui->stackedWidget_account_name->setCurrentWidget(ui->page_account_newName);
     });
     connect(ui->account_save,&QPushButton::clicked,this,[=](){
-        QString name = ui->account_newName->currentText();
-        QString nickname = ui->account_nickname->text();
-        qreal fund = ui->account_fund->value();
-        QString card = ui->account_card->text();
-        QString remark = ui->account_remark->toPlainText();
-        bool enable = false;
-        if(ui->account_enable->isChecked())
-            enable = true;
-//        if(!nickname.isEmpty() || !card.isEmpty() || !remark.isEmpty() )
+        // 初始化数据
+        Account account;
+        account.setFund(ui->account_fund->value());
+        account.setNickname(ui->account_nickname->text());
+        account.setCardNumber(ui->account_card->text());
+        account.setRemark(ui->account_remark->toPlainText());
+        account.setEnable(ui->account_enable->isChecked());
+
+        //添加账户
+        if(ui->page_account_newName == ui->stackedWidget_account_name->currentWidget()){
+            QSqlQuery query;
+            QString sql = QString("select act_name from account where act_name='%1';").arg(ui->account_newName->currentText());
+            if(query.exec(sql) && query.next()){
+                QMessageBox::information(this,"账户添加","此账户已存在，无法再次添加！",QMessageBox::Ok);
+                return;
+            }
+
+            account.setName(ui->account_newName->currentText());
+            account.setCreateTime(QDateTime::currentDateTime());
+            if(db->insertAccount(account)){
+                //插入到末尾
+                auto item = createAccountItem(account);//
+                int index = ui->vLayout_account->count() - 1;
+                ui->vLayout_account->insertWidget(index, qobject_cast<QWidget*>(item));
+
+                //提示窗口
+                QMessageBox::information(this,"账户添加","账户添加成功！",QMessageBox::Ok);
+
+                //重置数据
+                accountReadOnly(false);
+                ui->account_fund->setValue(0);
+                ui->account_nickname->clear();
+                ui->account_card->clear();
+                ui->account_remark->clear();
+                ui->account_enable->setChecked(true);
+            }else{
+                QMessageBox::information(this,"账户添加","账户添加失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
+            }
+        }else{ //更改账户信息
+            if(ui->account_name->text().isEmpty()){
+                QMessageBox::information(this,"账户更新","账户名称为空，无法更新账户信息！",QMessageBox::Ok);
+                return;
+            }
+            account.setName(ui->account_name->text());
+            if(db->updateAccount(account))
+                QMessageBox::information(this,"账户更新","账户更新成功！",QMessageBox::Ok);
+            else
+                QMessageBox::information(this,"账户更新","账户更新失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
+        }
     });
     connect(ui->account_delete,&QPushButton::clicked,this,[=](){
         ;
@@ -243,6 +287,7 @@ void MainWin::initSignalSlots()
         //显隐
         ui->account_delete->setVisible(true);
         ui->account_return->setVisible(false);
+        ui->widget_account_enable->setVisible(true);
         ui->stackedWidget_account_name->setCurrentWidget(ui->page_account_name);
 
         //还原数据
@@ -256,12 +301,61 @@ void MainWin::initSignalSlots()
 
     // book - 账本
     connect(ui->book_add,&QPushButton::clicked,this,[=](){
+        //重置数据
+        ui->book_newName->clear();
+        ui->book_newRemark->clear();
+
         ui->book_delete->setVisible(false);
         ui->book_return->setVisible(true);
         ui->stackedWidget_book->setCurrentWidget(ui->page_addBook);
     });
     connect(ui->book_save,&QPushButton::clicked,this,[=](){
-        ;
+        //添加账本
+        if(ui->page_addBook == ui->stackedWidget_book->currentWidget()){
+            QSqlQuery query;
+            QString sql = QString("select bok_name from book where bok_name='%1';").arg(ui->book_newName->text());
+            if(query.exec(sql) && query.next()){
+                QMessageBox::information(this,"账本添加","此账本已存在，无法再次添加！",QMessageBox::Ok);
+                return;
+            }
+
+            // 初始化数据
+            Book book;
+            book.setName(ui->book_newName->text());
+            book.setRemark(ui->book_newRemark->toPlainText());
+            book.setCreateTime(QDateTime::currentDateTime());
+            if(db->insertBook(book)){
+                //插入到末尾
+                auto item = createBookItem(book);//
+                int index = ui->vLayout_book->count() - 1;
+                ui->vLayout_book->insertWidget(index, qobject_cast<QWidget*>(item));
+
+                //提示窗口
+                QMessageBox::information(this,"账户添加","账户添加成功！",QMessageBox::Ok);
+
+                //重置数据
+                ui->book_newName->clear();
+                ui->book_newRemark->clear();
+            }else{
+                QMessageBox::information(this,"账本添加","账本添加失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
+            }
+        }else{ //更改账户信息
+            if(ui->book_name->text().isEmpty()){
+                QMessageBox::information(this,"账本更新","账本名称为空，无法更新账本信息！",QMessageBox::Ok);
+                return;
+            }
+
+            // 初始化数据
+            Book book;
+            book.setTotalIncome(ui->book_totalIncome->value());
+            book.setTotalExpend(ui->book_totalExpend->value());
+            book.setName(ui->book_name->text());
+            book.setRemark(ui->book_remark->toPlainText());
+            if(db->updateBook(book))
+                QMessageBox::information(this,"账本更新","账本更新成功！",QMessageBox::Ok);
+            else
+                QMessageBox::information(this,"账本更新","账本更新失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
+        }
     });
     connect(ui->book_delete,&QPushButton::clicked,this,[=](){
         ;
@@ -281,7 +375,7 @@ QToolButton* MainWin::createBookItem(const Book& book)
     toolBtn->setMinimumSize(QSize(400,100));
     toolBtn->setMaximumSize(QSize(400,100));
     toolBtn->setIcon(QIcon(":/img/book.png"));
-    toolBtn->setIconSize(QSize(90,90));
+    toolBtn->setIconSize(QSize(85,85));
     toolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     toolBtn->setCheckable(true);
     toolBtn->setAutoExclusive(true);
@@ -302,22 +396,29 @@ QToolButton* MainWin::createBookItem(const Book& book)
         ui->book_totalIncome->setValue(book.getTotalIncome());
         ui->book_totalExpend->setValue(book.getTotalExpend());
         ui->book_name->setText(book.getName());
+        ui->book_remark->setPlainText(book.getRemark());
         QString info = QString("账本创建于%1，已记录“%2”条账单。").arg(book.getCreateTime().toString("yyyy年MM月dd日"),
                                                                    QString::number(book.getTotalRecord()));
         ui->book_info->setText(info);
 
         //显隐
         ui->book_return->setVisible(false);
+        ui->book_delete->setVisible(true);
         ui->groupBox_book_left_dock->setVisible(true);
         ui->groupBox_book_right_dock->setVisible(true);
+        ui->stackedWidget_book->setCurrentWidget(ui->page_bookInfo);
 
         //更改
         if(DEFAULT_BOOK == book.getName()){
             ui->book_name->setReadOnly(true);
             ui->book_remark->setReadOnly(true);
+            ui->book_totalIncome->setReadOnly(true);
+            ui->book_totalExpend->setReadOnly(true);
         }else{
             ui->book_name->setReadOnly(false);
             ui->book_remark->setReadOnly(false);
+            ui->book_totalIncome->setReadOnly(false);
+            ui->book_totalExpend->setReadOnly(false);
         }
 
     });
@@ -327,10 +428,10 @@ QToolButton* MainWin::createBookItem(const Book& book)
 QToolButton *MainWin::createAccountItem(const Account &account)
 {
     QToolButton *toolBtn = new QToolButton(this);
-    toolBtn->setMinimumSize(QSize(400,100));
-    toolBtn->setMaximumSize(QSize(400,100));
-    toolBtn->setIcon(QIcon(":/img/book.png"));
-    toolBtn->setIconSize(QSize(90,90));
+    toolBtn->setMinimumSize(QSize(400,70));
+    toolBtn->setMaximumSize(QSize(400,70));
+    toolBtn->setIcon(QIcon(":/img/account.png"));
+    toolBtn->setIconSize(QSize(55,55));
     toolBtn->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     toolBtn->setCheckable(true);
     toolBtn->setAutoExclusive(true);
@@ -356,8 +457,18 @@ QToolButton *MainWin::createAccountItem(const Account &account)
 
         //显隐
         ui->account_return->setVisible(false);
+        ui->account_delete->setVisible(true);
         ui->groupBox_account_left_dock->setVisible(true);
         ui->groupBox_account_right_dock->setVisible(true);
+        ui->stackedWidget_account_name->setCurrentWidget(ui->page_account_name);
+
+        //更改
+        if(DEFAULT_ACCOUNT == account.getName())
+            accountReadOnly(true);
+        else
+            accountReadOnly(false);
+
+
     });
     return toolBtn;
 }
@@ -388,5 +499,15 @@ bool MainWin::accountIsChecked()
         }
     }
     return false;
+}
+
+void MainWin::accountReadOnly(bool bol)
+{
+    ui->account_name->setReadOnly(bol);
+    ui->account_fund->setReadOnly(bol);
+    ui->account_nickname->setReadOnly(bol);
+    ui->account_card->setReadOnly(bol);
+    ui->account_remark->setReadOnly(bol);
+    ui->widget_account_enable->setVisible(!bol);
 }
 

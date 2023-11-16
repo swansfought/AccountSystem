@@ -248,7 +248,7 @@ build AccountSystem_autogen/timestamp AccountSystem_autogen/mocs_compilation.cpp
 #############################################
 # Custom command for AccountSystem_autogen\EWIEGA46WW\qrc_res.cpp
 
-build AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp | ${cmake_ninja_workdir}AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp: CUSTOM_COMMAND E$:/code/qt/Widgets/AccountSystem/AccountSystem/res.qrc CMakeFiles/AccountSystem_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/show.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/book.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/balance.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/income.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/pay.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/fund.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/hide.png D$:/software/Qt/5.15.2/mingw81_64/bin/rcc.exe || AccountSystem_autogen AccountSystem_autogen_timestamp_deps
+build AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp | ${cmake_ninja_workdir}AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp: CUSTOM_COMMAND E$:/code/qt/Widgets/AccountSystem/AccountSystem/res.qrc CMakeFiles/AccountSystem_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/show.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/account.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/book.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/balance.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/income.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/pay.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/fund.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/hide.png D$:/software/Qt/5.15.2/mingw81_64/bin/rcc.exe || AccountSystem_autogen AccountSystem_autogen_timestamp_deps
   COMMAND = cmd.exe /C "cd /D E:\code\qt\Widgets\AccountSystem\build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug && D:\software\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/CMakeFiles/AccountSystem_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json Debug"
   DESC = Automatic RCC for res.qrc
   restat = 1
@@ -257,7 +257,7 @@ build AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp | ${cmake_ninja_workdir}Accou
 #############################################
 # Phony custom command for CMakeFiles\AccountSystem_autogen_timestamp_deps
 
-build CMakeFiles/AccountSystem_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/AccountSystem_autogen_timestamp_deps: phony D$:/software/Qt/5.15.2/mingw81_64/bin/uic.exe D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Sql.a D$:/software/Qt/5.15.2/mingw81_64/bin/moc.exe
+build CMakeFiles/AccountSystem_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/AccountSystem_autogen_timestamp_deps: phony D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Sql.a D$:/software/Qt/5.15.2/mingw81_64/bin/moc.exe D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a D$:/software/Qt/5.15.2/mingw81_64/bin/uic.exe
 
 
 #############################################

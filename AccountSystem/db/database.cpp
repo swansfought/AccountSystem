@@ -36,11 +36,11 @@ bool DataBase::connect()
                                 "act_cardnumber VARCHAR(30) DEFAULT NULL," // --账户卡号
                                 "act_remark text DEFAULT NULL," // --账户备注
                                 "act_enable bool default 1,"
-                                "act_datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"; //--创建时间
+                                "act_datetime DATETIME DEFAULT (datetime('now','localtime')) );"; //--创建时间
             query.exec(sql);
 
             //添加默认账户
-            sql = QString("insert into account(act_name,act_datetime) values('默认账户(系统自带)','%1');").arg(QDateTime::currentDateTime().toString("yyyy年MM月dd日 hh:mm:ss"));
+            sql = "insert into account(act_name,act_remark) values('默认账户(系统自带)','此账户为系统自带的账户。');";
             query.exec(sql);
         }
         if(!tables.contains("book")){
@@ -51,11 +51,11 @@ bool DataBase::connect()
                                 "bok_totalexpend REAL DEFAULT 0," // --共计支出
                                 "bok_remark text DEFAULT NULL," // --账本备注
                                 "bok_enable bool default 1,"
-                                "bok_datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"; // --创建时间
+                                "bok_datetime DATETIME DEFAULT (datetime('now','localtime')) );"; // --创建时间
             query.exec(sql);
 
             //添加默认账本
-            sql = QString("insert into book(bok_name,bok_datetime) values('默认账本(系统自带)','%1');").arg(QDateTime::currentDateTime().toString("yyyy年MM月dd日 hh:mm:ss"));
+            sql = "insert into book(bok_name,bok_remark) values('默认账本(系统自带)','此账本为系统自带的账本。');";
             query.exec(sql);
         }
         if(!tables.contains("record")){
@@ -63,7 +63,7 @@ bool DataBase::connect()
                                 "id INTEGER PRIMARY KEY AUTOINCREMENT," //
                                 "act_name VARCHAR(20) NOT NULL," // ------账户名称------
                                 "bok_name VARCHAR(20) NOT NULL," // ------账本名称-----
-                                "red_datetime TIMESTAMP NOT NULL," // --记账日期
+                                "red_datetime DATETIME NOT NULL," // --记账日期
                                 "red_flowType VARCHAR(10) NOT NULL," // --收支流向
                                 "red_first_classify VARCHAR(10) NOT NULL," // --一级分类
                                 "red_second_classify VARCHAR(10) NOT NULL," // --二级分类
@@ -137,6 +137,8 @@ QVector<Book> DataBase::queryAllBook()
             subSql = QString("select count (*) from record where bok_name='%1';").arg(query.value("bok_name").toString());
             if(subQuery.exec(subSql) && subQuery.next()){
                 book.setTotalRecord(subQuery.value(0).toInt());
+            }else{
+                book.setTotalRecord(0);
             }
             vec.append(book);
         }
@@ -147,6 +149,90 @@ QVector<Book> DataBase::queryAllBook()
 QVector<Record> DataBase::queryAllRecord()
 {
     checkConnect(); //检查数据库连接
+
+}
+
+Account DataBase::queryAccount(const QString &name)
+{
+    Account account;
+
+    QSqlQuery query;
+    QString sql = QString("select * from account where act_name='%1';").arg(name);
+    if(query.exec(sql) && query.next()){
+        account.setName(query.value("act_name").toString());
+        account.setFund(query.value("act_fund").toDouble());
+        account.setNickname(query.value("act_nickname").toString());
+        account.setCardNumber(query.value("act_cardnumber").toString());
+        account.setRemark(query.value("act_remark").toString());
+        account.setEnable(query.value("act_enable").toBool());
+        account.setCreateTime(query.value("act_datetime").toDateTime());
+    }
+    return account;
+}
+
+Book DataBase::queryBook(const QString &name)
+{
+    Book book;
+
+    QSqlQuery query,subQuery;
+    QString sql = QString("select * from book where bok_name='%1';").arg(name);
+    if(query.exec(sql) && query.next()){
+        book.setName(query.value("bok_name").toString());
+        book.setTotalIncome(query.value("bok_totalincome").toDouble());
+        book.setTotalExpend(query.value("bok_totalexpend").toDouble());
+        book.setRemark(query.value("bok_remark").toString());
+        book.setEnable(query.value("bok_enable").toBool());
+        book.setCreateTime(query.value("bok_datetime").toDateTime());
+
+        // 拿到该账本的总记录数
+        QString subSql = QString("select count (*) from record where bok_name='%1';").arg(query.value("bok_name").toString());
+        if(subQuery.exec(subSql) && subQuery.next()){
+            book.setTotalRecord(subQuery.value(0).toInt());
+        }else{
+            book.setTotalRecord(0);
+        }
+    }
+    return book;
+}
+
+Record DataBase::queryRecord(const QString &name)
+{
+
+}
+
+bool DataBase::insertAccount(const Account &account)
+{
+    QString sql = QString("insert into account(act_name,act_fund,act_nickname,act_cardnumber,act_remark,act_enable) "
+                          "values('%1',%2,'%3','%4','%5',%6);").arg(account.getName(),
+                                                                    QString::number(account.getFund(),'f',2),
+                                                                    account.getNickname(),
+                                                                    account.getCardNumber(),
+                                                                    account.getRemark(),
+                                                                    QString::number(account.getEnable()));
+//    qDebug()<<sql;
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+
+}
+
+bool DataBase::updateAccount(const Account &account)
+{
+
+}
+
+bool DataBase::insertBook(const Book &book)
+{
+    QString sql = QString("insert into book(bok_name,bok_remark) values('%1','%2');").arg(book.getName(),book.getRemark());
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::updateBook(const Book &book)
+{
 
 }
 

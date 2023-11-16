@@ -7,5 +7,6 @@
         <file>img/fund.png</file>
         <file>img/show.png</file>
         <file>img/hide.png</file>
+        <file>img/account.png</file>
     </qresource>
 </RCC>

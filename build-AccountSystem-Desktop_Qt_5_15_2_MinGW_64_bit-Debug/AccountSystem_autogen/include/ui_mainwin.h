@@ -11,7 +11,6 @@
 
 #include <QtCore/QDate>
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
@@ -29,7 +28,6 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolButton>
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -143,7 +141,6 @@ public:
     QWidget *scrollAreaWidgetContents_3;
     QGridLayout *gridLayout_48;
     QVBoxLayout *vLayout_account;
-    QToolButton *toolButton_20;
     QSpacerItem *verticalSpacer_3;
     QWidget *widget_21;
     QGridLayout *gridLayout_53;
@@ -179,7 +176,7 @@ public:
     QGridLayout *gridLayout_45;
     QLabel *label_27;
     QPlainTextEdit *account_remark;
-    QWidget *widget_22;
+    QWidget *widget_account_enable;
     QGridLayout *gridLayout_40;
     QLabel *label_26;
     QPushButton *account_enable;
@@ -913,7 +910,7 @@ public:
         scrollArea_3->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 402, 521));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 400, 521));
         gridLayout_48 = new QGridLayout(scrollAreaWidgetContents_3);
         gridLayout_48->setSpacing(0);
         gridLayout_48->setObjectName(QString::fromUtf8("gridLayout_48"));
@@ -921,24 +918,6 @@ public:
         vLayout_account = new QVBoxLayout();
         vLayout_account->setSpacing(5);
         vLayout_account->setObjectName(QString::fromUtf8("vLayout_account"));
-        toolButton_20 = new QToolButton(scrollAreaWidgetContents_3);
-        toolButton_20->setObjectName(QString::fromUtf8("toolButton_20"));
-        toolButton_20->setMinimumSize(QSize(400, 70));
-        toolButton_20->setMaximumSize(QSize(400, 70));
-        toolButton_20->setFont(font5);
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/img/pay.png"), QSize(), QIcon::Normal, QIcon::Off);
-        toolButton_20->setIcon(icon);
-        toolButton_20->setIconSize(QSize(50, 50));
-        toolButton_20->setCheckable(true);
-        toolButton_20->setAutoRepeat(false);
-        toolButton_20->setAutoExclusive(true);
-        toolButton_20->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        toolButton_20->setAutoRaise(false);
-        toolButton_20->setArrowType(Qt::NoArrow);
-
-        vLayout_account->addWidget(toolButton_20);
-
         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         vLayout_account->addItem(verticalSpacer_3);
@@ -1190,15 +1169,15 @@ public:
 
         gridLayout_53->addWidget(widget_23, 5, 0, 1, 1);
 
-        widget_22 = new QWidget(widget_21);
-        widget_22->setObjectName(QString::fromUtf8("widget_22"));
-        widget_22->setMinimumSize(QSize(0, 35));
-        widget_22->setMaximumSize(QSize(16777215, 35));
-        gridLayout_40 = new QGridLayout(widget_22);
+        widget_account_enable = new QWidget(widget_21);
+        widget_account_enable->setObjectName(QString::fromUtf8("widget_account_enable"));
+        widget_account_enable->setMinimumSize(QSize(0, 35));
+        widget_account_enable->setMaximumSize(QSize(16777215, 35));
+        gridLayout_40 = new QGridLayout(widget_account_enable);
         gridLayout_40->setSpacing(0);
         gridLayout_40->setObjectName(QString::fromUtf8("gridLayout_40"));
         gridLayout_40->setContentsMargins(0, 0, 0, 0);
-        label_26 = new QLabel(widget_22);
+        label_26 = new QLabel(widget_account_enable);
         label_26->setObjectName(QString::fromUtf8("label_26"));
         label_26->setMinimumSize(QSize(0, 35));
         label_26->setMaximumSize(QSize(16777215, 35));
@@ -1206,7 +1185,7 @@ public:
 
         gridLayout_40->addWidget(label_26, 0, 0, 1, 1);
 
-        account_enable = new QPushButton(widget_22);
+        account_enable = new QPushButton(widget_account_enable);
         account_enable->setObjectName(QString::fromUtf8("account_enable"));
         account_enable->setMinimumSize(QSize(70, 35));
         account_enable->setMaximumSize(QSize(55, 35));
@@ -1215,7 +1194,7 @@ public:
         gridLayout_40->addWidget(account_enable, 0, 1, 1, 1);
 
 
-        gridLayout_53->addWidget(widget_22, 6, 0, 1, 1);
+        gridLayout_53->addWidget(widget_account_enable, 6, 0, 1, 1);
 
 
         gridLayout_56->addWidget(widget_21, 0, 1, 1, 1);
@@ -1298,7 +1277,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollArea_book = new QWidget();
         scrollArea_book->setObjectName(QString::fromUtf8("scrollArea_book"));
-        scrollArea_book->setGeometry(QRect(0, 0, 100, 30));
+        scrollArea_book->setGeometry(QRect(0, 0, 400, 521));
         gridLayout_22 = new QGridLayout(scrollArea_book);
         gridLayout_22->setSpacing(0);
         gridLayout_22->setObjectName(QString::fromUtf8("gridLayout_22"));
@@ -1627,8 +1606,6 @@ public:
         account_add->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
         account_down->setText(QCoreApplication::translate("MainWin", "\344\270\213\347\247\273", nullptr));
         account_top->setText(QCoreApplication::translate("MainWin", "\347\275\256\351\241\266", nullptr));
-        toolButton_20->setText(QCoreApplication::translate("MainWin", "\360\237\223\214 \346\224\257\344\273\230\345\256\235\n"
-"\347\216\260\346\234\211\350\265\204\344\272\2475000.00\345\205\203", nullptr));
         account_save->setText(QCoreApplication::translate("MainWin", "\344\277\235\345\255\230", nullptr));
         account_delete->setText(QCoreApplication::translate("MainWin", "\345\210\240\351\231\244", nullptr));
         account_return->setText(QCoreApplication::translate("MainWin", "\350\277\224\345\233\236", nullptr));

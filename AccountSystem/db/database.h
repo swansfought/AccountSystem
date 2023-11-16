@@ -32,6 +32,18 @@ public:
     QVector<Book> queryAllBook();
     QVector<Record> queryAllRecord();
 
+    Account queryAccount(const QString& name);
+    Book queryBook(const QString& name);
+    Record queryRecord(const QString& name);
+
+    bool insertAccount(const Account& account);
+    bool updateAccount(const Account& account);
+    bool deleteAccount(const Account& account);
+
+    bool insertBook(const Book& book);
+    bool deleteBook(const Book& book);
+    bool updateBook(const Book& book);
+
 
 private:
     DataBase();

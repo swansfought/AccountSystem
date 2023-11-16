@@ -1806,7 +1806,7 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>402</width>
+                   <width>400</width>
                    <height>521</height>
                   </rect>
                  </property>
@@ -1831,59 +1831,6 @@
                     <property name="spacing">
                      <number>5</number>
                     </property>
-                    <item>
-                     <widget class="QToolButton" name="toolButton_20">
-                      <property name="minimumSize">
-                       <size>
-                        <width>400</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>400</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>📌 支付宝
-现有资产5000.00元</string>
-                      </property>
-                      <property name="icon">
-                       <iconset resource="res.qrc">
-                        <normaloff>:/img/pay.png</normaloff>:/img/pay.png</iconset>
-                      </property>
-                      <property name="iconSize">
-                       <size>
-                        <width>50</width>
-                        <height>50</height>
-                       </size>
-                      </property>
-                      <property name="checkable">
-                       <bool>true</bool>
-                      </property>
-                      <property name="autoRepeat">
-                       <bool>false</bool>
-                      </property>
-                      <property name="autoExclusive">
-                       <bool>true</bool>
-                      </property>
-                      <property name="toolButtonStyle">
-                       <enum>Qt::ToolButtonTextBesideIcon</enum>
-                      </property>
-                      <property name="autoRaise">
-                       <bool>false</bool>
-                      </property>
-                      <property name="arrowType">
-                       <enum>Qt::NoArrow</enum>
-                      </property>
-                     </widget>
-                    </item>
                     <item>
                      <spacer name="verticalSpacer_3">
                       <property name="orientation">
@@ -2630,7 +2577,7 @@
                </widget>
               </item>
               <item row="6" column="0">
-               <widget class="QWidget" name="widget_22" native="true">
+               <widget class="QWidget" name="widget_account_enable" native="true">
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
@@ -2946,8 +2893,8 @@
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>100</width>
-                   <height>30</height>
+                   <width>400</width>
+                   <height>521</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_22">

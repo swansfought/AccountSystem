@@ -2,7 +2,10 @@
 
 Book::Book()
 {
-
+    totalIncome = 0;
+    totalExpend = 0;
+    totalRecord = 0;
+    enable = true;
 }
 
 Book::~Book()
