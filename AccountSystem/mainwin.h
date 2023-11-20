@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QToolButton>
 #include <QMessageBox>
+#include <QStandardItemModel>
+#include <QToolTip>
 
 #include "ui/addwin.h"
 #include "dev/config.h"
@@ -27,12 +29,12 @@ public:
 
 private:
     void initWinData();
+    void initRecordData();
     void initSignalSlots();
     QToolButton* createBookItem(const Book& book);
     QToolButton* createAccountItem(const Account& account);
     bool bookIsChecked();
     bool accountIsChecked();
-    void accountReadOnly(bool bol);
 
     qreal totalFund;
     qreal totalIncome;
@@ -41,8 +43,8 @@ private:
     AddWin *addWin;//记账窗口
     Config *config;//配置管理
 
-    Account currAccount;
-    Book currBook;
+    QToolButton* currAccount;
+    QToolButton* currBook;
 
 private:
     Ui::MainWin *ui;

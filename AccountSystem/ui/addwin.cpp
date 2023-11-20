@@ -17,7 +17,7 @@ AddWin::AddWin(QWidget *parent) :
     db = DataBase::getInstance();
 
     initSignalSlots();
-    initData();
+    initData(); //先绑定槽，涉及到槽函数触发设置数据
 }
 
 AddWin::~AddWin()
@@ -25,14 +25,26 @@ AddWin::~AddWin()
     delete ui;
 }
 
-void AddWin::setAccount(const QString &text)
+void AddWin::addBook(const QString &name)
 {
-    ui->account->setCurrentText(text);
+    ui->book->addItem(name);
 }
 
-void AddWin::setAccountIn(const QString &text)
+void AddWin::addAccount(const QString &name)
 {
-    ui->account_in->setCurrentText(text);
+    ui->account->addItem(name);
+    ui->account_in->addItem(name);
+}
+
+void AddWin::setBook(const QString &name)
+{
+    ui->book->setCurrentText(name);
+}
+
+void AddWin::setAccount(const QString &name)
+{
+    ui->account->setCurrentText(name);
+    ui->account_in->setCurrentText(name);
 }
 
 void AddWin::setFlowType(const QString &text)
@@ -60,6 +72,11 @@ void AddWin::setRemark(const QString &text)
     ui->remark->setPlainText(text);
 }
 
+void AddWin::setDateEdit(const QDateTime& datetime)
+{
+    ui->dateEdit->setDateTime(datetime);
+}
+
 void AddWin::initData()
 {
     QJsonArray accountArr = config->getJsonArray(Config::Type::Accounts);
@@ -79,14 +96,32 @@ void AddWin::initData()
 void AddWin::initSignalSlots()
 {
     connect(ui->save,&QPushButton::clicked,this,[=](){
-        saveRecord();
-        this->close();
+        if(0 == ui->money->value()){
+            QMessageBox::information(this,"记账添加","请确保金额>=0！",QMessageBox::Ok);
+            return;
+        }else if("转账" == ui->flowType->currentText() && ui->account->currentText() == ui->account_in->currentText()){
+            QMessageBox::information(this,"记账添加","无法对自己进行转账！",QMessageBox::Ok);
+            return;
+        }
+        if(saveRecord())
+            this->close();
+        else
+            QMessageBox::information(this,"记账添加","记账失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
     });
     connect(ui->save_again,&QPushButton::clicked,this,[=](){
-        saveRecord();
-        ui->money->setValue(0);
-        ui->remark->clear();
-        ui->image->clear();
+        if(0 == ui->money->value()){
+            QMessageBox::information(this,"记账添加","请确保金额>=0！",QMessageBox::Ok);
+            return;
+        }else if("转账" == ui->flowType->currentText() && ui->account->currentText() == ui->account_in->currentText()){
+            QMessageBox::information(this,"记账添加","无法对自己进行转账！",QMessageBox::Ok);
+            return;
+        }
+        if(saveRecord()){
+            ui->money->setValue(0);
+            ui->remark->clear();
+            ui->image->clear();
+        }else
+            QMessageBox::information(this,"记账添加","记账失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
     });
     connect(ui->close,&QPushButton::clicked,this,[=](){
         this->close();
@@ -100,14 +135,6 @@ void AddWin::initSignalSlots()
         ui->image->clear(); //清除之前剩余的
         QPixmap pixmap;
         pixmap.load(fileName);
-
-        //从pixmap加载图片的二进制数据
-        QByteArray imageArray;
-        QBuffer buffer(&imageArray);
-        buffer.open(QIODevice::WriteOnly);
-        pixmap.save(&buffer, "PNG");
-        buffer.close();
-
         ui->image->setPixmap(pixmap);
     });
     connect(ui->deleteImage,&QPushButton::clicked,this,[=](){ ui->image->clear(); });
@@ -182,9 +209,43 @@ void AddWin::resetWin()
     ui->image->clear();
 }
 
-void AddWin::saveRecord()
+bool AddWin::saveRecord()
 {
+    Record record;
+    QString flowType = ui->flowType->currentText();
 
+    record.setBookName(ui->book->currentText());
+    record.setFlowType(ui->flowType->currentText());
+    record.setAccountName(ui->account->currentText());
+    record.setMoney(ui->money->value());
+    record.setRemark(ui->remark->toPlainText());
+    record.setRecordTime(ui->dateEdit->dateTime());
+
+    //获取图片
+    QPixmap pixmap = ui->image->pixmap(Qt::ReturnByValue);
+
+    //从pixmap加载图片的二进制数据
+    QByteArray imageArray;
+    QBuffer buffer(&imageArray);
+    buffer.open(QIODevice::WriteOnly);
+    pixmap.save(&buffer, "PNG");
+    buffer.close();
+
+    record.setImage(imageArray);
+
+    if("支出" == flowType){
+        record.setFirstClassify(ui->firstClassify->currentText());
+        record.setSecondClassify(ui->secondClassify->currentText());
+    }else if("收入" == flowType){
+        record.setFirstClassify(ui->firstClassify->currentText());
+    }else{ //转账
+        record.setTransferIn(ui->account_in->currentText());
+    }
+
+     //开始保存数据
+    if(db->insertRecord(record))
+        return true;
+    return false;
 }
 
 

@@ -1221,8 +1221,428 @@
                <property name="spacing">
                 <number>0</number>
                </property>
+               <item row="1" column="0">
+                <widget class="QWidget" name="widget" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_32">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>5</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="horizontalSpacing">
+                   <number>10</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>0</number>
+                  </property>
+                  <item row="0" column="3">
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="5">
+                   <widget class="QWidget" name="widget_5" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>145</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>145</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_30">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="horizontalSpacing">
+                      <number>5</number>
+                     </property>
+                     <property name="verticalSpacing">
+                      <number>0</number>
+                     </property>
+                     <item row="0" column="0">
+                      <widget class="QPushButton" name="record_output">
+                       <property name="minimumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>导出此页</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QPushButton" name="record_output_all">
+                       <property name="minimumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>导出全部</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QWidget" name="widget_4" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_29">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="horizontalSpacing">
+                      <number>5</number>
+                     </property>
+                     <property name="verticalSpacing">
+                      <number>0</number>
+                     </property>
+                     <item row="0" column="2">
+                      <widget class="QSpinBox" name="record_pageIndex">
+                       <property name="minimumSize">
+                        <size>
+                         <width>70</width>
+                         <height>26</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>70</width>
+                         <height>26</height>
+                        </size>
+                       </property>
+                       <property name="frame">
+                        <bool>false</bool>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                       <property name="buttonSymbols">
+                        <enum>QAbstractSpinBox::NoButtons</enum>
+                       </property>
+                       <property name="suffix">
+                        <string> 页</string>
+                       </property>
+                       <property name="prefix">
+                        <string>第 </string>
+                       </property>
+                       <property name="minimum">
+                        <number>1</number>
+                       </property>
+                       <property name="maximum">
+                        <number>999</number>
+                       </property>
+                       <property name="value">
+                        <number>999</number>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="3">
+                      <widget class="QPushButton" name="record_pageNext">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QPushButton" name="record_pagePrevious">
+                       <property name="minimumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>&lt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QWidget" name="widget_10" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>300</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>300</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_31">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="horizontalSpacing">
+                      <number>5</number>
+                     </property>
+                     <property name="verticalSpacing">
+                      <number>0</number>
+                     </property>
+                     <item row="0" column="1">
+                      <widget class="QComboBox" name="record_page_recordNum">
+                       <property name="minimumSize">
+                        <size>
+                         <width>95</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>95</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
+                       <item>
+                        <property name="text">
+                         <string>50条/页</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>100条/页</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>200条/页</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="0" column="2">
+                      <widget class="QLabel" name="record_pageInfo">
+                       <property name="minimumSize">
+                        <size>
+                         <width>200</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>200</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>共46532条记录，共466页。</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
                <item row="0" column="0">
                 <widget class="QTreeWidget" name="record_tree">
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QHeaderView::section {
+	border: 1px solid black;  /*设置边框样式*/
+	border-left:transparent;
+	border-top:transparent;
+	background-color: rgb(221, 221, 221);/*lightgray;  /*设置背景颜色*/
+	/*padding: 4px; 设置内边距*/
+	font-weight: bold;
+ }
+
+QTreeWidget{
+	border:1px solid black;
+     gridline-color: gray;  /*设置网格线颜色*/
+	outline:none;
+	/*alternate-background-color:lightgray;*/
+	selection-background-color:transparent;
+}
+
+QTreeView::item{
+	border:1px solid black;
+	border-left:transparent;
+	border-top:transparent;
+	height:30px;
+}
+
+QTreeView::branch{
+	border:1px solid black;
+	border-right:transparent;
+	border-left:transparent;
+	border-top:transparent;
+}
+
+QTreeView::item:selected{
+	/*color:black;
+	color:inherit;
+	background:rgb(230, 230, 230);
+	color:blue;
+	font-weight: bold;*/
+	color:inherit;
+	background:rgb(235, 235, 235);
+}
+
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings{
+	border-image: none;
+	image:url(:/img/branch-close.png);
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings{
+	border-image: none;
+	image:url(:/img/branch-open.png);
+}
+</string>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOn</enum>
+                 </property>
                  <column>
                   <property name="text">
                    <string notr="true">1</string>
@@ -1271,150 +1691,6 @@
               <property name="verticalSpacing">
                <number>0</number>
               </property>
-              <item row="0" column="6">
-               <widget class="Line" name="line_7">
-                <property name="minimumSize">
-                 <size>
-                  <width>2</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>2</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="5">
-               <widget class="QDateEdit" name="record_date">
-                <property name="minimumSize">
-                 <size>
-                  <width>170</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>170</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                 </font>
-                </property>
-                <property name="displayFormat">
-                 <string>yyyy年MM月dd日</string>
-                </property>
-                <property name="calendarPopup">
-                 <bool>true</bool>
-                </property>
-                <property name="date">
-                 <date>
-                  <year>2023</year>
-                  <month>11</month>
-                  <day>8</day>
-                 </date>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="3">
-               <widget class="Line" name="line_6">
-                <property name="minimumSize">
-                 <size>
-                  <width>2</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>2</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="7">
-               <widget class="QPushButton" name="record_reset">
-                <property name="minimumSize">
-                 <size>
-                  <width>55</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>55</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>9</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>重置</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="record_input">
-                <property name="minimumSize">
-                 <size>
-                  <width>255</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>255</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                 </font>
-                </property>
-                <property name="placeholderText">
-                 <string>模糊查询</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="8">
-               <widget class="QPushButton" name="record_output">
-                <property name="minimumSize">
-                 <size>
-                  <width>55</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>55</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>9</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>导出</string>
-                </property>
-               </widget>
-              </item>
               <item row="0" column="2">
                <widget class="QComboBox" name="record_filter">
                 <property name="minimumSize">
@@ -1456,7 +1732,7 @@
                 </item>
                </widget>
               </item>
-              <item row="0" column="9">
+              <item row="0" column="8">
                <spacer name="horizontalSpacer_5">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -1468,6 +1744,25 @@
                  </size>
                 </property>
                </spacer>
+              </item>
+              <item row="0" column="3">
+               <widget class="Line" name="line_6">
+                <property name="minimumSize">
+                 <size>
+                  <width>2</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>2</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
               </item>
               <item row="0" column="4">
                <widget class="QLabel" name="label_2">
@@ -1490,6 +1785,107 @@
                 </property>
                 <property name="text">
                  <string>选择日期</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="record_input">
+                <property name="minimumSize">
+                 <size>
+                  <width>255</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>255</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="placeholderText">
+                 <string>模糊查询</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="6">
+               <widget class="Line" name="line_7">
+                <property name="minimumSize">
+                 <size>
+                  <width>2</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>2</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="7">
+               <widget class="QPushButton" name="record_reset">
+                <property name="minimumSize">
+                 <size>
+                  <width>55</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>55</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>重置</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="5">
+               <widget class="QDateEdit" name="record_date">
+                <property name="minimumSize">
+                 <size>
+                  <width>170</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>170</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="displayFormat">
+                 <string>yyyy年MM月dd日</string>
+                </property>
+                <property name="calendarPopup">
+                 <bool>true</bool>
+                </property>
+                <property name="date">
+                 <date>
+                  <year>2023</year>
+                  <month>11</month>
+                  <day>8</day>
+                 </date>
                 </property>
                </widget>
               </item>
@@ -1532,7 +1928,7 @@
             </spacer>
            </item>
            <item row="0" column="1">
-            <widget class="TreeWidget" name="classify_incomeTree">
+            <widget class="ClassifyTreeWidget" name="classify_incomeTree">
              <property name="minimumSize">
               <size>
                <width>400</width>
@@ -1558,7 +1954,7 @@
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="TreeWidget" name="classify_expendTree">
+            <widget class="ClassifyTreeWidget" name="classify_expendTree">
              <property name="minimumSize">
               <size>
                <width>400</width>
@@ -2205,7 +2601,7 @@
                         <bool>false</bool>
                        </property>
                        <property name="readOnly">
-                        <bool>false</bool>
+                        <bool>true</bool>
                        </property>
                        <property name="placeholderText">
                         <string>账户名称</string>
@@ -2916,7 +3312,7 @@
                   <item row="0" column="0">
                    <layout class="QVBoxLayout" name="vLayout_book">
                     <property name="spacing">
-                     <number>10</number>
+                     <number>5</number>
                     </property>
                     <item>
                      <spacer name="verticalSpacer_2">
@@ -3207,21 +3603,9 @@
                   <property name="verticalSpacing">
                    <number>5</number>
                   </property>
-                  <item row="0" column="0" colspan="2">
-                   <widget class="QWidget" name="widget_18" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>35</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>35</height>
-                     </size>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_18">
+                  <item row="3" column="0" rowspan="2" colspan="2">
+                   <widget class="QWidget" name="widget_15" native="true">
+                    <layout class="QGridLayout" name="gridLayout_16">
                      <property name="leftMargin">
                       <number>0</number>
                      </property>
@@ -3234,171 +3618,20 @@
                      <property name="bottomMargin">
                       <number>0</number>
                      </property>
-                     <property name="horizontalSpacing">
-                      <number>5</number>
-                     </property>
-                     <property name="verticalSpacing">
+                     <property name="spacing">
                       <number>0</number>
                      </property>
-                     <item row="0" column="3">
-                      <widget class="QLabel" name="label_16">
-                       <property name="minimumSize">
-                        <size>
-                         <width>70</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>70</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <pointsize>10</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>共计支出</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="4">
-                      <widget class="QDoubleSpinBox" name="book_totalExpend">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <pointsize>10</pointsize>
-                        </font>
-                       </property>
-                       <property name="wrapping">
-                        <bool>false</bool>
-                       </property>
-                       <property name="frame">
-                        <bool>false</bool>
-                       </property>
-                       <property name="readOnly">
-                        <bool>true</bool>
-                       </property>
-                       <property name="buttonSymbols">
-                        <enum>QAbstractSpinBox::NoButtons</enum>
-                       </property>
-                       <property name="specialValueText">
-                        <string/>
-                       </property>
-                       <property name="accelerated">
-                        <bool>false</bool>
-                       </property>
-                       <property name="correctionMode">
-                        <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
-                       </property>
-                       <property name="keyboardTracking">
-                        <bool>true</bool>
-                       </property>
-                       <property name="showGroupSeparator" stdset="0">
-                        <bool>true</bool>
-                       </property>
-                       <property name="suffix">
-                        <string> 元</string>
-                       </property>
-                       <property name="maximum">
-                        <double>99999999.989999994635582</double>
-                       </property>
-                       <property name="singleStep">
-                        <double>100.000000000000000</double>
-                       </property>
-                       <property name="value">
-                        <double>0.000000000000000</double>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="2">
-                      <spacer name="horizontalSpacer_9">
-                       <property name="orientation">
-                        <enum>Qt::Horizontal</enum>
-                       </property>
-                       <property name="sizeType">
-                        <enum>QSizePolicy::Fixed</enum>
-                       </property>
-                       <property name="sizeHint" stdset="0">
-                        <size>
-                         <width>15</width>
-                         <height>20</height>
-                        </size>
-                       </property>
-                      </spacer>
-                     </item>
-                     <item row="0" column="1">
-                      <widget class="QDoubleSpinBox" name="book_totalIncome">
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <pointsize>10</pointsize>
-                        </font>
-                       </property>
-                       <property name="wrapping">
-                        <bool>false</bool>
-                       </property>
-                       <property name="frame">
-                        <bool>false</bool>
-                       </property>
-                       <property name="readOnly">
-                        <bool>true</bool>
-                       </property>
-                       <property name="buttonSymbols">
-                        <enum>QAbstractSpinBox::NoButtons</enum>
-                       </property>
-                       <property name="specialValueText">
-                        <string/>
-                       </property>
-                       <property name="accelerated">
-                        <bool>false</bool>
-                       </property>
-                       <property name="correctionMode">
-                        <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
-                       </property>
-                       <property name="keyboardTracking">
-                        <bool>true</bool>
-                       </property>
-                       <property name="showGroupSeparator" stdset="0">
-                        <bool>true</bool>
-                       </property>
-                       <property name="suffix">
-                        <string> 元</string>
-                       </property>
-                       <property name="maximum">
-                        <double>99999999.989999994635582</double>
-                       </property>
-                       <property name="singleStep">
-                        <double>100.000000000000000</double>
-                       </property>
-                       <property name="value">
-                        <double>0.000000000000000</double>
-                       </property>
-                      </widget>
-                     </item>
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_18">
+                      <widget class="QLabel" name="label_12">
                        <property name="minimumSize">
                         <size>
-                         <width>70</width>
+                         <width>0</width>
                          <height>35</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>70</width>
+                         <width>16777215</width>
                          <height>35</height>
                         </size>
                        </property>
@@ -3408,7 +3641,61 @@
                         </font>
                        </property>
                        <property name="text">
-                        <string>共计收入</string>
+                        <string>账本描述</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QPlainTextEdit" name="book_remark">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::NoFrame</enum>
+                       </property>
+                       <property name="horizontalScrollBarPolicy">
+                        <enum>Qt::ScrollBarAlwaysOff</enum>
+                       </property>
+                       <property name="tabChangesFocus">
+                        <bool>false</bool>
+                       </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                       <property name="plainText">
+                        <string/>
+                       </property>
+                       <property name="backgroundVisible">
+                        <bool>false</bool>
+                       </property>
+                       <property name="placeholderText">
+                        <string>简要描述(非必填)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="book_info">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -3508,9 +3795,21 @@
                     </layout>
                    </widget>
                   </item>
-                  <item row="2" column="0" rowspan="2" colspan="2">
-                   <widget class="QWidget" name="widget_15" native="true">
-                    <layout class="QGridLayout" name="gridLayout_16">
+                  <item row="2" column="0">
+                   <widget class="QWidget" name="widget_18" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>35</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>35</height>
+                     </size>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_18">
                      <property name="leftMargin">
                       <number>0</number>
                      </property>
@@ -3523,20 +3822,23 @@
                      <property name="bottomMargin">
                       <number>0</number>
                      </property>
-                     <property name="spacing">
+                     <property name="horizontalSpacing">
+                      <number>5</number>
+                     </property>
+                     <property name="verticalSpacing">
                       <number>0</number>
                      </property>
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_12">
+                     <item row="0" column="3">
+                      <widget class="QLabel" name="label_16">
                        <property name="minimumSize">
                         <size>
-                         <width>0</width>
+                         <width>70</width>
                          <height>35</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>16777215</width>
+                         <width>70</width>
                          <height>35</height>
                         </size>
                        </property>
@@ -3546,51 +3848,109 @@
                         </font>
                        </property>
                        <property name="text">
-                        <string>账本描述</string>
+                        <string>共计支出</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="1" column="0">
-                      <widget class="QPlainTextEdit" name="book_remark">
+                     <item row="0" column="2">
+                      <spacer name="horizontalSpacer_9">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeType">
+                        <enum>QSizePolicy::Expanding</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>15</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_18">
+                       <property name="minimumSize">
+                        <size>
+                         <width>70</width>
+                         <height>35</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>70</width>
+                         <height>35</height>
+                        </size>
+                       </property>
                        <property name="font">
                         <font>
                          <pointsize>10</pointsize>
                         </font>
                        </property>
-                       <property name="frameShape">
-                        <enum>QFrame::NoFrame</enum>
+                       <property name="text">
+                        <string>共计收入</string>
                        </property>
-                       <property name="horizontalScrollBarPolicy">
-                        <enum>Qt::ScrollBarAlwaysOff</enum>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QDoubleSpinBox" name="book_totalIncome">
+                       <property name="minimumSize">
+                        <size>
+                         <width>140</width>
+                         <height>35</height>
+                        </size>
                        </property>
-                       <property name="tabChangesFocus">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="wrapping">
+                        <bool>false</bool>
+                       </property>
+                       <property name="frame">
                         <bool>false</bool>
                        </property>
                        <property name="readOnly">
                         <bool>true</bool>
                        </property>
-                       <property name="plainText">
+                       <property name="buttonSymbols">
+                        <enum>QAbstractSpinBox::NoButtons</enum>
+                       </property>
+                       <property name="specialValueText">
                         <string/>
                        </property>
-                       <property name="backgroundVisible">
+                       <property name="accelerated">
                         <bool>false</bool>
                        </property>
-                       <property name="placeholderText">
-                        <string>简要描述(非必填)</string>
+                       <property name="correctionMode">
+                        <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
+                       </property>
+                       <property name="keyboardTracking">
+                        <bool>true</bool>
+                       </property>
+                       <property name="showGroupSeparator" stdset="0">
+                        <bool>true</bool>
+                       </property>
+                       <property name="suffix">
+                        <string> 元</string>
+                       </property>
+                       <property name="maximum">
+                        <double>99999999.989999994635582</double>
+                       </property>
+                       <property name="singleStep">
+                        <double>100.000000000000000</double>
+                       </property>
+                       <property name="value">
+                        <double>0.000000000000000</double>
                        </property>
                       </widget>
                      </item>
-                     <item row="2" column="0">
-                      <widget class="QLabel" name="book_info">
+                     <item row="0" column="4">
+                      <widget class="QDoubleSpinBox" name="book_totalExpend">
                        <property name="minimumSize">
                         <size>
-                         <width>0</width>
-                         <height>35</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
+                         <width>140</width>
                          <height>35</height>
                         </size>
                        </property>
@@ -3599,8 +3959,44 @@
                          <pointsize>10</pointsize>
                         </font>
                        </property>
-                       <property name="text">
+                       <property name="wrapping">
+                        <bool>false</bool>
+                       </property>
+                       <property name="frame">
+                        <bool>false</bool>
+                       </property>
+                       <property name="readOnly">
+                        <bool>true</bool>
+                       </property>
+                       <property name="buttonSymbols">
+                        <enum>QAbstractSpinBox::NoButtons</enum>
+                       </property>
+                       <property name="specialValueText">
                         <string/>
+                       </property>
+                       <property name="accelerated">
+                        <bool>false</bool>
+                       </property>
+                       <property name="correctionMode">
+                        <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
+                       </property>
+                       <property name="keyboardTracking">
+                        <bool>true</bool>
+                       </property>
+                       <property name="showGroupSeparator" stdset="0">
+                        <bool>true</bool>
+                       </property>
+                       <property name="suffix">
+                        <string> 元</string>
+                       </property>
+                       <property name="maximum">
+                        <double>99999999.989999994635582</double>
+                       </property>
+                       <property name="singleStep">
+                        <double>100.000000000000000</double>
+                       </property>
+                       <property name="value">
+                        <double>0.000000000000000</double>
                        </property>
                       </widget>
                      </item>
@@ -3661,9 +4057,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>TreeWidget</class>
+   <class>ClassifyTreeWidget</class>
    <extends>QTreeWidget</extends>
-   <header>custom/treewidget.h</header>
+   <header>custom/classifytreewidget.h</header>
   </customwidget>
  </customwidgets>
  <resources>

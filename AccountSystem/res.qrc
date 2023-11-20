@@ -8,5 +8,7 @@
         <file>img/show.png</file>
         <file>img/hide.png</file>
         <file>img/account.png</file>
+        <file>img/branch-open.png</file>
+        <file>img/branch-close.png</file>
     </qresource>
 </RCC>

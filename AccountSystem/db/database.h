@@ -25,12 +25,9 @@ public:
     bool connect();
     void disconnect();
 
-//    QVector<Record> queryAccount();
-//    QVector<Record> queryBook();
-//    QVector<Record> queryRecord();
     QVector<Account> queryAllAccount();
     QVector<Book> queryAllBook();
-    QVector<Record> queryAllRecord();
+//    QVector<Record> queryAllRecord();
 
     Account queryAccount(const QString& name);
     Book queryBook(const QString& name);
@@ -38,12 +35,13 @@ public:
 
     bool insertAccount(const Account& account);
     bool updateAccount(const Account& account);
-    bool deleteAccount(const Account& account);
+    bool deleteAccount(const QString& name);
 
     bool insertBook(const Book& book);
-    bool deleteBook(const Book& book);
     bool updateBook(const Book& book);
+    bool deleteBook(const QString& name);
 
+    bool insertRecord(const Record& record);
 
 private:
     DataBase();

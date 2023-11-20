@@ -42,16 +42,16 @@ public:
     void setImage(const QByteArray &newImage);
 
 private:
-    QString accountName;
     QString bookName;
-    QDateTime recordTime;
     QString flowType;
+    QString accountName;
+    QString transferIn;
     QString firstClassify;
     QString secondClassify;
-    QString transferIn;
     qreal money;
     QString remark;
     QByteArray image;
+    QDateTime recordTime;
 };
 
 #endif // RECORD_H

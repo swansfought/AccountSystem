@@ -1,14 +1,18 @@
 #ifndef ADDWIN_H
 #define ADDWIN_H
 
+#include <QGraphicsDropShadowEffect>
 #include <QMainWindow>
 #include <QFileDialog>
 #include <QComboBox>
-#include <QGraphicsDropShadowEffect>
+#include <QMessageBox>
 #include <QBuffer>
+#include <QPixmap>
+#include <QImage>
 
 #include "dev/config.h"
 #include "db/database.h"
+#include "db/record.h"
 #include "global.h"
 
 namespace Ui {
@@ -23,13 +27,17 @@ public:
     explicit AddWin(QWidget *parent = nullptr);
     ~AddWin();
 
-    void setAccount(const QString& text);
-    void setAccountIn(const QString& text);
-    void setFlowType(const QString& text);
+    void addBook(const QString& name);
+    void addAccount(const QString& name);
+
+    void setBook(const QString& name);
+    void setAccount(const QString& name);
+    void setFlowType(const QString& name);
     void setFirstClassify(const QString& text);
     void setSecondClassify(const QString& text);
     void setMoney(const qreal& money);
     void setRemark(const QString& text);
+    void setDateEdit(const QDateTime& datetime);
 
 protected:
 //    void closeEvent(QCloseEvent *event);
@@ -40,7 +48,7 @@ private:
     void initData();
     void initSignalSlots();
     void resetWin();
-    void saveRecord();
+    bool saveRecord();
 //    void setAccount(const QJsonArray& arr);
 //    void setFlowType(const QJsonArray& arr);
 //    void setFirstClassify(const QJsonArray& arr);

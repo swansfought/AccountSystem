@@ -80,9 +80,15 @@
 	"HEADERS" : 
 	[
 		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.h",
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/classifytreewidget.h",
 			"MU",
-			"ECAI6Z3TWJ/moc_treewidget.cpp",
+			"ECAI6Z3TWJ/moc_classifytreewidget.cpp",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/recordtreewidget.h",
+			"MU",
+			"ECAI6Z3TWJ/moc_recordtreewidget.cpp",
 			null
 		],
 		[
@@ -187,7 +193,12 @@
 	"SOURCES" : 
 	[
 		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.cpp",
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/classifytreewidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/recordtreewidget.cpp",
 			"MU",
 			null
 		],

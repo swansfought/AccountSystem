@@ -2,7 +2,14 @@
 
 Record::Record()
 {
-
+    bookName = "";
+    flowType = "";
+    accountName = "";
+    transferIn = "";
+    firstClassify = "";
+    secondClassify = "";
+    money = 0;
+    remark = "";
 }
 
 Record::~Record()

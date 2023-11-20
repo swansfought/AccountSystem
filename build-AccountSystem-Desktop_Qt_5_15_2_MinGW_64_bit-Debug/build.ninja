@@ -81,9 +81,9 @@ build CMakeFiles/AccountSystem.dir/ui/addwin.cpp.obj: CXX_COMPILER__AccountSyste
   OBJECT_DIR = CMakeFiles\AccountSystem.dir
   OBJECT_FILE_DIR = CMakeFiles\AccountSystem.dir\ui
 
-build CMakeFiles/AccountSystem.dir/custom/treewidget.cpp.obj: CXX_COMPILER__AccountSystem_Debug E$:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.cpp || cmake_object_order_depends_target_AccountSystem
+build CMakeFiles/AccountSystem.dir/custom/classifytreewidget.cpp.obj: CXX_COMPILER__AccountSystem_Debug E$:/code/qt/Widgets/AccountSystem/AccountSystem/custom/classifytreewidget.cpp || cmake_object_order_depends_target_AccountSystem
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles\AccountSystem.dir\custom\treewidget.cpp.obj.d
+  DEP_FILE = CMakeFiles\AccountSystem.dir\custom\classifytreewidget.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17
   INCLUDES = -IE:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/include -IE:/code/qt/Widgets/AccountSystem/AccountSystem -isystem D:/software/Qt/5.15.2/mingw81_64/include -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtGui -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtANGLE -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtCore -isystem D:/software/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++ -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtSql
   OBJECT_DIR = CMakeFiles\AccountSystem.dir
@@ -129,6 +129,14 @@ build CMakeFiles/AccountSystem.dir/db/book.cpp.obj: CXX_COMPILER__AccountSystem_
   OBJECT_DIR = CMakeFiles\AccountSystem.dir
   OBJECT_FILE_DIR = CMakeFiles\AccountSystem.dir\db
 
+build CMakeFiles/AccountSystem.dir/custom/recordtreewidget.cpp.obj: CXX_COMPILER__AccountSystem_Debug E$:/code/qt/Widgets/AccountSystem/AccountSystem/custom/recordtreewidget.cpp || cmake_object_order_depends_target_AccountSystem
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles\AccountSystem.dir\custom\recordtreewidget.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17
+  INCLUDES = -IE:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/include -IE:/code/qt/Widgets/AccountSystem/AccountSystem -isystem D:/software/Qt/5.15.2/mingw81_64/include -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtGui -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtANGLE -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtCore -isystem D:/software/Qt/5.15.2/mingw81_64/./mkspecs/win32-g++ -isystem D:/software/Qt/5.15.2/mingw81_64/include/QtSql
+  OBJECT_DIR = CMakeFiles\AccountSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\AccountSystem.dir\custom
+
 build CMakeFiles/AccountSystem.dir/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp.obj: CXX_COMPILER__AccountSystem_Debug E$:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp || cmake_object_order_depends_target_AccountSystem
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles\AccountSystem.dir\AccountSystem_autogen\EWIEGA46WW\qrc_res.cpp.obj.d
@@ -145,7 +153,7 @@ build CMakeFiles/AccountSystem.dir/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp.
 #############################################
 # Link the executable AccountSystem.exe
 
-build AccountSystem.exe: CXX_EXECUTABLE_LINKER__AccountSystem_Debug CMakeFiles/AccountSystem.dir/AccountSystem_autogen/mocs_compilation.cpp.obj CMakeFiles/AccountSystem.dir/main.cpp.obj CMakeFiles/AccountSystem.dir/mainwin.cpp.obj CMakeFiles/AccountSystem.dir/ui/addwin.cpp.obj CMakeFiles/AccountSystem.dir/custom/treewidget.cpp.obj CMakeFiles/AccountSystem.dir/dev/config.cpp.obj CMakeFiles/AccountSystem.dir/db/database.cpp.obj CMakeFiles/AccountSystem.dir/db/record.cpp.obj CMakeFiles/AccountSystem.dir/db/account.cpp.obj CMakeFiles/AccountSystem.dir/db/book.cpp.obj CMakeFiles/AccountSystem.dir/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp.obj | D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Sql.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Gui.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Core.a D$:/software/Qt/5.15.2/mingw81_64/lib/libqtmain.a || AccountSystem_autogen AccountSystem_autogen_timestamp_deps
+build AccountSystem.exe: CXX_EXECUTABLE_LINKER__AccountSystem_Debug CMakeFiles/AccountSystem.dir/AccountSystem_autogen/mocs_compilation.cpp.obj CMakeFiles/AccountSystem.dir/main.cpp.obj CMakeFiles/AccountSystem.dir/mainwin.cpp.obj CMakeFiles/AccountSystem.dir/ui/addwin.cpp.obj CMakeFiles/AccountSystem.dir/custom/classifytreewidget.cpp.obj CMakeFiles/AccountSystem.dir/dev/config.cpp.obj CMakeFiles/AccountSystem.dir/db/database.cpp.obj CMakeFiles/AccountSystem.dir/db/record.cpp.obj CMakeFiles/AccountSystem.dir/db/account.cpp.obj CMakeFiles/AccountSystem.dir/db/book.cpp.obj CMakeFiles/AccountSystem.dir/custom/recordtreewidget.cpp.obj CMakeFiles/AccountSystem.dir/AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp.obj | D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Sql.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Gui.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Core.a D$:/software/Qt/5.15.2/mingw81_64/lib/libqtmain.a || AccountSystem_autogen AccountSystem_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = D:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a  D:/software/Qt/5.15.2/mingw81_64/lib/libQt5Sql.a  D:/software/Qt/5.15.2/mingw81_64/lib/libQt5Gui.a  D:/software/Qt/5.15.2/mingw81_64/lib/libQt5Core.a  D:/software/Qt/5.15.2/mingw81_64/lib/libqtmain.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -248,7 +256,7 @@ build AccountSystem_autogen/timestamp AccountSystem_autogen/mocs_compilation.cpp
 #############################################
 # Custom command for AccountSystem_autogen\EWIEGA46WW\qrc_res.cpp
 
-build AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp | ${cmake_ninja_workdir}AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp: CUSTOM_COMMAND E$:/code/qt/Widgets/AccountSystem/AccountSystem/res.qrc CMakeFiles/AccountSystem_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/show.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/account.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/book.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/balance.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/income.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/pay.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/fund.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/hide.png D$:/software/Qt/5.15.2/mingw81_64/bin/rcc.exe || AccountSystem_autogen AccountSystem_autogen_timestamp_deps
+build AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp | ${cmake_ninja_workdir}AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp: CUSTOM_COMMAND E$:/code/qt/Widgets/AccountSystem/AccountSystem/res.qrc CMakeFiles/AccountSystem_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/show.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/account.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/book.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/balance.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/income.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/pay.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/fund.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/branch-open.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/hide.png E$:/code/qt/Widgets/AccountSystem/AccountSystem/img/branch-close.png D$:/software/Qt/5.15.2/mingw81_64/bin/rcc.exe || AccountSystem_autogen AccountSystem_autogen_timestamp_deps
   COMMAND = cmd.exe /C "cd /D E:\code\qt\Widgets\AccountSystem\build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug && D:\software\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/CMakeFiles/AccountSystem_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json Debug"
   DESC = Automatic RCC for res.qrc
   restat = 1
@@ -257,7 +265,7 @@ build AccountSystem_autogen/EWIEGA46WW/qrc_res.cpp | ${cmake_ninja_workdir}Accou
 #############################################
 # Phony custom command for CMakeFiles\AccountSystem_autogen_timestamp_deps
 
-build CMakeFiles/AccountSystem_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/AccountSystem_autogen_timestamp_deps: phony D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Sql.a D$:/software/Qt/5.15.2/mingw81_64/bin/moc.exe D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a D$:/software/Qt/5.15.2/mingw81_64/bin/uic.exe
+build CMakeFiles/AccountSystem_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/AccountSystem_autogen_timestamp_deps: phony D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Sql.a D$:/software/Qt/5.15.2/mingw81_64/lib/libQt5Widgets.a D$:/software/Qt/5.15.2/mingw81_64/bin/uic.exe D$:/software/Qt/5.15.2/mingw81_64/bin/moc.exe
 
 
 #############################################

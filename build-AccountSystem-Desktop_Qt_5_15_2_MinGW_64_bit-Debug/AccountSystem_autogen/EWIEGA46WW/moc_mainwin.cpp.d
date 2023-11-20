@@ -98,6 +98,9 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QImage \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QStandardItemModel \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h \
@@ -116,6 +119,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qregion.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qstandarditemmodel.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h \
@@ -136,6 +140,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolButton \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolTip \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractslider.h \
@@ -155,6 +160,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabbar.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbutton.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtooltip.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \

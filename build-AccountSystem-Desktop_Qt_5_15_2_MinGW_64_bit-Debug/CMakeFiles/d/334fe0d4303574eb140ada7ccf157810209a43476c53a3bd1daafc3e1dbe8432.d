@@ -98,6 +98,9 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QImage \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QStandardItemModel \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qcolor.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qcursor.h \
@@ -118,6 +121,7 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qregion.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qstandarditemmodel.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h \
@@ -141,6 +145,7 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenu \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolButton \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolTip \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QTreeWidget \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QTreeWidgetItem \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
@@ -168,6 +173,7 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabbar.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbutton.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtooltip.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtreeview.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtreewidget.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtreewidgetitemiterator.h \
@@ -406,8 +412,10 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/CMakeLists.txt \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.cpp \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/classifytreewidget.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/classifytreewidget.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/recordtreewidget.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/recordtreewidget.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.cpp \

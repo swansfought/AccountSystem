@@ -40,7 +40,7 @@ bool DataBase::connect()
             query.exec(sql);
 
             //添加默认账户
-            sql = "insert into account(act_name,act_remark) values('默认账户(系统自带)','此账户为系统自带的账户。');";
+            sql = "insert into account(act_name,act_remark) values('默认账户','此账户为系统自带的账户。');";
             query.exec(sql);
         }
         if(!tables.contains("book")){
@@ -55,22 +55,22 @@ bool DataBase::connect()
             query.exec(sql);
 
             //添加默认账本
-            sql = "insert into book(bok_name,bok_remark) values('默认账本(系统自带)','此账本为系统自带的账本。');";
+            sql = "insert into book(bok_name,bok_remark) values('默认账本','此账本为系统自带的账本。');";
             query.exec(sql);
         }
         if(!tables.contains("record")){
-            sql = "CREATE TABLE recocrd( "
+            sql = "CREATE TABLE record( "
                                 "id INTEGER PRIMARY KEY AUTOINCREMENT," //
                                 "act_name VARCHAR(20) NOT NULL," // ------账户名称------
                                 "bok_name VARCHAR(20) NOT NULL," // ------账本名称-----
                                 "red_datetime DATETIME NOT NULL," // --记账日期
-                                "red_flowType VARCHAR(10) NOT NULL," // --收支流向
+                                "red_flow_type VARCHAR(10) NOT NULL," // --收支流向
                                 "red_first_classify VARCHAR(10) NOT NULL," // --一级分类
                                 "red_second_classify VARCHAR(10) NOT NULL," // --二级分类
                                 "red_transfer_in VARCHAR(20) DEFAULT NULL," // ---转入账户
                                 "red_money REAL NOT NULL," // --收支金额
                                 "red_remark TEXT DEFAULT NULL," // --备注
-                                "red_image BLOD DEFAULT NULL," // --图片
+                                "red_image BLOB DEFAULT NULL," // --图片
                                 "FOREIGN KEY(act_name) REFERENCES account(act_name) ON DELETE CASCADE ON UPDATE CASCADE," // ------级联删除&更新------
                                 "FOREIGN KEY(bok_name) REFERENCES book(bok_name) ON DELETE CASCADE ON UPDATE CASCADE);"; //------级联删除&更新-------
             query.exec(sql);
@@ -146,11 +146,6 @@ QVector<Book> DataBase::queryAllBook()
     return vec;
 }
 
-QVector<Record> DataBase::queryAllRecord()
-{
-    checkConnect(); //检查数据库连接
-
-}
 
 Account DataBase::queryAccount(const QString &name)
 {
@@ -209,17 +204,37 @@ bool DataBase::insertAccount(const Account &account)
                                                                     account.getCardNumber(),
                                                                     account.getRemark(),
                                                                     QString::number(account.getEnable()));
-//    qDebug()<<sql;
     QSqlQuery query;
     if(query.exec(sql))
         return true;
     return false;
-
 }
 
 bool DataBase::updateAccount(const Account &account)
 {
+    QString sql = QString("update account "
+                          "set act_fund=%1,act_nickname='%2',"
+                          "act_cardnumber='%3',act_remark='%4',act_enable=%5 "
+                          "where act_name='%6';"
+                          ).arg(QString::number(account.getFund(),'f',2),
+                           account.getNickname(),
+                           account.getCardNumber(),
+                           account.getRemark(),
+                           QString::number(account.getEnable()),
+                           account.getName());
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+}
 
+bool DataBase::deleteAccount(const QString &name)
+{
+    QString sql = QString("delete from account where act_name='%1';").arg(name);
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
 }
 
 bool DataBase::insertBook(const Book &book)
@@ -233,7 +248,47 @@ bool DataBase::insertBook(const Book &book)
 
 bool DataBase::updateBook(const Book &book)
 {
+QString sql = QString("update book "
+                      "set bok_totalincome=%1,bok_totalexpend=%2,bok_remark='%3' "
+                      "where bok_name='%4';"
+                      ).arg(QString::number(book.getTotalIncome(),'f',2),
+                       QString::number(book.getTotalExpend(),'f',2),
+                       book.getRemark(),
+                       book.getName());
+//    qDebug()<<sql;
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+}
 
+bool DataBase::deleteBook(const QString &name)
+{
+    QString sql = QString("delete from book where bok_name='%1';").arg(name);
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::insertRecord(const Record &record)
+{
+    QSqlQuery query;
+    query.prepare("insert into record(act_name,bok_name,red_datetime,red_flow_type,red_first_classify,red_second_classify,red_transfer_in,red_money,red_remark,red_image) "
+                  "values(?,?,?,?,?,?,?,?,?,?);");
+    query.bindValue(0,record.getAccountName());
+    query.bindValue(1,record.getBookName());
+    query.bindValue(2,record.getRecordTime());
+    query.bindValue(3,record.getFlowType());
+    query.bindValue(4,record.getFirstClassify());
+    query.bindValue(5,record.getSecondClassify());
+    query.bindValue(6,record.getTransferIn());
+    query.bindValue(7,record.getMoney());
+    query.bindValue(8,record.getRemark());
+    query.bindValue(9,record.getImage());
+    if(query.exec())
+        return true;
+    return false;
 }
 
 DataBase::DataBase()

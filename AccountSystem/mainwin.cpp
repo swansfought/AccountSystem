@@ -13,6 +13,8 @@ MainWin::MainWin(QWidget *parent)
     db = DataBase::getInstance();
     addWin = new AddWin(this);
     config = Config::getInstance();
+    currAccount = nullptr;
+    currBook = nullptr;
 
     initWinData();//初始化数据
     initSignalSlots();
@@ -31,11 +33,15 @@ void MainWin::initWinData()
     ui->dock_totalExpend_hide->setIcon(QIcon(":/img/show.png"));
     ui->dock_totalFund_hide->setIcon(QIcon(":/img/show.png"));
 
+    initRecordData(); //记账记录
+
     //账本
     auto bookVec = db->queryAllBook();
     for (int i = 0; i < bookVec.size(); ++i) {
         auto toolBtn = createBookItem(bookVec.at(i));
         ui->vLayout_book->insertWidget(i, qobject_cast<QWidget*>(toolBtn));
+
+        addWin->addBook(bookVec.at(i).getName()); //记账窗口 账本
     }
 
     //账户
@@ -43,6 +49,8 @@ void MainWin::initWinData()
     for (int i = 0; i < accountVec.size(); ++i) {
         auto toolBtn = createAccountItem(accountVec.at(i));
         ui->vLayout_account->insertWidget(i, qobject_cast<QWidget*>(toolBtn));
+
+        addWin->addAccount(accountVec.at(i).getName());//记账窗口 账户
     }
 
     //收入分类
@@ -151,6 +159,89 @@ void MainWin::initWinData()
 
 }
 
+void MainWin::initRecordData()
+{
+    //初始化流水账
+    QStringList headerLabels;
+    headerLabels << "" << "账本" << "账户" << "流向" << "金额" << "一级分类" << "二级分类"  << "转入账户" << "备注";
+    ui->record_tree->setHeaderLabels(headerLabels);
+
+    //临时查询
+    QString sql = "select * from record;";
+    QSqlQuery query;
+    if(query.exec(sql) && query.next()){
+        QTreeWidgetItem *rootItem = new QTreeWidgetItem(ui->record_tree);
+        rootItem->setText(0,query.value("red_datetime").toDateTime().toString("yyyy年MM月dd日"));
+        rootItem->setFirstColumnSpanned(true); //列合并
+        do{
+            QTreeWidgetItem *subItem = new QTreeWidgetItem(rootItem);
+            subItem->setText(1,query.value("bok_name").toString());
+            subItem->setText(2,query.value("act_name").toString());
+            subItem->setText(3,query.value("red_flow_type").toString());
+            subItem->setText(4,QString::number(query.value("red_money").toFloat(),'f',2));
+            subItem->setText(5,query.value("red_first_classify").toString());
+            subItem->setText(6,query.value("red_second_classify").toString());
+            subItem->setText(7,query.value("red_transfer_in").toString());
+            subItem->setText(8,query.value("red_remark").toString());
+            subItem->setToolTip(8,query.value("red_remark").toString()); //设置备注提示
+
+            subItem->setTextAlignment(1,Qt::AlignCenter);
+            subItem->setTextAlignment(2,Qt::AlignCenter);
+            subItem->setTextAlignment(3,Qt::AlignCenter);
+            subItem->setTextAlignment(4,Qt::AlignCenter);
+            subItem->setTextAlignment(5,Qt::AlignCenter);
+            subItem->setTextAlignment(6,Qt::AlignCenter);
+            subItem->setTextAlignment(7,Qt::AlignCenter);
+
+            //设置字体样式
+            QFont font;
+//            font.setBold(true);
+            if("支出" == query.value("red_flow_type").toString()){
+                subItem->setFont(3,font);
+                subItem->setFont(4,font);
+
+                QBrush brush(QColor(216, 30, 6));
+                subItem->setForeground(3,brush);
+                subItem->setForeground(4,brush);
+            }else if("收入" == query.value("red_flow_type").toString()){
+                subItem->setFont(3,font);
+                subItem->setFont(4,font);
+
+                QBrush brush(QColor(37, 184, 122));
+                subItem->setForeground(3,brush);
+                subItem->setForeground(4,brush);
+            }else{ //转账
+                subItem->setFont(3,font);
+                subItem->setFont(4,font);
+
+                QBrush brush(QColor(254, 118, 95));
+                subItem->setForeground(3,brush);
+                subItem->setForeground(4,brush);
+            }
+
+        }while (query.next());
+        ui->record_tree->expandItem(rootItem);//展开
+    }
+    // 设置每列的调整模式为固定大小
+    QHeaderView *header = ui->record_tree->header();
+    for (int i = 0; i < 9; ++i)
+        header->setSectionResizeMode(i, QHeaderView::Fixed);
+
+    // 设置每列的宽度
+    header->resizeSection(0, 51); //解决子项距离父项左边偏距，暂没想到其他解决方法
+    header->resizeSection(1, 95);
+    header->resizeSection(2, 95);
+    header->resizeSection(3, 60);
+    header->resizeSection(4, 105);
+    header->resizeSection(5, 95);
+    header->resizeSection(6, 95);
+    header->resizeSection(7, 95);
+//    header->resizeSection(8, 100);
+
+    header->setDefaultAlignment(Qt::AlignCenter);//设置整个标题栏居中
+    header->setSectionsMovable(false);// 禁用列拖动
+}
+
 void MainWin::initSignalSlots()
 {
     // dock栏
@@ -217,7 +308,6 @@ void MainWin::initSignalSlots()
     // account - 账户
     connect(ui->account_add,&QPushButton::clicked,this,[=](){
         //重置数据
-        accountReadOnly(false);
         ui->account_fund->setValue(0);
         ui->account_nickname->clear();
         ui->account_card->clear();
@@ -259,7 +349,6 @@ void MainWin::initSignalSlots()
                 QMessageBox::information(this,"账户添加","账户添加成功！",QMessageBox::Ok);
 
                 //重置数据
-                accountReadOnly(false);
                 ui->account_fund->setValue(0);
                 ui->account_nickname->clear();
                 ui->account_card->clear();
@@ -274,14 +363,35 @@ void MainWin::initSignalSlots()
                 return;
             }
             account.setName(ui->account_name->text());
-            if(db->updateAccount(account))
+            if(db->updateAccount(account)){
+                QString text = QString("%1\n现有资产%2元").arg(account.getName(),
+                                                             QString::number(account.getFund(),'f',2));
+                currAccount->setText(text);
                 QMessageBox::information(this,"账户更新","账户更新成功！",QMessageBox::Ok);
-            else
+            }else
                 QMessageBox::information(this,"账户更新","账户更新失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
         }
     });
     connect(ui->account_delete,&QPushButton::clicked,this,[=](){
-        ;
+        QString name = currAccount->text().split("\n").at(0);
+        QString tip = QString("⚠注意：\n->确定要删除“%1”账户吗?\n->删除会导致账户所有记录都会被清空!!!").arg(name);
+        auto ret = QMessageBox::information(this,"账户删除",tip,QMessageBox::Yes,QMessageBox::No);
+        if(QMessageBox::Yes == ret && db->deleteAccount(name)){ // 直接删除
+            ui->vLayout_account->removeWidget(qobject_cast<QWidget*>(currAccount));
+            currAccount->deleteLater();
+            currAccount = nullptr;
+
+            //清空显示
+            ui->account_name->clear();
+            ui->account_fund->setValue(0);
+            ui->account_nickname->clear();
+            ui->account_remark->clear();
+            ui->book_info->clear();
+
+            //显隐
+            ui->groupBox_account_left_dock->setVisible(false);
+            ui->groupBox_account_right_dock->setVisible(false);
+        }
     });
     connect(ui->account_return,&QPushButton::clicked,this,[=](){
         //显隐
@@ -291,12 +401,7 @@ void MainWin::initSignalSlots()
         ui->stackedWidget_account_name->setCurrentWidget(ui->page_account_name);
 
         //还原数据
-        ui->account_name->setText(currAccount.getName());
-        ui->account_fund->setValue(currAccount.getFund());
-        ui->account_nickname->setText(currAccount.getNickname());
-        ui->account_card->setText(currAccount.getCardNumber());
-        ui->account_remark->setPlainText(currAccount.getRemark());
-        ui->account_enable->setChecked(currAccount.getEnable());
+        currAccount->click();
     });
 
     // book - 账本
@@ -312,6 +417,11 @@ void MainWin::initSignalSlots()
     connect(ui->book_save,&QPushButton::clicked,this,[=](){
         //添加账本
         if(ui->page_addBook == ui->stackedWidget_book->currentWidget()){
+            if(ui->book_newName->text().isEmpty()){
+                QMessageBox::information(this,"账本添加","账本名称为空，无法添加账本！",QMessageBox::Ok);
+                return;
+            }
+
             QSqlQuery query;
             QString sql = QString("select bok_name from book where bok_name='%1';").arg(ui->book_newName->text());
             if(query.exec(sql) && query.next()){
@@ -358,7 +468,26 @@ void MainWin::initSignalSlots()
         }
     });
     connect(ui->book_delete,&QPushButton::clicked,this,[=](){
-        ;
+        QString name = currBook->text().split("\n").at(0);
+//        Book book = db->queryBook(list.at(0));
+        QString tip = QString("⚠注意：\n->确定要删除“%1”账本吗?\n->删除会导致账本所有记录都会被清空!!!").arg(name);
+        auto ret = QMessageBox::information(this,"账本删除",tip,QMessageBox::Yes,QMessageBox::No);
+        if(QMessageBox::Yes == ret && db->deleteBook(name)){ // 直接删除
+            ui->vLayout_book->removeWidget(qobject_cast<QWidget*>(currBook));
+            currBook->deleteLater();
+            currBook = nullptr;
+
+            //清空显示
+            ui->book_name->clear();
+            ui->book_totalIncome->setValue(0);
+            ui->book_totalExpend->setValue(0);
+            ui->book_remark->clear();
+            ui->book_info->clear();
+
+            //显隐
+            ui->groupBox_book_left_dock->setVisible(false);
+            ui->groupBox_book_right_dock->setVisible(false);
+        }
     });
     connect(ui->book_return,&QPushButton::clicked,this,[=](){
         ui->book_delete->setVisible(true);
@@ -386,13 +515,14 @@ QToolButton* MainWin::createBookItem(const Book& book)
     toolBtn->setText(text);
     // 选择展示信息
     connect(toolBtn,&QToolButton::clicked,this,[=](){
-        currBook = book;
+        currBook = toolBtn;
         //前提是选择按钮互斥
         if(!toolBtn->isChecked() && !bookIsChecked()){
             toolBtn->setChecked(true);
             return;
         }
         //数据
+        Book book = db->queryBook(toolBtn->text().split("\n").at(0));
         ui->book_totalIncome->setValue(book.getTotalIncome());
         ui->book_totalExpend->setValue(book.getTotalExpend());
         ui->book_name->setText(book.getName());
@@ -410,12 +540,10 @@ QToolButton* MainWin::createBookItem(const Book& book)
 
         //更改
         if(DEFAULT_BOOK == book.getName()){
-            ui->book_name->setReadOnly(true);
             ui->book_remark->setReadOnly(true);
             ui->book_totalIncome->setReadOnly(true);
             ui->book_totalExpend->setReadOnly(true);
         }else{
-            ui->book_name->setReadOnly(false);
             ui->book_remark->setReadOnly(false);
             ui->book_totalIncome->setReadOnly(false);
             ui->book_totalExpend->setReadOnly(false);
@@ -441,13 +569,14 @@ QToolButton *MainWin::createAccountItem(const Account &account)
     toolBtn->setText(text);
     // 选择展示信息
     connect(toolBtn,&QToolButton::clicked,this,[=](){
-        currAccount = account;
+        currAccount = toolBtn;
         //前提是选择按钮互斥
         if(!toolBtn->isChecked() && !accountIsChecked()){
             toolBtn->setChecked(true);
             return;
         }
         //数据
+        Account account = db->queryAccount(toolBtn->text().split("\n").at(0));
         ui->account_name->setText(account.getName());
         ui->account_fund->setValue(account.getFund());
         ui->account_nickname->setText(account.getNickname());
@@ -464,11 +593,9 @@ QToolButton *MainWin::createAccountItem(const Account &account)
 
         //更改
         if(DEFAULT_ACCOUNT == account.getName())
-            accountReadOnly(true);
+            ui->widget_account_enable->setVisible(false);
         else
-            accountReadOnly(false);
-
-
+            ui->widget_account_enable->setVisible(true);
     });
     return toolBtn;
 }
@@ -499,15 +626,5 @@ bool MainWin::accountIsChecked()
         }
     }
     return false;
-}
-
-void MainWin::accountReadOnly(bool bol)
-{
-    ui->account_name->setReadOnly(bol);
-    ui->account_fund->setReadOnly(bol);
-    ui->account_nickname->setReadOnly(bol);
-    ui->account_card->setReadOnly(bol);
-    ui->account_remark->setReadOnly(bol);
-    ui->widget_account_enable->setVisible(!bol);
 }
 
