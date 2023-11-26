@@ -8,12 +8,15 @@
 	"INPUTS" : 
 	[
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/show.png",
+		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/switchLeft.png",
+		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/switchRight.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/account.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/book.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/balance.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/income.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/pay.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/fund.png",
+		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/loading.gif",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/branch-open.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/hide.png",
 		"E:/code/qt/Widgets/AccountSystem/AccountSystem/img/branch-close.png"

@@ -15,6 +15,7 @@
 #include <QDebug>
 #include "db/record.h"
 #include "db/account.h"
+#include "db/recordfilter.h"
 #include "db/book.h"
 #include "global.h"
 
@@ -27,11 +28,20 @@ public:
 
     QVector<Account> queryAllAccount();
     QVector<Book> queryAllBook();
-//    QVector<Record> queryAllRecord();
+
+    void queryLimitRecord(QSqlQuery& query, const int& start,const int& end);
+    void queryLimitRecord(QSqlQuery& query, const int& start,const int& end, const RecordFilter& filter);
+
+    int queryRecordRows();
+    int queryRecordRows(const QString& bookName);
 
     Account queryAccount(const QString& name);
     Book queryBook(const QString& name);
     Record queryRecord(const QString& name);
+
+    qreal queryTotalFund();
+    qreal queryMonthIncome();
+    qreal queryMonthExpend();
 
     bool insertAccount(const Account& account);
     bool updateAccount(const Account& account);
@@ -42,6 +52,8 @@ public:
     bool deleteBook(const QString& name);
 
     bool insertRecord(const Record& record);
+
+    int getMaxPages(const double& numOfPage);
 
 private:
     DataBase();
@@ -56,6 +68,9 @@ private:
 
     bool connectState;
     QSqlDatabase db;
+
+    int record_start_index;
+    int record_end_index;
 };
 
 #endif // DATABASE_H

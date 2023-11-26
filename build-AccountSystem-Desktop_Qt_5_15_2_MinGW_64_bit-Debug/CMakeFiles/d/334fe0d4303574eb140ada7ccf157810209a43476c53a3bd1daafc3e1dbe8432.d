@@ -38,6 +38,7 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfactoryinterface.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h \
@@ -69,7 +70,9 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qobjectdefs.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qobjectdefs_impl.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qpair.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qplugin.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qpoint.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qpointer.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qprocessordetection.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qrect.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qrefcount.h \
@@ -99,6 +102,7 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QImage \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QMovie \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QStandardItemModel \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
@@ -110,9 +114,12 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qimage.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qimageiohandler.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qimagereader.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qmovie.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h \
@@ -412,10 +419,8 @@ AccountSystem_autogen/timestamp: \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wchar.h \
   D:/software/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include/wctype.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/CMakeLists.txt \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/classifytreewidget.cpp \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/classifytreewidget.h \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/recordtreewidget.cpp \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/recordtreewidget.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/account.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.cpp \
@@ -424,6 +429,8 @@ AccountSystem_autogen/timestamp: \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/database.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/record.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/record.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/recordfilter.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/recordfilter.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/global.h \
@@ -431,13 +438,13 @@ AccountSystem_autogen/timestamp: \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.cpp \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/res.qrc \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.cpp \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/recordWin.cpp \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/recordWin.h \
   .qtc/package-manager/auto-setup.cmake \
   AccountSystem_autogen/moc_predefs.h \
   CMakeFiles/3.24.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.24.2/CMakeRCCompiler.cmake \
   CMakeFiles/3.24.2/CMakeSystem.cmake \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/mainwin.ui \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.ui \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/recordWin.ui \
   D:/software/Qt/Tools/CMake_64/bin/cmake.exe

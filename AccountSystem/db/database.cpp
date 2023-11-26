@@ -146,6 +146,107 @@ QVector<Book> DataBase::queryAllBook()
     return vec;
 }
 
+void DataBase::queryLimitRecord(QSqlQuery& query, const int &start, const int &end)
+{
+    if(start < 0 || end < 0 || end < start)
+        return;
+    QString sql = QString("select * from record "
+                          "order by red_datetime desc "
+                          "limit %1,%2;").arg(QString::number(start),QString::number(end));
+    if(!query.exec(sql))
+        return;
+}
+
+void DataBase::queryLimitRecord(QSqlQuery& query, const int &start, const int &end, const RecordFilter& filter)
+{
+    if(start < 0 || end < 0 || end < start)
+        return;
+
+    QString condition_date, condition_input, condition_flowType;
+
+    // 日期
+    QString dateType = filter.getDateType();
+    if("忽略日期" == dateType)
+        condition_date = "";
+    else  if("忽略日" == dateType)
+        condition_date = QString("red_datetime like '%1'").arg(filter.getDate().toString("yyyy-MM-%"));
+    else  if("忽略月" == dateType)
+        condition_date = QString("red_datetime like '%1'").arg(filter.getDate().toString("yyyy-%-dd%"));
+    else  if("保留日期" == dateType)
+        condition_date = QString("red_datetime like '%1'").arg(filter.getDate().toString("yyyy-MM-dd%"));
+
+    // 流向
+    if("全部" == filter.getFlowType())
+        condition_flowType = "";
+    else
+        condition_flowType = QString("red_flow_type = '%1'").arg(filter.getFlowType());
+
+    //输入
+    if(filter.getInput().isEmpty()){
+        condition_input = "";
+    }else{
+        condition_input = QString("("
+                                  "act_name like '%%1%' or "
+                                  "bok_name like '%%1%' or "
+                                  "red_first_classify like '%%1%' or "
+                                  "red_second_classify like '%%1%' or "
+                                  "red_transfer_in like '%%1%' or "
+                                  "red_money like '%%1%' or "
+                                  "red_remark like '%%1%'"
+                                  ")").arg(filter.getInput());
+    }
+
+    // 开始整理sql语句
+    QString sql;
+    if(condition_date.isEmpty() && condition_input.isEmpty() && condition_flowType.isEmpty()){
+        sql = QString("select * from record "
+                      "order by red_datetime desc "
+                      "limit %1,%2;").arg(QString::number(start),QString::number(end));
+    }else{
+        //如果条件为空会导致 and 前面为空，进而出现 where and 或者 where xxx and and 的情况
+        QString condition = "";
+        if(!condition_date.isEmpty())
+            condition.append(condition_date);
+        if(!condition_input.isEmpty() && !condition_date.isEmpty())
+            condition.append(" and " + condition_input);
+        else
+            condition.append(condition_input);
+        if(!condition_flowType.isEmpty() && (!condition_input.isEmpty() || !condition_date.isEmpty()) )
+            condition.append(" and " + condition_flowType);
+        else
+            condition.append(condition_flowType);
+
+        sql = QString("select * from record "
+                      "where "
+                      "%1 "
+                      "order by red_datetime desc "
+                      "limit %4,%5;"
+                      ).arg(condition,QString::number(start),QString::number(end));
+//        qDebug()<<sql;
+    }
+    query.exec(sql);
+}
+
+int DataBase::queryRecordRows()
+{
+    QSqlQuery query;
+    QString sql = "select count(*) from record;";
+    int counts = 0;
+    if(query.exec(sql) && query.next())
+        counts = query.value(0).toInt();
+    return counts;
+}
+
+int DataBase::queryRecordRows(const QString &bookName)
+{
+    QSqlQuery query;
+    QString sql = QString("select count(*) from record where bok_name='%1';").arg(bookName);
+    int counts = 0;
+    if(query.exec(sql) && query.next())
+        counts = query.value(0).toInt();
+    return counts;
+}
+
 
 Account DataBase::queryAccount(const QString &name)
 {
@@ -195,6 +296,48 @@ Record DataBase::queryRecord(const QString &name)
 
 }
 
+qreal DataBase::queryTotalFund()
+{
+    qreal totalFund = 0;
+    QSqlQuery query;
+    if(query.exec("select act_fund from account;")){
+        while (query.next())
+            totalFund += query.value("act_fund").toDouble();
+    }
+    return totalFund;
+}
+
+qreal DataBase::queryMonthIncome()
+{
+    qreal monthIncome = 0;
+    QSqlQuery query;
+    QString sql = QString("select red_money "
+                          "from record "
+                          "where red_flow_type = '收入' and red_datetime like '%1%';"
+                          ).arg(QDateTime::currentDateTime().toString("yyyy-MM"));
+    if(query.exec(sql)){
+        while (query.next())
+            monthIncome += query.value("red_money").toDouble();
+    }
+    return monthIncome;
+}
+
+qreal DataBase::queryMonthExpend()
+{
+    qreal monthExpend = 0;
+    QSqlQuery query;
+    QString sql = QString("select red_money "
+                          "from record "
+                          "where red_flow_type = '支出' and red_datetime like '%1%';"
+                          ).arg(QDateTime::currentDateTime().toString("yyyy-MM"));
+    if(query.exec(sql)){
+        while (query.next())
+            monthExpend += query.value("red_money").toDouble();
+    }
+    return monthExpend;
+
+}
+
 bool DataBase::insertAccount(const Account &account)
 {
     QString sql = QString("insert into account(act_name,act_fund,act_nickname,act_cardnumber,act_remark,act_enable) "
@@ -232,7 +375,7 @@ bool DataBase::deleteAccount(const QString &name)
 {
     QString sql = QString("delete from account where act_name='%1';").arg(name);
     QSqlQuery query;
-    if(query.exec(sql))
+    if(query.exec("PRAGMA foreign_keys = ON;") && query.exec(sql))
         return true;
     return false;
 }
@@ -248,13 +391,13 @@ bool DataBase::insertBook(const Book &book)
 
 bool DataBase::updateBook(const Book &book)
 {
-QString sql = QString("update book "
-                      "set bok_totalincome=%1,bok_totalexpend=%2,bok_remark='%3' "
-                      "where bok_name='%4';"
-                      ).arg(QString::number(book.getTotalIncome(),'f',2),
-                       QString::number(book.getTotalExpend(),'f',2),
-                       book.getRemark(),
-                       book.getName());
+    QString sql = QString("update book "
+                          "set bok_totalincome=%1,bok_totalexpend=%2,bok_remark='%3' "
+                          "where bok_name='%4';"
+                          ).arg(QString::number(book.getTotalIncome(),'f',2),
+                           QString::number(book.getTotalExpend(),'f',2),
+                           book.getRemark(),
+                           book.getName());
 //    qDebug()<<sql;
     QSqlQuery query;
     if(query.exec(sql))
@@ -266,13 +409,13 @@ bool DataBase::deleteBook(const QString &name)
 {
     QString sql = QString("delete from book where bok_name='%1';").arg(name);
     QSqlQuery query;
-    if(query.exec(sql))
+    if(query.exec("PRAGMA foreign_keys = ON;") && query.exec(sql))
         return true;
     return false;
 }
 
 bool DataBase::insertRecord(const Record &record)
-{
+{ 
     QSqlQuery query;
     query.prepare("insert into record(act_name,bok_name,red_datetime,red_flow_type,red_first_classify,red_second_classify,red_transfer_in,red_money,red_remark,red_image) "
                   "values(?,?,?,?,?,?,?,?,?,?);");
@@ -300,6 +443,9 @@ DataBase::DataBase()
         resPath.mkdir("resources");
     }
     connect();
+
+    record_start_index = 0;
+    record_end_index = 0;
 }
 
 void DataBase::checkConnect()
@@ -307,4 +453,16 @@ void DataBase::checkConnect()
     if(db.isOpen())
         return;
     connect();
+}
+
+int DataBase::getMaxPages(const double& numOfPage)
+{
+    int total = queryRecordRows();
+    int pages = 0;
+    if(total/numOfPage > int(total/numOfPage))
+        pages = int(total/numOfPage) + 1;
+    else
+        pages = int(total/numOfPage);
+
+    return pages;
 }

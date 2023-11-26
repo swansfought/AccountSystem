@@ -39,6 +39,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qdebug.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfactoryinterface.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfile.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qfileinfo.h \
@@ -49,6 +50,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qhash.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qiodevice.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qitemselectionmodel.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qiterator.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qjsonarray.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qjsondocument.h \
@@ -69,7 +71,9 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qobjectdefs.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qobjectdefs_impl.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qpair.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qplugin.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qpoint.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qpointer.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qprocessordetection.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qrect.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qrefcount.h \
@@ -99,6 +103,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qvector.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QImage \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QMovie \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QStandardItemModel \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
@@ -109,8 +114,11 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qimage.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qimageiohandler.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qimagereader.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qmovie.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h \
@@ -141,8 +149,11 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolButton \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolTip \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QTreeWidget \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractitemdelegate.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractitemview.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractslider.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractspinbox.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qcombobox.h \
@@ -161,6 +172,9 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtoolbutton.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtooltip.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtreeview.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtreewidget.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtreewidgetitemiterator.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
@@ -341,6 +355,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/book.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/database.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/db/record.h \
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/db/recordfilter.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.h \
   E:/code/qt/Widgets/AccountSystem/AccountSystem/global.h \
-  E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.h
+  E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/recordWin.h

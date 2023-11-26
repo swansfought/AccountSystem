@@ -42,15 +42,16 @@ else()
         add_executable(AccountSystem
             ${PROJECT_SOURCES}
             res.qrc
-            ui/addwin.h ui/addwin.cpp ui/addwin.ui
-            custom/classifytreewidget.h custom/classifytreewidget.cpp
+            ui/recordWin.h ui/recordWin.cpp ui/recordWin.ui
+            custom/treewidget.h custom/treewidget.cpp
             dev/config.h dev/config.cpp
             db/database.h db/database.cpp
             db/record.h db/record.cpp
             global.h
             db/account.h db/account.cpp
             db/book.h db/book.cpp
-            custom/recordtreewidget.h custom/recordtreewidget.cpp
+            db/recordfilter.h db/recordfilter.cpp
+
         )
     endif()
 endif()

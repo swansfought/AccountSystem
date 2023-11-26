@@ -10,5 +10,8 @@
         <file>img/account.png</file>
         <file>img/branch-open.png</file>
         <file>img/branch-close.png</file>
+        <file>img/loading.gif</file>
+        <file>img/switchLeft.png</file>
+        <file>img/switchRight.png</file>
     </qresource>
 </RCC>

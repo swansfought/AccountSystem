@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1100</width>
     <height>700</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1200</width>
+    <width>1100</width>
     <height>700</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1200</width>
+    <width>1100</width>
     <height>700</height>
    </size>
   </property>
@@ -109,33 +109,23 @@
           <property name="spacing">
            <number>0</number>
           </property>
-          <item row="0" column="0">
-           <widget class="QWidget" name="widget_2" native="true">
+          <item row="0" column="1">
+           <widget class="Line" name="line_2">
             <property name="minimumSize">
              <size>
-              <width>140</width>
+              <width>2</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>16777215</width>
+              <width>2</width>
               <height>16777215</height>
              </size>
             </property>
-            <widget class="QLabel" name="label">
-             <property name="geometry">
-              <rect>
-               <x>20</x>
-               <y>10</y>
-               <width>111</width>
-               <height>41</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>晚风来的正巧</string>
-             </property>
-            </widget>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
            </widget>
           </item>
           <item row="0" column="2">
@@ -326,7 +316,7 @@
                       </font>
                      </property>
                      <property name="text">
-                      <string>总资产</string>
+                      <string>总的资产</string>
                      </property>
                     </widget>
                    </item>
@@ -355,7 +345,7 @@
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(55, 146, 250);</string>
+                   <string notr="true">color: rgb(254, 118, 95);</string>
                   </property>
                   <property name="text">
                    <string>0.00</string>
@@ -385,7 +375,7 @@
               </widget>
              </item>
              <item row="0" column="2">
-              <widget class="QWidget" name="widget_totalIncome" native="true">
+              <widget class="QWidget" name="widget_monthIncome" native="true">
                <layout class="QGridLayout" name="gridLayout_10">
                 <property name="topMargin">
                  <number>5</number>
@@ -393,105 +383,6 @@
                 <property name="bottomMargin">
                  <number>5</number>
                 </property>
-                <item row="0" column="1">
-                 <widget class="QWidget" name="widget_9" native="true">
-                  <property name="minimumSize">
-                   <size>
-                    <width>180</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>180</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_11">
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="horizontalSpacing">
-                    <number>5</number>
-                   </property>
-                   <property name="verticalSpacing">
-                    <number>0</number>
-                   </property>
-                   <item row="0" column="2">
-                    <widget class="QPushButton" name="dock_totalIncome_hide">
-                     <property name="minimumSize">
-                      <size>
-                       <width>30</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>30</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="checkable">
-                      <bool>true</bool>
-                     </property>
-                     <property name="autoExclusive">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="1">
-                    <widget class="QLabel" name="label_7">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>0</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <pointsize>11</pointsize>
-                       <bold>true</bold>
-                      </font>
-                     </property>
-                     <property name="text">
-                      <string>月收入</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="3">
-                    <spacer name="horizontalSpacer_3">
-                     <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                      <size>
-                       <width>40</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </spacer>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
                 <item row="0" column="0" rowspan="2">
                  <widget class="QWidget" name="widget_8" native="true">
                   <property name="minimumSize">
@@ -547,8 +438,107 @@
                   </layout>
                  </widget>
                 </item>
+                <item row="0" column="1">
+                 <widget class="QWidget" name="widget_9" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>180</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>180</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_11">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="horizontalSpacing">
+                    <number>5</number>
+                   </property>
+                   <property name="verticalSpacing">
+                    <number>0</number>
+                   </property>
+                   <item row="0" column="2">
+                    <widget class="QPushButton" name="dock_monthIncome_hide">
+                     <property name="minimumSize">
+                      <size>
+                       <width>30</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>30</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="checkable">
+                      <bool>true</bool>
+                     </property>
+                     <property name="autoExclusive">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="3">
+                    <spacer name="horizontalSpacer_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="label_7">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>11</pointsize>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>本月收入</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
                 <item row="1" column="1">
-                 <widget class="QLabel" name="dock_totalIncome_num">
+                 <widget class="QLabel" name="dock_monthIncome_num">
                   <property name="minimumSize">
                    <size>
                     <width>180</width>
@@ -569,7 +559,7 @@
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(55, 146, 250);</string>
+                   <string notr="true">color: rgb(37, 184, 122);</string>
                   </property>
                   <property name="text">
                    <string>0.00</string>
@@ -599,7 +589,7 @@
               </widget>
              </item>
              <item row="0" column="4">
-              <widget class="QWidget" name="widget_totalExpend" native="true">
+              <widget class="QWidget" name="widget_monthExpend" native="true">
                <layout class="QGridLayout" name="gridLayout_12">
                 <property name="topMargin">
                  <number>5</number>
@@ -661,12 +651,12 @@
                       </font>
                      </property>
                      <property name="text">
-                      <string>月支出</string>
+                      <string>本月支出</string>
                      </property>
                     </widget>
                    </item>
                    <item row="0" column="2">
-                    <widget class="QPushButton" name="dock_totalExpend_hide">
+                    <widget class="QPushButton" name="dock_monthExpend_hide">
                      <property name="minimumSize">
                       <size>
                        <width>30</width>
@@ -756,7 +746,7 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLabel" name="dock_totalExpend_num">
+                 <widget class="QLabel" name="dock_monthExpend_num">
                   <property name="minimumSize">
                    <size>
                     <width>180</width>
@@ -777,7 +767,7 @@
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(55, 146, 250);</string>
+                   <string notr="true">color: rgb(216, 30, 6);</string>
                   </property>
                   <property name="text">
                    <string>0.00</string>
@@ -790,23 +780,33 @@
             </layout>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="Line" name="line_2">
+          <item row="0" column="0">
+           <widget class="QWidget" name="widget_2" native="true">
             <property name="minimumSize">
              <size>
-              <width>2</width>
+              <width>140</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>2</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
+            <widget class="QLabel" name="label">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>10</y>
+               <width>111</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>晚风来的正巧</string>
+             </property>
+            </widget>
            </widget>
           </item>
           <item row="0" column="3">
@@ -827,35 +827,6 @@
              <enum>Qt::Vertical</enum>
             </property>
            </widget>
-          </item>
-          <item row="0" column="7">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="4">
-           <spacer name="horizontalSpacer_7">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>10</width>
-              <height>27</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item row="0" column="5">
            <widget class="QPushButton" name="dock_addRecord">
@@ -884,6 +855,19 @@
              <string>记一笔</string>
             </property>
            </widget>
+          </item>
+          <item row="0" column="4">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
@@ -1182,6 +1166,9 @@
        </item>
        <item row="2" column="2">
         <widget class="QStackedWidget" name="stackedWidget_dock">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
          <widget class="QWidget" name="page_record">
           <layout class="QGridLayout" name="gridLayout_7">
            <property name="leftMargin">
@@ -1200,7 +1187,7 @@
             <number>5</number>
            </property>
            <item row="1" column="0">
-            <widget class="QStackedWidget" name="stackedWidget_2">
+            <widget class="QStackedWidget" name="stackedWidget_record">
              <property name="currentIndex">
               <number>0</number>
              </property>
@@ -1221,6 +1208,85 @@
                <property name="spacing">
                 <number>0</number>
                </property>
+               <item row="0" column="0">
+                <widget class="TreeWidget" name="record_tree">
+                 <property name="font">
+                  <font>
+                   <family>微软雅黑</family>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QHeaderView::section {
+	border: 1px solid black;  /*设置边框样式*/
+	border-left:transparent;
+	border-top:transparent;
+	background-color: rgb(221, 221, 221);/*lightgray;  /*设置背景颜色*/
+	/*padding: 4px; 设置内边距*/
+	font-weight: bold;
+ }
+
+QTreeWidget{
+	border:1px solid black;
+     gridline-color: gray;  /*设置网格线颜色*/
+	outline:none;
+	/*alternate-background-color:lightgray;*/
+	selection-background-color:transparent;
+}
+
+QTreeView::item{
+	border:1px solid black;
+	border-left:transparent;
+	border-top:transparent;
+	height:30px;
+}
+
+QTreeView::branch{
+	border:1px solid black;
+	border-right:transparent;
+	border-left:transparent;
+	border-top:transparent;
+}
+
+QTreeView::item:selected{
+	/*color:black;
+	color:inherit;
+	background:rgb(230, 230, 230);
+	color:blue;
+	font-weight: bold;*/
+	color:inherit;
+	background:rgb(235, 235, 235);
+}
+
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings{
+	border-image: none;
+	image:url(:/img/branch-close.png);
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings{
+	border-image: none;
+	image:url(:/img/branch-open.png);
+}
+</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Sunken</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOn</enum>
+                 </property>
+                 <column>
+                  <property name="text">
+                   <string notr="true">1</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
                <item row="1" column="0">
                 <widget class="QWidget" name="widget" native="true">
                  <property name="minimumSize">
@@ -1254,34 +1320,21 @@
                   <property name="verticalSpacing">
                    <number>0</number>
                   </property>
-                  <item row="0" column="3">
-                   <spacer name="horizontalSpacer_8">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="0" column="5">
-                   <widget class="QWidget" name="widget_5" native="true">
+                  <item row="0" column="2">
+                   <widget class="QWidget" name="widget_10" native="true">
                     <property name="minimumSize">
                      <size>
-                      <width>145</width>
+                      <width>300</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>145</width>
+                      <width>300</width>
                       <height>16777215</height>
                      </size>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_30">
+                    <layout class="QGridLayout" name="gridLayout_31">
                      <property name="leftMargin">
                       <number>0</number>
                      </property>
@@ -1300,17 +1353,17 @@
                      <property name="verticalSpacing">
                       <number>0</number>
                      </property>
-                     <item row="0" column="0">
-                      <widget class="QPushButton" name="record_output">
+                     <item row="0" column="1">
+                      <widget class="QComboBox" name="record_pageRecordNum">
                        <property name="minimumSize">
                         <size>
-                         <width>70</width>
+                         <width>95</width>
                          <height>30</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>70</width>
+                         <width>95</width>
                          <height>30</height>
                         </size>
                        </property>
@@ -1319,22 +1372,34 @@
                          <pointsize>9</pointsize>
                         </font>
                        </property>
-                       <property name="text">
-                        <string>导出此页</string>
-                       </property>
+                       <item>
+                        <property name="text">
+                         <string>50条/页</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>100条/页</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>150条/页</string>
+                        </property>
+                       </item>
                       </widget>
                      </item>
-                     <item row="0" column="1">
-                      <widget class="QPushButton" name="record_output_all">
+                     <item row="0" column="2">
+                      <widget class="QLabel" name="record_pageInfo">
                        <property name="minimumSize">
                         <size>
-                         <width>70</width>
+                         <width>200</width>
                          <height>30</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>70</width>
+                         <width>200</width>
                          <height>30</height>
                         </size>
                        </property>
@@ -1344,7 +1409,10 @@
                         </font>
                        </property>
                        <property name="text">
-                        <string>导出全部</string>
+                        <string>共46532条记录，共466页。</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                        </property>
                       </widget>
                      </item>
@@ -1417,10 +1485,10 @@
                         <number>1</number>
                        </property>
                        <property name="maximum">
-                        <number>999</number>
+                        <number>9999</number>
                        </property>
                        <property name="value">
-                        <number>999</number>
+                        <number>1</number>
                        </property>
                       </widget>
                      </item>
@@ -1475,21 +1543,21 @@
                     </layout>
                    </widget>
                   </item>
-                  <item row="0" column="2">
-                   <widget class="QWidget" name="widget_10" native="true">
+                  <item row="0" column="7">
+                   <widget class="QWidget" name="widget_5" native="true">
                     <property name="minimumSize">
                      <size>
-                      <width>300</width>
+                      <width>150</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>300</width>
+                      <width>145</width>
                       <height>16777215</height>
                      </size>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_31">
+                    <layout class="QGridLayout" name="gridLayout_30">
                      <property name="leftMargin">
                       <number>0</number>
                      </property>
@@ -1503,58 +1571,22 @@
                       <number>0</number>
                      </property>
                      <property name="horizontalSpacing">
-                      <number>5</number>
+                      <number>10</number>
                      </property>
                      <property name="verticalSpacing">
                       <number>0</number>
                      </property>
                      <item row="0" column="1">
-                      <widget class="QComboBox" name="record_page_recordNum">
+                      <widget class="QPushButton" name="record_output_all">
                        <property name="minimumSize">
                         <size>
-                         <width>95</width>
+                         <width>70</width>
                          <height>30</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>95</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <pointsize>9</pointsize>
-                        </font>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>50条/页</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>100条/页</string>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>200条/页</string>
-                        </property>
-                       </item>
-                      </widget>
-                     </item>
-                     <item row="0" column="2">
-                      <widget class="QLabel" name="record_pageInfo">
-                       <property name="minimumSize">
-                        <size>
-                         <width>200</width>
-                         <height>30</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>200</width>
+                         <width>70</width>
                          <height>30</height>
                         </size>
                        </property>
@@ -1564,10 +1596,128 @@
                         </font>
                        </property>
                        <property name="text">
-                        <string>共46532条记录，共466页。</string>
+                        <string>导出全部</string>
                        </property>
-                       <property name="alignment">
-                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QPushButton" name="record_output">
+                       <property name="minimumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>导出此页</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item row="0" column="6">
+                   <widget class="QWidget" name="widget_13" native="true">
+                    <property name="minimumSize">
+                     <size>
+                      <width>150</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>145</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_33">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="horizontalSpacing">
+                      <number>10</number>
+                     </property>
+                     <property name="verticalSpacing">
+                      <number>0</number>
+                     </property>
+                     <item row="0" column="1">
+                      <widget class="QPushButton" name="record_collapse">
+                       <property name="minimumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>全部折叠</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QPushButton" name="record_expand">
+                       <property name="minimumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>70</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>全部展开</string>
                        </property>
                       </widget>
                      </item>
@@ -1577,82 +1727,34 @@
                  </layout>
                 </widget>
                </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="page_record_loading">
+              <layout class="QGridLayout" name="gridLayout_36">
                <item row="0" column="0">
-                <widget class="QTreeWidget" name="record_tree">
-                 <property name="font">
-                  <font>
-                   <family>微软雅黑</family>
-                   <pointsize>10</pointsize>
-                  </font>
+                <widget class="QLabel" name="record_loading">
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>50</height>
+                  </size>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">QHeaderView::section {
-	border: 1px solid black;  /*设置边框样式*/
-	border-left:transparent;
-	border-top:transparent;
-	background-color: rgb(221, 221, 221);/*lightgray;  /*设置背景颜色*/
-	/*padding: 4px; 设置内边距*/
-	font-weight: bold;
- }
-
-QTreeWidget{
-	border:1px solid black;
-     gridline-color: gray;  /*设置网格线颜色*/
-	outline:none;
-	/*alternate-background-color:lightgray;*/
-	selection-background-color:transparent;
-}
-
-QTreeView::item{
-	border:1px solid black;
-	border-left:transparent;
-	border-top:transparent;
-	height:30px;
-}
-
-QTreeView::branch{
-	border:1px solid black;
-	border-right:transparent;
-	border-left:transparent;
-	border-top:transparent;
-}
-
-QTreeView::item:selected{
-	/*color:black;
-	color:inherit;
-	background:rgb(230, 230, 230);
-	color:blue;
-	font-weight: bold;*/
-	color:inherit;
-	background:rgb(235, 235, 235);
-}
-
-QTreeView::branch:has-children:!has-siblings:closed,
-QTreeView::branch:closed:has-children:has-siblings{
-	border-image: none;
-	image:url(:/img/branch-close.png);
-}
-
-QTreeView::branch:open:has-children:!has-siblings,
-QTreeView::branch:open:has-children:has-siblings{
-	border-image: none;
-	image:url(:/img/branch-open.png);
-}
-</string>
+                 <property name="maximumSize">
+                  <size>
+                   <width>50</width>
+                   <height>50</height>
+                  </size>
                  </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOn</enum>
+                 <property name="text">
+                  <string/>
                  </property>
-                 <column>
-                  <property name="text">
-                   <string notr="true">1</string>
-                  </property>
-                 </column>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
                 </widget>
                </item>
               </layout>
              </widget>
-             <widget class="QWidget" name="page_record_loading"/>
             </widget>
            </item>
            <item row="0" column="0">
@@ -1691,6 +1793,162 @@ QTreeView::branch:open:has-children:has-siblings{
               <property name="verticalSpacing">
                <number>0</number>
               </property>
+              <item row="0" column="8">
+               <widget class="QWidget" name="widget_19" native="true">
+                <property name="minimumSize">
+                 <size>
+                  <width>240</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>240</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_35">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="horizontalSpacing">
+                  <number>5</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>70</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>70</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>选择日期</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QDateEdit" name="record_date">
+                   <property name="minimumSize">
+                    <size>
+                     <width>165</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>165</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="displayFormat">
+                    <string>yyyy年MM月dd日</string>
+                   </property>
+                   <property name="calendarPopup">
+                    <bool>true</bool>
+                   </property>
+                   <property name="date">
+                    <date>
+                     <year>2023</year>
+                     <month>11</month>
+                     <day>8</day>
+                    </date>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="6">
+               <widget class="Line" name="line_6">
+                <property name="minimumSize">
+                 <size>
+                  <width>2</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>2</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="11">
+               <widget class="Line" name="line_7">
+                <property name="minimumSize">
+                 <size>
+                  <width>2</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>2</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="12">
+               <widget class="QPushButton" name="record_reset">
+                <property name="minimumSize">
+                 <size>
+                  <width>70</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>70</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>重置过滤</string>
+                </property>
+               </widget>
+              </item>
               <item row="0" column="2">
                <widget class="QComboBox" name="record_filter">
                 <property name="minimumSize">
@@ -1732,73 +1990,17 @@ QTreeView::branch:open:has-children:has-siblings{
                 </item>
                </widget>
               </item>
-              <item row="0" column="8">
-               <spacer name="horizontalSpacer_5">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>231</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="0" column="3">
-               <widget class="Line" name="line_6">
-                <property name="minimumSize">
-                 <size>
-                  <width>2</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>2</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="4">
-               <widget class="QLabel" name="label_2">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>选择日期</string>
-                </property>
-               </widget>
-              </item>
               <item row="0" column="1">
                <widget class="QLineEdit" name="record_input">
                 <property name="minimumSize">
                  <size>
-                  <width>255</width>
+                  <width>245</width>
                   <height>35</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>255</width>
+                  <width>245</width>
                   <height>35</height>
                  </size>
                 </property>
@@ -1812,82 +2014,119 @@ QTreeView::branch:open:has-children:has-siblings{
                 </property>
                </widget>
               </item>
-              <item row="0" column="6">
-               <widget class="Line" name="line_7">
+              <item row="0" column="7">
+               <widget class="QWidget" name="widget_17" native="true">
                 <property name="minimumSize">
                  <size>
-                  <width>2</width>
+                  <width>145</width>
                   <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>2</width>
+                  <width>145</width>
                   <height>16777215</height>
                  </size>
                 </property>
+                <layout class="QGridLayout" name="gridLayout_34">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="horizontalSpacing">
+                  <number>5</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>70</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>70</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>收支类型</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="record_flowType">
+                   <property name="minimumSize">
+                    <size>
+                     <width>70</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>70</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>全部</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>支出</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>收入</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>转账</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="13">
+               <spacer name="horizontalSpacer_7">
                 <property name="orientation">
-                 <enum>Qt::Vertical</enum>
+                 <enum>Qt::Horizontal</enum>
                 </property>
-               </widget>
-              </item>
-              <item row="0" column="7">
-               <widget class="QPushButton" name="record_reset">
-                <property name="minimumSize">
+                <property name="sizeHint" stdset="0">
                  <size>
-                  <width>55</width>
-                  <height>35</height>
+                  <width>40</width>
+                  <height>20</height>
                  </size>
                 </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>55</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>9</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>重置</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="5">
-               <widget class="QDateEdit" name="record_date">
-                <property name="minimumSize">
-                 <size>
-                  <width>170</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>170</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>10</pointsize>
-                 </font>
-                </property>
-                <property name="displayFormat">
-                 <string>yyyy年MM月dd日</string>
-                </property>
-                <property name="calendarPopup">
-                 <bool>true</bool>
-                </property>
-                <property name="date">
-                 <date>
-                  <year>2023</year>
-                  <month>11</month>
-                  <day>8</day>
-                 </date>
-                </property>
-               </widget>
+               </spacer>
               </item>
              </layout>
             </widget>
@@ -1903,7 +2142,7 @@ QTreeView::branch:open:has-children:has-siblings{
             <number>5</number>
            </property>
            <property name="rightMargin">
-            <number>5</number>
+            <number>0</number>
            </property>
            <property name="bottomMargin">
             <number>5</number>
@@ -1914,30 +2153,17 @@ QTreeView::branch:open:has-children:has-siblings{
            <property name="verticalSpacing">
             <number>0</number>
            </property>
-           <item row="0" column="2">
-            <spacer name="horizontalSpacer_23">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>286</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
            <item row="0" column="1">
-            <widget class="ClassifyTreeWidget" name="classify_incomeTree">
+            <widget class="TreeWidget" name="classify_incomeTree">
              <property name="minimumSize">
               <size>
-               <width>400</width>
+               <width>465</width>
                <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>400</width>
+               <width>465</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1945,6 +2171,12 @@ QTreeView::branch:open:has-children:has-siblings{
               <font>
                <pointsize>11</pointsize>
               </font>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
              </property>
              <column>
               <property name="text">
@@ -1954,16 +2186,16 @@ QTreeView::branch:open:has-children:has-siblings{
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="ClassifyTreeWidget" name="classify_expendTree">
+            <widget class="TreeWidget" name="classify_expendTree">
              <property name="minimumSize">
               <size>
-               <width>400</width>
+               <width>465</width>
                <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>400</width>
+               <width>465</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1971,6 +2203,12 @@ QTreeView::branch:open:has-children:has-siblings{
               <font>
                <pointsize>11</pointsize>
               </font>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
              </property>
              <column>
               <property name="text">
@@ -2203,7 +2441,7 @@ QTreeView::branch:open:has-children:has-siblings{
                    <x>0</x>
                    <y>0</y>
                    <width>400</width>
-                   <height>521</height>
+                   <height>16</height>
                   </rect>
                  </property>
                  <layout class="QGridLayout" name="gridLayout_48">
@@ -2259,7 +2497,7 @@ QTreeView::branch:open:has-children:has-siblings{
              </property>
              <property name="maximumSize">
               <size>
-               <width>450</width>
+               <width>16777215</width>
                <height>16777215</height>
               </size>
              </property>
@@ -2315,7 +2553,77 @@ QTreeView::branch:open:has-children:has-siblings{
                  <property name="verticalSpacing">
                   <number>0</number>
                  </property>
-                 <item row="0" column="5">
+                 <item row="0" column="3">
+                  <widget class="QLabel" name="account_loading">
+                   <property name="minimumSize">
+                    <size>
+                     <width>25</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>25</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="account_delete">
+                   <property name="minimumSize">
+                    <size>
+                     <width>55</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>55</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>删除</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="7">
+                  <widget class="QPushButton" name="account_return">
+                   <property name="minimumSize">
+                    <size>
+                     <width>55</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>55</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>返回</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="6">
                   <spacer name="horizontalSpacer_22">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
@@ -2358,53 +2666,21 @@ QTreeView::branch:open:has-children:has-siblings{
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="1">
-                  <widget class="QPushButton" name="account_delete">
-                   <property name="minimumSize">
+                 <item row="0" column="2">
+                  <spacer name="horizontalSpacer_5">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
                     <size>
-                     <width>55</width>
-                     <height>35</height>
+                     <width>10</width>
+                     <height>20</height>
                     </size>
                    </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>55</width>
-                     <height>35</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>删除</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="6">
-                  <widget class="QPushButton" name="account_return">
-                   <property name="minimumSize">
-                    <size>
-                     <width>55</width>
-                     <height>35</height>
-                    </size>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>55</width>
-                     <height>35</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>返回</string>
-                   </property>
-                  </widget>
+                  </spacer>
                  </item>
                 </layout>
                </widget>
@@ -2481,7 +2757,7 @@ QTreeView::branch:open:has-children:has-siblings{
                     </size>
                    </property>
                    <property name="currentIndex">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                    <widget class="QWidget" name="page_account_newName">
                     <layout class="QGridLayout" name="gridLayout_54">
@@ -2521,37 +2797,72 @@ QTreeView::branch:open:has-children:has-siblings{
                        </property>
                        <item>
                         <property name="text">
-                         <string>现金</string>
+                         <string>资产-现金</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>支付宝</string>
+                         <string>资产-数字人民币</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>微信</string>
+                         <string>资产-押金</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>银行卡</string>
+                         <string>资产-微信</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>行用卡</string>
+                         <string>资产-支付宝</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>会员卡</string>
+                         <string>资产-公积金</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>公交卡</string>
+                         <string>资产-医保卡</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>资产-社保卡</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>资产-借记卡</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>负债-信用卡</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>充值-购物卡</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>充值-会员卡</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>充值-公交卡</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>其他账户</string>
                         </property>
                        </item>
                       </widget>
@@ -2703,11 +3014,17 @@ QTreeView::branch:open:has-children:has-siblings{
                    <property name="suffix">
                     <string> 元</string>
                    </property>
+                   <property name="minimum">
+                    <double>-999999999.990000009536743</double>
+                   </property>
                    <property name="maximum">
-                    <double>99999999.989999994635582</double>
+                    <double>999999999.990000009536743</double>
                    </property>
                    <property name="singleStep">
                     <double>100.000000000000000</double>
+                   </property>
+                   <property name="value">
+                    <double>0.000000000000000</double>
                    </property>
                   </widget>
                  </item>
@@ -3030,18 +3347,29 @@ QTreeView::branch:open:has-children:has-siblings{
                   <widget class="QPushButton" name="account_enable">
                    <property name="minimumSize">
                     <size>
-                     <width>70</width>
-                     <height>35</height>
+                     <width>50</width>
+                     <height>30</height>
                     </size>
                    </property>
                    <property name="maximumSize">
                     <size>
-                     <width>55</width>
-                     <height>35</height>
+                     <width>50</width>
+                     <height>30</height>
                     </size>
                    </property>
                    <property name="text">
                     <string/>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="res.qrc">
+                     <normaloff>:/img/switchLeft.png</normaloff>
+                     <normalon>:/img/switchRight.png</normalon>:/img/switchLeft.png</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>50</width>
+                     <height>50</height>
+                    </size>
                    </property>
                    <property name="checkable">
                     <bool>true</bool>
@@ -3053,19 +3381,6 @@ QTreeView::branch:open:has-children:has-siblings{
               </item>
              </layout>
             </widget>
-           </item>
-           <item row="0" column="2">
-            <spacer name="horizontalSpacer_6">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>146</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
            </item>
           </layout>
          </widget>
@@ -3346,7 +3661,7 @@ QTreeView::branch:open:has-children:has-siblings{
              </property>
              <property name="maximumSize">
               <size>
-               <width>450</width>
+               <width>16777215</width>
                <height>16777215</height>
               </size>
              </property>
@@ -3402,6 +3717,35 @@ QTreeView::branch:open:has-children:has-siblings{
                  <property name="verticalSpacing">
                   <number>0</number>
                  </property>
+                 <item row="0" column="4">
+                  <spacer name="horizontalSpacer_13">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>238</width>
+                     <height>29</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="0" column="2">
+                  <spacer name="horizontalSpacer_6">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>10</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
                  <item row="0" column="0">
                   <widget class="QPushButton" name="book_save">
                    <property name="minimumSize">
@@ -3450,20 +3794,7 @@ QTreeView::branch:open:has-children:has-siblings{
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="2">
-                  <spacer name="horizontalSpacer_13">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>238</width>
-                     <height>29</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item row="0" column="3">
+                 <item row="0" column="5">
                   <widget class="QPushButton" name="book_return">
                    <property name="minimumSize">
                     <size>
@@ -3484,6 +3815,28 @@ QTreeView::branch:open:has-children:has-siblings{
                    </property>
                    <property name="text">
                     <string>返回</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QLabel" name="book_loading">
+                   <property name="minimumSize">
+                    <size>
+                     <width>25</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>25</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3516,7 +3869,7 @@ QTreeView::branch:open:has-children:has-siblings{
                    <number>0</number>
                   </property>
                   <property name="rightMargin">
-                   <number>5</number>
+                   <number>0</number>
                   </property>
                   <property name="bottomMargin">
                    <number>0</number>
@@ -3662,7 +4015,7 @@ QTreeView::branch:open:has-children:has-siblings{
                         <bool>false</bool>
                        </property>
                        <property name="readOnly">
-                        <bool>true</bool>
+                        <bool>false</bool>
                        </property>
                        <property name="plainText">
                         <string/>
@@ -3896,7 +4249,7 @@ QTreeView::branch:open:has-children:has-siblings{
                       <widget class="QDoubleSpinBox" name="book_totalIncome">
                        <property name="minimumSize">
                         <size>
-                         <width>140</width>
+                         <width>160</width>
                          <height>35</height>
                         </size>
                        </property>
@@ -3950,7 +4303,7 @@ QTreeView::branch:open:has-children:has-siblings{
                       <widget class="QDoubleSpinBox" name="book_totalExpend">
                        <property name="minimumSize">
                         <size>
-                         <width>140</width>
+                         <width>160</width>
                          <height>35</height>
                         </size>
                        </property>
@@ -4010,19 +4363,6 @@ QTreeView::branch:open:has-children:has-siblings{
              </layout>
             </widget>
            </item>
-           <item row="0" column="2">
-            <spacer name="horizontalSpacer_15">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>146</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
           </layout>
          </widget>
          <widget class="QWidget" name="page_setting"/>
@@ -4057,9 +4397,9 @@ QTreeView::branch:open:has-children:has-siblings{
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ClassifyTreeWidget</class>
+   <class>TreeWidget</class>
    <extends>QTreeWidget</extends>
-   <header>custom/classifytreewidget.h</header>
+   <header location="global">custom/treewidget.h</header>
   </customwidget>
  </customwidgets>
  <resources>

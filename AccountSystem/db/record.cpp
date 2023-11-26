@@ -37,12 +37,12 @@ void Record::setBookName(const QString &newBookName)
     bookName = newBookName;
 }
 
-QDateTime Record::getRecordTime() const
+QString Record::getRecordTime() const
 {
     return recordTime;
 }
 
-void Record::setRecordTime(const QDateTime &newRecordTime)
+void Record::setRecordTime(const QString &newRecordTime)
 {
     recordTime = newRecordTime;
 }

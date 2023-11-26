@@ -17,8 +17,8 @@ public:
     QString getBookName() const;
     void setBookName(const QString &newBookName);
 
-    QDateTime getRecordTime() const;
-    void setRecordTime(const QDateTime &newRecordTime);
+    QString getRecordTime() const;
+    void setRecordTime(const QString &newRecordTime);
 
     QString getFlowType() const;
     void setFlowType(const QString &newFlowType);
@@ -51,7 +51,7 @@ private:
     qreal money;
     QString remark;
     QByteArray image;
-    QDateTime recordTime;
+    QString recordTime;
 };
 
 #endif // RECORD_H

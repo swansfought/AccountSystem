@@ -6,8 +6,10 @@
 #include <QMessageBox>
 #include <QStandardItemModel>
 #include <QToolTip>
+#include <QMovie>
+#include <QTreeWidget>
 
-#include "ui/addwin.h"
+#include "ui/recordWin.h"
 #include "dev/config.h"
 #include "db/database.h"
 #include "db/account.h"
@@ -26,25 +28,36 @@ public:
     MainWin(QWidget *parent = nullptr);
     ~MainWin();
 
-
 private:
     void initWinData();
-    void initRecordData();
     void initSignalSlots();
+
+    void initRecordData(QSqlQuery &query);
+    void flushRecordData(const bool& filter);
+    void initRecordBottomInfo();
+
     QToolButton* createBookItem(const Book& book);
     QToolButton* createAccountItem(const Account& account);
-    bool bookIsChecked();
-    bool accountIsChecked();
+//    QToolButton* currCheckedBook();
+//    QToolButton* currCheckedAccount();
+    QString currentWeek(const QDateTime &datetime);
 
-    qreal totalFund;
-    qreal totalIncome;
-    qreal totalExpend;
+    QMovie *movie;
+    void loadingTip(const bool& bol);
+
+//    void save
+
     DataBase *db; //数据库
-    AddWin *addWin;//记账窗口
+    RecordWin *recordWin;//记账窗口
     Config *config;//配置管理
 
+    bool isAccountRestore;
     QToolButton* currAccount;
     QToolButton* currBook;
+    QMap<QString,QToolButton*> accountMap;
+    QMap<QString,QToolButton*> bookMap;
+
+
 
 private:
     Ui::MainWin *ui;

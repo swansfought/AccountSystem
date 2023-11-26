@@ -80,15 +80,9 @@
 	"HEADERS" : 
 	[
 		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/classifytreewidget.h",
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.h",
 			"MU",
-			"ECAI6Z3TWJ/moc_classifytreewidget.cpp",
-			null
-		],
-		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/recordtreewidget.h",
-			"MU",
-			"ECAI6Z3TWJ/moc_recordtreewidget.cpp",
+			"ECAI6Z3TWJ/moc_treewidget.cpp",
 			null
 		],
 		[
@@ -116,6 +110,12 @@
 			null
 		],
 		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/recordfilter.h",
+			"MU",
+			"SQIZ3OIOWK/moc_recordfilter.cpp",
+			null
+		],
+		[
 			"E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.h",
 			"MU",
 			"4HPZ3RALQ6/moc_config.cpp",
@@ -134,9 +134,9 @@
 			null
 		],
 		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.h",
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/recordWin.h",
 			"MU",
-			"UYX5XTB5RZ/moc_addwin.cpp",
+			"UYX5XTB5RZ/moc_recordWin.cpp",
 			null
 		]
 	],
@@ -193,12 +193,7 @@
 	"SOURCES" : 
 	[
 		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/classifytreewidget.cpp",
-			"MU",
-			null
-		],
-		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/recordtreewidget.cpp",
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/custom/treewidget.cpp",
 			"MU",
 			null
 		],
@@ -223,6 +218,11 @@
 			null
 		],
 		[
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/db/recordfilter.cpp",
+			"MU",
+			null
+		],
+		[
 			"E:/code/qt/Widgets/AccountSystem/AccountSystem/dev/config.cpp",
 			"MU",
 			null
@@ -234,7 +234,7 @@
 			null
 		],
 		[
-			"E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/addwin.cpp",
+			"E:/code/qt/Widgets/AccountSystem/AccountSystem/ui/recordWin.cpp",
 			"MU",
 			null
 		]

@@ -320,14 +320,16 @@ QJsonObject Config::getDefaultClassify()
     QJsonObject accountObj;
     QJsonArray topArr;
     QJsonArray normalArr;
+    normalArr.append("默认账户");
     accountObj.insert("top_list",topArr);
-    topArr.removeFirst();
     accountObj.insert("normal_list",normalArr);  //空的
     rootObj.insert("account",accountObj); //分类配置
+    normalArr.removeFirst();
+    topArr.removeFirst();
 
     //账本顺序
     QJsonObject bookObj;
-    normalArr.append("日常账本(系统自带)");
+    normalArr.append("默认账本");
     bookObj.insert("top_list",topArr); //空的
     bookObj.insert("normal_list",normalArr);  //空的
     rootObj.insert("book",bookObj); //分类配置
