@@ -2,7 +2,9 @@
 
 Account::Account()
 {
-
+    enable = true;
+    serial = 0;
+    top = false;
 }
 
 Account::~Account()
@@ -78,4 +80,24 @@ bool Account::getEnable() const
 void Account::setEnable(bool newEnable)
 {
     enable = newEnable;
+}
+
+int Account::getSerial() const
+{
+    return serial;
+}
+
+void Account::setSerial(int newSerial)
+{
+    serial = newSerial;
+}
+
+bool Account::getTop() const
+{
+    return top;
+}
+
+void Account::setTop(bool newTop)
+{
+    top = newTop;
 }

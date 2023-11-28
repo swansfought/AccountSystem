@@ -13,5 +13,6 @@
         <file>img/loading.gif</file>
         <file>img/switchLeft.png</file>
         <file>img/switchRight.png</file>
+        <file>qss/style.qss</file>
     </qresource>
 </RCC>

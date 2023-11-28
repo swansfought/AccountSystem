@@ -11,10 +11,15 @@ RecordWin::RecordWin(QWidget *parent) :
     font.setFamily("微软雅黑");
     this->setFont(font);
     this->setWindowModality(Qt::WindowModal); //设置为模态窗口
-    this->setWindowFlags(Qt::Window | Qt::CustomizeWindowHint);
+//    this->setWindowFlags(Qt::Window | Qt::CustomizeWindowHint);
+
+    this->setMinimumSize(QSize(600,350));
+    this->setMaximumSize(QSize(600,350));
 
     config = Config::getInstance();
     db = DataBase::getInstance();
+    currMode = RecordWMode::Add;
+    itemId = 0;
 
     initSignalSlots();
     initData(); //先绑定槽，涉及到槽函数触发设置数据
@@ -25,15 +30,24 @@ RecordWin::~RecordWin()
     delete ui;
 }
 
-void RecordWin::setWinMode(const RecordWMode &mode)
+void RecordWin::setWinMode(const RecordWMode &mode,int itemId)
 {
+    this->itemId = itemId;
     switch (mode) {
     case Show:{
+        this->setWindowTitle("记录更新");
+        currMode = RecordWMode::Show;
         ui->save_again->setVisible(false);
+        ui->deleteRecord->setVisible(true);
+        ui->money->setFocus();
         break;
     }
     case Add:{
+        this->setWindowTitle("记录新增");
+        currMode = RecordWMode::Add;
         ui->save_again->setVisible(true);
+        ui->deleteRecord->setVisible(false);
+        ui->money->setFocus();
         break;
     }
     default:
@@ -52,6 +66,11 @@ void RecordWin::removeBook(const QString &name)
     ui->book->removeItem( ui->book->findText(name));
 }
 
+void RecordWin::removeAllBook()
+{
+    ui->book->clear();
+}
+
 void RecordWin::addAccount(const QString &name)
 {
     ui->account->addItem(name);
@@ -64,6 +83,12 @@ void RecordWin::removeAccount(const QString &name)
     ui->account_in->removeItem( ui->account_in->findText(name));
 }
 
+void RecordWin::removeAllAccount()
+{
+    ui->account->clear();
+    ui->account_in->clear();
+}
+
 void RecordWin::setBook(const QString &name)
 {
     ui->book->setCurrentText(name);
@@ -72,6 +97,10 @@ void RecordWin::setBook(const QString &name)
 void RecordWin::setAccount(const QString &name)
 {
     ui->account->setCurrentText(name);
+}
+
+void RecordWin::setAccountIn(const QString &name)
+{
     ui->account_in->setCurrentText(name);
 }
 
@@ -105,6 +134,11 @@ void RecordWin::setDateEdit(const QDateTime& datetime)
     ui->dateEdit->setDateTime(datetime);
 }
 
+void RecordWin::setImage(const QByteArray &image)
+{
+    imgPixmap.loadFromData(image);
+}
+
 void RecordWin::closeEvent(QCloseEvent *event)
 {
     Q_UNUSED(event);
@@ -112,37 +146,73 @@ void RecordWin::closeEvent(QCloseEvent *event)
     this->hide();
 }
 
+//bool RecordWin::event(QEvent * event)
+//{
+//    if (QEvent::ActivationChange == event->type()) {
+//        if (QApplication::activeWindow() != this){
+//            this->hide();
+//        }
+//    }
+
+//    return QWidget::event(event);
+//}
+
+
 void RecordWin::initData()
 {
-    QJsonArray accountArr = config->getJsonArray(Config::Type::Accounts);
-    for (int i = 0; i < accountArr.size(); ++i){
-        ui->account->addItem(accountArr.at(i).toString());
-        ui->account_in->addItem(accountArr.at(i).toString());
-    }
+    // 加载图标
+    movie = new QMovie(":/img/loading.gif");
+    ui->loading->setMovie(movie);
+    ui->loading->setVisible(false);
 
+
+    //流向
     QJsonArray flowTypeArr = config->getJsonArray(Config::Type::Money_Flow_Type);
     for (int j = 0; j < flowTypeArr.size(); ++j){
         ui->flowType->addItem(flowTypeArr.at(j).toString());
     }
 
-    ui->flowType->setCurrentText("支出"); //默认为支出
+    ui->flowType->setCurrentText("支出"); //默认为支出，触发加载一二级分类
     ui->dateEdit->setDateTime(QDateTime::currentDateTime()); //当前时间
 }
 
 void RecordWin::initSignalSlots()
 {
     connect(ui->save,&QPushButton::clicked,this,[=](){
-        if(0 == ui->money->value()){
-            QMessageBox::information(this,"记账添加","请确保金额>=0！",QMessageBox::Ok);
-            return;
-        }else if("转账" == ui->flowType->currentText() && ui->account->currentText() == ui->account_in->currentText()){
-            QMessageBox::information(this,"记账添加","无法对自己进行转账！",QMessageBox::Ok);
-            return;
+        if(RecordWMode::Add == currMode){
+            if(0 == ui->money->value()){
+                QMessageBox::information(this,"记账添加","请确保金额>=0！",QMessageBox::Ok);
+                return;
+            }else if("转账" == ui->flowType->currentText() && ui->account->currentText() == ui->account_in->currentText()){
+                QMessageBox::information(this,"记账添加","无法对自己进行转账！",QMessageBox::Ok);
+                return;
+            }
+            loadingTip(true);
+            if(saveRecord()){
+                loadingTip(false);
+                this->close();
+            }else{
+                loadingTip(false);
+                QMessageBox::information(this,"记账添加","记账失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
+            }
+        }else{
+            if(0 == ui->money->value()){
+                QMessageBox::information(this,"记录更新","请确保金额>=0！",QMessageBox::Ok);
+                return;
+            }else if("转账" == ui->flowType->currentText() && ui->account->currentText() == ui->account_in->currentText()){
+                QMessageBox::information(this,"记录更新","无法对自己进行转账！",QMessageBox::Ok);
+                return;
+            }
+            loadingTip(true);
+            if(saveRecord()){
+                loadingTip(false);
+                this->close();
+            }else{
+                loadingTip(false);
+                QMessageBox::information(this,"记录更新","更新失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
+            }
         }
-        if(saveRecord())
-            this->close();
-        else
-            QMessageBox::information(this,"记账添加","记账失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
+
     });
     connect(ui->save_again,&QPushButton::clicked,this,[=](){
         if(0 == ui->money->value()){
@@ -152,27 +222,46 @@ void RecordWin::initSignalSlots()
             QMessageBox::information(this,"记账添加","无法对自己进行转账！",QMessageBox::Ok);
             return;
         }
+        loadingTip(true);
         if(saveRecord()){
+            loadingTip(false);
             ui->money->setValue(0);
             ui->remark->clear();
-            ui->image->clear();
-        }else
+//            ui->image->clear();
+            ui->deleteImage->click();
+            ui->money->setFocus();
+        }else{
+            loadingTip(false);
             QMessageBox::information(this,"记账添加","记账失败！\n注：请再次尝试或检查资源文件是否正确。",QMessageBox::Ok);
-    });
-    connect(ui->close,&QPushButton::clicked,this,[=](){
-        this->close();
+            ui->money->setFocus();
+        }
     });
     connect(ui->selectImage,&QPushButton::clicked,this,[=](){
         QString filter = "*.png *jpeg *jpg *bmp";
         QString fileName = QFileDialog::getOpenFileName(this,"选择图片","C:/",filter);
         if(fileName.isEmpty())
             return;
-        ui->image->clear(); //清除之前剩余的
-        QPixmap pixmap;
-        pixmap.load(fileName);
-        ui->image->setPixmap(pixmap);
+//        ui->image->clear(); //清除之前剩余的
+//        QPixmap pixmap;
+        ui->loading_image->setText("上传中...");
+        if(imgPixmap.load(fileName))
+            ui->loading_image->setText("上传成功!");
+        else
+            ui->loading_image->setText("上传失败!");
+//        ui->image->setPixmap(pixmap);
+        ui->remark->setFocus();
     });
-    connect(ui->deleteImage,&QPushButton::clicked,this,[=](){ ui->image->clear(); });
+    connect(ui->deleteImage,&QPushButton::clicked,this,[=](){
+//        ui->image->clear();
+        ui->loading_image->setText("");
+        imgPixmap = QPixmap();
+        ui->remark->setFocus();
+    });
+    connect(ui->deleteRecord,&QPushButton::clicked,this,[=](){
+        auto ret = QMessageBox::information(this,"记录删除","确定要删除此记录吗？",QMessageBox::Yes,QMessageBox::No);
+        if(QMessageBox::Yes == ret)
+            emit deleteRecord();
+    });
     connect(ui->firstClassify,&QComboBox::currentTextChanged,this,[=](const QString& text){
         QJsonArray arr;
         if("购物" == text)
@@ -231,6 +320,15 @@ void RecordWin::initSignalSlots()
             ui->widget_transfer_in->setVisible(true);
         }
     });
+    connect(ui->dateEdit,&QDateEdit::dateChanged,this,[=](const QDate &date){
+        if(date > QDate::currentDate()){
+            ui->dateEdit->setDate(QDate::currentDate());
+        }
+    });
+    connect(ui->money,qOverload<double>(&QDoubleSpinBox::valueChanged),this,[=](double money){
+        if(99999999 < money)
+            ui->money->setValue(99999999.99);
+    });
 }
 
 void RecordWin::resetWin()
@@ -243,7 +341,7 @@ void RecordWin::resetWin()
     ui->secondClassify->setCurrentIndex(0);
     ui->money->setValue(0);
     ui->remark->clear();
-    ui->image->clear();
+//    ui->image->clear();
 }
 
 bool RecordWin::saveRecord()
@@ -251,6 +349,7 @@ bool RecordWin::saveRecord()
     Record record;
     QString flowType = ui->flowType->currentText();
 
+    record.setId(itemId);
     record.setBookName(ui->book->currentText());
     record.setFlowType(ui->flowType->currentText());
     record.setAccountName(ui->account->currentText());
@@ -263,15 +362,14 @@ bool RecordWin::saveRecord()
     record.setRecordTime(dateTime.toString("yyyy-MM-dd hh:mm:ss"));
 
     //获取图片
-    QPixmap pixmap = ui->image->pixmap(Qt::ReturnByValue);
+//    QPixmap pixmap = ui->image->pixmap(Qt::ReturnByValue);
 
     //从pixmap加载图片的二进制数据
     QByteArray imageArray;
     QBuffer buffer(&imageArray);
     buffer.open(QIODevice::WriteOnly);
-    pixmap.save(&buffer, "PNG");
+    imgPixmap.save(&buffer, "PNG");
     buffer.close();
-
     record.setImage(imageArray);
 
     Book book = db->queryBook(ui->book->currentText());
@@ -294,7 +392,15 @@ bool RecordWin::saveRecord()
     }
 
      //开始保存数据
-    if(db->insertRecord(record)){
+    bool ret = false;
+    if(RecordWin::Add == currMode){
+        if(db->insertRecord(record))
+            ret = true;
+    }else{
+        if(db->updateRecord(record))
+            ret = true;
+    }
+    if(ret){
         db->updateBook(book);
         db->updateAccount(account);
 
@@ -304,6 +410,19 @@ bool RecordWin::saveRecord()
         return true;
     }
     return false;
+}
+
+void RecordWin::loadingTip(const bool &bol)
+{
+    if(bol){
+        ui->loading->setVisible(bol);
+        movie->start();
+    }else{
+        QTimer::singleShot(500,this,[=](){
+            ui->loading->setVisible(bol);
+            movie->stop();
+        });
+    }
 }
 
 

@@ -38,12 +38,7 @@ public:
         Expend_Second_ZaXiang,
         Income_Classify,
         Money_Flow_Type,
-        Account_Top_Sequence,
-        Account_Normal_Sequence,
-        Book_Top_Sequence,
-        Book_Normal_Sequence,
-        Accounts,
-        Books
+        Account_Type
     };
     QJsonArray getJsonArray(const Type& type);
 

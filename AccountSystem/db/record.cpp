@@ -2,6 +2,7 @@
 
 Record::Record()
 {
+    id = 0;
     bookName = "";
     flowType = "";
     accountName = "";
@@ -115,4 +116,14 @@ QByteArray Record::getImage() const
 void Record::setImage(const QByteArray &newImage)
 {
     image = newImage;
+}
+
+int Record::getId() const
+{
+    return id;
+}
+
+void Record::setId(int newId)
+{
+    id = newId;
 }

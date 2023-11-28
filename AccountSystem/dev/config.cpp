@@ -53,6 +53,10 @@ QJsonArray Config::getJsonArray(const Type &type)
         arr = configMap.find("Income_First_Classify").value();
         break;
     }
+    case Account_Type:{
+        arr = configMap.find("Account_Type").value();
+        break;
+    }
     case Money_Flow_Type:{
         arr = configMap.find("Money_Flow_Type").value();
         break;
@@ -99,22 +103,6 @@ QJsonArray Config::getJsonArray(const Type &type)
     }
     case Expend_Second_ZaXiang:{
         arr = configMap.find("Expend_Second_ZaXiang").value();
-        break;
-    }
-    case Account_Top_Sequence:{
-        arr = configMap.find("Account_Top_Sequence").value();
-        break;
-    }
-    case Account_Normal_Sequence:{
-        arr = configMap.find("Account_Normal_Sequence").value();
-        break;
-    }
-    case Book_Top_Sequence:{
-        arr = configMap.find("Book_Top_Sequence").value();
-        break;
-    }
-    case Book_Normal_Sequence:{
-        arr = configMap.find("Book_Normal_Sequence").value();
         break;
     }
     default:
@@ -168,25 +156,6 @@ QJsonObject Config::getDefaultClassify()
     firstClassify.append("通讯");
     firstClassify.append("杂项");
     subObj.insert("expend_first_classify",firstClassify);
-
-    QJsonArray flowType;
-    flowType.append("收入");
-    flowType.append("支出");
-    flowType.append("转账");
-    subObj.insert("money_flow_type",flowType);
-
-    QJsonArray inObj;//收入
-    inObj.append("薪资");
-    inObj.append("中奖");
-    inObj.append("奖金");
-    inObj.append("兼职");
-    inObj.append("补贴");
-    inObj.append("报销");
-    inObj.append("利息");
-    inObj.append("闲置品");
-    inObj.append("人情礼金");
-    inObj.append("其他");
-    subObj.insert("income_classify",inObj);
 
     // 二级分类
     QJsonObject outObj;//支出
@@ -314,25 +283,44 @@ QJsonObject Config::getDefaultClassify()
 
     subObj.insert("expend_second_classify",outObj);
 
+    //流动类型
+    QJsonArray flowType;
+    flowType.append("收入");
+    flowType.append("支出");
+    flowType.append("转账");
+    subObj.insert("money_flow_type",flowType);
+
+    // 收入类型
+    QJsonArray inObj;
+    inObj.append("薪资");
+    inObj.append("中奖");
+    inObj.append("奖金");
+    inObj.append("兼职");
+    inObj.append("补贴");
+    inObj.append("报销");
+    inObj.append("利息");
+    inObj.append("闲置品");
+    inObj.append("人情礼金");
+    inObj.append("其他");
+    subObj.insert("income_classify",inObj);
+
+
+    QJsonArray actObj;
+    actObj.append("资产|现金");
+    actObj.append("资产|微信");
+    actObj.append("资产|支付宝");
+    actObj.append("资产|e-CNY");
+    actObj.append("资产|医保卡");
+    actObj.append("资产|社保卡");
+    actObj.append("资产|借记卡");
+    actObj.append("负债|信用卡");
+    actObj.append("充值|购物卡");
+    actObj.append("充值|会员卡");
+    actObj.append("充值|公交卡");
+    actObj.append("其他账户");
+    subObj.insert("Account_Type",inObj);
+
     rootObj.insert("classify",subObj); //分类配置
-
-    //账户顺序
-    QJsonObject accountObj;
-    QJsonArray topArr;
-    QJsonArray normalArr;
-    normalArr.append("默认账户");
-    accountObj.insert("top_list",topArr);
-    accountObj.insert("normal_list",normalArr);  //空的
-    rootObj.insert("account",accountObj); //分类配置
-    normalArr.removeFirst();
-    topArr.removeFirst();
-
-    //账本顺序
-    QJsonObject bookObj;
-    normalArr.append("默认账本");
-    bookObj.insert("top_list",topArr); //空的
-    bookObj.insert("normal_list",normalArr);  //空的
-    rootObj.insert("book",bookObj); //分类配置
 
     return rootObj;
 }
@@ -340,16 +328,6 @@ QJsonObject Config::getDefaultClassify()
 void Config::loadConfigMap()
 {
     QJsonObject rootObj = readConfigJson();
-
-    //账户顺序
-    QJsonObject accountObj = rootObj["account"].toObject();
-    configMap.insert("Account_Top_Sequence",accountObj["top_list"].toArray());
-    configMap.insert("Account_Top_Sequence",accountObj["normal_list"].toArray());
-
-    //账本顺序
-    QJsonObject bookObj = rootObj["book"].toObject();
-    configMap.insert("Account_Top_Sequence",bookObj["top_list"].toArray());
-    configMap.insert("Account_Top_Sequence",bookObj["normal_list"].toArray());
 
     //分类
     QJsonObject classifyObj = rootObj["classify"].toObject();
@@ -370,6 +348,7 @@ void Config::loadConfigMap()
 
     configMap.insert("Income_First_Classify",classifyObj["income_classify"].toArray());
     configMap.insert("Money_Flow_Type",classifyObj["money_flow_type"].toArray());
+    configMap.insert("Account_Type",classifyObj["Account_Type"].toArray());
 }
 
 Config::Config()

@@ -14,6 +14,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QJsonValue \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QMutex \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QString \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QTimer \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/QVector \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qabstractitemmodel.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
@@ -21,6 +22,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qatomic.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qatomic_cxx11.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbuffer.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbytearray.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h \
@@ -95,6 +97,7 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qtimer.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qurl.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtCore/quuid.h \
@@ -147,6 +150,8 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QGraphicsDropShadowEffect \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QScrollArea \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QScrollBar \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolButton \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QToolTip \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/QTreeWidget \
@@ -164,6 +169,8 @@ E:/code/qt/Widgets/AccountSystem/build-AccountSystem-Desktop_Qt_5_15_2_MinGW_64_
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qmessagebox.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qrubberband.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qscrollarea.h \
+  D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qscrollbar.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qslider.h \
   D:/software/Qt/5.15.2/mingw81_64/include/QtWidgets/qstyle.h \

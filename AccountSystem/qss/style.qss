@@ -1,0 +1,28 @@
+
+
+#dock_monthExpend_hide,
+#dock_monthIncome_hide,
+#dock_totalFund_hide{
+    border:none;
+    background-color:#f0f0f0;
+}
+
+#dock_monthExpend_hide:hover,
+#dock_monthIncome_hide:hover,
+#dock_totalFund_hide:hover{
+    border:none;
+    background-color:#f0f0f0;
+}
+
+#dock_monthExpend_hide:checked,
+#dock_monthIncome_hide:checked,
+#dock_totalFund_hide:checked{
+    border:none;
+    background-color:#f0f0f0;
+}
+
+/*#dock_addRecord{
+    background-color:#fafbfc;
+    border:1px solid #d8d8d8;
+    border-radius:10px;
+}*/

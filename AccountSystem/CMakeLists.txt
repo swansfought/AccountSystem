@@ -20,7 +20,10 @@ set(PROJECT_SOURCES
         mainwin.cpp
         mainwin.h
         mainwin.ui
+        icon.rc
 )
+#set(ICON_SOURCES appIcon.ico)
+
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(AccountSystem
@@ -51,7 +54,6 @@ else()
             db/account.h db/account.cpp
             db/book.h db/book.cpp
             db/recordfilter.h db/recordfilter.cpp
-
         )
     endif()
 endif()

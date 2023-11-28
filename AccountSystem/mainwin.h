@@ -7,6 +7,8 @@
 #include <QStandardItemModel>
 #include <QToolTip>
 #include <QMovie>
+#include <QScrollArea>
+#include <QScrollBar>
 #include <QTreeWidget>
 
 #include "ui/recordWin.h"
@@ -28,18 +30,26 @@ public:
     MainWin(QWidget *parent = nullptr);
     ~MainWin();
 
+
+private slots:
+    void on_deleteRecord();
+
 private:
+    void initStyle();
     void initWinData();
     void initSignalSlots();
 
     void initRecordData(QSqlQuery &query);
-    void flushRecordData(const bool& filter);
     void initRecordBottomInfo();
+    void flushRecordData(const bool& filter);
+    void flushWinData(const Account &account, const Book &book);
+
 
     QToolButton* createBookItem(const Book& book);
     QToolButton* createAccountItem(const Account& account);
-//    QToolButton* currCheckedBook();
-//    QToolButton* currCheckedAccount();
+    void updateBookSerialTop();
+    void updateAccountSerialTop();
+
     QString currentWeek(const QDateTime &datetime);
 
     QMovie *movie;
@@ -57,7 +67,8 @@ private:
     QMap<QString,QToolButton*> accountMap;
     QMap<QString,QToolButton*> bookMap;
 
-
+    int bookTopNum;
+    int accountTopnum;
 
 private:
     Ui::MainWin *ui;

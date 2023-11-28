@@ -6,6 +6,9 @@ Book::Book()
     totalExpend = 0;
     totalRecord = 0;
     enable = true;
+    top = false;
+    serial = 0;
+    top = false;
 }
 
 Book::~Book()
@@ -81,4 +84,24 @@ bool Book::getEnable() const
 void Book::setEnable(bool newEnable)
 {
     enable = newEnable;
+}
+
+int Book::getSerial() const
+{
+    return serial;
+}
+
+void Book::setSerial(int newSerial)
+{
+    serial = newSerial;
+}
+
+bool Book::getTop() const
+{
+    return top;
+}
+
+void Book::setTop(bool newTop)
+{
+    top = newTop;
 }

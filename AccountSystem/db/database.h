@@ -40,18 +40,23 @@ public:
     Record queryRecord(const QString& name);
 
     qreal queryTotalFund();
-    qreal queryMonthIncome();
-    qreal queryMonthExpend();
+    qreal queryMonthIncome(const QDate& date);
+    qreal queryMonthExpend(const QDate& date);
+
+
+    bool insertRecord(const Record& record);
+    bool updateRecord(const Record& record);
+    bool deleteRecord(const int& id);
 
     bool insertAccount(const Account& account);
     bool updateAccount(const Account& account);
+    bool updateAccountSerialTop(const QString &name, const int &serial, const bool& isTop);
     bool deleteAccount(const QString& name);
 
     bool insertBook(const Book& book);
     bool updateBook(const Book& book);
+    bool updateBookSerialTop(const QString &name, const int &serial, const bool& isTop);
     bool deleteBook(const QString& name);
-
-    bool insertRecord(const Record& record);
 
     int getMaxPages(const double& numOfPage);
 

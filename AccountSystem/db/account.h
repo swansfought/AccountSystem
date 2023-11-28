@@ -31,6 +31,12 @@ public:
     bool getEnable() const;
     void setEnable(bool newEnable);
 
+    int getSerial() const;
+    void setSerial(int newSerial);
+
+    bool getTop() const;
+    void setTop(bool newTop);
+
 private:
     QString name;
     qreal fund;
@@ -38,6 +44,8 @@ private:
     QString cardNumber;
     QString remark;
     bool enable;
+    int serial;
+    bool top;
     QDateTime createTime;
 };
 

@@ -36,6 +36,8 @@ bool DataBase::connect()
                                 "act_cardnumber VARCHAR(30) DEFAULT NULL," // --账户卡号
                                 "act_remark text DEFAULT NULL," // --账户备注
                                 "act_enable bool default 1,"
+                                "act_serial int default 0,"
+                                "act_top bool default 0,"
                                 "act_datetime DATETIME DEFAULT (datetime('now','localtime')) );"; //--创建时间
             query.exec(sql);
 
@@ -51,6 +53,8 @@ bool DataBase::connect()
                                 "bok_totalexpend REAL DEFAULT 0," // --共计支出
                                 "bok_remark text DEFAULT NULL," // --账本备注
                                 "bok_enable bool default 1,"
+                                "bok_serial int default 0,"
+                                "bok_top bool default 0,"
                                 "bok_datetime DATETIME DEFAULT (datetime('now','localtime')) );"; // --创建时间
             query.exec(sql);
 
@@ -96,7 +100,7 @@ QVector<Account> DataBase::queryAllAccount()
 
     Record record;
     QSqlQuery query;
-    QString sql = "select * from account;";
+    QString sql = "select * from account order by act_serial;";
     if(query.exec(sql)){
         while (query.next()) {
             Account account;
@@ -107,6 +111,8 @@ QVector<Account> DataBase::queryAllAccount()
             account.setRemark(query.value("act_remark").toString());
             account.setEnable(query.value("act_enable").toBool());
             account.setCreateTime(query.value("act_datetime").toDateTime());
+            account.setSerial(query.value("act_serial").toInt());
+            account.setTop(query.value("act_top").toBool());
             vec.append(account);
         }
     }
@@ -122,7 +128,7 @@ QVector<Book> DataBase::queryAllBook()
     QString sql,subSql;
     QSqlQuery query,subQuery;
 
-    sql = "select * from book;";
+    sql = "select * from book order by bok_serial;";
     if(query.exec(sql)){
         while (query.next()) {
             Book book;
@@ -132,6 +138,8 @@ QVector<Book> DataBase::queryAllBook()
             book.setRemark(query.value("bok_remark").toString());
             book.setEnable(query.value("bok_enable").toBool());
             book.setCreateTime(query.value("bok_datetime").toDateTime());
+            book.setSerial(query.value("bok_serial").toInt());
+            book.setTop(query.value("bok_top").toBool());
 
             // 拿到该账本的总记录数
             subSql = QString("select count (*) from record where bok_name='%1';").arg(query.value("bok_name").toString());
@@ -153,8 +161,8 @@ void DataBase::queryLimitRecord(QSqlQuery& query, const int &start, const int &e
     QString sql = QString("select * from record "
                           "order by red_datetime desc "
                           "limit %1,%2;").arg(QString::number(start),QString::number(end));
-    if(!query.exec(sql))
-        return;
+//    qDebug()<<sql;
+    query.exec(sql);
 }
 
 void DataBase::queryLimitRecord(QSqlQuery& query, const int &start, const int &end, const RecordFilter& filter)
@@ -222,8 +230,8 @@ void DataBase::queryLimitRecord(QSqlQuery& query, const int &start, const int &e
                       "order by red_datetime desc "
                       "limit %4,%5;"
                       ).arg(condition,QString::number(start),QString::number(end));
-//        qDebug()<<sql;
     }
+//    qDebug()<<sql;
     query.exec(sql);
 }
 
@@ -262,6 +270,8 @@ Account DataBase::queryAccount(const QString &name)
         account.setRemark(query.value("act_remark").toString());
         account.setEnable(query.value("act_enable").toBool());
         account.setCreateTime(query.value("act_datetime").toDateTime());
+        account.setSerial(query.value("act_serial").toInt());
+        account.setTop(query.value("act_top").toBool());
     }
     return account;
 }
@@ -279,6 +289,8 @@ Book DataBase::queryBook(const QString &name)
         book.setRemark(query.value("bok_remark").toString());
         book.setEnable(query.value("bok_enable").toBool());
         book.setCreateTime(query.value("bok_datetime").toDateTime());
+        book.setSerial(query.value("bok_serial").toInt());
+        book.setTop(query.value("bok_top").toBool());
 
         // 拿到该账本的总记录数
         QString subSql = QString("select count (*) from record where bok_name='%1';").arg(query.value("bok_name").toString());
@@ -307,14 +319,14 @@ qreal DataBase::queryTotalFund()
     return totalFund;
 }
 
-qreal DataBase::queryMonthIncome()
+qreal DataBase::queryMonthIncome(const QDate& date)
 {
     qreal monthIncome = 0;
     QSqlQuery query;
     QString sql = QString("select red_money "
                           "from record "
                           "where red_flow_type = '收入' and red_datetime like '%1%';"
-                          ).arg(QDateTime::currentDateTime().toString("yyyy-MM"));
+                          ).arg(date.toString("yyyy-MM"));
     if(query.exec(sql)){
         while (query.next())
             monthIncome += query.value("red_money").toDouble();
@@ -322,14 +334,14 @@ qreal DataBase::queryMonthIncome()
     return monthIncome;
 }
 
-qreal DataBase::queryMonthExpend()
+qreal DataBase::queryMonthExpend(const QDate& date)
 {
     qreal monthExpend = 0;
     QSqlQuery query;
     QString sql = QString("select red_money "
                           "from record "
                           "where red_flow_type = '支出' and red_datetime like '%1%';"
-                          ).arg(QDateTime::currentDateTime().toString("yyyy-MM"));
+                          ).arg(date.toString("yyyy-MM"));
     if(query.exec(sql)){
         while (query.next())
             monthExpend += query.value("red_money").toDouble();
@@ -338,84 +350,8 @@ qreal DataBase::queryMonthExpend()
 
 }
 
-bool DataBase::insertAccount(const Account &account)
-{
-    QString sql = QString("insert into account(act_name,act_fund,act_nickname,act_cardnumber,act_remark,act_enable) "
-                          "values('%1',%2,'%3','%4','%5',%6);").arg(account.getName(),
-                                                                    QString::number(account.getFund(),'f',2),
-                                                                    account.getNickname(),
-                                                                    account.getCardNumber(),
-                                                                    account.getRemark(),
-                                                                    QString::number(account.getEnable()));
-    QSqlQuery query;
-    if(query.exec(sql))
-        return true;
-    return false;
-}
-
-bool DataBase::updateAccount(const Account &account)
-{
-    QString sql = QString("update account "
-                          "set act_fund=%1,act_nickname='%2',"
-                          "act_cardnumber='%3',act_remark='%4',act_enable=%5 "
-                          "where act_name='%6';"
-                          ).arg(QString::number(account.getFund(),'f',2),
-                           account.getNickname(),
-                           account.getCardNumber(),
-                           account.getRemark(),
-                           QString::number(account.getEnable()),
-                           account.getName());
-    QSqlQuery query;
-    if(query.exec(sql))
-        return true;
-    return false;
-}
-
-bool DataBase::deleteAccount(const QString &name)
-{
-    QString sql = QString("delete from account where act_name='%1';").arg(name);
-    QSqlQuery query;
-    if(query.exec("PRAGMA foreign_keys = ON;") && query.exec(sql))
-        return true;
-    return false;
-}
-
-bool DataBase::insertBook(const Book &book)
-{
-    QString sql = QString("insert into book(bok_name,bok_remark) values('%1','%2');").arg(book.getName(),book.getRemark());
-    QSqlQuery query;
-    if(query.exec(sql))
-        return true;
-    return false;
-}
-
-bool DataBase::updateBook(const Book &book)
-{
-    QString sql = QString("update book "
-                          "set bok_totalincome=%1,bok_totalexpend=%2,bok_remark='%3' "
-                          "where bok_name='%4';"
-                          ).arg(QString::number(book.getTotalIncome(),'f',2),
-                           QString::number(book.getTotalExpend(),'f',2),
-                           book.getRemark(),
-                           book.getName());
-//    qDebug()<<sql;
-    QSqlQuery query;
-    if(query.exec(sql))
-        return true;
-    return false;
-}
-
-bool DataBase::deleteBook(const QString &name)
-{
-    QString sql = QString("delete from book where bok_name='%1';").arg(name);
-    QSqlQuery query;
-    if(query.exec("PRAGMA foreign_keys = ON;") && query.exec(sql))
-        return true;
-    return false;
-}
-
 bool DataBase::insertRecord(const Record &record)
-{ 
+{
     QSqlQuery query;
     query.prepare("insert into record(act_name,bok_name,red_datetime,red_flow_type,red_first_classify,red_second_classify,red_transfer_in,red_money,red_remark,red_image) "
                   "values(?,?,?,?,?,?,?,?,?,?);");
@@ -434,13 +370,163 @@ bool DataBase::insertRecord(const Record &record)
     return false;
 }
 
+bool DataBase::updateRecord(const Record &record)
+{
+    QSqlQuery query;
+    query.prepare("update record "
+                  "set act_name=?,bok_name=?,red_datetime=?,red_flow_type=?,"
+                  "red_first_classify=?,red_second_classify=?,red_transfer_in=?,red_money=?,red_remark=?,red_image=?  "
+                  "where id=?;");
+    query.bindValue(0,record.getAccountName());
+    query.bindValue(1,record.getBookName());
+    query.bindValue(2,record.getRecordTime());
+    query.bindValue(3,record.getFlowType());
+    query.bindValue(4,record.getFirstClassify());
+    query.bindValue(5,record.getSecondClassify());
+    query.bindValue(6,record.getTransferIn());
+    query.bindValue(7,record.getMoney());
+    query.bindValue(8,record.getRemark());
+    query.bindValue(9,record.getImage());
+    query.bindValue(10,record.getId());
+    if(query.exec())
+        return true;
+    return false;
+}
+
+bool DataBase::deleteRecord(const int &id)
+{
+    QString sql = QString("delete from record where id=%1;").arg(QString::number(id));
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::insertAccount(const Account &account)
+{
+    QSqlQuery query;
+    QString sql = "select count(act_name) from account;";
+    int index = 1;
+    if(query.exec(sql) && query.next())
+        index = query.value(0).toInt() + 1;
+
+    sql = QString("insert into account(act_name,act_fund,act_nickname,act_cardnumber,act_remark,act_enable,act_serial) "
+                          "values('%1',%2,'%3','%4','%5',%6,%7);").arg(account.getName(),
+                                                                    QString::number(account.getFund(),'f',2),
+                                                                    account.getNickname(),
+                                                                    account.getCardNumber(),
+                                                                    account.getRemark(),
+                                                                    QString::number(account.getEnable()),
+                                                                    QString::number(index));
+
+    if(query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::updateAccount(const Account &account)
+{
+    QString sql = QString("update account "
+                          "set act_fund=%1,act_nickname='%2',"
+                          "act_cardnumber='%3',act_remark='%4',act_enable=%5,act_serial=%6,act_top=%7 "
+                          "where act_name='%8';"
+                          ).arg(QString::number(account.getFund(),'f',2),
+                           account.getNickname(),
+                           account.getCardNumber(),
+                           account.getRemark(),
+                           QString::number(account.getEnable()),
+                           QString::number(account.getSerial()),
+                           QString::number(account.getTop()),
+                           account.getName());
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::updateAccountSerialTop(const QString &name, const int &serial, const bool &isTop)
+{
+    QString sql = QString("update account "
+                          "set act_serial=%1,act_top=%2 "
+                          "where act_name='%3';").arg(QString::number(serial), QString::number(isTop), name);
+    //    qDebug()<<sql;
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::deleteAccount(const QString &name)
+{
+    QString sql = QString("delete from account where act_name='%1';").arg(name);
+    QSqlQuery query;
+    if(query.exec("PRAGMA foreign_keys = ON;") && query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::insertBook(const Book &book)
+{
+    QSqlQuery query;
+    QString sql = "select count(bok_name) from book;";
+    int index = 1;
+    if(query.exec(sql) && query.next())
+        index = query.value(0).toInt() + 1;
+
+    sql = QString("insert into "
+                  "book(bok_name,bok_remark,bok_serial) "
+                  "values('%1','%2',%3);").arg(book.getName(),book.getRemark(),QString::number(index));
+    if(query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::updateBook(const Book &book)
+{
+    QString sql = QString("update book "
+                          "set bok_totalincome=%1,bok_totalexpend=%2,bok_remark='%3',bok_serial=%4,bok_top=%5 "
+                          "where bok_name='%6';"
+                          ).arg(QString::number(book.getTotalIncome(),'f',2),
+                           QString::number(book.getTotalExpend(),'f',2),
+                           book.getRemark(),
+                           QString::number(book.getSerial()),
+                           QString::number(book.getTop()),
+                           book.getName());
+//    qDebug()<<sql;
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::updateBookSerialTop(const QString &name, const int &serial, const bool &isTop)
+{
+    QString sql = QString("update book "
+                          "set bok_serial=%1,bok_top=%2 "
+                          "where bok_name='%3';").arg(QString::number(serial), QString::number(isTop), name);
+//      qDebug()<<sql;
+    QSqlQuery query;
+    if(query.exec(sql))
+        return true;
+    return false;
+}
+
+bool DataBase::deleteBook(const QString &name)
+{
+    QString sql = QString("delete from book where bok_name='%1';").arg(name);
+    QSqlQuery query;
+    if(query.exec("PRAGMA foreign_keys = ON;") && query.exec(sql))
+        return true;
+    return false;
+}
+
 DataBase::DataBase()
 {
     // 判断d资源文件夹是否存在
-    QDir resPath(RES_DIR_PATH);
+    QDir resPath(DATA_DIR_PATH);
     if(!resPath.exists()){
         resPath.setPath(CURR_PATH);
-        resPath.mkdir("resources");
+        resPath.mkdir("data");
     }
     connect();
 

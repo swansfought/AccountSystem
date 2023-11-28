@@ -6,6 +6,7 @@
 #include <QTreeWidgetItem>
 #include <QMenu>
 #include <QAction>
+#include <QMessageBox>
 
 class TreeWidget : public QTreeWidget
 {
@@ -14,16 +15,30 @@ public:
     explicit TreeWidget(QWidget *parent = nullptr);
     ~TreeWidget();
 
-    void setContextMenu(const bool& bol);
+    enum MenuMode{
+        Record,
+        Classify
+    };
+
+    void setContextMenu(const MenuMode& mode);
 
     void collapseAll();
+    void deleteAll();
+
+signals:
+    void deleteRecord();
+    void deleteClassify();
+
+
+protected:
+//    void drawRow(QPainter *painter, const QStyleOptionViewItem &options, const QModelIndex &index) const override;
 
 private slots:
     void showContextMenu(const QPoint &pos);
 
 
 private:
-    bool contextMenu;
+    MenuMode menuMode;
 
 
 };

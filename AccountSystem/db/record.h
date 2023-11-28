@@ -41,7 +41,11 @@ public:
     QByteArray getImage() const;
     void setImage(const QByteArray &newImage);
 
+    int getId() const;
+    void setId(int newId);
+
 private:
+    int id;
     QString bookName;
     QString flowType;
     QString accountName;
