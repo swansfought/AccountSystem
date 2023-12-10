@@ -30,7 +30,6 @@ public:
     MainWin(QWidget *parent = nullptr);
     ~MainWin();
 
-
 private slots:
     void on_deleteRecord();
 

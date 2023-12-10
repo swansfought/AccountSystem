@@ -44,7 +44,6 @@ void TreeWidget::deleteAll()
     }
 }
 
-#include <QPainter>
 void TreeWidget::showContextMenu(const QPoint &pos)
 {
     QTreeWidgetItem *item = itemAt(pos);
@@ -54,6 +53,10 @@ void TreeWidget::showContextMenu(const QPoint &pos)
     //构建右键菜单
     QMenu menu(this);
     switch (menuMode) {
+    case Show:{
+
+        break;
+    }
     case Record:{
         if(nullptr != this->currentItem()->parent()){
             QAction *act = new QAction("删除记录", this);

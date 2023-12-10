@@ -75,7 +75,6 @@ void MainWin::initWinData()
     ui->account_loading->setVisible(false);
     ui->book_loading->setVisible(false);
 
-
     // 界面初始位置
     ui->dock_record->setChecked(true);
     ui->stackedWidget_dock->setCurrentWidget(ui->page_record);
@@ -84,7 +83,7 @@ void MainWin::initWinData()
     ui->stackedWidget_book->setCurrentWidget(ui->page_bookInfo);
     ui->record_input->setFocus();
 
-    ui->dock_analysis->setVisible(false);
+//    ui->dock_analysis->setVisible(false);
     ui->dock_borrowReturn->setVisible(false);
     ui->dock_setting->setVisible(false);
 
@@ -321,6 +320,7 @@ void MainWin::initSignalSlots()
     });
     connect(ui->dock_analysis,&QPushButton::clicked,this,[=](){
         ui->stackedWidget_dock->setCurrentWidget(ui->page_analysis);
+        ui->analysis_book->setFocus();
     });
     connect(ui->dock_borrowReturn,&QPushButton::clicked,this,[=](){
         ui->stackedWidget_dock->setCurrentWidget(ui->page_borrowReturn);

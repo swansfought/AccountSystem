@@ -7,6 +7,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QMessageBox>
+#include <QPainter>
 
 class TreeWidget : public QTreeWidget
 {
@@ -17,7 +18,8 @@ public:
 
     enum MenuMode{
         Record,
-        Classify
+        Classify,
+        Show
     };
 
     void setContextMenu(const MenuMode& mode);

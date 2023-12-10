@@ -318,7 +318,7 @@ QJsonObject Config::getDefaultClassify()
     actObj.append("充值|会员卡");
     actObj.append("充值|公交卡");
     actObj.append("其他账户");
-    subObj.insert("Account_Type",inObj);
+    subObj.insert("Account_Type",actObj);
 
     rootObj.insert("classify",subObj); //分类配置
 
