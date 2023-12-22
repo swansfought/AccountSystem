@@ -15,8 +15,9 @@
 #include <QDebug>
 #include "db/record.h"
 #include "db/account.h"
-#include "db/recordfilter.h"
 #include "db/book.h"
+#include "db/recordfilter.h"
+#include "db/analysifilter.h"
 #include "global.h"
 
 class DataBase
@@ -31,6 +32,7 @@ public:
 
     void queryLimitRecord(QSqlQuery& query, const int& start,const int& end);
     void queryLimitRecord(QSqlQuery& query, const int& start,const int& end, const RecordFilter& filter);
+    void queryLimitRecord(QSqlQuery& query, const int& start,const int& end, const AnalysiFilter& filter);
 
     int queryRecordRows();
     int queryRecordRows(const QString& bookName);
@@ -60,6 +62,28 @@ public:
 
     int getMaxPages(const double& numOfPage);
 
+    enum class ConfigType{
+        Book = 0x00000000,
+        Account,
+        Income_Classify,
+        Money_Flow_Type,
+        Account_Type,
+        Expend_First_Classify,
+        Expend_Second_GouWu,
+        Expend_Second_CanYin,
+        Expend_Second_JiaoTong,
+        Expend_Second_YuLe,
+        Expend_Second_LvYou,
+        Expend_Second_JiaJu,
+        Expend_Second_JiaoYu,
+        Expend_Second_RenQing,
+        Expend_Second_YiLiao,
+        Expend_Second_TongXun,
+        Expend_Second_ZaXiang
+    };
+    QVector<QString> getConfigArray(const ConfigType& type);
+    QVector<QString> getLikeText(const ConfigType& type, const QString &input); //模糊查询分类数据，默认返回第一项，没有返回空
+
 private:
     DataBase();
     ~DataBase();
@@ -67,6 +91,7 @@ private:
     DataBase& operator=(const DataBase&) = delete;
 
     void checkConnect();
+    QString getConfigType(const ConfigType& type);
 
     static QMutex mutex;
     static DataBase* instance;
@@ -79,3 +104,5 @@ private:
 };
 
 #endif // DATABASE_H
+
+

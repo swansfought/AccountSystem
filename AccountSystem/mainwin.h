@@ -12,6 +12,7 @@
 #include <QTreeWidget>
 
 #include "ui/recordWin.h"
+#include "ui/textcandidate.h"
 #include "dev/config.h"
 #include "db/database.h"
 #include "db/account.h"
@@ -30,6 +31,9 @@ public:
     MainWin(QWidget *parent = nullptr);
     ~MainWin();
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private slots:
     void on_deleteRecord();
 
@@ -41,6 +45,7 @@ private:
     void initRecordData(QSqlQuery &query);
     void initRecordBottomInfo();
     void flushRecordData(const bool& filter);
+    void flushAnalysisData();
     void flushWinData(const Account &account, const Book &book);
 
 
@@ -58,7 +63,8 @@ private:
 
     DataBase *db; //数据库
     RecordWin *recordWin;//记账窗口
-    Config *config;//配置管理
+//    Config *config;//配置管理
+    TextCandidate *textCandidate;
 
     bool isAccountRestore;
     QToolButton* currAccount;
@@ -68,6 +74,8 @@ private:
 
     int bookTopNum;
     int accountTopnum;
+
+    bool isFlushAnalysis;
 
 private:
     Ui::MainWin *ui;

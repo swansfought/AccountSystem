@@ -2,3 +2,4 @@
 #include "ECAI6Z3TWJ/moc_treewidget.cpp"
 #include "EWIEGA46WW/moc_mainwin.cpp"
 #include "UYX5XTB5RZ/moc_recordWin.cpp"
+#include "UYX5XTB5RZ/moc_textcandidate.cpp"

@@ -16,7 +16,6 @@ TreeWidget::TreeWidget(QWidget *parent)
 
 TreeWidget::~TreeWidget()
 {
-
 }
 
 void TreeWidget::setContextMenu(const MenuMode& mode)

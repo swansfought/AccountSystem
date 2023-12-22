@@ -9,21 +9,43 @@ MainWin::MainWin(QWidget *parent)
     this->setWindowTitle("嘟嘟记账");
     db = DataBase::getInstance();
     recordWin = new RecordWin(this);
-    config = Config::getInstance();
+    textCandidate = new TextCandidate(238,90,ui->page_record_analysis);
+//    config = Config::getInstance();
     isAccountRestore = false;
     currAccount = nullptr;
     currBook = nullptr;
     bookTopNum = 0;
     accountTopnum = 0;
+    isFlushAnalysis = true;
     initStyle();
     initWinData();//先初始化数据
     initSignalSlots();
+
+    ui->analysis_book->installEventFilter(this);
+    ui->analysis_flowType->installEventFilter(this);
+    ui->analysis_account->installEventFilter(this);
+    ui->analysis_firstClassify->installEventFilter(this);
+    ui->analysis_secondClassify->installEventFilter(this);
+    ui->analysis_account_in->installEventFilter(this);
 }
 
 MainWin::~MainWin()
 {
     db->disconnect();
     delete ui;
+}
+
+bool MainWin::eventFilter(QObject *watched, QEvent *event)
+{
+    if (event->type() == QEvent::FocusOut){
+        if(nullptr != textCandidate){
+            if(ui->analysis_book == watched || ui->analysis_flowType== watched || ui->analysis_account == watched
+                || ui->analysis_firstClassify == watched || ui->analysis_secondClassify == watched || ui->analysis_account_in == watched){
+                textCandidate->hide();
+            }
+        }
+    }
+    return QWidget::eventFilter(watched, event);
 }
 
 void MainWin::on_deleteRecord()
@@ -77,7 +99,7 @@ void MainWin::initWinData()
 
     // 界面初始位置
     ui->dock_record->setChecked(true);
-    ui->stackedWidget_dock->setCurrentWidget(ui->page_record);
+    ui->stackedWidget_dock->setCurrentWidget(ui->page_record_analysis);
     ui->stackedWidget_record->setCurrentWidget(ui->page_record_tree);
     ui->stackedWidget_account_name->setCurrentWidget(ui->page_account_name);
     ui->stackedWidget_book->setCurrentWidget(ui->page_bookInfo);
@@ -98,7 +120,7 @@ void MainWin::initWinData()
 
     //-------------流水账记录-------------
     ui->record_tree->setContextMenu(TreeWidget::Record);
-    ui->record_date->setDateTime(QDateTime::currentDateTime());
+    ui->record_date->setDate(QDate::currentDate());
 
     ui->record_pageRecordNum->setCurrentIndex(1);//默认100条/页
     initRecordBottomInfo(); // 底部提示
@@ -141,6 +163,9 @@ void MainWin::initWinData()
     header->setSectionsMovable(false);// 禁用列拖动
     //----------------------------------
 
+    ui->analysis_startDate->setDate(QDate::currentDate());
+    ui->analysis_endDate->setDate(QDate::currentDate());
+
     //账本
     ui->widget_account_enable->setVisible(false);// 暂不开启
     auto bookVec = db->queryAllBook();
@@ -160,15 +185,15 @@ void MainWin::initWinData()
     }
 
     //所有账户
-    QJsonArray actArr = config->getJsonArray(Config::Type::Account_Type);
+    auto actArr = db->getConfigArray(DataBase::ConfigType::Account_Type);
     for (int i = 0; i < actArr.size(); ++i)
-        ui->account_newName->addItem(actArr.at(i).toString());
+        ui->account_newName->addItem(actArr.at(i));
 
     //收入分类
-    QJsonArray inArr = config->getJsonArray(Config::Type::Income_Classify);
+    auto inArr = db->getConfigArray(DataBase::ConfigType::Income_Classify);
     for (int i = 0; i < inArr.size(); ++i) {
         QTreeWidgetItem *rootItem = new QTreeWidgetItem(ui->classify_incomeTree);
-        rootItem->setText(0,inArr.at(i).toString());
+        rootItem->setText(0,inArr.at(i));
     }
 
     //支出分类
@@ -176,100 +201,100 @@ void MainWin::initWinData()
     QTreeWidgetItem *rootGouwu = new QTreeWidgetItem(ui->classify_expendTree);
     rootGouwu->setFlags(rootGouwu->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootGouwu->setText(0,"购物");
-    QJsonArray gouwuArr = config->getJsonArray(Config::Type::Expend_Second_GouWu);
+    auto gouwuArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_GouWu);
     for (int i = 0; i < gouwuArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootGouwu);
-        subItem->setText(0,gouwuArr.at(i).toString());
+        subItem->setText(0,gouwuArr.at(i));
     }
     //餐饮
     QTreeWidgetItem *rootCanyin = new QTreeWidgetItem(ui->classify_expendTree);
     rootCanyin->setFlags(rootCanyin->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootCanyin->setText(0,"餐饮");
-    QJsonArray canyinArr = config->getJsonArray(Config::Type::Expend_Second_CanYin);
+    auto canyinArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_CanYin);
     for (int i = 0; i < canyinArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootCanyin);
-        subItem->setText(0,canyinArr.at(i).toString());
+        subItem->setText(0,canyinArr.at(i));
     }
     //交通
     QTreeWidgetItem *rootJiaotong = new QTreeWidgetItem(ui->classify_expendTree);
     rootJiaotong->setFlags(rootJiaotong->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootJiaotong->setText(0,"交通");
-    QJsonArray jiaotongArr = config->getJsonArray(Config::Type::Expend_Second_JiaoTong);
+    auto jiaotongArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_JiaoTong);
     for (int i = 0; i < jiaotongArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootJiaotong);
-        subItem->setText(0,jiaotongArr.at(i).toString());
+        subItem->setText(0,jiaotongArr.at(i));
     }
     //娱乐
     QTreeWidgetItem *rootYule = new QTreeWidgetItem(ui->classify_expendTree);
     rootYule->setFlags(rootYule->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootYule->setText(0,"娱乐");
-    QJsonArray yuleArr = config->getJsonArray(Config::Type::Expend_Second_YuLe);
+    auto yuleArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_YuLe);
     for (int i = 0; i < yuleArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootYule);
-        subItem->setText(0,yuleArr.at(i).toString());
+        subItem->setText(0,yuleArr.at(i));
     }
     //旅游
     QTreeWidgetItem *rootLvyou = new QTreeWidgetItem(ui->classify_expendTree);
     rootLvyou->setFlags(rootLvyou->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootLvyou->setText(0,"旅游");
-    QJsonArray lvyouArr = config->getJsonArray(Config::Type::Expend_Second_LvYou);
+    auto lvyouArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_LvYou);
     for (int i = 0; i < lvyouArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootLvyou);
-        subItem->setText(0,lvyouArr.at(i).toString());
+        subItem->setText(0,lvyouArr.at(i));
     }
     //家居
     QTreeWidgetItem *rootJiaju = new QTreeWidgetItem(ui->classify_expendTree);
     rootJiaju->setFlags(rootJiaju->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootJiaju->setText(0,"家居");
-    QJsonArray jiajuArr = config->getJsonArray(Config::Type::Expend_Second_JiaJu);
+    auto jiajuArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_JiaJu);
     for (int i = 0; i < jiajuArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootJiaju);
-        subItem->setText(0,jiajuArr.at(i).toString());
+        subItem->setText(0,jiajuArr.at(i));
     }
     //教育
     QTreeWidgetItem *rootJiaoyu = new QTreeWidgetItem(ui->classify_expendTree);
     rootJiaoyu->setFlags(rootJiaoyu->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootJiaoyu->setText(0,"教育");
-    QJsonArray jiaoyuArr = config->getJsonArray(Config::Type::Expend_Second_JiaoYu);
+    auto jiaoyuArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_JiaoYu);
     for (int i = 0; i < jiaoyuArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootJiaoyu);
-        subItem->setText(0,jiaoyuArr.at(i).toString());
+        subItem->setText(0,jiaoyuArr.at(i));
     }
     //人情
     QTreeWidgetItem *rootRenqing = new QTreeWidgetItem(ui->classify_expendTree);
     rootRenqing->setFlags(rootRenqing->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootRenqing->setText(0,"人情");
-    QJsonArray renqingArr = config->getJsonArray(Config::Type::Expend_Second_RenQing);
+    auto renqingArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_RenQing);
     for (int i = 0; i < renqingArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootRenqing);
-        subItem->setText(0,renqingArr.at(i).toString());
+        subItem->setText(0,renqingArr.at(i));
     }
     //医疗
     QTreeWidgetItem *rootYiliao = new QTreeWidgetItem(ui->classify_expendTree);
     rootYiliao->setFlags(rootYiliao->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootYiliao->setText(0,"医疗");
-    QJsonArray yiliaoArr = config->getJsonArray(Config::Type::Expend_Second_YiLiao);
+    auto yiliaoArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_YiLiao);
     for (int i = 0; i < yiliaoArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootYiliao);
-        subItem->setText(0,yiliaoArr.at(i).toString());
+        subItem->setText(0,yiliaoArr.at(i));
     }
     //通讯
     QTreeWidgetItem *rootTongxun = new QTreeWidgetItem(ui->classify_expendTree);
     rootTongxun->setFlags(rootTongxun->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootTongxun->setText(0,"通讯");
-    QJsonArray tongxunArr = config->getJsonArray(Config::Type::Expend_Second_TongXun);
+    auto tongxunArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_TongXun);
     for (int i = 0; i < tongxunArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootTongxun);
-        subItem->setText(0,tongxunArr.at(i).toString());
+        subItem->setText(0,tongxunArr.at(i));
     }
     //杂项
     QTreeWidgetItem *rootZaxiang = new QTreeWidgetItem(ui->classify_expendTree);
     rootZaxiang->setFlags(rootZaxiang->flags() & ~Qt::ItemIsDropEnabled); // 禁用顶部子项放入到另一个顶部子项中
     rootZaxiang->setText(0,"杂项");
-    QJsonArray zaxiangArr = config->getJsonArray(Config::Type::Expend_Second_ZaXiang);
+    auto zaxiangArr = db->getConfigArray(DataBase::ConfigType::Expend_Second_ZaXiang);
     for (int i = 0; i < zaxiangArr.size(); ++i) {
         QTreeWidgetItem *subItem = new QTreeWidgetItem(rootZaxiang);
-        subItem->setText(0,zaxiangArr.at(i).toString());
+        subItem->setText(0,zaxiangArr.at(i));
 
 //        subItem->setFlags(subItem->flags() & ~Qt::ItemIsDragEnabled); // 防止移动
         // 关闭子item的Drop功能。
@@ -277,9 +302,9 @@ void MainWin::initWinData()
 //        subItem->setFlags(subItem->flags() & ~Qt::ItemIsDropEnabled);
     }
 
-    //显隐设置
-    ui->widget_account_enable->setVisible(false);
-
+    ui->stackedWidget_record_analysis->setMaximumHeight(48);
+    ui->widget_account_enable->setVisible(false); //显隐设置
+    ui->stackedWidget_record_analysis->setCurrentWidget(ui->page_record);
 }
 
 void MainWin::initSignalSlots()
@@ -316,10 +341,17 @@ void MainWin::initSignalSlots()
         }
     });
     connect(ui->dock_record,&QPushButton::clicked,this,[=](){
-        ui->stackedWidget_dock->setCurrentWidget(ui->page_record);
+        ui->record_flush->click();
+        ui->stackedWidget_dock->setCurrentWidget(ui->page_record_analysis);
+        ui->stackedWidget_record_analysis->setCurrentWidget(ui->page_record);
+        ui->stackedWidget_record_analysis->setMaximumHeight(48);
+        ui->record_input->setFocus();
     });
     connect(ui->dock_analysis,&QPushButton::clicked,this,[=](){
-        ui->stackedWidget_dock->setCurrentWidget(ui->page_analysis);
+        ui->analysis_flush->click(); //加载当前数据
+        ui->stackedWidget_dock->setCurrentWidget(ui->page_record_analysis);
+        ui->stackedWidget_record_analysis->setCurrentWidget(ui->page_analysis);
+        ui->stackedWidget_record_analysis->setMaximumHeight(180);
         ui->analysis_book->setFocus();
     });
     connect(ui->dock_borrowReturn,&QPushButton::clicked,this,[=](){
@@ -453,6 +485,154 @@ void MainWin::initSignalSlots()
         }
         flushRecordData(true); //重加载页面数据
     });
+
+
+    // 账目统计
+    connect(textCandidate,&TextCandidate::selectedText,this,[=](const int& flag, const QString &text){
+        if(1 == flag){
+            ui->analysis_book->setText(text);
+            ui->analysis_book->setFocus();
+        }else if(2 == flag){
+            ui->analysis_flowType->setText(text);
+            ui->analysis_flowType->setFocus();
+        }else if(3 == flag){
+            ui->analysis_account->setText(text);
+            ui->analysis_account->setFocus();
+        }else if(4 == flag){
+            ui->analysis_firstClassify->setText(text);
+            ui->analysis_firstClassify->setFocus();
+        }else if(5 == flag){
+            ui->analysis_secondClassify->setText(text);
+            ui->analysis_secondClassify->setFocus();
+        }else if(6 == flag){
+            ui->analysis_account_in->setText(text);
+            ui->analysis_account_in->setFocus();
+        }
+    });
+    connect(ui->analysis_book,&QLineEdit::textChanged,this,[=](const QString &input){
+        textCandidate->setFlag(1); //设置标志
+        if(input.isEmpty()){
+            textCandidate->hide();
+            flushAnalysisData();//更新数据
+            return;
+        }
+        auto vec = db->getLikeText(DataBase::ConfigType::Book,input);
+        if(0 >= vec.count())
+            return;
+        textCandidate->setText(vec);
+
+        textCandidate->move(77, ui->analysis_book->height()*2 + 15); //设置文本候选控件坐标
+        textCandidate->show();
+        flushAnalysisData();//更新数据
+    });
+    connect(ui->analysis_flowType,&QLineEdit::textChanged,this,[=](const QString &input){
+        textCandidate->setFlag(2); //设置标志
+        if(input.isEmpty()){
+            textCandidate->hide();
+            flushAnalysisData();//更新数据
+            return;
+        }
+        auto vec = db->getLikeText(DataBase::ConfigType::Money_Flow_Type,input);
+        if(0 >= vec.count())
+            return;
+        textCandidate->setText(vec);
+
+        textCandidate->move(392, ui->analysis_flowType->height()*2 + 15); //设置文本候选控件坐标
+        textCandidate->show();
+        flushAnalysisData();//更新数据
+    });
+    connect(ui->analysis_account,&QLineEdit::textChanged,this,[=](const QString &input){
+        textCandidate->setFlag(3); //设置标志
+        if(input.isEmpty()){
+            textCandidate->hide();
+            flushAnalysisData();//更新数据
+            return;
+        }
+        auto vec = db->getLikeText(DataBase::ConfigType::Account,input);
+        if(0 >= vec.count())
+            return;
+        textCandidate->setText(vec);
+
+        textCandidate->move(708, ui->analysis_account->height()*2 + 15); //设置文本候选控件坐标
+        textCandidate->show();
+        flushAnalysisData();//更新数据
+    });
+    connect(ui->analysis_firstClassify,&QLineEdit::textChanged,this,[=](const QString &input){
+        textCandidate->setFlag(4); //设置标志
+        if(input.isEmpty()){
+            textCandidate->hide();
+            flushAnalysisData();//更新数据
+            return;
+        }
+        auto vec = db->getLikeText(DataBase::ConfigType::Expend_First_Classify,input);
+        if(0 >= vec.count())
+            return;
+        textCandidate->setText(vec);
+
+        textCandidate->move(77, ui->analysis_firstClassify->height()*3 + 21); //设置文本候选控件坐标
+        textCandidate->show();
+        flushAnalysisData();//更新数据
+    });
+    connect(ui->analysis_secondClassify,&QLineEdit::textChanged,this,[=](const QString &input){
+        textCandidate->setFlag(5); //设置标志
+        if(input.isEmpty()){
+            textCandidate->hide();
+            flushAnalysisData();//更新数据
+            return;
+        }
+        auto vec = db->getLikeText(DataBase::ConfigType::Expend_Second_CanYin,input);
+        if(0 >= vec.count())
+            return;
+        textCandidate->setText(vec);
+
+        textCandidate->move(392, ui->analysis_secondClassify->height()*3 + 21); //设置文本候选控件坐标
+        textCandidate->show();
+        flushAnalysisData();//更新数据
+    });
+    connect(ui->analysis_account_in,&QLineEdit::textChanged,this,[=](const QString &input){
+        textCandidate->setFlag(6); //设置标志
+        if(input.isEmpty()){
+            textCandidate->hide();
+            flushAnalysisData();//更新数据
+            return;
+        }
+        auto vec = db->getLikeText(DataBase::ConfigType::Account,input);
+        if(0 >= vec.count())
+            return;
+        textCandidate->setText(vec);
+
+        textCandidate->move(708, ui->analysis_account_in->height()*3 + 21); //设置文本候选控件坐标
+        textCandidate->show();
+        flushAnalysisData();//更新数据
+    });
+    connect(ui->analysis_startDate,&QDateTimeEdit::dateChanged,this,[=](const QDate &date){
+        if(date > ui->analysis_endDate->date())
+            return;
+        flushAnalysisData();//更新数据
+    });
+    connect(ui->analysis_endDate,&QDateTimeEdit::dateChanged,this,[=](const QDate &date){
+        if(date < ui->analysis_startDate->date())
+            return;
+        flushAnalysisData();//更新数据
+    });
+    connect(ui->analysis_reset,&QPushButton::clicked,this,[=](){
+        isFlushAnalysis = false; //暂停数据刷新
+        ui->analysis_book->clear();
+        ui->analysis_flowType->clear();
+        ui->analysis_account->clear();
+        ui->analysis_firstClassify->clear();
+        ui->analysis_secondClassify->clear();
+        ui->analysis_account_in->clear();
+//        ui->analysis_startDate->setDate(QDate::currentDate());
+//        ui->analysis_endDate->setDate(QDate::currentDate());
+
+        ui->cBox_analysisDate->setChecked(true);
+        ui->cBox_analysisText->setChecked(false);
+        isFlushAnalysis = true; //恢复数据刷新
+    });
+    connect(ui->analysis_flush,&QPushButton::clicked,this,[=](){ flushAnalysisData(); });
+    connect(ui->cBox_analysisDate,&QAbstractButton::toggled,this,[=](){ flushAnalysisData(); });
+    connect(ui->cBox_analysisText,&QAbstractButton::toggled,this,[=](){ flushAnalysisData(); });
 
 
     // account - 账户
@@ -953,6 +1133,22 @@ void MainWin:: initRecordData(QSqlQuery &query)
         rootItem->setText(0,newInfo);
 //        qDebug()<<newInfo;
     } //while结束处
+    // 统计分析界面
+    if(ui->dock_analysis->isChecked()){
+        qreal totalExpend = 0;
+        qreal totalIncome = 0;
+        qreal totalTransfer = 0;
+        int count = ui->record_tree->topLevelItemCount();
+        for (int i = 0; i < count; ++i) {
+            QStringList strList = ui->record_tree->topLevelItem(i)->text(0).split(":");
+            totalIncome += strList.at(1).split(" ").at(0).toDouble(); //收入
+            totalExpend += strList.at(2).split(" ").at(0).toDouble();//支出
+            totalTransfer += strList.at(3).split(" ").at(0).toDouble();//转账
+        }
+        ui->analysis_totalIncome->setValue(totalIncome);
+        ui->analysis_totalExpend->setValue(totalExpend);
+        ui->analysis_totalTransfer->setValue(totalTransfer);
+    }
     initRecordBottomInfo();//更新信息
 }
 
@@ -983,6 +1179,42 @@ void MainWin::flushRecordData(const bool &filter)
 
     loadingTip(false);//结束提示
     ui->record_input->setFocus();
+}
+
+void MainWin::flushAnalysisData()
+{
+    if(!isFlushAnalysis)
+        return;
+    loadingTip(true); //加载提示
+
+    double numOfPage = ui->record_pageRecordNum->currentText().split("条").at(0).toDouble();
+    int index = ui->record_pageIndex->value();
+
+    //结算开始和结束索引
+    int start = (index-1)*numOfPage;
+    int end = start + (numOfPage-1);    //结算开始和结束索引
+
+    QSqlQuery query;
+    if(!ui->cBox_analysisDate->isChecked() && !ui->cBox_analysisText->isChecked()){
+        db->queryLimitRecord(query,start,end);
+    }else{
+        AnalysiFilter analysisfilter;
+        analysisfilter.setDateEnable(ui->cBox_analysisDate->isChecked());
+        analysisfilter.setTextEnable(ui->cBox_analysisText->isChecked());
+        analysisfilter.setStartDate(ui->analysis_startDate->date());
+        analysisfilter.setEndDate(ui->analysis_endDate->date());
+        analysisfilter.setBook(ui->analysis_book->text());
+        analysisfilter.setFlowType(ui->analysis_flowType->text());
+        analysisfilter.setAccount(ui->analysis_account->text());
+        analysisfilter.setFirstClassify(ui->analysis_firstClassify->text());
+        analysisfilter.setSecondClassify(ui->analysis_secondClassify->text());
+        analysisfilter.setAccount_in(ui->analysis_account_in->text());
+
+        db->queryLimitRecord(query,start,end,analysisfilter);
+    }
+    initRecordData(query); //加载页面数据
+    loadingTip(false);//结束提示
+//    ui->analysis_book->setFocus();
 }
 
 void MainWin::flushWinData(const Account &account, const Book &book)

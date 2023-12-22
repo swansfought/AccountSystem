@@ -235,6 +235,69 @@ void DataBase::queryLimitRecord(QSqlQuery& query, const int &start, const int &e
     query.exec(sql);
 }
 
+void DataBase::queryLimitRecord(QSqlQuery &query, const int &start, const int &end, const AnalysiFilter &filter)
+{
+    if(filter.getTextEnable() && filter.getDateEnable()){ //文本&日期模式
+        QString tmpTable = QString("("
+                                  "select * from record "
+                                  "where "
+                                  "bok_name like '%1%' or "
+                                  "red_flow_type like '%2%' or "
+                                  "act_name like '%3%' or "
+                                  "red_first_classify like '%4%' or "
+                                  "red_second_classify like '%5%' or "
+                                  "red_transfer_in like '%6%' "
+                                  ") as _tmp "
+                                   ).arg(filter.getBook(),
+                                         filter.getFlowType(),
+                                         filter.getAccount(),
+                                         filter.getFirstClassify(),
+                                         filter.getSecondClassify(),
+                                         filter.getAccount_in());
+        QString sql = QString("select * from %1"
+                              "where red_datetime between '%2' and '%3' "
+                              "order by red_datetime desc "
+                              "limit '%4','%5';"
+                              ).arg(tmpTable,
+                               filter.getStartDate().toString("yyyy-MM-dd 00:00:00"),
+                               filter.getEndDate().toString("yyyy-MM-dd 23:59:59"),
+                               QString::number(start),
+                               QString::number(end));
+        query.exec(sql);
+    }else if(filter.getTextEnable() && !filter.getDateEnable()){ //文本模式
+         QString sql = QString("select * from record "
+                              "where "
+                              "bok_name like '%1%' or "
+                              "red_flow_type like '%2%' or "
+                              "act_name like '%3%' or "
+                              "red_first_classify like '%4%' or "
+                              "red_second_classify like '%5%' or "
+                              "red_transfer_in like '%6%' "
+                              "order by red_datetime desc "
+                              "limit '%7','%8';"
+                              ).arg(filter.getBook(),
+                               filter.getFlowType(),
+                               filter.getAccount(),
+                               filter.getFirstClassify(),
+                               filter.getSecondClassify(),
+                               filter.getAccount_in(),
+                               QString::number(start),
+                               QString::number(end));
+        query.exec(sql);
+    }else if(!filter.getTextEnable() && filter.getDateEnable()){//日期模式
+        QString sql = QString("select * from record "
+                              "where "
+                              "red_datetime between '%1' and '%2' "
+                              "order by red_datetime desc "
+                              "limit '%3','%4';"
+                              ).arg(filter.getStartDate().toString("yyyy-MM-dd 00:00:00"),
+                               filter.getEndDate().toString("yyyy-MM-dd 23:59:59"),
+                               QString::number(start),
+                               QString::number(end));
+        query.exec(sql);
+    }
+}
+
 int DataBase::queryRecordRows()
 {
     QSqlQuery query;
@@ -305,7 +368,6 @@ Book DataBase::queryBook(const QString &name)
 
 Record DataBase::queryRecord(const QString &name)
 {
-
 }
 
 qreal DataBase::queryTotalFund()
@@ -541,6 +603,76 @@ void DataBase::checkConnect()
     connect();
 }
 
+QString DataBase::getConfigType(const ConfigType &type)
+{
+    QString cfg_type;
+    switch (type) {
+    case ConfigType::Expend_First_Classify:{
+        cfg_type = "Expend_First_Classify";
+        break;
+    }
+    case ConfigType::Income_Classify:{
+        cfg_type = "Income_Classify";
+        break;
+    }
+    case ConfigType::Account_Type:{
+        cfg_type = "Account_Type";
+        break;
+    }
+    case ConfigType::Money_Flow_Type:{
+        cfg_type = "Money_Flow_Type";
+        break;
+    }
+    case ConfigType:: Expend_Second_GouWu:{
+        cfg_type = "Expend_Second_GouWu";
+        break;
+    }
+    case ConfigType::Expend_Second_CanYin:{
+        cfg_type = "Expend_Second_CanYin";
+        break;
+    }
+    case ConfigType::Expend_Second_JiaoTong:{
+        cfg_type = "Expend_Second_JiaoTong";
+        break;
+    }
+    case ConfigType::Expend_Second_YuLe:{
+        cfg_type = "Expend_Second_YuLe";
+        break;
+    }
+    case ConfigType::Expend_Second_LvYou:{
+        cfg_type = "Expend_Second_LvYou";
+        break;
+    }
+    case ConfigType::Expend_Second_JiaJu:{
+        cfg_type = "Expend_Second_JiaJu";
+        break;
+    }
+    case ConfigType::Expend_Second_JiaoYu:{
+        cfg_type = "Expend_Second_JiaoYu";
+        break;
+    }
+    case ConfigType::Expend_Second_RenQing:{
+        cfg_type = "Expend_Second_RenQing";
+        break;
+    }
+    case ConfigType::Expend_Second_YiLiao:{
+        cfg_type = "Expend_Second_YiLiao";
+        break;
+    }
+    case ConfigType::Expend_Second_TongXun:{
+        cfg_type = "Expend_Second_TongXun";
+        break;
+    }
+    case ConfigType::Expend_Second_ZaXiang:{
+        cfg_type = "Expend_Second_ZaXiang";
+        break;
+    }
+    default:
+        break;
+    }
+    return cfg_type;
+}
+
 int DataBase::getMaxPages(const double& numOfPage)
 {
     int total = queryRecordRows();
@@ -551,4 +683,37 @@ int DataBase::getMaxPages(const double& numOfPage)
         pages = int(total/numOfPage);
 
     return pages;
+}
+
+QVector<QString> DataBase::getConfigArray(const ConfigType &type)
+{
+    QVector<QString> vec;
+    QString sql = QString("select * from config where cfg_type='%1' order by cfg_serial;").arg(getConfigType(type));
+    QSqlQuery query;
+    if(query.exec(sql)){
+        while(query.next())
+            vec.append(query.value("cfg_name").toString());
+    }
+    return vec;
+}
+
+//模糊查询分类数据，默认返回第一项，没有返回空
+QVector<QString> DataBase::getLikeText(const ConfigType &type, const QString &input)
+{
+    QString sql;
+    if(ConfigType::Book == type)
+        sql = QString("select bok_name from book where bok_name like '%1%';").arg(input);
+    else if(ConfigType::Account == type)
+        sql = QString("select act_name from account where act_name like '%1%';").arg(input);
+    else
+        sql = QString("select cfg_name from config where cfg_type='%1' and cfg_name like '%2%';").arg(getConfigType(type),input);
+
+    //不管多少个，默认只拿第一个
+    QSqlQuery query;
+    QVector<QString> vec;
+    if(query.exec(sql)){
+        while (query.next())
+            vec.append(query.value(0).toString());
+    }
+    return vec;
 }

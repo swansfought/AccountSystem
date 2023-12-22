@@ -106,6 +106,7 @@ AccountSystem_autogen/timestamp: \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QImage \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QMovie \
+	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QPainter \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/QStandardItemModel \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qbrush.h \
@@ -124,7 +125,9 @@ AccountSystem_autogen/timestamp: \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qmatrix.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qmovie.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h \
+	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpainter.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpalette.h \
+	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpixelformat.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpixmap.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qpolygon.h \
@@ -132,6 +135,7 @@ AccountSystem_autogen/timestamp: \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qrgb.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qstandarditemmodel.h \
+	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
 	D:/software/Qt/5.15.2/mingw81_64/include/QtGui/qtransform.h \

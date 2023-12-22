@@ -54,6 +54,8 @@ else()
             db/account.h db/account.cpp
             db/book.h db/book.cpp
             db/recordfilter.h db/recordfilter.cpp
+            ui/textcandidate.h ui/textcandidate.cpp ui/textcandidate.ui
+            db/analysifilter.h db/analysifilter.cpp
         )
     endif()
 endif()

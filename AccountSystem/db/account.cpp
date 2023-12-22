@@ -1,10 +1,8 @@
 #include "account.h"
 
-Account::Account()
+Account::Account():enable(true),serial(0),top(false)
 {
-    enable = true;
-    serial = 0;
-    top = false;
+
 }
 
 Account::~Account()

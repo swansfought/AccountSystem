@@ -16,6 +16,7 @@ Config *Config::getInstance()
 
 void Config::checkConfigFile(bool isCheck)
 {
+
     //1.配置文件是否存在
     QFile file(CFG_FILE_PATH);
     if(isCheck && file.exists()){
@@ -111,7 +112,6 @@ QJsonArray Config::getJsonArray(const Type &type)
     return arr;
 }
 
-
 QJsonObject Config::readConfigJson()
 {
     QFile file(CFG_FILE_PATH);
@@ -161,7 +161,7 @@ QJsonObject Config::getDefaultClassify()
     QJsonObject outObj;//支出
     // 支出-购物
     QJsonArray gouwuArr;
-    gouwuArr.append("家居用品");
+    gouwuArr.append("生活用品");
     gouwuArr.append("护肤美妆");
     gouwuArr.append("数码产品");
     gouwuArr.append("衣着服饰");
@@ -178,14 +178,12 @@ QJsonObject Config::getDefaultClassify()
 
     // 支出-餐饮
     QJsonArray canyinArr;
-    canyinArr.append("三餐");
-    canyinArr.append("蔬菜");
-    canyinArr.append("水果");
     canyinArr.append("外卖");
+    canyinArr.append("水果");
     canyinArr.append("零食");
-    canyinArr.append("其他");
-    canyinArr.append("肉禽类");
-    canyinArr.append("水产品");
+    canyinArr.append("买菜");
+    canyinArr.append("逛超市");
+    canyinArr.append("出去吃");
     canyinArr.append("饮料酒水");
     canyinArr.append("材米油盐");
     canyinArr.append("其他");
@@ -209,6 +207,7 @@ QJsonObject Config::getDefaultClassify()
     yuleArr.append("游戏");
     yuleArr.append("健身");
     yuleArr.append("充值");
+    yuleArr.append("VIP会员");
     yuleArr.append("演唱会");
     yuleArr.append("电影唱歌");
     yuleArr.append("其他");
@@ -245,6 +244,7 @@ QJsonObject Config::getDefaultClassify()
     jiaoyuArr.append("书籍");
     jiaoyuArr.append("培训");
     jiaoyuArr.append("网课");
+    jiaoyuArr.append("会员");
     jiaoyuArr.append("其他");
     outObj.insert("jiaoyu",jiaoyuArr);
 
@@ -318,7 +318,7 @@ QJsonObject Config::getDefaultClassify()
     actObj.append("充值|会员卡");
     actObj.append("充值|公交卡");
     actObj.append("其他账户");
-    subObj.insert("Account_Type",actObj);
+    subObj.insert("account_type",actObj);
 
     rootObj.insert("classify",subObj); //分类配置
 

@@ -22,7 +22,6 @@ public:
 
     void checkConfigFile(bool isCheck = true);
 
-
     enum Type{
         Expend_First_Classify = 0x00000000,
         Expend_Second_GouWu,
@@ -45,11 +44,11 @@ public:
 private:
     bool writeConfigJson(const QJsonObject &rootObj);
     QJsonObject readConfigJson();
+
     QJsonObject getDefaultClassify();
     void loadConfigMap();
 
     QMap<QString,QJsonArray> configMap;
-
 
 private:
     Config();

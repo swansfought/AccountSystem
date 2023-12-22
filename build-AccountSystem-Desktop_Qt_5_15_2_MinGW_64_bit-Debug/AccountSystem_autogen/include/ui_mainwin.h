@@ -44,6 +44,17 @@ public:
     QFrame *line_bottom;
     QWidget *widget_background;
     QGridLayout *gridLayout_3;
+    QWidget *widget_left_dock;
+    QGridLayout *gridLayout_2;
+    QPushButton *dock_classify;
+    QPushButton *dock_analysis;
+    QPushButton *dock_borrowReturn;
+    QPushButton *dock_account;
+    QSpacerItem *verticalSpacer;
+    QPushButton *dock_record;
+    QPushButton *dock_book;
+    QPushButton *dock_setting;
+    QFrame *line_central;
     QWidget *widget_top_dock;
     QGridLayout *gridLayout_4;
     QWidget *widget_3;
@@ -91,17 +102,6 @@ public:
     QFrame *line_2;
     QSpacerItem *horizontalSpacer;
     QSpacerItem *horizontalSpacer_10;
-    QWidget *widget_left_dock;
-    QGridLayout *gridLayout_2;
-    QPushButton *dock_classify;
-    QPushButton *dock_analysis;
-    QPushButton *dock_borrowReturn;
-    QPushButton *dock_account;
-    QSpacerItem *verticalSpacer;
-    QPushButton *dock_record;
-    QPushButton *dock_book;
-    QPushButton *dock_setting;
-    QFrame *line_central;
     QFrame *line;
     QStackedWidget *stackedWidget_dock;
     QWidget *page_record;
@@ -154,48 +154,47 @@ public:
     TreeWidget *classify_incomeTree;
     TreeWidget *classify_expendTree;
     QWidget *page_analysis;
-    QWidget *widget_31;
-    QGridLayout *gridLayout_50;
-    QWidget *widget_transfer_in;
-    QGridLayout *gridLayout_60;
-    QLabel *label_25;
-    QComboBox *account_in;
-    QWidget *widget_first;
-    QGridLayout *gridLayout_63;
-    QLabel *lab_firstClassify;
-    QComboBox *firstClassify;
+    QGridLayout *gridLayout_64;
+    TreeWidget *analysis_tree;
     QWidget *widget_33;
     QGridLayout *gridLayout_59;
-    QDoubleSpinBox *money;
-    QLabel *label_31;
-    QWidget *widget_second;
-    QGridLayout *gridLayout_62;
-    QLabel *lab_secondClassify;
-    QComboBox *secondClassify;
-    QComboBox *record_flowType_2;
-    QPushButton *record_reset_2;
-    QPushButton *record_flush_2;
-    QWidget *widget_20;
+    QWidget *widget_22;
+    QGridLayout *gridLayout_38;
     QWidget *widget_30;
     QGridLayout *gridLayout_44;
     QDateEdit *analysis_startDate;
     QLabel *label_11;
     QDateEdit *analysis_endDate;
     QLabel *label_8;
-    QWidget *widget_22;
-    QGridLayout *gridLayout_38;
-    QWidget *widget_32;
+    QSpacerItem *horizontalSpacer_7;
+    QPushButton *analysis_reset;
+    QPushButton *analysis_flush;
+    QWidget *widget_20;
     QGridLayout *gridLayout_57;
-    QComboBox *account;
-    QLabel *label_24;
     QWidget *widget_35;
-    QGridLayout *gridLayout_64;
-    QComboBox *book;
-    QLabel *label_34;
-    QWidget *widget_34;
     QGridLayout *gridLayout_61;
-    QComboBox *flowType;
-    QLabel *label_32;
+    QLabel *label_34;
+    QLineEdit *analysis_book;
+    QWidget *widget_32;
+    QGridLayout *gridLayout_50;
+    QLabel *label_31;
+    QLineEdit *analysis_flowType;
+    QWidget *widget_31;
+    QGridLayout *gridLayout_42;
+    QLabel *label_24;
+    QLineEdit *analysis_account;
+    QWidget *widget_first;
+    QGridLayout *gridLayout_39;
+    QLabel *lab_firstClassify;
+    QLineEdit *analysis_firstClassify;
+    QWidget *widget_second;
+    QGridLayout *gridLayout_60;
+    QLabel *lab_secondClassify;
+    QLineEdit *analysis_secondClassify;
+    QWidget *widget_transfer_in;
+    QGridLayout *gridLayout_62;
+    QLabel *label_25;
+    QLineEdit *analysis_account_in;
     QWidget *page_account;
     QGridLayout *gridLayout_56;
     QWidget *widget_24;
@@ -334,6 +333,102 @@ public:
         gridLayout_3->setSpacing(0);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        widget_left_dock = new QWidget(widget_background);
+        widget_left_dock->setObjectName(QString::fromUtf8("widget_left_dock"));
+        widget_left_dock->setMinimumSize(QSize(140, 0));
+        widget_left_dock->setMaximumSize(QSize(140, 16777215));
+        gridLayout_2 = new QGridLayout(widget_left_dock);
+        gridLayout_2->setSpacing(0);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        dock_classify = new QPushButton(widget_left_dock);
+        dock_classify->setObjectName(QString::fromUtf8("dock_classify"));
+        dock_classify->setMinimumSize(QSize(0, 60));
+        dock_classify->setMaximumSize(QSize(16777215, 60));
+        QFont font;
+        font.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font.setPointSize(11);
+        dock_classify->setFont(font);
+        dock_classify->setCheckable(true);
+        dock_classify->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(dock_classify, 6, 0, 1, 1);
+
+        dock_analysis = new QPushButton(widget_left_dock);
+        dock_analysis->setObjectName(QString::fromUtf8("dock_analysis"));
+        dock_analysis->setMinimumSize(QSize(0, 60));
+        dock_analysis->setMaximumSize(QSize(16777215, 60));
+        dock_analysis->setFont(font);
+        dock_analysis->setCheckable(true);
+        dock_analysis->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(dock_analysis, 1, 0, 1, 1);
+
+        dock_borrowReturn = new QPushButton(widget_left_dock);
+        dock_borrowReturn->setObjectName(QString::fromUtf8("dock_borrowReturn"));
+        dock_borrowReturn->setMinimumSize(QSize(0, 60));
+        dock_borrowReturn->setMaximumSize(QSize(16777215, 60));
+        dock_borrowReturn->setFont(font);
+        dock_borrowReturn->setCheckable(true);
+        dock_borrowReturn->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(dock_borrowReturn, 2, 0, 1, 1);
+
+        dock_account = new QPushButton(widget_left_dock);
+        dock_account->setObjectName(QString::fromUtf8("dock_account"));
+        dock_account->setMinimumSize(QSize(0, 60));
+        dock_account->setMaximumSize(QSize(16777215, 60));
+        dock_account->setFont(font);
+        dock_account->setCheckable(true);
+        dock_account->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(dock_account, 4, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_2->addItem(verticalSpacer, 8, 0, 1, 1);
+
+        dock_record = new QPushButton(widget_left_dock);
+        dock_record->setObjectName(QString::fromUtf8("dock_record"));
+        dock_record->setMinimumSize(QSize(0, 60));
+        dock_record->setMaximumSize(QSize(16777215, 60));
+        dock_record->setFont(font);
+        dock_record->setCheckable(true);
+        dock_record->setChecked(true);
+        dock_record->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(dock_record, 0, 0, 1, 1);
+
+        dock_book = new QPushButton(widget_left_dock);
+        dock_book->setObjectName(QString::fromUtf8("dock_book"));
+        dock_book->setMinimumSize(QSize(0, 60));
+        dock_book->setMaximumSize(QSize(16777215, 60));
+        dock_book->setFont(font);
+        dock_book->setCheckable(true);
+        dock_book->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(dock_book, 5, 0, 1, 1);
+
+        dock_setting = new QPushButton(widget_left_dock);
+        dock_setting->setObjectName(QString::fromUtf8("dock_setting"));
+        dock_setting->setMinimumSize(QSize(0, 60));
+        dock_setting->setMaximumSize(QSize(16777215, 60));
+        dock_setting->setFont(font);
+        dock_setting->setCheckable(true);
+        dock_setting->setAutoExclusive(true);
+
+        gridLayout_2->addWidget(dock_setting, 7, 0, 1, 1);
+
+
+        gridLayout_3->addWidget(widget_left_dock, 2, 0, 1, 1);
+
+        line_central = new QFrame(widget_background);
+        line_central->setObjectName(QString::fromUtf8("line_central"));
+        line_central->setFrameShape(QFrame::VLine);
+        line_central->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_3->addWidget(line_central, 2, 1, 1, 1);
+
         widget_top_dock = new QWidget(widget_background);
         widget_top_dock->setObjectName(QString::fromUtf8("widget_top_dock"));
         widget_top_dock->setMinimumSize(QSize(0, 0));
@@ -350,9 +445,9 @@ public:
         gridLayout_15->setContentsMargins(4, 0, 0, 0);
         widget_totalFund = new QWidget(widget_3);
         widget_totalFund->setObjectName(QString::fromUtf8("widget_totalFund"));
-        QFont font;
-        font.setPointSize(13);
-        widget_totalFund->setFont(font);
+        QFont font1;
+        font1.setPointSize(13);
+        widget_totalFund->setFont(font1);
         gridLayout_9 = new QGridLayout(widget_totalFund);
         gridLayout_9->setSpacing(5);
         gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
@@ -403,10 +498,10 @@ public:
         label_15->setObjectName(QString::fromUtf8("label_15"));
         label_15->setMinimumSize(QSize(0, 0));
         label_15->setMaximumSize(QSize(16777215, 16777215));
-        QFont font1;
-        font1.setPointSize(11);
-        font1.setBold(true);
-        label_15->setFont(font1);
+        QFont font2;
+        font2.setPointSize(11);
+        font2.setBold(true);
+        label_15->setFont(font2);
 
         gridLayout_8->addWidget(label_15, 0, 1, 1, 1);
 
@@ -417,11 +512,11 @@ public:
         dock_totalFund_num->setObjectName(QString::fromUtf8("dock_totalFund_num"));
         dock_totalFund_num->setMinimumSize(QSize(180, 35));
         dock_totalFund_num->setMaximumSize(QSize(180, 35));
-        QFont font2;
-        font2.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font2.setPointSize(13);
-        font2.setBold(true);
-        dock_totalFund_num->setFont(font2);
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font3.setPointSize(13);
+        font3.setBold(true);
+        dock_totalFund_num->setFont(font3);
         dock_totalFund_num->setStyleSheet(QString::fromUtf8("color: rgb(254, 118, 95);"));
 
         gridLayout_9->addWidget(dock_totalFund_num, 1, 1, 1, 1);
@@ -489,7 +584,7 @@ public:
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setMinimumSize(QSize(0, 0));
         label_7->setMaximumSize(QSize(16777215, 16777215));
-        label_7->setFont(font1);
+        label_7->setFont(font2);
 
         gridLayout_11->addWidget(label_7, 0, 1, 1, 1);
 
@@ -500,7 +595,7 @@ public:
         dock_monthIncome_num->setObjectName(QString::fromUtf8("dock_monthIncome_num"));
         dock_monthIncome_num->setMinimumSize(QSize(180, 35));
         dock_monthIncome_num->setMaximumSize(QSize(180, 35));
-        dock_monthIncome_num->setFont(font2);
+        dock_monthIncome_num->setFont(font3);
         dock_monthIncome_num->setStyleSheet(QString::fromUtf8("color: rgb(37, 184, 122);"));
 
         gridLayout_10->addWidget(dock_monthIncome_num, 1, 1, 1, 1);
@@ -535,7 +630,7 @@ public:
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setMinimumSize(QSize(0, 0));
         label_10->setMaximumSize(QSize(16777215, 16777215));
-        label_10->setFont(font1);
+        label_10->setFont(font2);
 
         gridLayout_14->addWidget(label_10, 0, 1, 1, 1);
 
@@ -578,7 +673,7 @@ public:
         dock_monthExpend_num->setObjectName(QString::fromUtf8("dock_monthExpend_num"));
         dock_monthExpend_num->setMinimumSize(QSize(180, 35));
         dock_monthExpend_num->setMaximumSize(QSize(180, 35));
-        dock_monthExpend_num->setFont(font2);
+        dock_monthExpend_num->setFont(font3);
         dock_monthExpend_num->setStyleSheet(QString::fromUtf8("color: rgb(216, 30, 6);"));
 
         gridLayout_12->addWidget(dock_monthExpend_num, 1, 1, 1, 1);
@@ -593,10 +688,10 @@ public:
         dock_addRecord->setObjectName(QString::fromUtf8("dock_addRecord"));
         dock_addRecord->setMinimumSize(QSize(70, 70));
         dock_addRecord->setMaximumSize(QSize(70, 70));
-        QFont font3;
-        font3.setPointSize(10);
-        font3.setBold(false);
-        dock_addRecord->setFont(font3);
+        QFont font4;
+        font4.setPointSize(10);
+        font4.setBold(false);
+        dock_addRecord->setFont(font4);
         dock_addRecord->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout_4->addWidget(dock_addRecord, 0, 5, 1, 1);
@@ -643,102 +738,6 @@ public:
 
 
         gridLayout_3->addWidget(widget_top_dock, 0, 0, 1, 4);
-
-        widget_left_dock = new QWidget(widget_background);
-        widget_left_dock->setObjectName(QString::fromUtf8("widget_left_dock"));
-        widget_left_dock->setMinimumSize(QSize(140, 0));
-        widget_left_dock->setMaximumSize(QSize(140, 16777215));
-        gridLayout_2 = new QGridLayout(widget_left_dock);
-        gridLayout_2->setSpacing(0);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        dock_classify = new QPushButton(widget_left_dock);
-        dock_classify->setObjectName(QString::fromUtf8("dock_classify"));
-        dock_classify->setMinimumSize(QSize(0, 60));
-        dock_classify->setMaximumSize(QSize(16777215, 60));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
-        font4.setPointSize(11);
-        dock_classify->setFont(font4);
-        dock_classify->setCheckable(true);
-        dock_classify->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(dock_classify, 6, 0, 1, 1);
-
-        dock_analysis = new QPushButton(widget_left_dock);
-        dock_analysis->setObjectName(QString::fromUtf8("dock_analysis"));
-        dock_analysis->setMinimumSize(QSize(0, 60));
-        dock_analysis->setMaximumSize(QSize(16777215, 60));
-        dock_analysis->setFont(font4);
-        dock_analysis->setCheckable(true);
-        dock_analysis->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(dock_analysis, 1, 0, 1, 1);
-
-        dock_borrowReturn = new QPushButton(widget_left_dock);
-        dock_borrowReturn->setObjectName(QString::fromUtf8("dock_borrowReturn"));
-        dock_borrowReturn->setMinimumSize(QSize(0, 60));
-        dock_borrowReturn->setMaximumSize(QSize(16777215, 60));
-        dock_borrowReturn->setFont(font4);
-        dock_borrowReturn->setCheckable(true);
-        dock_borrowReturn->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(dock_borrowReturn, 2, 0, 1, 1);
-
-        dock_account = new QPushButton(widget_left_dock);
-        dock_account->setObjectName(QString::fromUtf8("dock_account"));
-        dock_account->setMinimumSize(QSize(0, 60));
-        dock_account->setMaximumSize(QSize(16777215, 60));
-        dock_account->setFont(font4);
-        dock_account->setCheckable(true);
-        dock_account->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(dock_account, 4, 0, 1, 1);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_2->addItem(verticalSpacer, 8, 0, 1, 1);
-
-        dock_record = new QPushButton(widget_left_dock);
-        dock_record->setObjectName(QString::fromUtf8("dock_record"));
-        dock_record->setMinimumSize(QSize(0, 60));
-        dock_record->setMaximumSize(QSize(16777215, 60));
-        dock_record->setFont(font4);
-        dock_record->setCheckable(true);
-        dock_record->setChecked(true);
-        dock_record->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(dock_record, 0, 0, 1, 1);
-
-        dock_book = new QPushButton(widget_left_dock);
-        dock_book->setObjectName(QString::fromUtf8("dock_book"));
-        dock_book->setMinimumSize(QSize(0, 60));
-        dock_book->setMaximumSize(QSize(16777215, 60));
-        dock_book->setFont(font4);
-        dock_book->setCheckable(true);
-        dock_book->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(dock_book, 5, 0, 1, 1);
-
-        dock_setting = new QPushButton(widget_left_dock);
-        dock_setting->setObjectName(QString::fromUtf8("dock_setting"));
-        dock_setting->setMinimumSize(QSize(0, 60));
-        dock_setting->setMaximumSize(QSize(16777215, 60));
-        dock_setting->setFont(font4);
-        dock_setting->setCheckable(true);
-        dock_setting->setAutoExclusive(true);
-
-        gridLayout_2->addWidget(dock_setting, 7, 0, 1, 1);
-
-
-        gridLayout_3->addWidget(widget_left_dock, 2, 0, 1, 1);
-
-        line_central = new QFrame(widget_background);
-        line_central->setObjectName(QString::fromUtf8("line_central"));
-        line_central->setFrameShape(QFrame::VLine);
-        line_central->setFrameShadow(QFrame::Sunken);
-
-        gridLayout_3->addWidget(line_central, 2, 1, 1, 1);
 
         line = new QFrame(widget_background);
         line->setObjectName(QString::fromUtf8("line"));
@@ -829,7 +828,7 @@ public:
 ""));
         record_tree->setFrameShape(QFrame::StyledPanel);
         record_tree->setFrameShadow(QFrame::Sunken);
-        record_tree->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        record_tree->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 
         gridLayout_20->addWidget(record_tree, 0, 0, 1, 1);
 
@@ -1169,164 +1168,106 @@ public:
         stackedWidget_dock->addWidget(page_classify);
         page_analysis = new QWidget();
         page_analysis->setObjectName(QString::fromUtf8("page_analysis"));
-        widget_31 = new QWidget(page_analysis);
-        widget_31->setObjectName(QString::fromUtf8("widget_31"));
-        widget_31->setGeometry(QRect(10, 170, 230, 331));
-        widget_31->setMinimumSize(QSize(0, 0));
-        widget_31->setMaximumSize(QSize(16777215, 16777215));
-        gridLayout_50 = new QGridLayout(widget_31);
-        gridLayout_50->setObjectName(QString::fromUtf8("gridLayout_50"));
-        gridLayout_50->setHorizontalSpacing(5);
-        gridLayout_50->setVerticalSpacing(10);
-        gridLayout_50->setContentsMargins(0, 0, 0, 0);
-        widget_transfer_in = new QWidget(widget_31);
-        widget_transfer_in->setObjectName(QString::fromUtf8("widget_transfer_in"));
-        gridLayout_60 = new QGridLayout(widget_transfer_in);
-        gridLayout_60->setObjectName(QString::fromUtf8("gridLayout_60"));
-        gridLayout_60->setHorizontalSpacing(5);
-        gridLayout_60->setVerticalSpacing(0);
-        gridLayout_60->setContentsMargins(0, 0, 0, 0);
-        label_25 = new QLabel(widget_transfer_in);
-        label_25->setObjectName(QString::fromUtf8("label_25"));
-        label_25->setMinimumSize(QSize(70, 35));
-        label_25->setMaximumSize(QSize(70, 16777215));
-        label_25->setFont(font8);
+        gridLayout_64 = new QGridLayout(page_analysis);
+        gridLayout_64->setObjectName(QString::fromUtf8("gridLayout_64"));
+        gridLayout_64->setHorizontalSpacing(5);
+        gridLayout_64->setVerticalSpacing(10);
+        gridLayout_64->setContentsMargins(5, 5, 5, 5);
+        analysis_tree = new TreeWidget(page_analysis);
+        analysis_tree->setObjectName(QString::fromUtf8("analysis_tree"));
+        analysis_tree->setFont(font5);
+        analysis_tree->setStyleSheet(QString::fromUtf8("QHeaderView::section {\n"
+"	border: 1px solid black;  /*\350\256\276\347\275\256\350\276\271\346\241\206\346\240\267\345\274\217*/\n"
+"	border-left:transparent;\n"
+"	border-top:transparent;\n"
+"	font:16px;\n"
+"	height:36px;\n"
+"	background-color: rgb(221, 221, 221);/*lightgray;  /*\350\256\276\347\275\256\350\203\214\346\231\257\351\242\234\350\211\262*/\n"
+"	/*padding: 4px; \350\256\276\347\275\256\345\206\205\350\276\271\350\267\235*/\n"
+"	font-weight: bold;\n"
+" }\n"
+"\n"
+"QTreeWidget{\n"
+"	border:1px solid black;\n"
+"     gridline-color: gray;  /*\350\256\276\347\275\256\347\275\221\346\240\274\347\272\277\351\242\234\350\211\262*/\n"
+"	outline:none;\n"
+"	/*alternate-background-color:lightgray;*/\n"
+"	selection-background-color:transparent;\n"
+"}\n"
+"\n"
+"QTreeView::item{\n"
+"	border:1px solid black;\n"
+"	border-left:transparent;\n"
+"	border-top:transparent;\n"
+"	height:30px;\n"
+"}\n"
+"\n"
+"QTreeView::branch{\n"
+"	border:1px solid black;\n"
+"	border-right:transparent;\n"
+"	border-left:transparent;\n"
+"	bor"
+                        "der-top:transparent;\n"
+"}\n"
+"\n"
+"QTreeView::item:selected{\n"
+"	/*color:black;\n"
+"	color:inherit;\n"
+"	background:rgb(230, 230, 230);\n"
+"	color:blue;\n"
+"	font-weight: bold;*/\n"
+"	color:inherit;\n"
+"	background:rgb(235, 235, 235);\n"
+"}\n"
+"\n"
+"QTreeView::branch:has-children:!has-siblings:closed,\n"
+"QTreeView::branch:closed:has-children:has-siblings{\n"
+"	border-image: none;\n"
+"	image:url(:/img/branch-close.png);\n"
+"}\n"
+"\n"
+"QTreeView::branch:open:has-children:!has-siblings,\n"
+"QTreeView::branch:open:has-children:has-siblings{\n"
+"	border-image: none;\n"
+"	image:url(:/img/branch-open.png);\n"
+"}\n"
+""));
+        analysis_tree->setFrameShape(QFrame::StyledPanel);
+        analysis_tree->setFrameShadow(QFrame::Sunken);
+        analysis_tree->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        analysis_tree->setAutoScroll(true);
 
-        gridLayout_60->addWidget(label_25, 0, 0, 1, 1);
+        gridLayout_64->addWidget(analysis_tree, 1, 0, 1, 1);
 
-        account_in = new QComboBox(widget_transfer_in);
-        account_in->setObjectName(QString::fromUtf8("account_in"));
-        account_in->setMinimumSize(QSize(0, 35));
-        account_in->setMaximumSize(QSize(16777215, 35));
-        account_in->setFont(font8);
-
-        gridLayout_60->addWidget(account_in, 0, 1, 1, 1);
-
-
-        gridLayout_50->addWidget(widget_transfer_in, 3, 0, 1, 1);
-
-        widget_first = new QWidget(widget_31);
-        widget_first->setObjectName(QString::fromUtf8("widget_first"));
-        gridLayout_63 = new QGridLayout(widget_first);
-        gridLayout_63->setObjectName(QString::fromUtf8("gridLayout_63"));
-        gridLayout_63->setHorizontalSpacing(5);
-        gridLayout_63->setVerticalSpacing(0);
-        gridLayout_63->setContentsMargins(0, 0, 0, 0);
-        lab_firstClassify = new QLabel(widget_first);
-        lab_firstClassify->setObjectName(QString::fromUtf8("lab_firstClassify"));
-        lab_firstClassify->setMinimumSize(QSize(70, 35));
-        lab_firstClassify->setMaximumSize(QSize(70, 16777215));
-        lab_firstClassify->setFont(font8);
-
-        gridLayout_63->addWidget(lab_firstClassify, 0, 0, 1, 1);
-
-        firstClassify = new QComboBox(widget_first);
-        firstClassify->setObjectName(QString::fromUtf8("firstClassify"));
-        firstClassify->setMinimumSize(QSize(0, 35));
-        firstClassify->setMaximumSize(QSize(16777215, 35));
-        firstClassify->setFont(font8);
-
-        gridLayout_63->addWidget(firstClassify, 0, 1, 1, 1);
-
-
-        gridLayout_50->addWidget(widget_first, 1, 0, 1, 1);
-
-        widget_33 = new QWidget(widget_31);
+        widget_33 = new QWidget(page_analysis);
         widget_33->setObjectName(QString::fromUtf8("widget_33"));
+        widget_33->setMinimumSize(QSize(0, 120));
+        widget_33->setMaximumSize(QSize(16777215, 120));
         gridLayout_59 = new QGridLayout(widget_33);
         gridLayout_59->setObjectName(QString::fromUtf8("gridLayout_59"));
-        gridLayout_59->setHorizontalSpacing(5);
-        gridLayout_59->setVerticalSpacing(0);
+        gridLayout_59->setHorizontalSpacing(0);
+        gridLayout_59->setVerticalSpacing(10);
         gridLayout_59->setContentsMargins(0, 0, 0, 0);
-        money = new QDoubleSpinBox(widget_33);
-        money->setObjectName(QString::fromUtf8("money"));
-        money->setMinimumSize(QSize(0, 35));
-        money->setMaximumSize(QSize(16777215, 35));
-        money->setFont(font8);
-        money->setContextMenuPolicy(Qt::NoContextMenu);
-        money->setFrame(false);
-        money->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        money->setProperty("showGroupSeparator", QVariant(true));
-        money->setMaximum(999999999.990000009536743);
-        money->setSingleStep(100.000000000000000);
-
-        gridLayout_59->addWidget(money, 0, 1, 1, 1);
-
-        label_31 = new QLabel(widget_33);
-        label_31->setObjectName(QString::fromUtf8("label_31"));
-        label_31->setMinimumSize(QSize(70, 35));
-        label_31->setMaximumSize(QSize(70, 16777215));
-        label_31->setFont(font8);
-
-        gridLayout_59->addWidget(label_31, 0, 0, 1, 1);
-
-
-        gridLayout_50->addWidget(widget_33, 4, 0, 1, 1);
-
-        widget_second = new QWidget(widget_31);
-        widget_second->setObjectName(QString::fromUtf8("widget_second"));
-        gridLayout_62 = new QGridLayout(widget_second);
-        gridLayout_62->setObjectName(QString::fromUtf8("gridLayout_62"));
-        gridLayout_62->setHorizontalSpacing(5);
-        gridLayout_62->setVerticalSpacing(0);
-        gridLayout_62->setContentsMargins(0, 0, 0, 0);
-        lab_secondClassify = new QLabel(widget_second);
-        lab_secondClassify->setObjectName(QString::fromUtf8("lab_secondClassify"));
-        lab_secondClassify->setMinimumSize(QSize(70, 35));
-        lab_secondClassify->setMaximumSize(QSize(70, 16777215));
-        lab_secondClassify->setFont(font8);
-
-        gridLayout_62->addWidget(lab_secondClassify, 0, 0, 1, 1);
-
-        secondClassify = new QComboBox(widget_second);
-        secondClassify->setObjectName(QString::fromUtf8("secondClassify"));
-        secondClassify->setMinimumSize(QSize(0, 35));
-        secondClassify->setMaximumSize(QSize(16777215, 35));
-        secondClassify->setFont(font8);
-
-        gridLayout_62->addWidget(secondClassify, 0, 1, 1, 1);
-
-
-        gridLayout_50->addWidget(widget_second, 2, 0, 1, 1);
-
-        record_flowType_2 = new QComboBox(page_analysis);
-        record_flowType_2->addItem(QString());
-        record_flowType_2->addItem(QString());
-        record_flowType_2->addItem(QString());
-        record_flowType_2->addItem(QString());
-        record_flowType_2->setObjectName(QString::fromUtf8("record_flowType_2"));
-        record_flowType_2->setGeometry(QRect(670, 170, 70, 35));
-        record_flowType_2->setMinimumSize(QSize(70, 35));
-        record_flowType_2->setMaximumSize(QSize(70, 35));
-        record_flowType_2->setFont(font8);
-        record_reset_2 = new QPushButton(page_analysis);
-        record_reset_2->setObjectName(QString::fromUtf8("record_reset_2"));
-        record_reset_2->setGeometry(QRect(660, 330, 70, 35));
-        record_reset_2->setMinimumSize(QSize(70, 35));
-        record_reset_2->setMaximumSize(QSize(70, 35));
-        record_reset_2->setFont(font6);
-        record_flush_2 = new QPushButton(page_analysis);
-        record_flush_2->setObjectName(QString::fromUtf8("record_flush_2"));
-        record_flush_2->setGeometry(QRect(670, 270, 50, 35));
-        record_flush_2->setMinimumSize(QSize(50, 35));
-        record_flush_2->setMaximumSize(QSize(50, 35));
-        record_flush_2->setFont(font6);
-        widget_20 = new QWidget(page_analysis);
-        widget_20->setObjectName(QString::fromUtf8("widget_20"));
-        widget_20->setGeometry(QRect(10, 20, 811, 141));
-        widget_30 = new QWidget(widget_20);
+        widget_22 = new QWidget(widget_33);
+        widget_22->setObjectName(QString::fromUtf8("widget_22"));
+        gridLayout_38 = new QGridLayout(widget_22);
+        gridLayout_38->setObjectName(QString::fromUtf8("gridLayout_38"));
+        gridLayout_38->setHorizontalSpacing(5);
+        gridLayout_38->setVerticalSpacing(0);
+        gridLayout_38->setContentsMargins(0, 0, 0, 0);
+        widget_30 = new QWidget(widget_22);
         widget_30->setObjectName(QString::fromUtf8("widget_30"));
-        widget_30->setGeometry(QRect(220, 20, 435, 35));
-        widget_30->setMinimumSize(QSize(435, 35));
-        widget_30->setMaximumSize(QSize(435, 35));
+        widget_30->setMinimumSize(QSize(575, 35));
+        widget_30->setMaximumSize(QSize(575, 35));
         gridLayout_44 = new QGridLayout(widget_30);
-        gridLayout_44->setSpacing(0);
         gridLayout_44->setObjectName(QString::fromUtf8("gridLayout_44"));
+        gridLayout_44->setHorizontalSpacing(5);
+        gridLayout_44->setVerticalSpacing(0);
         gridLayout_44->setContentsMargins(0, 0, 0, 0);
         analysis_startDate = new QDateEdit(widget_30);
         analysis_startDate->setObjectName(QString::fromUtf8("analysis_startDate"));
-        analysis_startDate->setMinimumSize(QSize(165, 35));
-        analysis_startDate->setMaximumSize(QSize(165, 35));
+        analysis_startDate->setMinimumSize(QSize(0, 35));
+        analysis_startDate->setMaximumSize(QSize(16777215, 35));
         analysis_startDate->setFont(font8);
         analysis_startDate->setCalendarPopup(true);
         analysis_startDate->setDate(QDate(2023, 11, 8));
@@ -1335,17 +1276,19 @@ public:
 
         label_11 = new QLabel(widget_30);
         label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setMinimumSize(QSize(30, 0));
-        label_11->setMaximumSize(QSize(30, 16777215));
-        label_11->setFont(font8);
+        label_11->setMinimumSize(QSize(25, 0));
+        label_11->setMaximumSize(QSize(25, 16777215));
+        QFont font10;
+        font10.setPointSize(15);
+        label_11->setFont(font10);
         label_11->setAlignment(Qt::AlignCenter);
 
         gridLayout_44->addWidget(label_11, 0, 2, 1, 1);
 
         analysis_endDate = new QDateEdit(widget_30);
         analysis_endDate->setObjectName(QString::fromUtf8("analysis_endDate"));
-        analysis_endDate->setMinimumSize(QSize(165, 35));
-        analysis_endDate->setMaximumSize(QSize(165, 35));
+        analysis_endDate->setMinimumSize(QSize(0, 35));
+        analysis_endDate->setMaximumSize(QSize(16777215, 35));
         analysis_endDate->setFont(font8);
         analysis_endDate->setCalendarPopup(true);
         analysis_endDate->setDate(QDate(2023, 11, 8));
@@ -1354,109 +1297,233 @@ public:
 
         label_8 = new QLabel(widget_30);
         label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setMinimumSize(QSize(75, 0));
-        label_8->setMaximumSize(QSize(75, 16777215));
+        label_8->setMinimumSize(QSize(70, 0));
+        label_8->setMaximumSize(QSize(70, 16777215));
         label_8->setFont(font8);
 
         gridLayout_44->addWidget(label_8, 0, 0, 1, 1);
 
-        widget_22 = new QWidget(widget_20);
-        widget_22->setObjectName(QString::fromUtf8("widget_22"));
-        widget_22->setGeometry(QRect(20, 10, 185, 125));
-        widget_22->setMinimumSize(QSize(185, 125));
-        widget_22->setMaximumSize(QSize(185, 16777215));
-        gridLayout_38 = new QGridLayout(widget_22);
-        gridLayout_38->setSpacing(0);
-        gridLayout_38->setObjectName(QString::fromUtf8("gridLayout_38"));
-        gridLayout_38->setContentsMargins(0, 0, 0, 0);
-        widget_32 = new QWidget(widget_22);
-        widget_32->setObjectName(QString::fromUtf8("widget_32"));
-        widget_32->setMinimumSize(QSize(0, 35));
-        widget_32->setMaximumSize(QSize(16777215, 35));
-        gridLayout_57 = new QGridLayout(widget_32);
+
+        gridLayout_38->addWidget(widget_30, 0, 0, 1, 1);
+
+        horizontalSpacer_7 = new QSpacerItem(226, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_38->addItem(horizontalSpacer_7, 0, 1, 1, 1);
+
+        analysis_reset = new QPushButton(widget_22);
+        analysis_reset->setObjectName(QString::fromUtf8("analysis_reset"));
+        analysis_reset->setMinimumSize(QSize(70, 35));
+        analysis_reset->setMaximumSize(QSize(70, 35));
+        analysis_reset->setFont(font6);
+
+        gridLayout_38->addWidget(analysis_reset, 0, 2, 1, 1);
+
+        analysis_flush = new QPushButton(widget_22);
+        analysis_flush->setObjectName(QString::fromUtf8("analysis_flush"));
+        analysis_flush->setMinimumSize(QSize(50, 35));
+        analysis_flush->setMaximumSize(QSize(50, 35));
+        analysis_flush->setFont(font6);
+
+        gridLayout_38->addWidget(analysis_flush, 0, 3, 1, 1);
+
+
+        gridLayout_59->addWidget(widget_22, 0, 0, 1, 1);
+
+        widget_20 = new QWidget(widget_33);
+        widget_20->setObjectName(QString::fromUtf8("widget_20"));
+        gridLayout_57 = new QGridLayout(widget_20);
+        gridLayout_57->setSpacing(8);
         gridLayout_57->setObjectName(QString::fromUtf8("gridLayout_57"));
-        gridLayout_57->setHorizontalSpacing(5);
-        gridLayout_57->setVerticalSpacing(0);
         gridLayout_57->setContentsMargins(0, 0, 0, 0);
-        account = new QComboBox(widget_32);
-        account->setObjectName(QString::fromUtf8("account"));
-        account->setMinimumSize(QSize(0, 35));
-        account->setMaximumSize(QSize(110, 35));
-        account->setFont(font8);
-
-        gridLayout_57->addWidget(account, 0, 1, 1, 1);
-
-        label_24 = new QLabel(widget_32);
-        label_24->setObjectName(QString::fromUtf8("label_24"));
-        label_24->setMinimumSize(QSize(75, 35));
-        label_24->setMaximumSize(QSize(75, 16777215));
-        label_24->setFont(font8);
-
-        gridLayout_57->addWidget(label_24, 0, 0, 1, 1);
-
-
-        gridLayout_38->addWidget(widget_32, 0, 0, 1, 1);
-
-        widget_35 = new QWidget(widget_22);
+        widget_35 = new QWidget(widget_20);
         widget_35->setObjectName(QString::fromUtf8("widget_35"));
-        widget_35->setMinimumSize(QSize(0, 35));
-        widget_35->setMaximumSize(QSize(16777215, 35));
-        gridLayout_64 = new QGridLayout(widget_35);
-        gridLayout_64->setObjectName(QString::fromUtf8("gridLayout_64"));
-        gridLayout_64->setHorizontalSpacing(5);
-        gridLayout_64->setVerticalSpacing(0);
-        gridLayout_64->setContentsMargins(0, 0, 0, 0);
-        book = new QComboBox(widget_35);
-        book->addItem(QString());
-        book->setObjectName(QString::fromUtf8("book"));
-        book->setMinimumSize(QSize(0, 35));
-        book->setMaximumSize(QSize(110, 35));
-        book->setFont(font8);
-
-        gridLayout_64->addWidget(book, 1, 1, 1, 1);
-
-        label_34 = new QLabel(widget_35);
-        label_34->setObjectName(QString::fromUtf8("label_34"));
-        label_34->setMinimumSize(QSize(75, 35));
-        label_34->setMaximumSize(QSize(75, 35));
-        label_34->setFont(font8);
-
-        gridLayout_64->addWidget(label_34, 1, 0, 1, 1);
-
-
-        gridLayout_38->addWidget(widget_35, 1, 0, 1, 1);
-
-        widget_34 = new QWidget(widget_22);
-        widget_34->setObjectName(QString::fromUtf8("widget_34"));
-        widget_34->setMinimumSize(QSize(0, 35));
-        widget_34->setMaximumSize(QSize(16777215, 35));
-        gridLayout_61 = new QGridLayout(widget_34);
+        widget_35->setMinimumSize(QSize(200, 0));
+        widget_35->setMaximumSize(QSize(16777215, 16777215));
+        gridLayout_61 = new QGridLayout(widget_35);
         gridLayout_61->setObjectName(QString::fromUtf8("gridLayout_61"));
         gridLayout_61->setHorizontalSpacing(5);
         gridLayout_61->setVerticalSpacing(0);
         gridLayout_61->setContentsMargins(0, 0, 0, 0);
-        flowType = new QComboBox(widget_34);
-        flowType->addItem(QString());
-        flowType->addItem(QString());
-        flowType->addItem(QString());
-        flowType->addItem(QString());
-        flowType->setObjectName(QString::fromUtf8("flowType"));
-        flowType->setMinimumSize(QSize(0, 35));
-        flowType->setMaximumSize(QSize(110, 35));
-        flowType->setFont(font8);
+        label_34 = new QLabel(widget_35);
+        label_34->setObjectName(QString::fromUtf8("label_34"));
+        label_34->setMinimumSize(QSize(70, 35));
+        label_34->setMaximumSize(QSize(70, 35));
+        label_34->setFont(font8);
 
-        gridLayout_61->addWidget(flowType, 0, 1, 1, 1);
+        gridLayout_61->addWidget(label_34, 0, 0, 1, 1);
 
-        label_32 = new QLabel(widget_34);
-        label_32->setObjectName(QString::fromUtf8("label_32"));
-        label_32->setMinimumSize(QSize(75, 35));
-        label_32->setMaximumSize(QSize(75, 35));
-        label_32->setFont(font8);
+        analysis_book = new QLineEdit(widget_35);
+        analysis_book->setObjectName(QString::fromUtf8("analysis_book"));
+        analysis_book->setMinimumSize(QSize(0, 35));
+        QFont font11;
+        font11.setFamily(QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221"));
+        font11.setPointSize(10);
+        font11.setBold(false);
+        font11.setItalic(false);
+        font11.setUnderline(false);
+        font11.setStrikeOut(false);
+        font11.setKerning(true);
+        font11.setStyleStrategy(QFont::PreferDefault);
+        analysis_book->setFont(font11);
+        analysis_book->setCursor(QCursor(Qt::IBeamCursor));
+        analysis_book->setMaxLength(30);
+        analysis_book->setFrame(false);
 
-        gridLayout_61->addWidget(label_32, 0, 0, 1, 1);
+        gridLayout_61->addWidget(analysis_book, 0, 1, 1, 1);
 
 
-        gridLayout_38->addWidget(widget_34, 2, 0, 1, 1);
+        gridLayout_57->addWidget(widget_35, 0, 0, 1, 1);
+
+        widget_32 = new QWidget(widget_20);
+        widget_32->setObjectName(QString::fromUtf8("widget_32"));
+        widget_32->setMaximumSize(QSize(16777215, 16777215));
+        gridLayout_50 = new QGridLayout(widget_32);
+        gridLayout_50->setObjectName(QString::fromUtf8("gridLayout_50"));
+        gridLayout_50->setHorizontalSpacing(5);
+        gridLayout_50->setVerticalSpacing(0);
+        gridLayout_50->setContentsMargins(0, 0, 0, 0);
+        label_31 = new QLabel(widget_32);
+        label_31->setObjectName(QString::fromUtf8("label_31"));
+        label_31->setMinimumSize(QSize(70, 35));
+        label_31->setMaximumSize(QSize(70, 35));
+        label_31->setFont(font8);
+
+        gridLayout_50->addWidget(label_31, 0, 0, 1, 1);
+
+        analysis_flowType = new QLineEdit(widget_32);
+        analysis_flowType->setObjectName(QString::fromUtf8("analysis_flowType"));
+        analysis_flowType->setMinimumSize(QSize(0, 35));
+        analysis_flowType->setFont(font11);
+        analysis_flowType->setCursor(QCursor(Qt::IBeamCursor));
+        analysis_flowType->setMaxLength(30);
+        analysis_flowType->setFrame(false);
+
+        gridLayout_50->addWidget(analysis_flowType, 0, 1, 1, 1);
+
+
+        gridLayout_57->addWidget(widget_32, 0, 1, 1, 1);
+
+        widget_31 = new QWidget(widget_20);
+        widget_31->setObjectName(QString::fromUtf8("widget_31"));
+        widget_31->setMaximumSize(QSize(16777215, 16777215));
+        gridLayout_42 = new QGridLayout(widget_31);
+        gridLayout_42->setObjectName(QString::fromUtf8("gridLayout_42"));
+        gridLayout_42->setHorizontalSpacing(5);
+        gridLayout_42->setVerticalSpacing(0);
+        gridLayout_42->setContentsMargins(0, 0, 0, 0);
+        label_24 = new QLabel(widget_31);
+        label_24->setObjectName(QString::fromUtf8("label_24"));
+        label_24->setMinimumSize(QSize(70, 35));
+        label_24->setMaximumSize(QSize(70, 16777215));
+        label_24->setFont(font8);
+
+        gridLayout_42->addWidget(label_24, 0, 0, 1, 1);
+
+        analysis_account = new QLineEdit(widget_31);
+        analysis_account->setObjectName(QString::fromUtf8("analysis_account"));
+        analysis_account->setMinimumSize(QSize(0, 35));
+        analysis_account->setFont(font11);
+        analysis_account->setCursor(QCursor(Qt::IBeamCursor));
+        analysis_account->setMaxLength(30);
+        analysis_account->setFrame(false);
+
+        gridLayout_42->addWidget(analysis_account, 0, 1, 1, 1);
+
+
+        gridLayout_57->addWidget(widget_31, 0, 2, 1, 1);
+
+        widget_first = new QWidget(widget_20);
+        widget_first->setObjectName(QString::fromUtf8("widget_first"));
+        widget_first->setMaximumSize(QSize(16777215, 16777215));
+        gridLayout_39 = new QGridLayout(widget_first);
+        gridLayout_39->setObjectName(QString::fromUtf8("gridLayout_39"));
+        gridLayout_39->setHorizontalSpacing(5);
+        gridLayout_39->setVerticalSpacing(0);
+        gridLayout_39->setContentsMargins(0, 0, 0, 0);
+        lab_firstClassify = new QLabel(widget_first);
+        lab_firstClassify->setObjectName(QString::fromUtf8("lab_firstClassify"));
+        lab_firstClassify->setMinimumSize(QSize(70, 35));
+        lab_firstClassify->setMaximumSize(QSize(70, 16777215));
+        lab_firstClassify->setFont(font8);
+
+        gridLayout_39->addWidget(lab_firstClassify, 0, 0, 1, 1);
+
+        analysis_firstClassify = new QLineEdit(widget_first);
+        analysis_firstClassify->setObjectName(QString::fromUtf8("analysis_firstClassify"));
+        analysis_firstClassify->setMinimumSize(QSize(0, 35));
+        analysis_firstClassify->setFont(font11);
+        analysis_firstClassify->setCursor(QCursor(Qt::IBeamCursor));
+        analysis_firstClassify->setMaxLength(30);
+        analysis_firstClassify->setFrame(false);
+
+        gridLayout_39->addWidget(analysis_firstClassify, 0, 1, 1, 1);
+
+
+        gridLayout_57->addWidget(widget_first, 1, 0, 1, 1);
+
+        widget_second = new QWidget(widget_20);
+        widget_second->setObjectName(QString::fromUtf8("widget_second"));
+        widget_second->setMaximumSize(QSize(16777215, 16777215));
+        gridLayout_60 = new QGridLayout(widget_second);
+        gridLayout_60->setObjectName(QString::fromUtf8("gridLayout_60"));
+        gridLayout_60->setHorizontalSpacing(5);
+        gridLayout_60->setVerticalSpacing(0);
+        gridLayout_60->setContentsMargins(0, 0, 0, 0);
+        lab_secondClassify = new QLabel(widget_second);
+        lab_secondClassify->setObjectName(QString::fromUtf8("lab_secondClassify"));
+        lab_secondClassify->setMinimumSize(QSize(70, 35));
+        lab_secondClassify->setMaximumSize(QSize(70, 16777215));
+        lab_secondClassify->setFont(font8);
+
+        gridLayout_60->addWidget(lab_secondClassify, 0, 0, 1, 1);
+
+        analysis_secondClassify = new QLineEdit(widget_second);
+        analysis_secondClassify->setObjectName(QString::fromUtf8("analysis_secondClassify"));
+        analysis_secondClassify->setMinimumSize(QSize(0, 35));
+        analysis_secondClassify->setFont(font11);
+        analysis_secondClassify->setCursor(QCursor(Qt::IBeamCursor));
+        analysis_secondClassify->setMaxLength(30);
+        analysis_secondClassify->setFrame(false);
+
+        gridLayout_60->addWidget(analysis_secondClassify, 0, 1, 1, 1);
+
+
+        gridLayout_57->addWidget(widget_second, 1, 1, 1, 1);
+
+        widget_transfer_in = new QWidget(widget_20);
+        widget_transfer_in->setObjectName(QString::fromUtf8("widget_transfer_in"));
+        widget_transfer_in->setMaximumSize(QSize(16777215, 16777215));
+        gridLayout_62 = new QGridLayout(widget_transfer_in);
+        gridLayout_62->setObjectName(QString::fromUtf8("gridLayout_62"));
+        gridLayout_62->setHorizontalSpacing(5);
+        gridLayout_62->setVerticalSpacing(0);
+        gridLayout_62->setContentsMargins(0, 0, 0, 0);
+        label_25 = new QLabel(widget_transfer_in);
+        label_25->setObjectName(QString::fromUtf8("label_25"));
+        label_25->setMinimumSize(QSize(70, 35));
+        label_25->setMaximumSize(QSize(70, 16777215));
+        label_25->setFont(font8);
+
+        gridLayout_62->addWidget(label_25, 0, 0, 1, 1);
+
+        analysis_account_in = new QLineEdit(widget_transfer_in);
+        analysis_account_in->setObjectName(QString::fromUtf8("analysis_account_in"));
+        analysis_account_in->setMinimumSize(QSize(0, 35));
+        analysis_account_in->setFont(font11);
+        analysis_account_in->setCursor(QCursor(Qt::IBeamCursor));
+        analysis_account_in->setMaxLength(30);
+        analysis_account_in->setFrame(false);
+
+        gridLayout_62->addWidget(analysis_account_in, 0, 1, 1, 1);
+
+
+        gridLayout_57->addWidget(widget_transfer_in, 1, 2, 1, 1);
+
+
+        gridLayout_59->addWidget(widget_20, 1, 0, 1, 1);
+
+
+        gridLayout_64->addWidget(widget_33, 0, 0, 1, 1);
 
         stackedWidget_dock->addWidget(page_analysis);
         page_account = new QWidget();
@@ -1907,7 +1974,7 @@ public:
         scrollArea_book->setWidgetResizable(true);
         scrollAreaWidgetContents_4 = new QWidget();
         scrollAreaWidgetContents_4->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_4"));
-        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 100, 30));
+        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 400, 16));
         gridLayout_22 = new QGridLayout(scrollAreaWidgetContents_4);
         gridLayout_22->setSpacing(0);
         gridLayout_22->setObjectName(QString::fromUtf8("gridLayout_22"));
@@ -2198,7 +2265,7 @@ public:
 
         retranslateUi(MainWin);
 
-        stackedWidget_dock->setCurrentIndex(0);
+        stackedWidget_dock->setCurrentIndex(2);
         stackedWidget_record->setCurrentIndex(0);
         stackedWidget_account_name->setCurrentIndex(0);
         stackedWidget_book->setCurrentIndex(0);
@@ -2210,6 +2277,13 @@ public:
     void retranslateUi(QMainWindow *MainWin)
     {
         MainWin->setWindowTitle(QCoreApplication::translate("MainWin", "MainWin", nullptr));
+        dock_classify->setText(QCoreApplication::translate("MainWin", "\345\210\206\347\261\273\347\256\241\347\220\206", nullptr));
+        dock_analysis->setText(QCoreApplication::translate("MainWin", "\350\264\246\347\233\256\347\273\237\350\256\241", nullptr));
+        dock_borrowReturn->setText(QCoreApplication::translate("MainWin", "\345\200\237\350\277\230\350\256\260\345\275\225/", nullptr));
+        dock_account->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\347\256\241\347\220\206", nullptr));
+        dock_record->setText(QCoreApplication::translate("MainWin", "\346\265\201\346\260\264\350\264\246\347\233\256", nullptr));
+        dock_book->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\347\256\241\347\220\206", nullptr));
+        dock_setting->setText(QCoreApplication::translate("MainWin", "\350\256\276       \347\275\256/", nullptr));
         label_3->setText(QString());
         dock_totalFund_hide->setText(QString());
         label_15->setText(QCoreApplication::translate("MainWin", "\346\200\273\347\232\204\350\265\204\344\272\247", nullptr));
@@ -2225,13 +2299,6 @@ public:
         dock_addRecord->setText(QCoreApplication::translate("MainWin", "\350\256\260\344\270\200\347\254\224", nullptr));
         label->setText(QCoreApplication::translate("MainWin", "\345\230\237\345\230\237\350\256\260\350\264\246v1.0\n"
 "2023\345\271\26411\346\234\21028\346\227\245", nullptr));
-        dock_classify->setText(QCoreApplication::translate("MainWin", "\345\210\206\347\261\273\347\256\241\347\220\206", nullptr));
-        dock_analysis->setText(QCoreApplication::translate("MainWin", "\350\264\246\347\233\256\347\273\237\350\256\241", nullptr));
-        dock_borrowReturn->setText(QCoreApplication::translate("MainWin", "\345\200\237\350\277\230\350\256\260\345\275\225/", nullptr));
-        dock_account->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\347\256\241\347\220\206", nullptr));
-        dock_record->setText(QCoreApplication::translate("MainWin", "\346\265\201\346\260\264\350\264\246\347\233\256", nullptr));
-        dock_book->setText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\347\256\241\347\220\206", nullptr));
-        dock_setting->setText(QCoreApplication::translate("MainWin", "\350\256\276       \347\275\256/", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = record_tree->headerItem();
         ___qtreewidgetitem->setText(0, QCoreApplication::translate("MainWin", "1", nullptr));
         record_pageRecordNum->setItemText(0, QCoreApplication::translate("MainWin", "50\346\235\241/\351\241\265", nullptr));
@@ -2264,32 +2331,32 @@ public:
         record_flush->setText(QCoreApplication::translate("MainWin", "\345\210\267\346\226\260", nullptr));
         label_2->setText(QCoreApplication::translate("MainWin", "\351\200\211\346\213\251\346\227\245\346\234\237", nullptr));
         record_date->setDisplayFormat(QCoreApplication::translate("MainWin", "yyyy\345\271\264MM\346\234\210dd\346\227\245", nullptr));
-        label_25->setText(QCoreApplication::translate("MainWin", "\350\275\254\345\205\245\350\264\246\346\210\267", nullptr));
-        lab_firstClassify->setText(QCoreApplication::translate("MainWin", "\344\270\200\347\272\247\345\210\206\347\261\273", nullptr));
-        money->setSuffix(QCoreApplication::translate("MainWin", " \345\205\203", nullptr));
-        label_31->setText(QCoreApplication::translate("MainWin", "\351\207\221       \351\242\235", nullptr));
-        lab_secondClassify->setText(QCoreApplication::translate("MainWin", "\344\272\214\347\272\247\345\210\206\347\261\273", nullptr));
-        record_flowType_2->setItemText(0, QCoreApplication::translate("MainWin", "\345\205\250\351\203\250", nullptr));
-        record_flowType_2->setItemText(1, QCoreApplication::translate("MainWin", "\346\224\257\345\207\272", nullptr));
-        record_flowType_2->setItemText(2, QCoreApplication::translate("MainWin", "\346\224\266\345\205\245", nullptr));
-        record_flowType_2->setItemText(3, QCoreApplication::translate("MainWin", "\350\275\254\350\264\246", nullptr));
-
-        record_reset_2->setText(QCoreApplication::translate("MainWin", "\351\207\215\347\275\256\350\277\207\346\273\244", nullptr));
-        record_flush_2->setText(QCoreApplication::translate("MainWin", "\345\210\267\346\226\260", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem1 = analysis_tree->headerItem();
+        ___qtreewidgetitem1->setText(0, QCoreApplication::translate("MainWin", "1", nullptr));
         analysis_startDate->setDisplayFormat(QCoreApplication::translate("MainWin", "yyyy\345\271\264MM\346\234\210dd\346\227\245", nullptr));
-        label_11->setText(QCoreApplication::translate("MainWin", "\345\210\260", nullptr));
+        label_11->setText(QCoreApplication::translate("MainWin", "\342\206\222", nullptr));
         analysis_endDate->setDisplayFormat(QCoreApplication::translate("MainWin", "yyyy\345\271\264MM\346\234\210dd\346\227\245", nullptr));
-        label_8->setText(QCoreApplication::translate("MainWin", "\346\227\245\346\234\237\350\214\203\345\233\264", nullptr));
-        label_24->setText(QCoreApplication::translate("MainWin", "\350\264\246       \346\210\267", nullptr));
-        book->setItemText(0, QCoreApplication::translate("MainWin", "\351\273\230\350\256\244\350\264\246\346\234\254", nullptr));
-
+        label_8->setText(QCoreApplication::translate("MainWin", "\346\227\245       \346\234\237", nullptr));
+        analysis_reset->setText(QCoreApplication::translate("MainWin", "\351\207\215\347\275\256\350\277\207\346\273\244", nullptr));
+        analysis_flush->setText(QCoreApplication::translate("MainWin", "\345\210\267\346\226\260", nullptr));
         label_34->setText(QCoreApplication::translate("MainWin", "\345\270\220       \346\234\254", nullptr));
-        flowType->setItemText(0, QCoreApplication::translate("MainWin", "\345\205\250\351\203\250", nullptr));
-        flowType->setItemText(1, QCoreApplication::translate("MainWin", "\346\224\257\345\207\272", nullptr));
-        flowType->setItemText(2, QCoreApplication::translate("MainWin", "\346\224\266\345\205\245", nullptr));
-        flowType->setItemText(3, QCoreApplication::translate("MainWin", "\350\275\254\350\264\246", nullptr));
-
-        label_32->setText(QCoreApplication::translate("MainWin", "\346\265\201       \345\220\221", nullptr));
+        analysis_book->setText(QString());
+        analysis_book->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\234\254\345\220\215\347\247\260", nullptr));
+        label_31->setText(QCoreApplication::translate("MainWin", "\346\265\201       \345\220\221", nullptr));
+        analysis_flowType->setText(QString());
+        analysis_flowType->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\265\204\351\207\221\346\265\201\345\220\221", nullptr));
+        label_24->setText(QCoreApplication::translate("MainWin", "\350\264\246       \346\210\267", nullptr));
+        analysis_account->setText(QString());
+        analysis_account->setPlaceholderText(QCoreApplication::translate("MainWin", "\350\264\246\346\210\267\345\220\215\347\247\260", nullptr));
+        lab_firstClassify->setText(QCoreApplication::translate("MainWin", "\344\270\200\347\272\247\345\210\206\347\261\273", nullptr));
+        analysis_firstClassify->setText(QString());
+        analysis_firstClassify->setPlaceholderText(QCoreApplication::translate("MainWin", "\344\270\200\347\272\247\345\210\206\347\261\273", nullptr));
+        lab_secondClassify->setText(QCoreApplication::translate("MainWin", "\344\272\214\347\272\247\345\210\206\347\261\273", nullptr));
+        analysis_secondClassify->setText(QString());
+        analysis_secondClassify->setPlaceholderText(QCoreApplication::translate("MainWin", "\344\270\200\347\272\247\345\210\206\347\261\273", nullptr));
+        label_25->setText(QCoreApplication::translate("MainWin", "\350\275\254\345\205\245\350\264\246\346\210\267", nullptr));
+        analysis_account_in->setText(QString());
+        analysis_account_in->setPlaceholderText(QCoreApplication::translate("MainWin", "\344\270\200\347\272\247\345\210\206\347\261\273", nullptr));
         account_up->setText(QCoreApplication::translate("MainWin", "\344\270\212\347\247\273", nullptr));
         account_add->setText(QCoreApplication::translate("MainWin", "\346\226\260\345\242\236", nullptr));
         account_down->setText(QCoreApplication::translate("MainWin", "\344\270\213\347\247\273", nullptr));

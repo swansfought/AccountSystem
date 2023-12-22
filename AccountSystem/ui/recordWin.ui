@@ -560,6 +560,16 @@
                     <pointsize>10</pointsize>
                    </font>
                   </property>
+                  <property name="dateTime">
+                   <datetime>
+                    <hour>0</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                    <year>2023</year>
+                    <month>11</month>
+                    <day>28</day>
+                   </datetime>
+                  </property>
                   <property name="displayFormat">
                    <string>yyyy年MM月dd日</string>
                   </property>
@@ -570,7 +580,7 @@
                    <date>
                     <year>2023</year>
                     <month>11</month>
-                    <day>8</day>
+                    <day>28</day>
                    </date>
                   </property>
                  </widget>
@@ -745,11 +755,6 @@
                     <pointsize>10</pointsize>
                    </font>
                   </property>
-                  <item>
-                   <property name="text">
-                    <string>镇江-苏宁广场</string>
-                   </property>
-                  </item>
                  </widget>
                 </item>
                </layout>
